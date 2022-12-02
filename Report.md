@@ -17,6 +17,7 @@
 **Pads**-A bonding pad serves the purpose of connecting the circuit on a die to the pin on a packaged chip
 
 **Core**-An IP core consists of a block of logic or data that is used in a semiconductor chip. It is usually the intellectual property of a particular person or company. 
+
 **Macros**- Also called as a custom building block
 
 #### Basic understanding of Language and System Software
