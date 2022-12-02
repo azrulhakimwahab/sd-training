@@ -3,7 +3,7 @@
 
 [DAY 1](https://github.com/azrulhakimwahab/sd-training/blob/main/Report.md#day-1)
 
-## Day 0
+## Day 0-System/Tool Setup Check. GitHub ID creation
 ### Theory Review
 **IC Package**-*Integrated circuits are put into protective packages to allow easy handling and assembly onto printed circuit boards and to protect the devices from damage.Exp:
 
