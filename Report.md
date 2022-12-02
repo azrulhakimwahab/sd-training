@@ -10,7 +10,7 @@
 ### Theory Review
 **IC Package**-*Integrated circuits are put into protective packages to allow easy handling and assembly onto printed circuit boards and to protect the devices from damage.Exp:
 
-![image](https://user-images.githubusercontent.com/118953938/205211281-f9ea98e9-eef4-45ca-a579-7de14f7eca8b.png)" 
+![image](https://user-images.githubusercontent.com/118953938/205211281-f9ea98e9-eef4-45ca-a579-7de14f7eca8b.png)
 
 **Wire Bond**-*Wire bonding is the process of creating electrical interconnections between semiconductors (or other integrated circuits) and silicon chips using bonding wires, which are fine wires made of materials such as gold and aluminium.
 
@@ -24,7 +24,7 @@
 
 **Macros**- Also called as a custom building block
 
-#### Basic understanding of Language and System Software
+#### Basic understanding of System Software interactions
 
 1) Application softwares-*An application, also referred to as an application program or application software, is a computer software package that performs a specific function directly for an end user or, in some cases, for another application.*
 2) System Software-*System software is a type of computer program that is designed to run a computer's hardware and application programs.*
@@ -34,6 +34,9 @@
 as shown below
 
 ![image](https://user-images.githubusercontent.com/118953938/205213514-731d48e5-526e-4525-a472-5247fabe5ad9.png)
+
+Synthesis-<br />
+Synthesis is a process of converting RTL (synthesizable Verilog code) into a technology specific Gate level netlist which includes nets, sequential cells, combinational cells and their connectivity. In other words, It is a process of combining pre-existing elements to form something new. It is the conversion of an idea into an implementation.<br />
 
 #### Next Review
 1) Logic Synthesis
