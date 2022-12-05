@@ -77,8 +77,9 @@ Successfully executed!
 <img src="https://user-images.githubusercontent.com/118953938/205565493-518ebbe0-bd06-49ca-95a2-b6ed521ebc9f.png" width=50% height=50%>
 
 **Testbench** <br />
-`timescale 1ns / 1ps
-module tb_good_mux;
+
+    `timescale 1ns / 1ps 
+    module tb_good_mux;
         // Inputs
         reg i0,i1,sel;
         // Outputs
@@ -100,10 +101,11 @@ module tb_good_mux;
         i0 = 0;
         i1 = 0;
         #300 $finish;
-always #75 sel = ~sel;
-always #10 i0 = ~i0;
-always #55 i1 = ~i1;
-endmodule
+    always #75 sel = ~sel;
+    always #10 i0 = ~i0;
+    always #55 i1 = ~i1;
+    endmodule
+
 #########################################################################
     
     module good_mux (input i0 , input i1 , input sel , output reg y);
