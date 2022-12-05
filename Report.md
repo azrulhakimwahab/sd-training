@@ -2,12 +2,12 @@
 
 ## Contents
 
-[DAY 0](https://github.com/azrulhakimwahab/sd-training/blob/main/Report.md#day-0)
+[DAY 0 System/Tool Setup Check. GitHub ID creation](https://github.com/azrulhakimwahab/sd-training/blob/main/Report.md#day-0)
 
 [DAY 1](https://github.com/azrulhakimwahab/sd-training/blob/main/Report.md#day-1)
 
 ## Day 0-System/Tool Setup Check. GitHub ID creation
-### Theory Review
+### Theory Recap
 **IC Package**-Integrated circuits are put into protective packages to allow easy handling and assembly onto printed circuit boards and to protect the devices from damage.Exp:<br />
 <img src="https://user-images.githubusercontent.com/118953938/205218471-519b2b8c-384c-4015-b869-af05d6407829.png" width=30% height=30%>
 <br />
@@ -56,15 +56,28 @@ Successfully executed!
 
 ## Day 1-Introduction to Verilog RTL design and Synthesis
 
-### Lab Work
-#### Lab 1- Introduction to iverilog and GTKWave Part 1
+### Quick theory recap
 
+**1) RTL (Register−Transfer Level)**- A design abstraction which models a synchronous digital circuit in terms of the flow of digital signals between hardware registers, and the logical operations performed on those signals<br />
+**1.1) Benefit**: more compact since the language is more of an actual hardware modeling language. Write fewer lines of code, and it elicits a comparison to the C language.<br />
+
+**2) Hardware description language (HDL)**: A programming language used to describe the behavior or structure of digital circuits (ICs).
+
+**3) iVerilog**: An implementation of the Verilog hardware description language compiler that generates netlists in the desired format.
+
+**4) GTKWave**: A fully featured GTK+ based wave viewer for Unix, Win32, and Mac OSX which reads LXT, LXT2, VZT, FST, and GHW files as well as standard Verilog. 
+
+<img src="https://user-images.githubusercontent.com/118953938/205651867-5bfd9786-fe3b-493a-8d9d-5f835ea4c9db.png" width=50% height=50%>
+
+### Lab Work
+#### Lab 1- Introduction to Lab
+1.1) Copying directory from source <br />
 <img src="https://user-images.githubusercontent.com/118953938/205256498-ca0e627e-924d-419e-8099-f5d832882c20.png" width=50% height=50%>
 
 <img src="https://user-images.githubusercontent.com/118953938/205256649-2699c0ec-b49d-4fab-83af-a2d678915d05.png" width=50% height=50%>
 
-#### Lab 1- Introduction to iverilog and GTKWave Part 2
-
+#### Lab 2- Introduction to iverilog and GTKWave Part 1
+2.1) Launching the GTKWave <br />
 <img src="https://user-images.githubusercontent.com/118953938/205260137-79f93e7a-ad6b-4879-87ce-18bccbb15ef0.png" width=50% height=50%>
 
 <img src="https://user-images.githubusercontent.com/118953938/205260341-e0bfea4e-3a18-4816-aadb-fa914fd0d384.png" width=50% height=50%>
@@ -72,8 +85,8 @@ Successfully executed!
 
 <img src="https://user-images.githubusercontent.com/118953938/205261274-3b66e0cf-46b1-44d3-9f4c-251b71595e86.png" width=50% height=50%>
 
-#### Lab 2- Introduction to yosys and logic synthesis
-
+#### Lab 2- Introduction to iverilog and GTKWave Part 2
+2.2) Displaying file content (module and testbench of good_mux.v) <br />
 <img src="https://user-images.githubusercontent.com/118953938/205565493-518ebbe0-bd06-49ca-95a2-b6ed521ebc9f.png" width=50% height=50%>
 
 **Testbench** <br />
@@ -116,19 +129,28 @@ Successfully executed!
         else
                  y <= i0;
 
-#### Lab 3- Labs using yosys and SKY130 PDKs
+#### Lab 3- Labs using yosys and SKY130 PDKs Part 1
 
-##### 1) Invoking YOSYS <br />
+##### 3.1) Invoking YOSYS <br />
 
 <img src="https://user-images.githubusercontent.com/118953938/205570129-9ab774c1-bfc1-4f56-8608-f22952e646a7.png" width=50% height=50%>
-
+3.2) read_liberty -lib ../my_lib/lib/sky*.lib and read_verilog good_mux.v <br />
 <img src="https://user-images.githubusercontent.com/118953938/205580276-cca4faf2-9989-4b41-96ca-b1cb20596dda.png" width=50% height=50%>
 
+3.3) synth -top good_mux <br />
 <img src="https://user-images.githubusercontent.com/118953938/205580716-c39e49e1-07ab-414b-8772-8416c03dce3b.png" width=50% height=50%>
 
+3.4) abc -liberty ../lib/sky*.lib <br />
 <img src="https://user-images.githubusercontent.com/118953938/205584426-033b3a65-620f-4750-9798-6a9e5d12dbb0.png" width=80% height=80%>
 
+3.5) show (display) <br />
 <img src="https://user-images.githubusercontent.com/118953938/205584955-2c0c5989-8753-462a-96fc-b7ff1de5228e.png" width=50% height=50%>
+
+#### Lab 3- Labs using yosys and SKY130 PDKs Part 2
+
+
+#### Lab 3- Labs using yosys and SKY130 PDKs Part 3
+
 
 <img src="https://user-images.githubusercontent.com/118953938/205591107-be8cc6f1-d76f-4b1e-89dd-c2b4efa6d097.png" width=50% height=50%>
 
