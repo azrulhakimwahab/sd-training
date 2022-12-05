@@ -54,16 +54,16 @@ Synthesis is a process of converting RTL (synthesizable Verilog code) into a tec
 Successfully executed!
 
 
-## Day 1-
+## Day 1-Introduction to Verilog RTL design and Synthesis
 
 ### Lab Work
-#### Lab 1
+#### Lab 1- Introduction to iverilog and GTKWave Part 1
 
 <img src="https://user-images.githubusercontent.com/118953938/205256498-ca0e627e-924d-419e-8099-f5d832882c20.png" width=50% height=50%>
 
 <img src="https://user-images.githubusercontent.com/118953938/205256649-2699c0ec-b49d-4fab-83af-a2d678915d05.png" width=50% height=50%>
 
-#### Lab 1.1
+#### Lab 1- Introduction to iverilog and GTKWave Part 2
 
 <img src="https://user-images.githubusercontent.com/118953938/205260137-79f93e7a-ad6b-4879-87ce-18bccbb15ef0.png" width=50% height=50%>
 
@@ -72,7 +72,7 @@ Successfully executed!
 
 <img src="https://user-images.githubusercontent.com/118953938/205261274-3b66e0cf-46b1-44d3-9f4c-251b71595e86.png" width=50% height=50%>
 
-#### Lab 2
+#### Lab 2- Introduction to yosys and logic synthesis
 
 <img src="https://user-images.githubusercontent.com/118953938/205565493-518ebbe0-bd06-49ca-95a2-b6ed521ebc9f.png" width=50% height=50%>
 
@@ -95,7 +95,7 @@ module tb_good_mux;
         initial begin
         $dumpfile("tb_good_mux.vcd");
         $dumpvars(0,tb_good_mux);
-// Initialize Inputs
+    // Initialize Inputs
         sel = 0;
         i0 = 0;
         i1 = 0;
@@ -104,16 +104,17 @@ always #75 sel = ~sel;
 always #10 i0 = ~i0;
 always #55 i1 = ~i1;
 endmodule
-
-
-module good_mux (input i0 , input i1 , input sel , output reg y);
-always @ (*)
-begin
+#########################################################################
+    
+    module good_mux (input i0 , input i1 , input sel , output reg y);
+    always @ (*)
+    begin
         if(sel)
                 y <= i1;
         else
+                 y <= i0;
 
-#### Lab 3
+#### Lab 3- Labs using yosys and SKY130 PDKs
 
 ##### 1) Invoking YOSYS <br />
 
@@ -126,6 +127,11 @@ begin
 <img src="https://user-images.githubusercontent.com/118953938/205584426-033b3a65-620f-4750-9798-6a9e5d12dbb0.png" width=80% height=80%>
 
 <img src="https://user-images.githubusercontent.com/118953938/205584955-2c0c5989-8753-462a-96fc-b7ff1de5228e.png" width=50% height=50%>
+
+<img src="https://user-images.githubusercontent.com/118953938/205591107-be8cc6f1-d76f-4b1e-89dd-c2b4efa6d097.png" width=50% height=50%>
+
+<img src="https://user-images.githubusercontent.com/118953938/205591648-9d3c6e7b-114c-45bb-843b-4a0a11c3d41b.png" width=50% height=50%>
+
 
 
 
