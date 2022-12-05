@@ -63,7 +63,7 @@ Successfully executed!
 
 <img src="https://user-images.githubusercontent.com/118953938/205256649-2699c0ec-b49d-4fab-83af-a2d678915d05.png" width=50% height=50%>
 
-#### Lab 2
+#### Lab 1.1
 
 <img src="https://user-images.githubusercontent.com/118953938/205260137-79f93e7a-ad6b-4879-87ce-18bccbb15ef0.png" width=50% height=50%>
 
@@ -72,9 +72,11 @@ Successfully executed!
 
 <img src="https://user-images.githubusercontent.com/118953938/205261274-3b66e0cf-46b1-44d3-9f4c-251b71595e86.png" width=50% height=50%>
 
-#### Lab 3
+#### Lab 2
 
-**Testbench**
+<img src="https://user-images.githubusercontent.com/118953938/205565493-518ebbe0-bd06-49ca-95a2-b6ed521ebc9f.png" width=50% height=50%>
+
+**Testbench** <br />
 `timescale 1ns / 1ps
 module tb_good_mux;
         // Inputs
@@ -103,13 +105,30 @@ always #10 i0 = ~i0;
 always #55 i1 = ~i1;
 endmodule
 
-**Module**
+
 module good_mux (input i0 , input i1 , input sel , output reg y);
 always @ (*)
 begin
         if(sel)
                 y <= i1;
         else
+
+#### Lab 3
+
+##### 1) Invoking YOSYS <br />
+
+<img src="https://user-images.githubusercontent.com/118953938/205570129-9ab774c1-bfc1-4f56-8608-f22952e646a7.png" width=50% height=50%>
+
+<img src="https://user-images.githubusercontent.com/118953938/205580276-cca4faf2-9989-4b41-96ca-b1cb20596dda.png" width=50% height=50%>
+
+<img src="https://user-images.githubusercontent.com/118953938/205580716-c39e49e1-07ab-414b-8772-8416c03dce3b.png" width=50% height=50%>
+
+<img src="https://user-images.githubusercontent.com/118953938/205584426-033b3a65-620f-4750-9798-6a9e5d12dbb0.png" width=80% height=80%>
+
+<img src="https://user-images.githubusercontent.com/118953938/205584955-2c0c5989-8753-462a-96fc-b7ff1de5228e.png" width=50% height=50%>
+
+
+
 
 
 
