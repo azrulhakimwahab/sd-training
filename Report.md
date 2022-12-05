@@ -54,4 +54,68 @@ Synthesis is a process of converting RTL (synthesizable Verilog code) into a tec
 Successfully executed!
 
 
-# Day 1
+## Day 1-
+
+### Lab Work
+#### Lab 1
+
+<img src="https://user-images.githubusercontent.com/118953938/205256498-ca0e627e-924d-419e-8099-f5d832882c20.png" width=50% height=50%>
+
+<img src="https://user-images.githubusercontent.com/118953938/205256649-2699c0ec-b49d-4fab-83af-a2d678915d05.png" width=50% height=50%>
+
+#### Lab 2
+
+<img src="https://user-images.githubusercontent.com/118953938/205260137-79f93e7a-ad6b-4879-87ce-18bccbb15ef0.png" width=50% height=50%>
+
+<img src="https://user-images.githubusercontent.com/118953938/205260341-e0bfea4e-3a18-4816-aadb-fa914fd0d384.png" width=50% height=50%>
+<img src="https://user-images.githubusercontent.com/118953938/205260820-9d56d72a-1eee-4f65-9969-7e56d776150f.png" width=50% height=50%>
+
+<img src="https://user-images.githubusercontent.com/118953938/205261274-3b66e0cf-46b1-44d3-9f4c-251b71595e86.png" width=50% height=50%>
+
+#### Lab 3
+
+**Testbench**
+`timescale 1ns / 1ps
+module tb_good_mux;
+        // Inputs
+        reg i0,i1,sel;
+        // Outputs
+        wire y;
+
+        // Instantiate the Unit Under Test (UUT)
+        good_mux uut (
+                .sel(sel),
+                .i0(i0),
+                .i1(i1),
+                .y(y)
+        );
+
+        initial begin
+        $dumpfile("tb_good_mux.vcd");
+        $dumpvars(0,tb_good_mux);
+// Initialize Inputs
+        sel = 0;
+        i0 = 0;
+        i1 = 0;
+        #300 $finish;
+always #75 sel = ~sel;
+always #10 i0 = ~i0;
+always #55 i1 = ~i1;
+endmodule
+
+**Module**
+module good_mux (input i0 , input i1 , input sel , output reg y);
+always @ (*)
+begin
+        if(sel)
+                y <= i1;
+        else
+
+
+
+
+
+
+
+
+
