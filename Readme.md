@@ -6,6 +6,8 @@
 
 [DAY 1 Introduction to Verilog RTL design and Synthesis](https://github.com/azrulhakimwahab/sd-training/blob/main/Report.md#day-1)
 
+[DAY 2 Timing libs(QTMs/ETMs), hierarchical vs flat synthesis and efficient flop coding styles](https://github.com/azrulhakimwahab/sd-training/blob/main/Readme.md#day-2--timing-libsqtmsetms-hierarchical-vs-flat-synthesis-and-efficient-flop-coding-styles)
+
 ## Day 0-System/Tool Setup Check. GitHub ID creation
 ## Theory Recap
 **IC Package**-Integrated circuits are put into protective packages to allow easy handling and assembly onto printed circuit boards and to protect the devices from damage.Exp:<br />
