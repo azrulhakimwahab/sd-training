@@ -356,11 +356,97 @@ Example: 4-bit synchronous counter<br />
 
 ![image](https://user-images.githubusercontent.com/118953938/206231314-a61d83c1-65b9-426a-b206-e344d651a905.png)
 
-6.) Synchronous Reset
-
 ![image](https://user-images.githubusercontent.com/118953938/206232667-dfdce230-4d87-4f34-aea6-d02ea7410232.png)
 
 ![image](https://user-images.githubusercontent.com/118953938/206237085-2d7df92f-06f0-4e73-9666-d18efa98d723.png)
+
+6.2) Synchronous Reset
+
+![image](https://user-images.githubusercontent.com/118953938/206240447-70dbfc55-4b5e-45d9-80c2-a6644a97f594.png)
+
+![image](https://user-images.githubusercontent.com/118953938/206240322-385d4541-22db-4d68-8224-6f99693f63a9.png)
+
+### Lab 6- Lab flop synthesis simulations Part 2
+
+6.3) Asynchronous 
+
+**Commands**<br />
+
+    1) yosys
+    2) read_liberty -lib ../lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+    3) read_verilog dff_asyncres.v
+    4) synth -top dff_asyncres
+    5) dfflibmap -liberty ../lib/sky130_fd_sc_hd__tt_025C_1v80.lib 
+    6) abc -liberty ../lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+    7) show
+
+**Output**
+
+<img src="https://user-images.githubusercontent.com/118953938/206243461-c023cafc-83bf-45b0-8f7c-4f3a46e98510.png" width=80% height=80%>
+
+**Commands**<br />
+
+    1) read_verilog dff_async_set.v
+    2) synth -top dff_async_set
+    3) dfflibmap -liberty ../lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+    4) abc -liberty ../lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+    5) show
+
+**Output**
+
+![image](https://user-images.githubusercontent.com/118953938/206245194-1e54e233-722b-4fa4-b3db-5339e2251bc5.png)
+
+6.4) Synchronous
+
+**Commands**<br />
+
+    1) read_verilog dff_syncres.v
+    2) synth -top dff_syncres
+    3) dfflibmap -liberty ../lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+    4) abc -liberty ../lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+    5) show
+
+**Output**
+
+<img src="https://user-images.githubusercontent.com/118953938/206247803-d8403775-33c5-4491-9c91-169a20aeabca.png" width=80% height=80%>
+
+### Lab 6- Interesting optimisations Part 1
+
+**Multiplexer**- The multiplexer, shortened to “MUX” or “MPX”, is a combinational logic circuit designed to switch one of several input lines through to a single common output
+
+6.5) mult_2.v
+
+**Commands**<br />
+
+    1) yosys
+    2) read_liberty -lib ../lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+    3) read_verilog mult_2.v
+    4) synth -top mul2
+    5) abc -liberty ../lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+    6) show
+
+**Output**
+
+![image](https://user-images.githubusercontent.com/118953938/206253674-f0319c90-9665-4e36-a62a-c45e36de7f7e.png)
+
+### Lab 6- Interesting optimisations Part 2
+
+6.5) mult_8.v
+
+**Commands**<br />
+
+    1) yosys
+    2) read_liberty -lib ../lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+    3) read_verilog mult_8.v
+    4) synth -top mult8
+    5) abc -liberty ../lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+    6) show
+
+**Output**
+
+![image](https://user-images.githubusercontent.com/118953938/206256679-97b653f8-26b0-4d4b-8bde-2963a52edce9.png)
+
+
 
 
 
