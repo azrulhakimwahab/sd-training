@@ -168,8 +168,7 @@ Conversion from the synthesis to logic circuit can be done by reading the diagra
 
 ## Day 2- Timing libs(QTMs/ETMs), hierarchical vs flat synthesis and efficient flop coding styles
 
-### Quick Theory Recap
-
+**Note/: Theory was put between the labs**
 
 ### Lab Work
 ### Lab 4 -Introduction to timing .libs Part 1
@@ -194,6 +193,30 @@ PVT is the Process, Voltage, and Temperature. In order to make our chip to work 
 
 <img src="https://user-images.githubusercontent.com/118953938/206067245-4bf69a56-199b-439a-8a05-b92c82456042.png" width=50% height=50%>
 
+**Commands**
+
+        :se nu - enabling the line numbers
+
+<img src="https://user-images.githubusercontent.com/118953938/206264279-a27561bb-4b26-411f-9f9d-1897b3ed42b3.png" width=50% height=50%>
+
+Information on "a2111o"<br />
+1) 'a'- and gate
+2) 'o' or gate
+3) '2'- 2 input and gate
+4) '2111'- 4 input or gate
+
+<img src="https://user-images.githubusercontent.com/118953938/206265818-8fcf1d0f-5a57-4637-9006-cc2e6dae5da6.png" width=50% height=50%>
+
+### Lab 4 -Introduction to timing .libs Part 3
+
+<img src="https://user-images.githubusercontent.com/118953938/206268527-c8eeee1f-c2a6-481f-abeb-13302da10a3a.png" width=50% height=50%>
+
+**Commands**
+
+        :vsp-split the screen
+        -to review more information
+        
+![image](https://user-images.githubusercontent.com/118953938/206269265-850d17bb-50d2-4a6f-9ca0-92e8abbf5e02.png)
 
 ### Lab 5 -Hier synthesis flat synthesis Part 1
 
