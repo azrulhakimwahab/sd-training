@@ -166,6 +166,43 @@ Conversion from the synthesis to logic circuit can be done by reading the diagra
 <img src="https://user-images.githubusercontent.com/118953938/205591648-9d3c6e7b-114c-45bb-843b-4a0a11c3d41b.png" width=50% height=50%>
 
 
+## Day 2- Timing libs(QTMs/ETMs), hierarchical vs flat synthesis and efficient flop coding styles
+
+### Quick Theory Recap
+
+
+### Lab Work
+### Lab 4 -Introduction to timing .libs Part 1
+‌
+4.1) Open .lib (‌‌‌
+
+<img src="https://user-images.githubusercontent.com/118953938/206061310-8eddbd07-20ed-44f6-8173-53fce86fa270.png" width=50% height=50%>
+
+**tt**- typical <br />
+**025C**- temperature
+
+### PVT
+PVT is the Process, Voltage, and Temperature. In order to make our chip to work after fabrication in all the possible conditions, we simulate it at different corners of process, voltage, and temperature. These conditions are called corners. All these three parameters directly affect the delay of the cell.
+
+1) Process (variations due to fabrication)- Process variation is the naturally occurring variation in the attributes of transistors (length, widths, oxide thickness) when integrated circuits are fabricated.<br />
+2) Voltage - Variation of voltage contributes to the variation of behaviour in the circuit. <br />
+3) Temperature - The transistor density is not uniform throughout the chip. Some regions of the chip have higher density and higher switching, resulting in higher power dissipation and Some regions of the chip have lower density and lower switching, resulting in lower power dissipation Hence the junction temperature at these regions may be higher or lower depending upon the density of transistors.<br />
+
+### Lab 4 -Introduction to timing .libs Part 2
+
+4.2) Information extraction from .lib
+
+<img src="https://user-images.githubusercontent.com/118953938/206067245-4bf69a56-199b-439a-8a05-b92c82456042.png" width=50% height=50%>
+
+
+### Lab 5 -Hier synthesis flat synthesis Part1
+
+<img src="https://user-images.githubusercontent.com/118953938/206068994-b43a7b0c-73c8-4c5c-9de9-2bf54770bf58.png" width=70% height=70%>
+
+<img src="https://user-images.githubusercontent.com/118953938/206074036-bc277834-94f1-4488-9dfb-e99ca16b6057.png" width=50% height=50%>
+
+
+
 
 
 
