@@ -345,7 +345,7 @@ synth -top sub_module1 and abc -liberty ../lib/sky130_fd_sc_hd__tt_025C_1v80.lib
 
 <img src="https://user-images.githubusercontent.com/118953938/206214978-4d5337ea-8a93-4afa-b924-371e3cc003d9.png" width=50% height=50%>
 From the lecture, why we nees a sub module level synth is because<br />
-1) When we have multiple module of the same instance
+1) When we have multiple module of the same instance<br />
 2) Divide and conquer (the design is to take a dispute on a huge input, break the input into minor pieces, decide the problem on each of the small pieces, and then merge the piecewise solutions into a global solution)
 
 ## Various Flop Coding Styles and optimization
