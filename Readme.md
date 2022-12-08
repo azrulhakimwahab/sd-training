@@ -175,7 +175,7 @@ Conversion from the synthesis to logic circuit can be done by reading the diagra
 ### Lab Work
 ### Lab 4 -Introduction to timing .libs Part 1
 ‌
-4.1) Open .lib (‌‌‌
+4.1) Open .lib 
 
 <img src="https://user-images.githubusercontent.com/118953938/206061310-8eddbd07-20ed-44f6-8173-53fce86fa270.png" width=50% height=50%>
 
