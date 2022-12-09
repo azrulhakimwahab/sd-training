@@ -528,10 +528,25 @@ optimization on a type of logic circuit whose output depends on the present valu
 Files that used in the lab:<br />
 <img src="https://user-images.githubusercontent.com/118953938/206646837-2f43f589-8ad4-4fc9-b79a-deb8be479831.png" width=70% height=70%>
 
-Expectation from opt_check<br />
-y=a? y=o<br />
-y=a-.o+ab<br />
+Expectation from: <br />
+opt_check<br />
+y=a! y=o<br />
+y=a!.o+ab<br />
 y= a.b (and gate)<br />
+
+opt_check2<br />
+y=a!b+a<br />
+y=a+b<br />
+
+opt_check3<br />
+y=a!o+a(c!o+cb)<br />
+y=o+abc<br />
+y=abc<br />
+
+opt_check4<br />
+y=a!c!+a(b!c+b(ac))
+y=a!c!+ab!c+abc
+y=a!c!+ac
 
 **Commands**<br />
 
@@ -563,8 +578,58 @@ y= a.b (and gate)<br />
 
 ### :test_tube:	Lab 7- Sequential Logic Optimisations Part 1/2/3
 
-Files that used in the lab:<br />
+:grey_exclamation: Files that used in the lab:<br />
+
 ![image](https://user-images.githubusercontent.com/118953938/206661166-35ce7f5d-b7a2-406a-8b06-895679f9f685.png)
+
+Open files (gvim dff_const1(3).v -o dff_const2(4).v)<br />
+
+<img src="https://user-images.githubusercontent.com/118953938/206666758-dbe6e54a-9cc5-4387-a499-7db2205a870e.png" width=50% height=50%>
+
+
+
+**Commands**<br />
+
+        1)iverilog dff_const1(2).v tb_dff_const1(2).v       
+        2)./a.out
+        3)gtkwave tb_dff_const1(2).vcd
+        
+        1) yosys
+        2) read_liberty -lib ../lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+        3) read_verilog dff_const1(2,3,4).v
+        4) synth -top dff_const1(2,3,4)
+        5) dfflibmap -liberty ../lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+        6) abc -liberty ../lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+        7) show
+ 
+ **Output**
+ 
+ **7.1) dff_const1.v**
+ 
+ <img src="https://user-images.githubusercontent.com/118953938/206716305-0503e144-1ae3-4108-894c-a5fabed0a83f.png" width=70% height=70%><br />
+:grey_exclamation: We can observe that the 'q' will be high when the positive clock edge <br />
+
+ <img src="https://user-images.githubusercontent.com/118953938/206722429-a7380f65-0879-4285-ada8-92b585924bff.png" width=70% height=70%><br />
+
+
+ **7.2) dff_const2.v**
+ 
+ <img src="https://user-images.githubusercontent.com/118953938/206718806-5d643402-3291-4f1c-aa25-9f0ba6ffd12b.png" width=70% height=70%><br />
+ 
+<img src="https://user-images.githubusercontent.com/118953938/206724438-2a6d0e25-efae-4472-ab49-d5036cafa944.png" width=70% height=70%><br />
+
+**7.3) dff_const3.v**
+
+<img src="https://user-images.githubusercontent.com/118953938/206731500-2616f009-641e-47fc-9477-26501739bcc7.png" width=70% height=70%><br />
+
+ <img src="https://user-images.githubusercontent.com/118953938/206734381-f472352d-0780-4c6e-97e6-7d166bf387e5.png" width=70% height=70%><br />
+       
+
+### :mag_right: Seq optimisation unused outputs Part 1
+
+
+
+
 
 
 
