@@ -1,4 +1,4 @@
-# My Respository
+# :book: My Respository
 
 ## Contents
 
@@ -8,7 +8,7 @@
 
 [DAY 2 Timing libs(QTMs/ETMs), hierarchical vs flat synthesis and efficient flop coding styles](https://github.com/azrulhakimwahab/sd-training/blob/main/Readme.md#day-2--timing-libsqtmsetms-hierarchical-vs-flat-synthesis-and-efficient-flop-coding-styles)
 
-## Day 0-System/Tool Setup Check. GitHub ID creation
+# :book: Day 0-System/Tool Setup Check. GitHub ID creation
 ## Theory Recap
 **IC Package**-Integrated circuits are put into protective packages to allow easy handling and assembly onto printed circuit boards and to protect the devices from damage.Exp:<br />
 <img src="https://user-images.githubusercontent.com/118953938/205218471-519b2b8c-384c-4015-b869-af05d6407829.png" width=30% height=30%>
@@ -56,7 +56,7 @@ Synthesis is a process of converting RTL (synthesizable Verilog code) into a tec
 Successfully executed!
 
 
-## Day 1-Introduction to Verilog RTL design and Synthesis
+# :book: Day 1-Introduction to Verilog RTL design and Synthesis
 
 ## Quick theory recap
 
@@ -168,7 +168,7 @@ Conversion from the synthesis to logic circuit can be done by reading the diagra
 <img src="https://user-images.githubusercontent.com/118953938/205591648-9d3c6e7b-114c-45bb-843b-4a0a11c3d41b.png" width=50% height=50%>
 
 
-## Day 2- Timing libs(QTMs/ETMs), hierarchical vs flat synthesis and efficient flop coding styles
+# :book: Day 2- Timing libs(QTMs/ETMs), hierarchical vs flat synthesis and efficient flop coding styles
 
 **Note/: Theory was put between the labs**
 
@@ -374,8 +374,8 @@ Example: 4-bit asynchronous counter<br />
 Example: 4-bit synchronous counter<br />
 <img src="https://user-images.githubusercontent.com/118953938/206225805-32bee99c-e553-4301-a52d-b9e6e6c398b3.png" width=50% height=50%>
 
-### Lab 6- Lab flop synthesis simulations Part 1
-6.1) Asynchronous Reset
+### Lab 5.1- Lab flop synthesis simulations Part 1
+5.1.1) Asynchronous Reset
 
 <img src="https://user-images.githubusercontent.com/118953938/206227275-8ea9a958-ffce-4ef6-aef6-2dd2b0707a52.png" width=100% height=100%>
 
@@ -385,15 +385,15 @@ Example: 4-bit synchronous counter<br />
 
 ![image](https://user-images.githubusercontent.com/118953938/206237085-2d7df92f-06f0-4e73-9666-d18efa98d723.png)
 
-6.2) Synchronous Reset
+5.1.2) Synchronous Reset
 
 ![image](https://user-images.githubusercontent.com/118953938/206240447-70dbfc55-4b5e-45d9-80c2-a6644a97f594.png)
 
 ![image](https://user-images.githubusercontent.com/118953938/206240322-385d4541-22db-4d68-8224-6f99693f63a9.png)
 
-### Lab 6- Lab flop synthesis simulations Part 2
+### Lab 5.1- Lab flop synthesis simulations Part 2
 
-6.3) Asynchronous 
+5.1.3) Asynchronous 
 
 **Commands**<br />
 
@@ -421,7 +421,7 @@ Example: 4-bit synchronous counter<br />
 
 ![image](https://user-images.githubusercontent.com/118953938/206245194-1e54e233-722b-4fa4-b3db-5339e2251bc5.png)
 
-6.4) Synchronous
+5.1.4) Synchronous
 
 **Commands**<br />
 
@@ -435,11 +435,11 @@ Example: 4-bit synchronous counter<br />
 
 <img src="https://user-images.githubusercontent.com/118953938/206247803-d8403775-33c5-4491-9c91-169a20aeabca.png" width=80% height=80%>
 
-### Lab 6- Interesting optimisations Part 1
+### Lab 5.2- Interesting optimisations Part 1
 
 **Multiplexer**- The multiplexer, shortened to “MUX” or “MPX”, is a combinational logic circuit designed to switch one of several input lines through to a single common output
 
-6.5) mult_2.v
+5.2.1) mult_2.v
 
 **Commands**<br />
 
@@ -456,7 +456,7 @@ Example: 4-bit synchronous counter<br />
 
 ### Lab 6- Interesting optimisations Part 2
 
-6.5) mult_8.v
+5.2.2) mult_8.v
 
 **Commands**<br />
 
@@ -470,6 +470,102 @@ Example: 4-bit synchronous counter<br />
 **Output**
 
 ![image](https://user-images.githubusercontent.com/118953938/206256679-97b653f8-26b0-4d4b-8bde-2963a52edce9.png)
+
+# :book: Day 3 - Combinational and sequential optimizations
+
+### :mag_right: Combinational Logic Optimization
+is a process of finding an equivalent representation of the specified logic circuit under one or more specified constraints. This process is a part of a logic synthesis applied in digital electronics and integrated circuit design.<br />
+
+<img src="https://user-images.githubusercontent.com/118953938/206629033-0516bc19-de72-4f97-9cc2-2d5cefc2d643.png" width=40% height=40%>
+
+How to optimize the design?<br />
+1) Squeezing the logics (area and power)<br />
+2) Constant propagation <br />
+    * It can be defined as the process of replacing the constant value of variables in the expression. In simpler words, we can say that if  some value is assigned a known constant, than we can simply replace the that value by constant. Constants assigned to a variable can be propagated through the flow graph and can be replaced when the variable is used. 
+3) Boolean logic optimization <br />
+    * In terms of Boolean algebra, the optimization of a complex boolean expression is a process of finding a simpler one, which would upon evaluation ultimately produce the same results as the original one.Exp:<br />
+    
+    !<img src="https://user-images.githubusercontent.com/118953938/206629248-7d2f5b3f-981a-4324-bb92-ba4c7681fd64.png" width=60% height=60%>
+
+### :mag_right: Sequential Logic Optimization
+optimization on a type of logic circuit whose output depends on the present value of its input signals and on the sequence of past inputs, the input history.<br />
+
+<img src="https://user-images.githubusercontent.com/118953938/206628188-21135ec8-0828-4f87-b360-c46d7cd094a0.png" width=40% height=40%>
+
+1) Basic
+    * Sequential Constant propagation 
+        * Constant propagation is the use of control-flow and data-flow information to determine that a variable must have a particular constant value at a specific point in the program.
+2) Advanced
+    * State optimization
+         
+         :heavy_check_mark: Retiming
+         * Retiming is a technique for optimizing sequential circuits. It repositions the registers in a circuit leaving the combinational portion of circuitry untouched. The central objective of retiming is to find a circuit with the minimum number of registers for a specified clock period.
+         * It cann help to reduce the delay and improve frequency efficiency of the sequential design.
+          
+             <img src="https://user-images.githubusercontent.com/118953938/206641971-ffa7441b-9c4f-4b91-88c9-216a44b3ce1b.png" width=20% height=10%>
+         
+         :heavy_check_mark: Sequential Logic cloning (physical aware)
+           
+         * In Physical aware synthesis, it will provide floor plan DEF as one of the input to the synthesis tool. Floor plan DEF will contains the physical information like placement of macros, placement of input & output ports, die area & placement blockages. Also, RC co-efficient file can be given as input to synthesis tool for better calculation of wire resistance & capacitance compared to wire load model method.
+
+                Advantages of Physical aware synthesis:
+
+                     * Gives better PPA (power, performance, area)
+                     * Will give better timing correlation between synthesis and PnR results
+                     * Improvement in Power
+                     * PnR run time also reduces because of lesser violations
+
+
+        * Sequential logic cloning will help to reduce the large routing delay from the design
+
+### :test_tube:	Lab 6- Combinational Logic Optimisations Part 1/2
+
+**:mag_right: Multiplexer**- A multiplexer is a circuit used to select and route any one of the several input signals to a single output. A simple example of an non-electronic circuit of a multiplexer is a single pole multi-position switch. Multi-position switches are widely used in many electronics circuits. <br />
+* Multiplexers are part of computer systems to select data from a specific source, be it a memory chip or a hardware peripheral. A computer uses multiplexers to control the data and address buses, allowing the processor to select data from multiple data sources.  <br />
+
+![image](https://user-images.githubusercontent.com/118953938/206646645-f7f541c2-8d71-48c0-a4f5-ea90d6fbad17.png)
+
+Files that used in the lab:<br />
+<img src="https://user-images.githubusercontent.com/118953938/206646837-2f43f589-8ad4-4fc9-b79a-deb8be479831.png" width=70% height=70%>
+
+Expectation from opt_check<br />
+y=a? y=o<br />
+y=a-.o+ab<br />
+y= a.b (and gate)<br />
+
+**Commands**<br />
+
+        1) yosys
+        2) read_liberty -lib ../lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+        3) read_verilog opt_check.v (opt_check2.v/opt_check3.v/opt_check4.v)
+        4) synth -top opt_check (opt_check2/opt_check3/opt_check4)
+        5) opt_clean -purge
+        6) abc -liberty ../lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+        7) show
+
+**Output**
+
+6.1) opt_check.v
+
+<img src="https://user-images.githubusercontent.com/118953938/206650258-4d8c5816-7466-4b6f-a78b-fbc72bce0e84.png" width=70% height=70%>
+
+6.2) opt_check2.v
+
+<img src="https://user-images.githubusercontent.com/118953938/206655855-bcff2bfb-8129-4c15-be49-db75f6cc6621.png" width=70% height=70%>
+
+6.3) opt_check3.v
+
+<img src="https://user-images.githubusercontent.com/118953938/206656766-ef63d951-a494-489e-babc-215dd312f5c7.png" width=70% height=70%>
+
+6.4) opt_check4.v
+
+<img src="https://user-images.githubusercontent.com/118953938/206658501-17ef67e6-576e-4ab1-ac3a-b151593986fd.png" width=70% height=70%>
+
+### :test_tube:	Lab 7- Sequential Logic Optimisations Part 1/2/3
+
+Files that used in the lab:<br />
+![image](https://user-images.githubusercontent.com/118953938/206661166-35ce7f5d-b7a2-406a-8b06-895679f9f685.png)
+
 
 
 
