@@ -8,6 +8,8 @@
 
 [DAY 2 Timing libs(QTMs/ETMs), hierarchical vs flat synthesis and efficient flop coding styles](https://github.com/azrulhakimwahab/sd-training/blob/main/Readme.md#day-2--timing-libsqtmsetms-hierarchical-vs-flat-synthesis-and-efficient-flop-coding-styles)
 
+[DAY 3 Combinational and sequential optimizations](https://github.com/azrulhakimwahab/sd-training/blob/main/Readme.md#book-day-3---combinational-and-sequential-optimizations)
+
 # :book: Day 0-System/Tool Setup Check. GitHub ID creation
 ## Theory Recap
 **IC Package**-Integrated circuits are put into protective packages to allow easy handling and assembly onto printed circuit boards and to protect the devices from damage.Exp:<br />
