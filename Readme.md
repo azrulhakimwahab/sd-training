@@ -529,27 +529,28 @@ Files that used in the lab:<br />
 <img src="https://user-images.githubusercontent.com/118953938/206646837-2f43f589-8ad4-4fc9-b79a-deb8be479831.png" width=70% height=70%>
 
 Expectation from: <br />
-opt_check<br />
+**opt_check**<br />
 y=a! y=o<br />
 y=a!.o+ab<br />
 y= a.b (and gate)<br />
 
-opt_check2<br />
+**opt_check2**<br />
 y=a!b+a<br />
 y=a+b<br />
 
-opt_check3<br />
+**opt_check3**<br />
 y=a!o+a(c!o+cb)<br />
 y=o+abc<br />
 y=abc<br />
 
-opt_check4<br />
-y=a!c!+a(b!c+b(ac))
-y=a!c!+ab!c+abc
-y=a!c!+ac
+**opt_check4**<br />
+y=a!c!+a(b!c+b(ac))<br />
+y=a!c!+ab!c+abc<br />
+y=a!c!+ac<br />
 
 **Commands**<br />
-
+        
+        opt_check.v
         1) yosys
         2) read_liberty -lib ../lib/sky130_fd_sc_hd__tt_025C_1v80.lib
         3) read_verilog opt_check.v (opt_check2.v/opt_check3.v/opt_check4.v)
@@ -557,8 +558,19 @@ y=a!c!+ac
         5) opt_clean -purge
         6) abc -liberty ../lib/sky130_fd_sc_hd__tt_025C_1v80.lib
         7) show
+        multiple_module_opt.v
+        1) yosys
+        2) read_liberty -lib ../lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+        3) read_verilog multiple_module_opt.v
+        4) synth -top multiple_module_opt
+        5) opt_clean -purge
+        6) abc -liberty ../lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+        7) flatten
+        8) show
+        
+**Outputs**
 
-**Output**
+**opt_check.v**
 
 6.1) opt_check.v
 
@@ -576,17 +588,32 @@ y=a!c!+ac
 
 <img src="https://user-images.githubusercontent.com/118953938/206658501-17ef67e6-576e-4ab1-ac3a-b151593986fd.png" width=70% height=70%>
 
+**multiple_module_opt.v**
+
+6.5) multiple_module_opt.v
+
+<img src="https://user-images.githubusercontent.com/118953938/206825112-61f0e771-44d9-4ec3-b25e-7a853d53a628.png" width=70% height=70%>
+
+<img src="https://user-images.githubusercontent.com/118953938/206825248-ca41eed4-0eed-42fb-9df4-6fc1cfea263b.png" width=70% height=70%>
+
+6.5) multiple_module_opt.v
+
+<img src="https://user-images.githubusercontent.com/118953938/206826258-20e59c46-62bf-49a6-8422-02b42c55b6cc.png" width=50% height=50%>
+
+<img src="https://user-images.githubusercontent.com/118953938/206825783-832a4072-2f84-4106-bf4a-e2759e4dc865.png" width=70% height=70%>
+
+
 ### :test_tube:	Lab 7- Sequential Logic Optimisations Part 1/2/3
 
 :grey_exclamation: Files that used in the lab:<br />
 
 ![image](https://user-images.githubusercontent.com/118953938/206661166-35ce7f5d-b7a2-406a-8b06-895679f9f685.png)
 
-Open files (gvim dff_const1(3).v -o dff_const2(4).v)<br />
+Open files (gvim dff_const1.v -o dff_const2.v)<br />
 
-<img src="https://user-images.githubusercontent.com/118953938/206666758-dbe6e54a-9cc5-4387-a499-7db2205a870e.png" width=50% height=50%>
+![image](https://user-images.githubusercontent.com/118953938/206829396-01d1fea2-fa27-4fe0-93e9-ee1761f545e3.png)
 
-
+![image](https://user-images.githubusercontent.com/118953938/206829428-ba0d5072-037d-4a7d-b9c4-416199b342f5.png)
 
 **Commands**<br />
 
@@ -602,7 +629,7 @@ Open files (gvim dff_const1(3).v -o dff_const2(4).v)<br />
         6) abc -liberty ../lib/sky130_fd_sc_hd__tt_025C_1v80.lib
         7) show
  
- **Output**
+ **Outputs**
  
  **7.1) dff_const1.v**
  
@@ -625,15 +652,38 @@ Open files (gvim dff_const1(3).v -o dff_const2(4).v)<br />
  <img src="https://user-images.githubusercontent.com/118953938/206734381-f472352d-0780-4c6e-97e6-7d166bf387e5.png" width=70% height=70%><br />
        
 
-### :mag_right: Seq optimisation unused outputs Part 1
+### :mag_right: Seq optimisation unused outputs 
 
+**Counter**-counter is a device which stores (and sometimes displays) the number of times a particular event or process has occurred, often in relationship to a clock. The most common type is a sequential digital logic circuit with an input line called the clock and multiple output lines.
 
+### :test_tube:	Lab- Seq optimisation unused outputs Part 1/2
 
+**Commands**<br />
 
+        1) yosys
+        2) read_liberty -lib ../lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+        3) read_verilog counter_opt.v
+        4) synth -top counter_opt
+        5) dfflibmap -liberty ../lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+        6) abc -liberty ../lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+        7) show
 
+**Outputs**
 
+**counter_opt.v**
 
+<img src="https://user-images.githubusercontent.com/118953938/206827397-b2bdcba6-d41c-4422-bcaa-e2bea0dc2fd6.png" width=70% height=70%><br />
 
+<img src="https://user-images.githubusercontent.com/118953938/206827736-73ce0d9a-e73d-4b89-9c2b-a170454e421d.png" width=30% height=30%><br />
 
+<img src="https://user-images.githubusercontent.com/118953938/206827717-2b585628-17e5-4019-a3b5-bae205012510.png" width=100% height=100%><br />
+
+**counter_opt2.v**
+
+<img src="https://user-images.githubusercontent.com/118953938/206828145-1f000601-c665-4779-b047-ccd6cae48792.png" width=70% height=70%><br />
+
+<img src="https://user-images.githubusercontent.com/118953938/206828220-c98e737b-e9e3-42d9-9182-052a43be7e67.png" width=30% height=30%><br />
+
+![image](https://user-images.githubusercontent.com/118953938/206829257-34beedea-58a5-493b-987c-42449a48a15b.png)
 
 
