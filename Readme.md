@@ -688,4 +688,54 @@ Open files (gvim dff_const1.v -o dff_const2.v)<br />
 
 ![image](https://user-images.githubusercontent.com/118953938/206829257-34beedea-58a5-493b-987c-42449a48a15b.png)
 
+# :book: Day 4 - GLS, Synthesis-Simulation mismatch and Blocking/Non-blocking statements
+
+### :mag_right: Gate Level Simulation (GLS)
+The term "gate level" refers to the netlist view of a circuit, usually produced by logic synthesis. 
+* As a process of running the testbench with netlist under Design Under Test (DUT)
+* A 'netlist' is a description of the connectivity of an electronic circuit. In its simplest form, a netlist consists of a list of the electronic components in a circuit and a list of the nodes they are connected to. 
+
+Benefits:
+* Can verify the logical correctness of the design after synthesis
+* Ensuring the timing of the design follows the requirements
+
+### :mag_right: Gate Level Simulation (GLS) using I Verilog
+
+<img src="https://user-images.githubusercontent.com/118953938/207057743-acb93c06-6a44-46b9-8ddf-75626ab19798.png" width=70% height=70%><br />
+
+Example:
+
+assign y=(a&b)|c
+
+<img src="https://user-images.githubusercontent.com/118953938/207067196-b6ac65cc-6e70-458f-b9b5-53f49deeb774.png" width=50% height=50%><br />
+
+### :mag_right: Synthesis Simulation Mismatch
+
+Why is it happening?
+
+**1) Missing sensitivity list**
+
+<img src="https://user-images.githubusercontent.com/118953938/207072609-1f0c90a8-f48c-4118-b5a8-b0aa6e767882.png" width=70% height=70%><br />
+
+**2) Blocking vs Non-Blocking Assignments**
+
+Blocking<br />
+* Executes the statements in order it is written
+* The first statement is evaluated before the second statement
+
+Non-Blocking<br />
+* Executes all the RHS when the always block is entered and assigns to LHS
+* Parallel evaluation
+
+Caveats with Blocking Statements
+
+<img src="https://user-images.githubusercontent.com/118953938/207080124-74d5a7d7-5b5f-433a-bd28-1e46de5fec33.png" width=70% height=70%><br />
+
+
+**3) Non Standard Verilog Coding**
+
+
+### :test_tube:	Lab 7- Sequential Logic Optimisations Part 1/2/3
+
+
 
