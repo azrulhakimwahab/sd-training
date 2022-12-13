@@ -731,11 +731,115 @@ Caveats with Blocking Statements
 
 <img src="https://user-images.githubusercontent.com/118953938/207080124-74d5a7d7-5b5f-433a-bd28-1e46de5fec33.png" width=70% height=70%><br />
 
+* Use nonblocking for writing sequential circuits 
+* Need to use blocking carefully 
+
+Synth Sim Mismatch
+
+<img src="https://user-images.githubusercontent.com/118953938/207241913-e7436966-b4ad-4f46-866f-30492435b119.png" width=70% height=70%><br />
+
+#Note that the figures were taken from the lectures and edited according to understanding
 
 **3) Non Standard Verilog Coding**
 
 
-### :test_tube:	Lab 7- Sequential Logic Optimisations Part 1/2/3
+### :test_tube:	Lab 8- Labs on GLS and Synthesis-Simulation Mismatch Part 1/2
+
+8.1) ternary_operator_mux.v
+
+<img src="https://user-images.githubusercontent.com/118953938/207226907-6b25ec1b-2b1c-4e2b-a72a-55489eeab931.png" width=70% height=70%><img src="https://user-images.githubusercontent.com/118953938/207227078-f8240d34-8654-4f6c-a87d-d448a4953fdd.png" width=50% height=50%><br />
+<img src="https://user-images.githubusercontent.com/118953938/207225419-7f854ecb-c2ad-40da-8bff-8b1bd711b966.png" width=70% height=70%>
+
+**Commands**<br />
+
+        1) yosys
+        2) read_liberty -lib ../lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+        3) read_verilog ternary_operator_mux.v
+        4) synth -top ternary_operator_mux
+        5) abc -liberty ../lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+        6) write_verilog -noattr ternary_operator_mux_net.v
+        7) show
+        
+        Ternary_operator_mux wave form
+        1) iverilog ../my_lib/verilog_model/primitives.v ../my_lib/verilog_model/sky130_fd_sc_hd.v ternary_operator_mux_net.v tb_ternary_operator_mux.v
+        2) ./a.out
+        3) gtkwave tb_ternary_operator_mux.vcd
+
+**Outputs**
+
+<img src="https://user-images.githubusercontent.com/118953938/207225951-c12dc257-ed22-423e-9258-954f39879dd0.png" width=70% height=70%>
+
+<img src="https://user-images.githubusercontent.com/118953938/207226666-96619c81-77c7-4584-8429-7ccd396d8604.png" width=70% height=70%>
+
+8.2) bad_mux.v
+
+<img src="https://user-images.githubusercontent.com/118953938/207227690-e7881ae1-590e-49a9-ab34-b1250efab6e9.png" width=70% height=70%>
+
+<img src="https://user-images.githubusercontent.com/118953938/207234532-95d2d27f-29b3-444f-9007-47ccab7143f2.png" width=50% height=50%>
+
+<img src="https://user-images.githubusercontent.com/118953938/207235253-6b95f4e7-64a2-4c18-bdc5-3b3cc27617ce.png" width=70% height=70%>
+
+**Commands**<br />
+
+        1) yosys
+        2) read_liberty -lib ../lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+        3) read_verilog bad_mux.v
+        4) synth -top bad_mux
+        5) abc -liberty ../lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+        6) write_verilog -noattr bad_mux_net.v
+        7) show
+        
+        Ternary_operator_mux wave form
+        1) iverilog ../my_lib/verilog_model/primitives.v ../my_lib/verilog_model/sky130_fd_sc_hd.v bad_mux_net.v tb_bad_mux.v
+        2) ./a.out
+        3) gtkwave tb_bad_mux.vcd
+
+**Outputs**
+
+<img src="https://user-images.githubusercontent.com/118953938/207235731-4614f121-cb5c-468b-bac9-7866ae5d24c2.png" width=70% height=70%>
+
+<img src="https://user-images.githubusercontent.com/118953938/207236874-b1470cff-bd96-4faf-b6f4-c2277a9d540d.png" width=70% height=70%>
+
+### :test_tube:	Lab 9- Labs on Synth sim mismatch blocking statement Part 1/2
+
+9.1) blocking_caveat.v
+
+**Commands**<br />
+
+        1) gvim blocking_caveat.v
+        2) riverilog blocking_caveat.v tb_blocking_caveat.v
+        3) ./a.out
+        4) gtkwave tb_blocking_caveat.vcd
+               
+        Synthesize
+        1) yosys
+        2) read_liberty -lib ../my_lib/lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+        3) read_verilog blocking_caveat.v
+        4) synth -top blocking_caveat
+        5) abc -liberty ../my_lib/lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+        6) write_verilog -noattr blocking_caveat_net.v
+        7) show
+        
+        Waveform
+        1) iverilog ../my_lib/verilog_model/primitives.v ../my_lib/verilog_model/sky130_fd_sc_hd.v blocking_caveat_net.v tb_blocking_caveat.v
+        2) ./a.out
+        3) gtkwave tb_blocking_caveat.vcd
+        
+**Outputs**
+
+<img src="https://user-images.githubusercontent.com/118953938/207238130-1382d6bf-986b-41f5-be2e-9425db091a8f.png" width=50% height=50%>
+
+<img src="https://user-images.githubusercontent.com/118953938/207239249-ed7b9c2c-b87e-4d82-b1c9-ad9f3dbb6c18.png" width=70% height=70%>
+
+<img src="https://user-images.githubusercontent.com/118953938/207239567-088bd850-2a8e-4ab6-8945-6c6648d2ae94.png" width=70% height=70%>
+
+<img src="https://user-images.githubusercontent.com/118953938/207240419-373ed5c4-45b6-4ccb-89c8-3fe92c003b98.png" width=70% height=70%>
+
+
+
+
+
+
 
 
 
