@@ -836,6 +836,138 @@ Synth Sim Mismatch
 <img src="https://user-images.githubusercontent.com/118953938/207240419-373ed5c4-45b6-4ccb-89c8-3fe92c003b98.png" width=70% height=70%>
 
 
+# :book: Day 5 - Design For Testability
+
+### :mag_right: DFT definition
+
+* Design For Testability (or Design for Test, or DFT) refers to design techniques that make products easier to test.
+* The new features simplify the development and application of manufacturing tests to the designed hardware. 
+* Manufacturing tests are performed to ensure that the product hardware is free of manufacturing defects that could interfere with the product's proper operation.
+
+Tests are utilized at numerous stages of the hardware manufacturing process and, in some cases, for hardware maintenance in the customer's environment. Test programmes are typically used to drive the tests, which are then executed on automatic test equipment (ATE) or, in the case of system maintenance, within the constructed system itself. Tests may be able to log diagnostic information regarding the nature of the encountered test fails in addition to discovering and indicating the presence of faults (i.e., the test fails). The diagnostic data can be used to pinpoint the source of the failure.
+
+| Advantages  | Disadvantages |
+| ------------- | ------------- |
+| Reduces tester complexity  | DFT increase power, area, timing   |
+| Reduces tester time | DFT adds complication to the design flow. |
+| Reduces the possibility of losing money due to defective products. | Design time increases  |
+
+#### :black_nib: Example of DFT
+<details><summary> Explainations </summary>
+<p>
+        
+1) **MBIST**: is the industry-standard method of testing embedded memories. MBIST works by performing sequences of reads and writes to the memory according to a test algorithm. Many industry-standard test algorithms exist.
+
+    ![image](https://user-images.githubusercontent.com/118953938/207633181-1b6ecec9-6a9d-40a6-a7de-60370ee604b0.png)<br>
+ visit [here](https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.design-reuse.com%2Farticles%2F45915%2Fmemory-testing-self-repair-mechanism.html&psig=AOvVaw0z6iyRGnzeG6m-O2mSmz19&ust=1671116083088000&source=images&cd=vfe&ved=0CBEQjhxqFwoTCMj0_pqy-fsCFQAAAAAdAAAAABAP) for more info
+
+2) **Scan chains**: Scan chains are the elements in scan-based designs that are used to shift-in and shift-out test data
+
+    <img src="https://user-images.githubusercontent.com/118953938/207635196-ed672c27-3e5b-44eb-9ff9-84eb3a1a955e.png" width=50% height=50%>
+
+    2.1) Lots and lots of flops/latches in a high-end chip<br>
+        * 200,000 latches on 2nd gen Itanium (static + dynamic)<br>
+    • Scan chains offer two benefits for these latches and flops<br>
+        – Observability: you can stop the chip and read out all their states<br>
+        – Controllability: you can stop the chip and set all of their states<br>
+    • Critical for debugging circuit issues too<br>
+        – They are your easiest “probe” points in the circuit<br>
+        – Can trace back errors to see where they first appear<br>
+    • Great with simulator or when a part fails in some condition<br>
+        – Even more useful with a flexible clock generator<br>
+    • Can stress certain clock cycles, and look at which bits fail<br>
+    
+3) **Generate test patterns** for combo logics
+
+* DFT benefit: can reduce the high cost in time and effort required to generate test vector sequences for VLSI circuits.
+</p>
+</details>
+
+#### :black_nib: Levels of testing
+
+<img src="https://user-images.githubusercontent.com/118953938/207757611-1284d021-8955-4e68-b358-97b91d6c7e69.png" width=50% height=50%>
+
+#### :black_nib: Terminologies
+
+1) **Controlability**- Controllability gives us a measure of how easy or difficult it is to force the logic level in a node to either 1 or 0. If we consider the simple circuit shown in figure 1, it is easy to verify that only 2 out of 8 possible input combinations enable us to force a 1 in node Y. [Source](https://www.google.com/url?sa=i&url=http%3A%2F%2Fvlsi-soc.blogspot.com%2F2013%2F04%2Ftwo-pillars-of-dft-controllability.html&psig=AOvVaw3RfyRP2JZ6lGFmfInSYEa0&ust=1671159908845000&source=images&cd=vfe&ved=0CBEQjhxqFwoTCLiY_vjR-vsCFQAAAAAdAAAAABAD)
+
+<img src="https://user-images.githubusercontent.com/118953938/207762936-fc6d91fd-a635-47db-895f-dd1f50639fa1.png" width=50% height=50%>
+
+<img src="https://user-images.githubusercontent.com/118953938/207805782-c0d6a061-dbcf-42b9-989f-fa3522bd1c53.png" width=50% height=50%>
+
+2) **Observability**- The observability of a node is defined precisely to give a measure of how easy or difficult it is to propagate the logic level in a node to a directly observable output.<br>
+
+<img src="https://user-images.githubusercontent.com/118953938/207805891-ef07369c-81ce-4541-b45d-997fb151da01.png" width=50% height=50%>
+
+4) **Fault**- It is a physical damage/defect compared to the good system, which may or may not cause system failure.<br>
+5) **Error**-  An error is caused by a fault because of which system went to erroneous state.<br>
+6) **Failure**-  failure is when the system is not providing the expected service. A fault causes an error which leads to the system failure.<br>
+7) **Fault Coverage**- Percentage of the total number of logical faults that can be tested using a given test set T.<br>
+8) **Defect Level**- Refers to the fraction of shipped parts that are defective. Or, the proportion of the faulty chip in which fault isn’t detected and has been classified as good.<br>
+
+#### :black_nib: DFT techniques
+
+Two main categories of DFT Techniques
+
+<img src="https://user-images.githubusercontent.com/118953938/207784240-88112dc9-f7ee-43a1-8aa2-c038c029dde0.png" width=50% height=50%>
+
+#### :black_nib: SCAN CHAIN TECHNIQUE
+
+1) Scan chains are scan-based design features that are used to shift-in and shift-out test data.
+2) A scan chain is made up of a series of flops connected back to back in a chain, with the output of one flop connected to the output of the next.
+3) The first flop's input is connected to the chip's input pin (called scan-in), from which scan data is fed. The output of the last flop is attached to the chip's output pin (called scan-out), which is used to extract the shifted data. 
+
+There are three sorts of scan flip-flop configurations: 
+
+1) Multiplexed
+Scan testing is done in order to detect any manufacturing fault in the combinatorial logic block. In order to do so, the ATPG tool try to excite each and every node within the combinatorial logic block by applying input vectors at the flops of the scan chain. All the flops are connected in form of a chain, which effectively acts as a shift register. The first flop of the scan chain is connected to the scan-in port and the last flop is connected to the scan-out port.
+
+ <p align="center"><img src="https://user-images.githubusercontent.com/118953938/207805541-0e4e3293-7a86-431b-8f24-6107325fa690.png" width=80% height=80%></p>
+ <p align="center"><img src="https://user-images.githubusercontent.com/118953938/207812996-8c37101d-bd32-4df1-a04c-18aec8fe2c76.png" width=80% height=80%></p>
+
+5) Level-sensitive scan design (lssd)
+
+    * IT uses separate system and scan clocks to distinguish between normal and test mode. Latches are used in pairs, each has a normal data input, data output and clock for system operation. For test operation, the two latches form a master/slave pair with one scan input, one scan output and non-overlapping scan clocks A and B which are held low during system operation but cause the scan data to be latched when pulsed high during scan. [Source](https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.researchgate.net%2Ffigure%2FModified-Clocked-LSSD-Scan-FF-b-Additional-front-end-logic_fig1_280173334&psig=AOvVaw13SU6GfK5vMLtBUpVfNhXe&ust=1671178751339000&source=images&cd=vfe&ved=0CBEQjhxqFwoTCKCT3JGY-_sCFQAAAAAdAAAAABAP)
+
+       <p align="center"><img src="https://user-images.githubusercontent.com/118953938/207808393-9cccd9f1-33e8-45f1-89b1-5987fabb66b4.png" width=30% height=30%></p>
+
+<img src="https://user-images.githubusercontent.com/118953938/207803976-6e80c450-7fc7-4eed-8aed-ca1e3bcdaf9b.png" width=80% height=80%>
+
+3) Timed
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
