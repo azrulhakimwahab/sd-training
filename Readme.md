@@ -864,19 +864,7 @@ Tests are utilized at numerous stages of the hardware manufacturing process and,
 2) **Scan chains**: Scan chains are the elements in scan-based designs that are used to shift-in and shift-out test data
 
     <img src="https://user-images.githubusercontent.com/118953938/207635196-ed672c27-3e5b-44eb-9ff9-84eb3a1a955e.png" width=50% height=50%>
-
-    2.1) Lots and lots of flops/latches in a high-end chip<br>
-        * 200,000 latches on 2nd gen Itanium (static + dynamic)<br>
-    • Scan chains offer two benefits for these latches and flops<br>
-        – Observability: you can stop the chip and read out all their states<br>
-        – Controllability: you can stop the chip and set all of their states<br>
-    • Critical for debugging circuit issues too<br>
-        – They are your easiest “probe” points in the circuit<br>
-        – Can trace back errors to see where they first appear<br>
-    • Great with simulator or when a part fails in some condition<br>
-        – Even more useful with a flexible clock generator<br>
-    • Can stress certain clock cycles, and look at which bits fail<br>
-    
+   
 3) **Generate test patterns** for combo logics
 
 * DFT benefit: can reduce the high cost in time and effort required to generate test vector sequences for VLSI circuits.
@@ -917,29 +905,44 @@ Two main categories of DFT Techniques
 2) A scan chain is made up of a series of flops connected back to back in a chain, with the output of one flop connected to the output of the next.
 3) The first flop's input is connected to the chip's input pin (called scan-in), from which scan data is fed. The output of the last flop is attached to the chip's output pin (called scan-out), which is used to extract the shifted data. 
 
-There are three sorts of scan flip-flop configurations: 
-
-1) Multiplexed
-Scan testing is done in order to detect any manufacturing fault in the combinatorial logic block. In order to do so, the ATPG tool try to excite each and every node within the combinatorial logic block by applying input vectors at the flops of the scan chain. All the flops are connected in form of a chain, which effectively acts as a shift register. The first flop of the scan chain is connected to the scan-in port and the last flop is connected to the scan-out port.
-
- <p align="center"><img src="https://user-images.githubusercontent.com/118953938/207805541-0e4e3293-7a86-431b-8f24-6107325fa690.png" width=80% height=80%></p>
- <p align="center"><img src="https://user-images.githubusercontent.com/118953938/207812996-8c37101d-bd32-4df1-a04c-18aec8fe2c76.png" width=80% height=80%></p>
-
-5) Level-sensitive scan design (lssd)
-
-    * IT uses separate system and scan clocks to distinguish between normal and test mode. Latches are used in pairs, each has a normal data input, data output and clock for system operation. For test operation, the two latches form a master/slave pair with one scan input, one scan output and non-overlapping scan clocks A and B which are held low during system operation but cause the scan data to be latched when pulsed high during scan. [Source](https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.researchgate.net%2Ffigure%2FModified-Clocked-LSSD-Scan-FF-b-Additional-front-end-logic_fig1_280173334&psig=AOvVaw13SU6GfK5vMLtBUpVfNhXe&ust=1671178751339000&source=images&cd=vfe&ved=0CBEQjhxqFwoTCKCT3JGY-_sCFQAAAAAdAAAAABAP)
-
-       <p align="center"><img src="https://user-images.githubusercontent.com/118953938/207808393-9cccd9f1-33e8-45f1-89b1-5987fabb66b4.png" width=30% height=30%></p>
+         • Lots and lots of flops/latches in a high-end chip
+             * 200,000 latches on 2nd gen Itanium (static + dynamic)
+          • Scan chains offer two benefits for these latches and flops
+              – Observability: you can stop the chip and read out all their states
+              – Controllability: you can stop the chip and set all of their states
+         • Critical for debugging circuit issues too
+              – They are your easiest “probe” points in the circuit
+              – Can trace back errors to see where they first appear
+         • Great with simulator or when a part fails in some condition
+             – Even more useful with a flexible clock generator
+          • Can stress certain clock cycles, and look at which bits fail
 
 <img src="https://user-images.githubusercontent.com/118953938/207803976-6e80c450-7fc7-4eed-8aed-ca1e3bcdaf9b.png" width=80% height=80%>
 
-3) Timed
+There are three sorts of scan flip-flop configurations: 
 
+**1) Multiplexed**<br>
 
+* Scan testing is done in order to detect any manufacturing fault in the combinatorial logic block. In order to do so, the ATPG tool try to excite each and every node within the combinatorial logic block by applying input vectors at the flops of the scan chain. All the flops are connected in form of a chain, which effectively acts as a shift register. The first flop of the scan chain is connected to the scan-in port and the last flop is connected to the scan-out port.
 
+ <p align="center"><img src="https://user-images.githubusercontent.com/118953938/207814382-c53ac8ee-5d03-4119-83f0-0b3dc1a8d47f.png" width=70% height=70%></p>
+<p align="center"><img src="https://user-images.githubusercontent.com/118953938/207812996-8c37101d-bd32-4df1-a04c-18aec8fe2c76.png" width=80% height=80%></p>
 
+**2) Level-sensitive scan design (lssd)**
 
+* IT uses separate system and scan clocks to distinguish between normal and test mode. Latches are used in pairs, each has a normal data input, data output and clock for system operation. For test operation, the two latches form a master/slave pair with one scan input, one scan output and non-overlapping scan clocks A and B which are held low during system operation but cause the scan data to be latched when pulsed high during scan. [Source](https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.researchgate.net%2Ffigure%2FModified-Clocked-LSSD-Scan-FF-b-Additional-front-end-logic_fig1_280173334&psig=AOvVaw13SU6GfK5vMLtBUpVfNhXe&ust=1671178751339000&source=images&cd=vfe&ved=0CBEQjhxqFwoTCKCT3JGY-_sCFQAAAAAdAAAAABAP)
 
+<p align="center"><img src="https://user-images.githubusercontent.com/118953938/207808393-9cccd9f1-33e8-45f1-89b1-5987fabb66b4.png" width=30% height=30%></p>
+
+### :mag_right: Automatic test equipment
+
+Automatic test equipment (ATE) is any apparatus that uses automation to swiftly make measurements and assess test findings on a device known as the device under test (DUT), equipment under test (EUT), or unit under test (UUT). An ATE can be as simple as a computer-controlled digital multimeter or as complex as a system with dozens of complex test instruments (real or simulated electronic test equipment) capable of automatically testing and diagnosing faults in sophisticated electronic packaged parts or on wafer testing, such as system on chips and integrated circuits.
+
+1.Scan-In Phase
+2.Parallel Measure 
+3.Parallel Capture 
+4.First Scan-Out Phase
+5.Scan-Out Phase
 
 
 
