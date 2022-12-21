@@ -1085,9 +1085,338 @@ A Synthesis tool targeted for ASIC design flow from Synopsys
         6. DDC- synopsys proprietary format for storing the design information. can write out and read in DDC
         7. Design- RTL files which has the behavioral model of the design
         
-Synopsys Design Constraints (SDC)
+**Synopsys Design Constraints (SDC)**
 
 * Used to specify the design intent in terms of timing, power and area constraints
 * Supported by Electronic Design Automation (EDA) tools across semiconductor industry
 * Using the Tool Command Language (TCL)
+
+![image](https://user-images.githubusercontent.com/118953938/208903231-deced78d-b763-4c17-bbb7-2ce3ebbc8e18.png)
+
+<img src="https://user-images.githubusercontent.com/118953938/208903310-66cf441e-94e2-494d-99d1-c3bce629077b.png" width=40% height=40%>
+
+### :mag_right: Quick recap: TCL
+
+![image](https://user-images.githubusercontent.com/118953938/208954251-3d2db13c-5b47-4562-ac92-3b516ac7540d.png)
+
+### :test_tube:	Lab 1- Invoking dc basic setup
+
+1.1) Invoking
+
+**Commands**
+
+        1) cd /nfs/png/disks/png_mip_gen6p9ddr_0032/wahabm--->open directory
+        2) mkdir VLSI---> make a new directory 
+        3) git clone https://github.com/kunalg123/sky130RTLDesignAndSynthesisWorkshop.git --->file cloning (copy/paste)
+        4) cd sky130RTLDesignAndSynthesisWorkshop/DC_WORKSHOP/lib
+        
+**Output**
+
+<img src="https://user-images.githubusercontent.com/118953938/208927319-79aabf37-418c-488c-af0a-4ec474eefe5d.png" width=60% height=60%>
+
+1.2) Reading '.lib'
+
+**Commands**
+
+        1) gvim sky130_fd_sc_hd__tt_025C_1v80.lib
+        2) :syn off ---> to shut the syntax (red colour) 
+        3) git clone https://github.com/kunalg123/sky130RTLDesignAndSynthesisWorkshop.git --->file cloning (copy/paste)
+        4) cd sky130RTLDesignAndSynthesisWorkshop/DC_WORKSHOP/lib
+        
+        Searching multiple types of cell
+        1) /cell (.*and(or)(inv)
+      
+**Output**
+
+Info captured <br>
+<img src="https://user-images.githubusercontent.com/118953938/208929233-d31e9515-4af0-49db-92b6-d6a1d23db3a3.png" width=60% height=60%>
+
+Searching multiple types of cell <br>
+![image](https://user-images.githubusercontent.com/118953938/208930288-9ed8af1f-54d2-4a52-b4ae-cc2089a85e54.png)
+
+1.3) Invoking DC
+
+**Commands**
+
+        1) /p/hdk/pu_tu/prd/sams/mig76_wlw/setup/enter_p31 -cfg ip76p31r08hp7rev03 -ov ./
+        2) csh
+        3) dc_shell
+        
+**Output**
+
+<img src="https://user-images.githubusercontent.com/118953938/208932669-e141eb07-57f2-41f6-a6f1-f6882c097840.png" width=60% height=60%>
+
+1.4) Read std cell/tech .lib
+
+**Commands**
+
+        1) echo $target_library
+        2) echo $link_library
+        Exit and ready to use gvim
+        3) gvim DC_WORKSHOP/verilog_files/lab1_flop_with_en.v
+
+**Output**
+
+<img src="https://user-images.githubusercontent.com/118953938/208933423-b5a2efce-bc2c-45d8-a2c5-18cf0e114def.png" width=60% height=60%>
+
+<img src="https://user-images.githubusercontent.com/118953938/208934994-c5e87d66-e9b8-4d67-9fd0-4ff7026e71e6.png" width=60% height=60%>
+
+1.5) Read and write verilog
+
+**Commands**
+
+        1) read_verilog DC_WORKSHOP/verilog_files/lab1_flop_with_en.v
+        2) write -f verilog -out lab1_net.v
+        3) read_db DC_WORKSHOP/lib/sky130_fd_sc_hd__tt_025C_1v80.db
+        4) write -f verilog -out lab1_net.v
+        5) sh gvim lab1_net.v &
+
+**Output**
+
+![image](https://user-images.githubusercontent.com/118953938/208937241-3a83b6a7-c600-4d0a-9093-7e4c8e62b015.png)
+
+1.6) loading the sky130 library
+
+**Commands**
+
+        1) read_db DC_WORKSHOP/lib/sky130_fd_sc_hd__tt_025C_1v80.db
+        2) write -f verilog -out lab1_net.v
+        3) sh gvim lab1_net.v & ---> the format is still in gtech
+        look at target_library and link_library  
+        
+        To set target library
+        4) set target_library /nfs/png/disks/png_mip_gen6p9ddr_0032/wahabm/sky130RTLDesignAndSynthesisWorkshop/DC_WORKSHOP/lib/sky130_fd_sc_hd__tt_025C_1v80.db/nfs/png/disks/png_mip_gen6p9ddr_0032/wahabm/sky130RTLDesignAndSynthesisWorkshop/DC_WORKSHOP/lib/sky130_fd_sc_hd__tt_025C_1v80.db
+        5) set link_library {* /nfs/png/disks/png_mip_gen6p9ddr_0032/wahabm/sky130RTLDesignAndSynthesisWorkshop/DC_WORKSHOP/lib/sky130_fd_sc_hd__tt_025C_1v80.db}*/nfs/png/disks/png_mip_gen6p9ddr_0032/wahabm/sky130RTLDesignAndSynthesisWorkshop/DC_WORKSHOP/lib/sky130_fd_sc_hd__tt_025C_1v80.db
+        6)link
+        7) compile
+        8) write -f verilog -out lab1_net_with_sky130.v
+        9) sh gvim lab1_net_with_sky130.v &
+
+**Output**
+
+<img src="https://user-images.githubusercontent.com/118953938/208939357-1aa37fe5-e880-4fc4-aa96-96a056a37d83.png" width=60% height=60%>
+
+<img src="https://user-images.githubusercontent.com/118953938/208939647-cf64ecaf-1f84-424e-968f-c5fd89955fbb.png" width=60% height=60%>
+
+<img src="https://user-images.githubusercontent.com/118953938/208940378-3f622a7a-ba9a-4738-b0f7-326084266563.png" width=60% height=60%>
+
+### :test_tube:	Lab 2- Intro to ddc gui with design_vision
+
+**Commands**
+
+        1) csh
+        2) Design vision
+        3) start_gui
+        4) read_ddc lab1.ddc
+
+**Output**
+
+<img src="https://user-images.githubusercontent.com/118953938/208941454-9927252b-46c4-417d-b6c1-856cb5ab09ce.png" width=60% height=60%>
+
+<img src="https://user-images.githubusercontent.com/118953938/208941855-010a185c-9b80-4e94-a5da-211f7cea9f11.png" width=60% height=60%>
+
+<img src="https://user-images.githubusercontent.com/118953938/208942090-7b5f6f35-3ca0-41ea-ac8a-e287f343df7b.png" width=60% height=60%>
+
+### :test_tube:	Lab 3- dc synopsys dc setup
+
+**Commands**
+
+        1) csh
+        2) dc_shell
+        3) echo $target_library
+        4) echo $link_library
+        5) set target_library DC_WORKSHOP/lib/sky130_fd_sc_hd__tt_025C_1v80.db
+        6) set link_library {* $target_library}
+        7) echo $target_library
+        8) output: DC_WORKSHOP/lib/sky130_fd_sc_hd__tt_025C_1v80.db
+        9) echo $link_library
+
+**Output**
+
+<img src="https://user-images.githubusercontent.com/118953938/208944525-3b823af4-d841-4c34-9d67-5a606a99d785.png" width=60% height=60%>
+
+<img src="https://user-images.githubusercontent.com/118953938/208946213-c06a9f25-2620-4ebc-ac81-9b5cc049c2da.png" width=60% height=60%>
+
+To correct the issue
+
+**Commands**
+
+        1) quit dc_shell
+        2) cd /nfs/png/disks/png_mip_gen6p9ddr_0032/wahabm/VLSI/sky130RTLDesignAndSynthesisWorkshop
+        3) gvim .synopsys_dc.setup
+            -in gvim, paste this and save
+                set target_library DC_WORKSHOP/lib/sky130_fd_sc_hd__tt_025C_1v80.db
+                set link_library {* $target_library}
+        
+        invoke DC shell
+        4) csh
+        5) dc_shell
+        6) echo $target_library
+        7) echo $link_library
+
+**Output**
+
+<img src="https://user-images.githubusercontent.com/118953938/208947484-f7acba91-4de6-4d25-a60e-16a309448c6d.png" width=60% height=60%>
+
+**Target library and link library now is auto set**
+
+### :test_tube:	Lab 4- TCL
+
+4.1) For loop
+
+            for {set i 0} {$i < 12} {incr i} {                                                             
+                      echo $i
+            }
+
+<img src="https://user-images.githubusercontent.com/118953938/208956840-8b29f850-d8ec-4b9c-82ca-d9a656903e1f.png" width=40% height=40%>
+
+4.2) while loop 
+
+        while {$i < 11} {  
+            echo $i;  
+            incr i;                                                                                                              
+            }
+
+<img src="https://user-images.githubusercontent.com/118953938/208959355-91428d61-0ea6-47f8-b2e0-0c79e5e4a751.png" width=40% height=40%>
+
+         while {$i < 11} {
+            echo $i;
+            set i [expr $i + 1];
+            }
+
+<img src="https://user-images.githubusercontent.com/118953938/208959691-f1284b53-206c-41fe-a931-fa1890d9eb89.png" width=40% height=40%>
+
+4.3) List
+
+        set mylist [list a b c d e f g];
+        
+<img src="https://user-images.githubusercontent.com/118953938/208960408-d0e18a64-e15f-4d24-b4c6-0f56474b1903.png" width=40% height=40%>
+
+4.4) foreach loop
+
+        foreach my_var $mylist {
+        echo $my_var;
+        }
+        
+<img src="https://user-images.githubusercontent.com/118953938/208961109-8aa1ae44-9a28-4ae3-ac32-35aeb72537f5.png" width=40% height=40%>
+
+4.5) foreach_in_collection
+
+        get_lib_cells */*and* ---> listing all the and gates
+        ( bracket to bracket means collection)
+
+<img src="https://user-images.githubusercontent.com/118953938/208961567-1fe38025-bc8e-4cd2-9215-036ec37bb365.png" width=40% height=40%>
+
+        foreach_in_collection my_var [get_lib_cells */*and*] {
+            echo $my_var;
+        } ---> listing the collection of pointers
+        
+<img src="https://user-images.githubusercontent.com/118953938/208963792-e3669877-de91-423b-b8e6-4fb47447d969.png" width=40% height=40%>
+
+        foreach_in_collection my_var [get_lib_cells */*and*] {
+        set my_var_name [get_object_name $my_var]; echo $my_var_name;
+        }
+
+<img src="https://user-images.githubusercontent.com/118953938/208964255-aff0eb3f-ed79-43b6-9dab-9a45e0248bcf.png" width=40% height=40%>
+
+Can also be printed in gvim
+
+        sh gvim &
+
+        copy and paste these in gvim
+
+            foreach_in_collection my_var [get_lib_cells */*and*] {
+	            set my_var_name [get_object_name $my_var]; echo $my_var_name;
+            }
+
+            echo "Printing Multiplication Table"
+
+            set i 10;
+            set j 1;
+            while {$j < 21} {
+	            echo $i*$j;
+	            incr j;
+            }
+        
+        Save it 
+        :w! myscript.tcl
+        Quit
+        :q!
+        
+        Launch it
+        source myscript.tcl
+
+<img src="https://user-images.githubusercontent.com/118953938/208965624-8a07c328-2043-4c35-846a-9a9f5edaf3e7.png" width=40% height=40%>
+
+        sh gvim myscript.tcl &
+
+         Edit the highlighted part
+           
+        foreach_in_collection my_var [get_lib_cells */*and*] {
+	        set my_var_name [get_object_name $my_var]; echo $my_var_name;
+        }
+
+        echo "Printing Multiplication Table"
+
+        set i 10;
+        set j 1;
+        while {$j < 21} {
+	        echo [expr $i*$j]; --->edited here
+	        incr j;
+        }
+
+        save
+        :wq!
+        Launch it
+        source myscript.tcl
+        
+<img src="https://user-images.githubusercontent.com/118953938/208967037-d9f78d2c-cf7f-4c8f-b5c9-98eb4f7a6378.png" width=40% height=40%>
+
+
+
+        gvim myscript.tcl &
+
+        add these codes after the last bracket
+
+        set mylist [list a b c d e f g];
+
+        foreach myvar $mylist {
+	        echo $myvar;
+        }
+        echo $mylist;
+
+        save
+        :wq!
+        Launch it
+        source myscript.tcl
+        
+<img src="https://user-images.githubusercontent.com/118953938/208968503-4b9e0807-c6d4-4b7e-aac3-6e07a756d62d.png" width=40% height=40%>
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
