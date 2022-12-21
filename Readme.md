@@ -944,37 +944,150 @@ Automatic test equipment (ATE) is any apparatus that uses automation to swiftly 
 4.First Scan-Out Phase
 5.Scan-Out Phase
 
+# :book: Day 6 - Introduction to Logic Synthesis
 
+### :mag_right: Definition and details about Logic Synthesis
 
+**It is the process of transforming RTL to gate-level netlist. Synthesis process can be optimized for Speed(timing)/Area/Testability (DFT)/Power(DFP)/Run time. Inputs : RTL, Technology libraries, Constraints (Environment, clocks, IO delays etc.). Outputs : Netlist , SDC, Reports etc.**
 
+:gear: Tools used in the synthesis
 
+        1. iVerilog: for verilog compilation and simulation
+        2. gtkwave: for viewing the simulation output
+        3. Synopsys design compiler: for logic synthesis
+        4. skywater 130nm library
+        5. Pre-requisites
 
+:gear: Digital electronics applied
 
+        1. Boolean algebra
+            - Boolean algebra is a branch of mathematics that deals with operations on logical values with binary variables. 
+        2. Verilog Hardware Description Level (HDL) coding
+            - Used to model electronic systems
+        3. Idea of basic synthesis
+            - Synthesis occurs between the RTL Design & Verification phase and the Physical Design phase
+        
+:gear: The aim of this course
 
+        1. Understand various steps involved in Digital Logic Synthesis
+        2. Understand and write Synopsis Design Constrants (SDC) for the given module
+        3. Perform synthesis and write out netlist using design compiler
+        4. Generate and analyze the synthesis reports/STA reports
+        
+### :mag_right: Basics of digital logic design and synthesis
 
+:triangular_flag_on_post: **Digital logic** <br>
+-*Digital logic is the **manipulation of binary values** through printed circuit board technology that uses circuits and logic gates to construct the implementation of computer operations.*
 
+A **hardware description language (HDL)** is a specialized computer language used to describe the structure and behavior of electronics.
 
+Example of HDLs
 
+| Name  | Description |
+| ------------- | ------------- |
+| VHDL-AMS (VHDL with Analog/Mixed-Signal extension) | An IEEE standard extension (IEEE Std 1076.1) of VHDL for analog and mixed-signal simulation  |
+| Verilog-AMS (Verilog for Analog and Mixed-Signal) | An Accellera standard extension of IEEE Std 1364 Verilog for analog and mixed-signal simulation  |
+|SpectreHDL  | A proprietary analog HDL from Cadence Design Systems for its Spectre circuit simulator  |
+| HDL-A  | A proprietary analog HDL  |
 
+**Verilog HDL and Verilog**<br>
 
+<img src="https://user-images.githubusercontent.com/118953938/208822921-82d7aed0-6847-4ba2-b966-b738cfb68674.png" width=80% height=80%>
 
+<img src="https://user-images.githubusercontent.com/118953938/208825551-9f5460ab-57a2-4ef1-9467-19d7a4546f5a.png" width=80% height=80%><br>
+[Figure source](https://digilent.com/blog/verilog-vs-vhdl/#:~:text=VHDL%20was%20written%20as%20a,is%20often%20easier%20to%20learn.)
 
+:red_circle: Can you mix VHDL and Verilog? :red_circle: <br>
+*Yes, you can mix Verilog and VHDL in Vivado, and it is also supported in the Xilinx simulation environment. If you use another simulator like Modelsim, you may need a different license class to support mixed language simulation.*
 
+:triangular_flag_on_post: **Logic Synthesis** <br>
+*A process by which an abstract specification of desired circuit behavior, typically at **register transfer level (RTL), is turned into a design implementation in terms of logic gates, typically by a computer program called a synthesis tool**.*
 
+3 components in synthesis are RTL, standard cell library (.lib) and netlist
 
+<img src="https://user-images.githubusercontent.com/118953938/208852110-348047f3-0a82-4fc2-9a81-c4df57426b2e.png" width=50% height=50%>
 
+1) Register Transfer Level (RTL)
 
+* A smaller subset of the full range of HDL code
+* The term Register Transfer refers to the **availability of hardware logic circuits that can perform a given micro-operation and transfer the result of the operation to the same or another register.** (Describes how data is transformed as it is passed from register to register)
+* <img src="https://user-images.githubusercontent.com/118953938/208852007-71f2e89c-7a3e-4f27-98a6-93ae3960f261.png" width=30% height=30%>
 
+2) standard cell library (.lib)
 
+* A collection of low-level electronic logic functions.
+* In general, a standard cell library contains the following types of cell:
 
+        - All basic and universal gates (like AND, OR, NOT, NAND, NOR, XOR etc)
+        - Complex gates (like MUX, HA, FA, Comparators, AOI, OAI etc)
+        - Clock tree cells (like Clock buffers, clock inverters, ICG cells etc)
+        - Flip flops and latches.
+        - Delay cells.
+* Have different flavours of gates
+    * Why we needed that?
+        * Combinational delay in logic path determines the maximum speed of operation of digital logic circuit
+        
+        <img src="https://user-images.githubusercontent.com/118953938/208852504-06bdb38b-4a07-429d-8dc9-6a091ac346ed.png" width=60% height=60%>
+        
+* Why we need slow cells?
 
+        1) to ensure that there is no 'hold' issue at DFF_B
+        2) Therefore we need a 'fast cell' to meet required performance (setup)
+        3) the collection forms the .lib
+     
+    <img src="https://user-images.githubusercontent.com/118953938/208853858-6e27e2ae-3fca-4797-8d8f-26f7f3eea8df.png" width=40% height=40%>
 
+* Faster Cells vs Slower Cells
 
+| Faster Cells | Slower Cells |
+| ------------- | ------------- |
+| wider transistor -> low delay -> more area and power  | narrow transistor -> more delay -> less area and power  |
 
+* Cell Selection
+    * It is essential to guide the synthesiser in choosing the cell flavour that is best for using in a logic circuit.
+    * More use of faster cells giving the Power and Area in a bad condition
+    * More use of slower cells will result in sluggish circuit where it may not meet the performance needed
 
+![image](https://user-images.githubusercontent.com/118953938/208860251-133dd6fb-2226-46db-83b5-72508613ed7f.png)
 
+* What are the requirements achieve in logic synthesis?
 
+        1) Logically correct
+        2) Electrically correct
+        3) Timing met
 
+*  How do we know it i sthe correct recipie?
+    * By set up constraints- Constraints are the guide to the synthesizer to pick the correct library cells which is most appropriate for the design
 
+### :mag_right: Introduction to design compiler
 
+**Design Compiler** <br>
+A Synthesis tool targeted for ASIC design flow from Synopsys
+
+**Benefits** [source](https://www.synopsys.com/implementation-and-signoff/rtl-synthesis-test/dc-ultra.html#:~:text=Design%20Compiler%C2%AE%20RTL%20synthesis,in%20faster%20time%20to%20results.)
+
+        1. Concurrent optimization of timing, area, power and test
+        2. Results correlate within 10% of physical implementation
+        3. Removes timing bottlenecks by creating fast critical paths
+        4. Gate-to-gate optimization for smaller area on new or legacy designs while maintaining timing Quality of Results (QoR)
+        5. Cross-probing between RTL, schematic, and timing reports for fast debug
+        6. Offers more flexibility for users to control optimization on specific areas of designs
+        7. Enables higher efficiency with integrated static timing analysis, test synthesis and power synthesis
+        8. Support for multi voltage and multi supply
+        9. 2X faster runtime on quad-core compute servers
+
+**Common Terminologies** associated with DC 
+
+        1. SDC (Synopsys Design Constraints)- design constraints which are supplied to DC to enable appropriate optimization suitable for achieving the best implementation
+        2. Industry standard- used across Electronic Design Automation (EDA) implementation tools
+        3. .lib- Design Library which contains the standard cells
+        4. DB- (same as .lib but in different format) understand libraries in .db format (convert .lib in db and then supply to DC)
+        6. DDC- synopsys proprietary format for storing the design information. can write out and read in DDC
+        7. Design- RTL files which has the behavioral model of the design
+        
+Synopsys Design Constraints (SDC)
+
+* Used to specify the design intent in terms of timing, power and area constraints
+* Supported by Electronic Design Automation (EDA) tools across semiconductor industry
+* Using the Tool Command Language (TCL)
 
