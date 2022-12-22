@@ -1435,11 +1435,23 @@ Water bucket analogy
 * Delay of a cell will be a function of input Transition which is the water inflow.<br>
 * Delay of a cell will be a function of output load which is the size of the bucket.
 
+<img src="https://user-images.githubusercontent.com/118953938/209033870-e2c37c41-5fcf-467c-a785-2cce313faa4f.png" width=50% height=50%>
 
+:black_nib: **Timing Arc**
 
+*Timing arc is an abstract notion of a timing dependence between the signals at any two related pins of a standard cell.*<br>
+* usually present in the timing libraries (liberty files), which are then used by the tool to perform static timing analysis and gate level synthesis of the design
 
+1) Combinational cell
 
+	<img src="https://user-images.githubusercontent.com/118953938/209034242-03853cd0-a070-4528-a475-25b5b8c45c7e.png" width=70% height=70%>
 
+2) Sequential cell<br>
+	- can be DFF/D-latch<br>
+	- Delay from clock to Q for D-flip flop<br>
+	- Delay from clock to Q, delay from D to Q for D latch<br>
+	- Setup and hold time<br>
 
+	<img src="https://user-images.githubusercontent.com/118953938/209035848-6d5da6cb-4ba5-47c0-8420-1e2a9b96612d.png" width=70% height=70%>
 
 
