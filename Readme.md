@@ -1454,4 +1454,218 @@ Water bucket analogy
 
 	<img src="https://user-images.githubusercontent.com/118953938/209035848-6d5da6cb-4ba5-47c0-8420-1e2a9b96612d.png" width=70% height=70%>
 
+### :mag_right: Constraints
+
+Before going in details about constraints, lets look at timing path
+
+<img src="https://user-images.githubusercontent.com/118953938/209038467-10013161-0c27-423b-99c4-056147fb2622.png" width=70% height=70%>
+
+:black_nib: **Constraints**
+
+* Design constraints are limitations on a design. 
+* These include imposed limitations that you don't control, and limitations that are self-imposed as a way to improve a design.
+
+Why we need constraints?
+
+<img src="https://user-images.githubusercontent.com/118953938/209054060-ad67ab97-ac0f-4d96-ac2f-10af94b36824.png" width=70% height=70%>
+
+:black_nib: **Timing paths**
+
+Start point <br>
+* Input ports
+* Clk pins of register
+
+End point<br>
+* Output ports
+* D pins of DFF/D-latch
+
+Always the timing paths start at one of the start points and ends at one of the end points.<br>
+* Clk to D (reg-to-reg timing path)
+* Clk to output (IO timing path)
+* Input to D (IO timing path)
+* Input to output (IO timing path that ideally shouldn't be present)
+
+<img src="https://user-images.githubusercontent.com/118953938/209059758-010ae4c4-fbe7-4cd2-be5d-5ef9048e51a0.png" width=70% height=70%>
+
+		REG 2 REG: constrained by clock
+		REG 2 OUT: constrained by output external delay and clock period
+		IN 2 REG: constrained by input external delay and clock period
+		Collectively the REG2OUT and IN2REG are called IO paths and the delay modelling are referred above is called IO Delay Modelling
+
+<img src="https://user-images.githubusercontent.com/118953938/209059792-6addd325-6d68-4009-958c-36febc41ff94.png" width=70% height=70%>
+
+### :mag_right: Input Transfer Output Load
+
+
+
+### :test_tube:	Lab 5- Timing dot Libs
+
+5.1) opening '.lib' file
+
+**Commands**
+
+		1) gvim DC_WORKSHOP/lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+		2) :syn off
+		
+**Output**
+
+<img src="https://user-images.githubusercontent.com/118953938/209063373-d73a977b-e3aa-4fe7-8e9e-8e218cf32853.png" width=70% height=70%>
+
+5.1.1) Default Max Transition
+
+<img src="https://user-images.githubusercontent.com/118953938/209065715-31248283-53a6-4d63-88ce-71655f6d71f7.png" width=70% height=70%>
+
+5.1.2) Delay Model Lookup Table
+
+<img src="https://user-images.githubusercontent.com/118953938/209065459-12b9791b-6e71-4b2c-bf2d-758fb60cf722.png" width=40% height=40%>
+
+<img src="https://user-images.githubusercontent.com/118953938/209066723-f5c139df-c947-452a-b438-0775b7e4fd8d.png" width=60% height=60%>
+
+<img src="https://user-images.githubusercontent.com/118953938/209070161-c48c941f-6595-408d-aa67-80333aa18573.png" width=60% height=60%>
+
+5.1.2.1) Internal power delay
+
+<img src="https://user-images.githubusercontent.com/118953938/209070265-d3b54dee-d0ea-4236-b7b8-498c4bad2cac.png" width=60% height=60%>
+
+5.1.2.2) Timing delay
+
+<img src="https://user-images.githubusercontent.com/118953938/209071330-2abda278-f49b-4ddd-a425-1900362c0160.png" width=60% height=60%>
+
+5.1.2.3) Combinational timing arc
+
+<img src="https://user-images.githubusercontent.com/118953938/209073440-af95cf54-4b5c-4907-8c6a-7353ccb1bcde.png" width=60% height=60%>
+
+<img src="https://user-images.githubusercontent.com/118953938/209073228-4cf3105f-3245-4ed9-9c0a-164fea855f44.png" width=60% height=60%>
+
+### :test_tube:	Lab 6- Exploring dot Lib
+
+6.1) Pin details
+
+<img src="https://user-images.githubusercontent.com/118953938/209078286-64322721-f05a-4f5a-a06f-41f20c9e0349.png" width=60% height=60%>
+
+<img src="https://user-images.githubusercontent.com/118953938/209077822-3c281ab2-fc97-4705-a021-be0c12abfc87.png" width=80% height=80%>
+
+6.2) Rising/falling edge of the pins
+
+<img src="https://user-images.githubusercontent.com/118953938/209079520-2e5a361a-e524-4ff0-8974-4a536c9d110c.png" width=60% height=60%>
+
+<img src="https://user-images.githubusercontent.com/118953938/209080532-a9032da6-e911-4e11-af1d-b1fa63b5029c.png" width=60% height=60%>
+
+<img src="https://user-images.githubusercontent.com/118953938/209084351-6a1ede75-d66e-412d-b37f-ccc305a404c7.png" width=60% height=60%>
+
+6.3) To find DFF and D-latch
+
+**Commands**
+
+		csh
+		dc_shell
+		echo $target_library
+		get_lib_cells */* -filter "is_sequential==true"
+
+<img src="https://user-images.githubusercontent.com/118953938/209085758-e54797b7-21e9-4e48-9445-5c820b4d8fd7.png" width=60% height=60%>
+
+### :test_tube:	Lab 7- Exploring dot Lib part 2
+
+7.1) Loading library
+
+**Commands**
+
+		In dc_shell
+		1) list_lib
+		2) get_lib_cells */*and* --->collection form (fetch all the 'and' gate in the lib)
+		3) foreach_in_collection my_lib_cell [get_lib_cells */*and*] {
+			set my_lib_cell_name [get_object_name $my_lib_cell]; echo $my_lib_cell_name;
+			} ---> in list form
+			
+		Wrong way to print out the pointer
+		1) foreach_in_collection my_lib_cell [get_lib_cells */*and*] {
+			echo $my_lib_cell;
+			}
+
+**Output**
+
+<img src="https://user-images.githubusercontent.com/118953938/209160395-a58da666-e029-4d6f-9395-274c23973e19.png" width=60% height=60%>
+
+<img src="https://user-images.githubusercontent.com/118953938/209160826-90298c18-91ed-464c-a3eb-6a22da94cf49.png" width=50% height=50%>
+
+<img src="https://user-images.githubusercontent.com/118953938/209161779-2fc27ec6-2f5f-4616-9760-c0ec0d896326.png" width=50% height=50%>
+
+7.2) Pins for specific gate and functionality
+
+**Commands**
+
+		In dc_shell
+		1) get_lib_pins sky130_fd_sc_hd__tt_025C_1v80/sky130_fd_sc_hd__and2_0/*
+		2) get_lib_cells */*and* --->collection form (fetch all the 'and' gate in the lib)
+
+		Fetch with pin direction
+		1) foreach_in_collection my_pins [get_lib_pins sky130_fd_sc_hd__tt_025C_1v80/sky130_fd_sc_hd__and2_0/*] {                  
+			set my_pin_name [get_object_name $my_pins];                                                                               
+			set pin_dir [get_lib_attribute $my_pin_name direction];                                                                   
+			echo $my_pin_name $pin_dir;                                                                                               
+			}                               
+		2) get_lib_attribute sky130_fd_sc_hd__tt_025C_1v80/sky130_fd_sc_hd__and2_0/X function
+
+**Output**
+
+<img src="https://user-images.githubusercontent.com/118953938/209164199-e5af0d0e-3ad7-4262-a4b3-809be06c41eb.png" width=80% height=80%>
+<img src="https://user-images.githubusercontent.com/118953938/209164670-88f447da-e8ed-4e7b-9a91-9ca1b8bd9561.png" width=70% height=70%>
+
+7.3) Writing script for displaying needed output
+
+**Commands**
+
+		In dc_shell
+		1)  sh gvim my_script.tcl
+
+		In my_script.tcl, paste the below command
+		1)  set my_list [list *paste the gates copied]
+
+			#For each cell in the list, find the output pin name and its functionality
+
+			foreach my_cell $my_list {
+				foreach_in_collection my_lib_pin [get_lib_pins ${my_cell}/*] {
+					set my_lib_pin_name [get_object_name $my_lib_pin];
+					set a [get_lib_attribute $my_lib_pin_name direction];
+					if {a > 1} {
+						set fn [get_lib_attribute $my_lib_pin_name function];
+						echo $my_lib_pin_name $a $fn];
+					}
+				}
+			}
+		
+		2) Save and exit
+		3) In dc_shell---> source my_script.tcl
+
+**Output**
+
+<img src="https://user-images.githubusercontent.com/118953938/209167573-c6b5c44e-5b7b-4c96-9f1f-87b0f9a7071c.png" width=80% height=80%>
+
+Getting selected attributes such as clock, area and capacitance value
+
+<img src="https://user-images.githubusercontent.com/118953938/209169698-e428c47d-4dfb-4b13-9424-09ea755ae072.png" width=80% height=80%>
+
+7.4) all attribute list
+
+**Commands**
+
+		In dc_shell
+		1) list_attributes -app
+		2) list_attributes -app > a
+		3) sh gvim a &
+
+**Output**
+
+<img src="https://user-images.githubusercontent.com/118953938/209170520-8fb33463-6f33-4a9f-97fe-7b8adc60dfa1.png" width=80% height=80%>
+
+
+
+
+
+
+
+
+
+
+
 
