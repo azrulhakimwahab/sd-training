@@ -1407,20 +1407,26 @@ When performing timing analysis, STA first **breaks down the design into timing 
 *2) **Combinational logic network**. Elements that have no memory or internal state. Combinational logic can contain AND, OR, XOR, and inverter elements, but cannot contain flip-flops, latches, registers, or RAM.*<br>
 *3) **Endpoint**. The end of a timing path where data is captured by a clock edge or where the data must be available at a specific time. Every endpoint must be either a register data input pin or an output port.*<br>
 
+* STA does a complete and exhaustive point to point analysis of the design
+* To ensure that despite all possible pessimism in a design, the signals arrives either too early, nor too late and the design maintains its correct operation
+
+<img src="https://user-images.githubusercontent.com/118953938/209026926-b93e616d-b073-44ff-af51-73571fa5a419.png" width=40% height=40%>
+
 :black_nib: **Maximum and minimum delay constraint**
 
 1) Maximum delay constraint<br>
 *The maximum delay constraint **limits the number of consecutive gates** on the critical path of a high-speed circuit because a high clock frequency means a short clock period*
 
-2)Minimum delay constraint<br>
+2) Minimum delay constraint<br>
 *Memory element inputs must not change until a hold time after the sampling edge.*
 
 <img src="https://user-images.githubusercontent.com/118953938/209024681-739a8a08-dd8f-48a7-9f7b-1c1cc73eeef6.png" width=60% height=60%>
 
-:black_nib: **Why delat? look ad the analogy below**
+:black_nib: **Why delay? look ad the analogy below**
 
 Water bucket analogy
 
+<img src="https://user-images.githubusercontent.com/118953938/209028810-70b8c06e-beaf-465c-a24c-3ee934974cef.png" width=80% height=80%>
 
 
 
