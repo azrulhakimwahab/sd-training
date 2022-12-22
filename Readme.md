@@ -1428,7 +1428,12 @@ Water bucket analogy
 
 <img src="https://user-images.githubusercontent.com/118953938/209028810-70b8c06e-beaf-465c-a24c-3ee934974cef.png" width=80% height=80%>
 
+<img src="https://user-images.githubusercontent.com/118953938/209030369-a38c1f32-1cc3-4590-a320-77fcc63e444a.png" width=80% height=80%>
 
+:black_nib: **Is delay of a cell constant?**
+
+* Delay of a cell will be a function of input Transition which is the water inflow.<br>
+* Delay of a cell will be a function of output load which is the size of the bucket.
 
 
 
