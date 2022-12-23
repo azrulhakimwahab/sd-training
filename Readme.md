@@ -1496,7 +1496,18 @@ Always the timing paths start at one of the start points and ends at one of the 
 
 ### :mag_right: Input Transfer Output Load
 
+1) Is IO modelling sufficient?
 
+<img src="https://user-images.githubusercontent.com/118953938/209252358-e9ed87fa-4dfd-4369-91ce-57960399fd6e.png" width=70% height=70%>
+
+2) Is IO delay and input transition modelling sufficient for IO path?
+
+<img src="https://user-images.githubusercontent.com/118953938/209253282-8d22d4cd-94ec-45f9-af78-b2c36fce662f.png" width=70% height=70%>
+
+		-> REG 2 REG: constrained by clock
+		-> REG 2 OUT: constrained by output external delay, output load and clock period
+		-> IN 2 REG: constrained by input external delay, input transition and clock period
+		-> The IO paths needs to be constrained for both Max delay (setup) and Min delay (hold)
 
 ### :test_tube:	Lab 5- Timing dot Libs
 
