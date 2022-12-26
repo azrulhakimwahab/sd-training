@@ -1784,18 +1784,34 @@ How to constraint the design in DC?
 
 <img src="https://user-images.githubusercontent.com/118953938/209537087-d1c85fd2-53ba-4938-a74d-dcb9fcd7ace1.png" width=80% height=80%>
 
-<img src="https://user-images.githubusercontent.com/118953938/209537837-f2ca99c2-546a-4dde-84b8-aeb7bb4ec435.png" width=80% height=80%>
-
 **Bringing the practicalities of the clock network**
 
+<img src="https://user-images.githubusercontent.com/118953938/209537837-f2ca99c2-546a-4dde-84b8-aeb7bb4ec435.png" width=80% height=80%>
 
+**Clocks waveform**
 
+<img src="https://user-images.githubusercontent.com/118953938/209540170-0e1b9356-f894-497f-a665-5a0594e16bb9.png" width=80% height=80%>
 
+**Constraining the IO Paths Constraint the Input/Output**
 
+Input<br>
+<img src="https://user-images.githubusercontent.com/118953938/209540453-7f5001ea-6aab-43a5-aeab-c11488c70343.png" width=80% height=80%>
 
+		set_input_delay -max 3 -clock [get_clocks MY_CLK][get_ports IN_*];
+		set_input_delay -min 1.5 -clock [get_clocks MY_CLK][get_ports IN_*];
+		set_input_transition -max 1.5 [get_ports IN_*];
+		set_input_transition -min .75 [get_ports IN_*];
+		Note: Both inputs IN_A, IN_B are coming wrt clock MY_CLK created on port CLK
 
+Output<br>
+<img src="https://user-images.githubusercontent.com/118953938/209540685-5df98d2e-a746-40a1-8369-626452b3fb00.png" width=60% height=60%>
 
+		set_output_delay -max 3 -clock [get_clocks MY_CLK][get_ports Out_y];
+		set_output_delay -min 0.5 -clock [get_clocks MY_CLK][get_ports Out_y];
+		set_output_load -max 80 [get_ports Out_y];
+		set_output_load -min 20 [get_ports Out_y];
 
+### :test_tube:	Lab 6- Exploring dot Lib
 
 
 
