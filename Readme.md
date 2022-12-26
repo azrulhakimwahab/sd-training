@@ -2296,66 +2296,268 @@ Removing clock
 
 <img src="https://user-images.githubusercontent.com/118953938/209566116-96d1f64b-0b0a-4f11-9f44-c4f82123105f.png" width=60% height=60%>
 
+### :mag_right: SDC Part3: Generated clock
 
+<img src="https://user-images.githubusercontent.com/118953938/209567100-19bcd9e1-c54d-478f-b37a-c6ca4241240f.png" width=60% height=60%>
 
+**Generated clocks**
 
+*A **generated clock** is a **clock derived from a master clock**. A master clock is a clock defined using the create_clock specification. When a new clock is generated in a design that is based on a master clock, the new clock can be defined as a generated clock.*
 
+<img src="https://user-images.githubusercontent.com/118953938/209567246-10d61f3d-00d7-48cb-a0ad-e94748150596.png" width=60% height=60%>
 
+[source](https://www.google.com/url?sa=i&url=https%3A%2F%2Fblogs.cuit.columbia.edu%2Fzp2130%2Fconfigure_sta_environment%2F&psig=AOvVaw3Hnz4-mID2J94Z08fhnWOg&ust=1672158081665000&source=images&cd=vfe&ved=0CA0QjhxqFwoTCPDsnbrYl_wCFQAAAAAdAAAAABAD)
 
+Generation of clock are always created with respect to master clocks (clocks at clock source or primary IO pin)
 
+		create_generated_clock -name MY_GEN_CLK -master [get clocks MY_CLK] -source [get_ports CLK] -div 1 [get_ports OUT_CLK]
+		
+		->[get clocks MY_CLK] -source [get_ports CLK]
+			wrt what the generated clock is created
+		->div
+			Refers to the division value of generated clock (useful for clock dividers)
+		->[get_ports OUT_CLK]
+			Generated definition point where the generated clock is created
+		->Out_Y need to be constrained wrt the generated clock
 
+**Constraining the Design**
 
+<img src="https://user-images.githubusercontent.com/118953938/209568289-69e25ca2-42a9-4523-9b5a-463e9ac841f8.png" width=60% height=60%>
 
+<img src="https://user-images.githubusercontent.com/118953938/209568265-a7c9074d-8abb-4d98-8702-cf7410ac824e.png" width=60% height=60%>
 
+### :test_tube:	Lab 13- Generated clock
 
+13.1) creating a generated clock
 
+**Commands**		
+		
+		In dc_shell 
+		1) report_timing -to OUT_Y
+		
+		creating a generated clock
+		1) create_generated_clock -name MYGEN_CLK -master MYCLK -source [get_ports clk] -div 1 [get_ports out_clk]
+		2) report_clocks
+		3) get_attribute [get_clocks MYGEN_CLK] is_generated-->True if it is generated clk
+		4) get_attribute [get_clocks MYCLK] is_generated-->False if it is generated clk - master clk
 
+**Output**
 
+<img src="https://user-images.githubusercontent.com/118953938/209568760-c69818be-424b-49a8-8244-9188a9383812.png" width=60% height=60%>
 
+<img src="https://user-images.githubusercontent.com/118953938/209568881-41576a78-4459-4c32-92f9-051645123c5c.png" width=60% height=60%>
 
+<img src="https://user-images.githubusercontent.com/118953938/209568899-29218e96-2d1d-4dc9-9dc5-41275e50d09b.png" width=40% height=40%>
 
+13.2) modification of lab8_circuit.v
 
+**Commands**	
 
+		sh gvim lab8_circuit.v
+		:vsp lab8_circuit_modified.v 
 
+**Output**
 
+<img src="https://user-images.githubusercontent.com/118953938/209569238-a6e10ae7-2d12-45f0-951f-f9749b59bce6.png" width=60% height=60%>
 
+13.3) Reset the design
 
+**Commands**		
+		
+		In dc_shell 
+		1) reset_design
+		2) read_verilog DC_WORKSHOP/verilog_files/lab8_circuit_modified.v
+		3) sh gvim DC_WORKSHOP/verilog_files/lab8_cons.tcl
+		4) link
+		5) source DC_WORKSHOP/verilog_files/lab8_cons.tcl
+		6) report_clocks
+		7) get_generated_clocks
+		
+		reporting the ports
+		1) report_port -verbose
+		
+**Outputs**
 
+<img src="https://user-images.githubusercontent.com/118953938/209569445-ebf21f07-8efb-4b79-b324-000a9f1682a4.png" width=60% height=60%>
 
+<img src="https://user-images.githubusercontent.com/118953938/209569490-1434dae4-b501-4a8e-838f-d9142279d8e1.png" width=60% height=60%>
 
+<img src="https://user-images.githubusercontent.com/118953938/209569655-7e4bd9ef-557b-4649-a543-57b2082a3a8e.png" width=60% height=60%>
 
+<img src="https://user-images.githubusercontent.com/118953938/209569752-e977a4e9-3a46-4547-90ba-b14b2a3dfac5.png" width=60% height=60%>
+<img src="https://user-images.githubusercontent.com/118953938/209569767-4e56156e-6f76-41f1-8ae2-a5d95516baa7.png" width=60% height=60%>
 
+DESIGN SUCCESSFULLY CONSTRAINED!!
 
+### :mag_right: SDC Part4: vclk, max_latency, rise_fall IO Delays
 
+### :test_tube:	Lab 14- Set_Max_delay
 
+Recall on previous design
 
+<img src="https://user-images.githubusercontent.com/118953938/209570597-a74d65ad-6b2f-4907-a0c7-6d17fb213c14.png" width=60% height=60%>
 
+14.1) lab14_circuit.v
 
+**Commands**		
+		
+		In dc_shell 
+		1) reset_design
+		2) sh gvim DC_WORKSHOP/verilog_files/lab14_circuit.v
+		3) read_verilog DC_WORKSHOP/verilog_files/lab14_circuit.v
+		4) source DC_WORKSHOP/verilog_files/lab8_cons.tcl 
+		5) report_timing
+		
+**Outputs**
 
+<img src="https://user-images.githubusercontent.com/118953938/209570917-5c8bc6c7-bf73-44a1-8868-6258bc34b726.png" width=60% height=60%>
 
+<img src="https://user-images.githubusercontent.com/118953938/209570951-b016799b-caad-49df-b9dd-ac83ce5db4fe.png" width=60% height=60%>
 
+<img src="https://user-images.githubusercontent.com/118953938/209570988-cde1997a-41e7-4062-ba80-0d6c90d13353.png" width=60% height=60%>
 
+UNLINKED DESIGN!!
 
+14.2) Linking the design
 
+**Commands**		
+		
+		In dc_shell 
+		1) link
+		2) compile_ultra
+		3) report_timing
+		
+**Outputs**
 
+<img src="https://user-images.githubusercontent.com/118953938/209571150-0c4d282c-b441-495c-b1b0-79badc036cb2.png" width=60% height=60%>
 
+<img src="https://user-images.githubusercontent.com/118953938/209571187-9f454186-27de-43e5-b661-30fcc7c71c0c.png" width=60% height=60%>
+<img src="https://user-images.githubusercontent.com/118953938/209571207-2a9f579c-d0f2-46d1-9c4a-f56ae33ca33d.png" width=60% height=60%>
 
+14.3) Checking path (wheather it is constraint or not)
 
+**Commands**		
+		
+		In dc_shell 
+		1) get_ports *
+		2) report_timing -to OUT_Z
+		3) report_timing -from IN_C
+		
+		helpful commands to try on
+		all_inputs--->Listing all inputs
+		all_outputs--->Listing all outputs
+		all_clocks --->Listing all clocks
+		all_registers --->Listing all registers
+		all_registers -clock MYCLK --->Listing registers clocked by MYCLK
+		all_fanout -from IN_A 	--->Listing all fanouts of desired input
+		all_fanout -flat -endpoints_only -from IN_A
+		all_fanin -to REGA_reg/D
+		all_fanin -flat -startpoints_only -to REGA_reg/D
+		
+**Outputs**
 
+<img src="https://user-images.githubusercontent.com/118953938/209571478-e6b66d69-4a9e-473b-b8d5-6af109d6c440.png" width=60% height=60%>
 
+<img src="https://user-images.githubusercontent.com/118953938/209571503-2aa5fe4e-a5af-49ab-8150-1fe6d8a99741.png" width=60% height=60%>
 
+Note that the ENDPOINTS of a timing path = D pin or out pin
 
+14.4) Constraining path to Z
 
+There is mo path to OUT_Z yet
 
+**Commands**		
+		
+		In dc_shell 
+		1) set_max_delay 0.1 -from [all_inputs] -to [get_port OUT_Z]
+		2) report_timing -to OUT_Z -sig 4
+		
+		OPtimizing
+		1) compile_ultra
+		2) report_timing -to OUT_Z -sig 4
+		
+**Outputs**
 
+<img src="https://user-images.githubusercontent.com/118953938/209571725-e0f8b8b3-6109-4ded-b5b4-5696fcd9324e.png" width=60% height=60%>
 
+<img src="https://user-images.githubusercontent.com/118953938/209571784-c22ffb2d-004e-451a-b738-f6c6bccc1414.png" width=60% height=60%>
 
+14.5) Invoking design_vision
 
+**Commands**		
+		
+		In dc_shell 
+		1) write -f ddc -out lab14.ddc
+		2) reset_design
+		3) read_ddc lab14.ddc
+		4) start_gui
 
+**Output**
 
+<img src="https://user-images.githubusercontent.com/118953938/209571984-3f6ac2a3-688f-4e48-8a88-d0c31f49d1a6.png" width=80% height=80%>
 
+<img src="https://user-images.githubusercontent.com/118953938/209572141-81365330-1f57-438f-8001-d416dc63bb7e.png" width=80% height=80%>
 
+### :test_tube:	Lab 15 - part2 - VCLK
 
+**virtual clock** is a clock that has been defined, but has not been associated with any pin/port.
+
+	While using VCLK
+
+		1st method--> set_max_delay
+		2nd method--> use virtual clock where a clock is created without a definition point
+
+15.1) VCLK
+
+**Commands**		
+		
+		In dc_shell 
+		1) reset_design
+		2) read_verilog lab14_circuit.v
+		3) link
+		4) source lab8_cons.tcl
+		5) compile_ultra
+		6) report_clocks
+		7) report_timing -to OUT_Z
+		8) create_clock -name MYVCLK -per 10
+		9) report_clocks
+
+**Output**
+
+<img src="https://user-images.githubusercontent.com/118953938/209572529-a2757e0e-67b1-4659-bf08-21d3c2f0d52c.png" width=80% height=80%>
+
+<img src="https://user-images.githubusercontent.com/118953938/209572572-0a1610f8-d8bc-41da-910b-234116193d92.png" width=80% height=80%>
+
+<img src="https://user-images.githubusercontent.com/118953938/209572615-e32cbca4-3bc9-421a-a691-16100df7239a.png" width=80% height=80%>
+
+<img src="https://user-images.githubusercontent.com/118953938/209572727-77a6e0d6-30e3-4ec8-8038-7a3df2c3789d.png" width=80% height=80%>
+
+15.1) IO delays
+
+**Commands**		
+		
+		In dc_shell 
+		1) set_input_delay -max 5 [get_ports IN_C] -clock [get_clocks MYVCLK]
+		2) set_input_delay -max 5 [get_ports IN_D] -clock [get_clocks MYVCLK]
+		3) set_output_delay -max 4.9 [get_ports OUT_Z] -clock [get_clocks MYVCLK]
+		4) report_timing
+		5) compile_ultra
+		6) report_timing -to OUT_Z -sig 4
+		7) report_port -verbose
+
+**Output**
+
+<img src="https://user-images.githubusercontent.com/118953938/209572837-8e9fbae4-3426-4705-9a5d-5a441ae99770.png" width=80% height=80%>
+
+<img src="https://user-images.githubusercontent.com/118953938/209572862-a92b1f27-79ce-414d-9274-92e982c628a4.png" width=80% height=80%>
+
+<img src="https://user-images.githubusercontent.com/118953938/209572875-91bc134a-afdb-4c83-8ebc-140a72400616.png" width=80% height=80%>
+
+<img src="https://user-images.githubusercontent.com/118953938/209572973-42333f33-2353-49d9-b926-d1975a7609e1.png" width=80% height=80%>
+
+<img src="https://user-images.githubusercontent.com/118953938/209572997-0e7b9147-2475-4976-8276-6a49d7802d48.png" width=80% height=80%>
+
+<img src="https://user-images.githubusercontent.com/118953938/209573013-44b69fb7-a171-4419-80ee-17390ef520f9.png" width=80% height=80%>
 
 
 
