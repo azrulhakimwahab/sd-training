@@ -2166,40 +2166,135 @@ Removing clock
 
 <img src="https://user-images.githubusercontent.com/118953938/209563165-da3c7be1-3838-4776-a437-5a42afef7674.png" width=60% height=60%>
 
+### :test_tube:	Lab 12- Clock Network Modelling - IO Delays
 
+12.1) IO Constraints
 
+**Commands**
+		
+		In dc_shell
+		1) report_timing -from IN_A
+		2) report_timing
+		3) report_timing -to OUT_Y
 
+**Output**
 
+<img src="https://user-images.githubusercontent.com/118953938/209563366-61941d35-054c-4962-9bf2-f9c01917fb23.png" width=60% height=60%>
 
+<img src="https://user-images.githubusercontent.com/118953938/209563393-178123d9-9959-4f6b-908c-421ae16708fe.png" width=60% height=60%>
 
+<img src="https://user-images.githubusercontent.com/118953938/209563405-86b3dd6a-4598-4969-9cdb-d43dcc6a6350.png" width=60% height=60%>
 
+12.2) Listing all ports
 
+**Commands**
+		
+		In dc_shell
+		1) report_port -verbose
 
+**Output**
 
+<img src="https://user-images.githubusercontent.com/118953938/209563487-cb948002-78aa-4222-b43e-4c0f0b154164.png" width=60% height=60%>
 
+<img src="https://user-images.githubusercontent.com/118953938/209563504-52ae1b06-769e-4dc0-805f-42c0533aecb0.png" width=60% height=60%>
 
+12.3) Modelling
 
+12.3.1) input delay
 
+**Commands**		
+		
+		In dc_shell ---> delay setup
+		1) set_input_delay -max 5 -clock [get_clocks MYCLK] [get_ports IN_A]				
+		2) set_input_delay -max 5 -clock [get_clocks MYCLK] [get_ports IN_B]
+		3) report_port -verbose
+		4) report_timing -from IN_A
+		5) report_timing -from IN_A -trans -net -cap
+		6) report_timing -from IN_A -trans -net -cap -nosplit > a
+		7) sh gvim a
 
+**Output**
 
+<img src="https://user-images.githubusercontent.com/118953938/209564491-812c1581-5925-430f-9070-70b2589e8d05.png" width=60% height=60%>
 
+<img src="https://user-images.githubusercontent.com/118953938/209564517-27a117ce-0fe7-440f-b300-965f442af38e.png" width=60% height=60%>
 
+<img src="https://user-images.githubusercontent.com/118953938/209564552-f38575c1-1606-4c26-bafd-6c2a1554c4a9.png" width=60% height=60%>
 
+<img src="https://user-images.githubusercontent.com/118953938/209564582-5feceb57-ea7f-43cf-901c-27ecb95b1fc7.png" width=60% height=60%>
 
+<img src="https://user-images.githubusercontent.com/118953938/209564614-a9f62450-02d5-4512-96f9-5587ce3c62fc.png" width=60% height=60%>
 
+12.4) hold timing 
 
+**Commands**		
+		
+		In dc_shell 
+		report_timing -from IN_A -trans -net -cap -nosplit -delay_type min
 
+**Output**
 
+<img src="https://user-images.githubusercontent.com/118953938/209564846-1537d857-f59c-42e5-a106-a9cb1c9f4bf4.png" width=60% height=60%>
 
+12.5) hold time modelling
 
+**Commands**		
+		
+		In dc_shell 
+		1) set_input_delay -min 1 -clock [get_clocks MYCLK] [get_ports IN_A]
+		2) set_input_delay -min 1 -clock [get_clocks MYCLK] [get_ports IN_B]
+		3) report_timing -from IN_A -trans -net -cap -nosplit -delay_type min
 
+**Output**
 
+<img src="https://user-images.githubusercontent.com/118953938/209564965-898e3619-55a5-454d-b30d-02bcf602a60e.png" width=60% height=60%>
 
+12.6) Setting new maximum value, input transition and output transition
 
+**Commands**		
+		
+		In dc_shell 
+		1) set_input_delay -max 5 -clock [get_clocks MYCLK] [get_ports IN_A]
+		2) sh gvim a
+		
+		1) set_input_transition -max 0.3 [get_ports IN_A]
+		2) set_input_transition -max 0.3 [get_ports IN_B]
+		3) set_input_transition -min 0.1 [get_ports IN_B]
+		4) set_input_transition -min 0.1 [get_ports IN_A]
+		5) report_timing -from IN_A -trans  -cap -nosplit > a_trans
+		
+		1)set_output_delay -max 5 -clock [get_clocks MYCLK] [get_ports OUT_Y]
+		2) set_output_delay -min 1 -clock [get_clocks MYCLK] [get_ports OUT_Y]
+		3) report_timing -to OUT_Y
+		4) report_timing -to OUT_Y -cap -trans
 
+**Output**
 
+<img src="https://user-images.githubusercontent.com/118953938/209565305-e0afd1fc-434e-46e6-bd2f-00c603990766.png" width=60% height=60%>
 
+<img src="https://user-images.githubusercontent.com/118953938/209565747-f0b78f89-0d57-4c10-add2-5f5f680702f2.png" width=60% height=60%>
 
+<img src="https://user-images.githubusercontent.com/118953938/209565833-f1b66102-8d8f-4e4b-9ac0-3bb102fd2783.png" width=60% height=60%>
+
+<img src="https://user-images.githubusercontent.com/118953938/209565857-4fee4d59-530a-468b-bf51-be874dcc4102.png" width=60% height=60%>
+
+12.7) Setting for load minimum delay
+
+**Commands**		
+		
+		In dc_shell 
+		1) set_load -max 0.4 [get_ports OUT_Y]
+		2) report_timing -to OUT_Y -cap -trans
+		3) report_timing -to OUT_Y -cap -trans -delay min
+		4) report_timing -to OUT_Y -cap -trans -delay min
+
+**Output**
+
+<img src="https://user-images.githubusercontent.com/118953938/209566061-67c76b97-3650-4b3f-9bbd-c4afe2efb87a.png" width=60% height=60%>
+
+<img src="https://user-images.githubusercontent.com/118953938/209566084-c9f6b00a-872a-498d-a0ac-fb205646bcf3.png" width=60% height=60%>
+
+<img src="https://user-images.githubusercontent.com/118953938/209566116-96d1f64b-0b0a-4f11-9f44-c4f82123105f.png" width=60% height=60%>
 
 
 
