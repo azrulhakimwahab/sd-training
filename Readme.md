@@ -1811,7 +1811,120 @@ Output<br>
 		set_output_load -max 80 [get_ports Out_y];
 		set_output_load -min 20 [get_ports Out_y];
 
-### :test_tube:	Lab 6- Exploring dot Lib
+### :test_tube:	Lab 8- Exploring dot Lib
+
+8.1) Opening lab_8 circuit
+
+**Command**
+
+		1) gvim lab8_circuit.v
+		
+		In dc_shell
+		1) echo $target_library
+		2) echo $link_library
+		3) read_verilog lab8_circuit.v
+		4) link
+		5) compile_ultra
+
+**Output**
+
+<img src="https://user-images.githubusercontent.com/118953938/209551710-a9687437-c4ff-4c57-a957-2ecb59d7bd53.png" width=60% height=60%>
+
+<img src="https://user-images.githubusercontent.com/118953938/209551814-096696b8-9ae2-4100-952f-e4e3f076ecb7.png" width=60% height=60%>
+
+<img src="https://user-images.githubusercontent.com/118953938/209551954-cc04b2ee-4a71-49c7-8827-00149bb70a70.png" width=60% height=60%>
+
+8.2) Finding ports and the direction
+
+**Command**
+
+		In dc_shell
+		1) get_ports
+		2) foreach_in_collection my_port [get_ports *] {
+			set my_port_name [get_object_name $my_port]; echo $my_port_name; }---> port list
+			
+		1) get_ports rst
+		2) get_attribute [get_ports rst] direction ---> know direction of only 1 port
+		3) foreach_in_collection my_port [get_ports *] {
+			set my_port_name [get_object_name $my_port];
+			set dir [get_attribute [get_ports $my_port_name] direction];
+			echo $my_port_name $dir;
+			} --->multiple ports
+		
+		Fetching cells
+		1) get_cells *
+		2) get_attribute [get_cells U9] is_hierarchical
+		3) get_attribute [get_cells U12] is_hierarchical
+		4) get_attribute [get_cells REGA_reg] is_hierarchical
+		5) get_cells * -filter "is_hierarchical == false"
+		
+**Output**
+
+<img src="https://user-images.githubusercontent.com/118953938/209552429-96a6fe49-2dc3-426b-a97d-144fcd4cda37.png" width=40% height=40%>
+
+<img src="https://user-images.githubusercontent.com/118953938/209552703-100412de-c7b8-4bc7-bf6b-7dd4b40eee54.png" width=40% height=40%>
+
+8.3) Getting the ref name
+
+**Command**
+
+		In dc_shell
+		1) get_attribute [get_cells REGA_reg] ref_name
+		2) foreach_in_collection my_cell [get_cells * -hier] {                                                        
+			set my_cell_name [get_object_name $my_cell];                                                                 
+			set rname [get_attribute [get_cells $my_cell_name] ref_name];                                                
+			echo $my_cell_name $rname;                                                                                   
+			}
+
+**Output**
+
+<img src="https://user-images.githubusercontent.com/118953938/209553521-c037d21a-03dd-486f-a235-5020140181a6.png" width=40% height=40%>
+
+8.4) DDC design_vision
+
+**Command**
+
+		In dc_shell
+		1) write -f ddc -out lab8_circuit.ddc
+		
+		In design_vision
+		1) read_ddc lab8_circuit.ddc
+		2) all_connected N1
+		3) all_connected N5
+		4) foreach_in_collection my_pin [all_connected n5] {
+			set pin_name [get_object_name $my_pin];
+			set dir [get_attribute [get_pins $pin_name] direction];
+			echo $pin_name $dir;
+			}
+
+**Output**
+
+<img src="https://user-images.githubusercontent.com/118953938/209553984-190ac7f6-029e-41ea-8c2d-acfdebd97c2d.png" width=60% height=60%>
+
+<img src="https://user-images.githubusercontent.com/118953938/209554229-4b107903-3b53-4ff4-b50b-aab0bf715230.png" width=60% height=60%>
+
+### :test_tube:	Lab 9- get_pins, get_clocks, querying_clocks
+
+9.1) Knwing the pins
+
+**Commands**
+
+		1) get_pins *
+		2) foreach_in_collection my_pin [get_pins *] {
+			set pin_name [get_object_name $my_pin];
+			echo $pin_name;
+				}---> listing the pins name
+
+
+
+
+
+
+
+
+
+
+
 
 
 
