@@ -1905,7 +1905,7 @@ Output<br>
 
 ### :test_tube:	Lab 9- get_pins, get_clocks, querying_clocks
 
-9.1) Knwing the pins
+9.1) Knowing the pins
 
 **Commands**
 
@@ -1914,6 +1914,400 @@ Output<br>
 			set pin_name [get_object_name $my_pin];
 			echo $pin_name;
 				}---> listing the pins name
+		3) get_attribute [get_pins REGC_reg/RESET_B] direction
+		4) get_attribute [get_pins REGC_reg/RESET_B] clock
+		5) get_attribute [get_pins REGC_reg/CLK] clock
+		6) foreach_in_collection my_pin [get_pins *] {
+			set pin_name [get_object_name $my_pin];
+			set dir [get_attribute [get_pins $pin_name] direction];
+			echo $pin_name $dir;
+			}
+
+**Outputs**
+
+<img src="https://user-images.githubusercontent.com/118953938/209557435-6fbe799a-8dc1-4106-8f46-cfa8d229e792.png" width=60% height=60%>
+
+<img src="https://user-images.githubusercontent.com/118953938/209557480-9538d112-55c6-496a-8c49-e9e79be466db.png" width=60% height=60%>
+
+9.2) regexp
+
+**Commands**
+
+		In dc_shell
+		1) regexp abcd efgh
+		2) regexp abcd abcd
+		3) set a in
+		4) regexp $a in
+		5) regexp $a out
+		6) foreach_in_collection my_pin [get_pins *] {
+			set pin_name [get_object_name $my_pin];                                                                                      
+			set dir [get_attribute [get_pins $pin_name] direction];                                                      
+			if { [regexp $dir in] } {                                                                                    
+			if { [get_attribute [get_pins $pin_name] clock] } {                                          
+			echo $pin_name;                                                                                              
+			}                  }        }
+
+**Output**
+
+<img src="https://user-images.githubusercontent.com/118953938/209557787-bddb25e5-1bc3-4b18-8562-7338f643809e.png" width=60% height=60%>
+
+9.3) query_clock_pin.tcl script writing
+
+**Commands**
+
+		In dc_shell
+		1) sh gvim query_clock_pin.tcl &
+		Paste the bellow command
+		foreach_in_collection my_pin [get_pins *] {
+			set my_pin_name [get_object_name $my_pin];
+       			 set dir [get_attribute [get_pins $my_pin_name] direction];                                                                                              
+			if { [regexp $dir in] } {
+				if { [get_attribute [get_pins $my_pin_name] clock ] } { 
+					echo $my_pin_name $clk_name;
+
+					}
+				}
+			}	
+		4)  source query_clock_pin.tcl
+	
+**Output**
+
+<img src="https://user-images.githubusercontent.com/118953938/209558228-927808fa-aec8-4577-b864-c4929d669019.png" width=60% height=60%>
+
+9.4) Clock coming in and checking the clock
+
+**Commands**
+
+		In dc_shell
+		1) get_attribute [get_pins REGA_reg/CLK] clock
+		2) get_attribute [get_pins REGA_reg/CLK] clocks
+		3) get_clocks * 
+		
+**Output**
+
+<img src="https://user-images.githubusercontent.com/118953938/209558805-092847d3-517f-43e6-99ba-351c455011e7.png" width=60% height=60%>
+
+<img src="https://user-images.githubusercontent.com/118953938/209558940-2a441c2a-6ed4-465a-a549-b5dbb012de37.png" width=60% height=60%>
+
+**No clock created that is why there is no clock**
+
+### :test_tube:	Lab 10- create_clock waveform
+
+10.1) Get ports, Create Clock, and Know Attribute Reporting clocks
+
+**Commands**
+
+		In dc_shell
+		1) current_design --->to know the top module
+		2) get_ports *
+		3) create_clock -name MYCLK -per 10 [get_ports clk]
+		4) get_clocks *
+		5) get_attribute [get_clocks MYCLK] period
+		6) get_attribute [get_clocks MYCLK] is_generated
+		7) get_attribute [get_pins REGA_reg/CLK] clocks
+		
+		report clock
+		8) report_clocks *
+		
+**Outputs**]
+
+<img src="https://user-images.githubusercontent.com/118953938/209559712-b5c3d1c6-e0bc-4090-8574-0f03ac2bbe3f.png" width=60% height=60%>
+
+<img src="https://user-images.githubusercontent.com/118953938/209559762-7d6526f2-c720-40ce-81d0-869e4276c01d.png" width=60% height=60%>
+
+10.2) get the attributes and query_clock_pin.tcl script writing
+
+**Commands**
+
+		In dc_shell
+		1) get_attribute [get_pins REGA_reg/CLK] clocks
+		2) get_attribute [get_ports out_clk] clocks
+		3) sh gvim query_clock_pin.tcl
+		Paste bellow command
+		foreach_in_collection my_pin [get_pins *] {
+			set my_pin_name [get_object_name $my_pin];
+        		set dir [get_attribute [get_pins $my_pin_name] direction];                                                                                              
+			if { [regexp $dir in] } {
+				if { [get_attribute [get_pins $my_pin_name] clock ] } { 
+					set clk [get_attribute [get_pins $my_pin_name] clocks]; 
+					set clk_name [get_object_name $clk];
+ 					echo $my_pin_name $clk_name;
+
+				}
+			}
+			}	
+		4) source query_clock_pin.tcl 
+
+
+**Outputs**
+
+<img src="https://user-images.githubusercontent.com/118953938/209560349-058bed52-12e7-4b9e-a0e0-8163754e2aa7.png" width=40% height=40%>
+
+<img src="https://user-images.githubusercontent.com/118953938/209560265-3e2557d0-1e0d-4271-bd03-e15a0e4b485e.png" width=60% height=60%>
+
+10.3) Creating clock
+
+**Commands**
+
+		In dc_shell
+		1) create_clock -name BAD_CLK -per 10 [get_pins U14/Y]
+		2)  get_clocks *
+		3)  report_clocks *
+		4) all_connected U14/Y
+		5) all_connected n3
+		
+		Removing clock
+		1) remove_clock BAD_CLK
+
+**Output**
+
+<img src="https://user-images.githubusercontent.com/118953938/209560658-53ca3d77-f181-483c-8803-70c72fd1a075.png" width=60% height=60%>
+
+Removing clock
+
+<img src="https://user-images.githubusercontent.com/118953938/209560802-66804087-ae88-4701-b6fd-aaeba523d752.png" width=60% height=60%>
+
+10.4) Waveform adjustment
+
+**Commands**
+		
+		In dc_shell
+		1) remove_clock MYCLK
+		2) create_clock -name MYCLK -per 10 [get_ports clk] -wave {5 10} --> rise edge at 5   fall edge at 10
+		3) report_clocks *
+		
+		4) remove_clock MYCLK
+		5) create_clock -name MYCLK -per 10 [get_ports clk] -wave {0 2.5}  
+		---> first rising edge = 0, fall edge = 2.5,  next rising edge = 10, fall edge =12.5
+		6) report_clocks *
+		
+		7) remove_clock MYCLK
+		8) create_clock -name MYCLK -per 10 [get_ports clk] -wave {15 20}
+		9) report_clocks *
+
+**Output**
+
+<img src="https://user-images.githubusercontent.com/118953938/209561373-1f63c440-4ede-44ab-964a-62b98b386aeb.png" width=60% height=60%>
+
+<img src="https://user-images.githubusercontent.com/118953938/209561453-43c8468a-a0bb-4109-ab9a-bf565ac435c7.png" width=60% height=60%>
+
+<img src="https://user-images.githubusercontent.com/118953938/209561532-13208412-245f-419b-97ce-f9df88c059a1.png" width=60% height=60%>
+
+### :test_tube:	Lab 11- Clock Network Modelling - Uncertainty, report_timing
+
+11.1) Model the clock tree attribute
+
+**Commands**
+		
+		In dc_shell
+		1) report_clocks *
+			set_clock_latency -source 1 [get_clocks MYCLK] --> modelling source latency
+			set_clock_latency 1 [get_clocks MYCLK] --> modelling network latency
+			set_clock_uncertainty 0.5 [get_clocks MYCLK] --> max delay time/setup time (default)
+			set_clock_uncertainty -hold 0.1 [get_clocks MYCLK] --> min delay time/hold time
+
+		2) remove_clock *
+		3) get_clocks *
+		4) report_timing
+		5) report_timing -to REGC_reg/D
+
+**Outputs**
+
+<img src="https://user-images.githubusercontent.com/118953938/209562153-5e2c07df-a2c5-46b1-9e13-9f779df9a7ce.png" width=60% height=60%>
+
+<img src="https://user-images.githubusercontent.com/118953938/209562165-0d809667-f50c-448b-80cd-b51bfc942474.png" width=60% height=60%>
+
+<img src="https://user-images.githubusercontent.com/118953938/209562300-5634b60f-fe94-486a-a03a-2cc70884f063.png" width=60% height=60%>
+
+<img src="https://user-images.githubusercontent.com/118953938/209562324-36f5c292-07b0-46be-b3cb-8866900300dd.png" width=60% height=60%>
+
+11.2) Creating clock and report timing
+
+**Commands**
+		
+		In dc_shell
+		1) create_clock -name MYCLK -per 10 [get_ports clk]
+		2) report_timing -to REGC_reg/D
+			
+**Output**
+
+<img src="https://user-images.githubusercontent.com/118953938/209562153-5e2c07df-a2c5-46b1-9e13-9f779df9a7ce.png" width=60% height=60%>
+
+<img src="https://user-images.githubusercontent.com/118953938/209562613-8f45f54b-7b1b-4e0e-b8d9-49aa110d9091.png" width=60% height=60%>
+
+11.3) Model clock behaviour and Report Timing
+
+**Commands**
+		
+		In dc_shell
+		1) set_clock_latency -source 2 [get_clocks MYCLK]
+		2) set_clock_latency 1 [get_clocks MYCLK]
+		3) set_clock_uncertainty -setup  0.5 [get_clocks MYCLK]
+		4) set_clock_uncertainty -hold  0.1 [get_clocks MYCLK]
+		5)  report_timing -to REGC_reg/D
+		6) report_timing -to REGC_reg/D -delay min
+
+**Output**
+
+<img src="https://user-images.githubusercontent.com/118953938/209562945-7a02ae9d-003d-42fc-9f33-97a5f8e190fd.png" width=60% height=60%>
+
+<img src="https://user-images.githubusercontent.com/118953938/209563036-198a1db4-80e1-4a52-85e5-257d66b14ff3.png" width=60% height=60%>
+
+11.4) All Port Report
+
+**Commands**
+		
+		In dc_shell
+		1) report_port -verbose
+
+**Output**
+
+<img src="https://user-images.githubusercontent.com/118953938/209563125-10db9212-1089-4e72-87a6-17dc40976822.png" width=60% height=60%>
+
+<img src="https://user-images.githubusercontent.com/118953938/209563165-da3c7be1-3838-4776-a437-5a42afef7674.png" width=60% height=60%>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
