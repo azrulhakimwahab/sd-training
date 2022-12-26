@@ -2524,13 +2524,13 @@ There is mo path to OUT_Z yet
 
 **Output**
 
-<img src="https://user-images.githubusercontent.com/118953938/209572529-a2757e0e-67b1-4659-bf08-21d3c2f0d52c.png" width=80% height=80%>
+<img src="https://user-images.githubusercontent.com/118953938/209572529-a2757e0e-67b1-4659-bf08-21d3c2f0d52c.png" width=60% height=60%>
 
-<img src="https://user-images.githubusercontent.com/118953938/209572572-0a1610f8-d8bc-41da-910b-234116193d92.png" width=80% height=80%>
+<img src="https://user-images.githubusercontent.com/118953938/209572572-0a1610f8-d8bc-41da-910b-234116193d92.png" width=60% height=60%>
 
-<img src="https://user-images.githubusercontent.com/118953938/209572615-e32cbca4-3bc9-421a-a691-16100df7239a.png" width=80% height=80%>
+<img src="https://user-images.githubusercontent.com/118953938/209572615-e32cbca4-3bc9-421a-a691-16100df7239a.png" width=60% height=60%>
 
-<img src="https://user-images.githubusercontent.com/118953938/209572727-77a6e0d6-30e3-4ec8-8038-7a3df2c3789d.png" width=80% height=80%>
+<img src="https://user-images.githubusercontent.com/118953938/209572727-77a6e0d6-30e3-4ec8-8038-7a3df2c3789d.png" width=60% height=60%>
 
 15.1) IO delays
 
@@ -2547,17 +2547,17 @@ There is mo path to OUT_Z yet
 
 **Output**
 
-<img src="https://user-images.githubusercontent.com/118953938/209572837-8e9fbae4-3426-4705-9a5d-5a441ae99770.png" width=80% height=80%>
+<img src="https://user-images.githubusercontent.com/118953938/209572837-8e9fbae4-3426-4705-9a5d-5a441ae99770.png" width=60% height=60%>
 
-<img src="https://user-images.githubusercontent.com/118953938/209572862-a92b1f27-79ce-414d-9274-92e982c628a4.png" width=80% height=80%>
+<img src="https://user-images.githubusercontent.com/118953938/209572862-a92b1f27-79ce-414d-9274-92e982c628a4.png" width=60% height=60%>
 
-<img src="https://user-images.githubusercontent.com/118953938/209572875-91bc134a-afdb-4c83-8ebc-140a72400616.png" width=80% height=80%>
+<img src="https://user-images.githubusercontent.com/118953938/209572875-91bc134a-afdb-4c83-8ebc-140a72400616.png" width=60% height=60%>
 
-<img src="https://user-images.githubusercontent.com/118953938/209572973-42333f33-2353-49d9-b926-d1975a7609e1.png" width=80% height=80%>
+<img src="https://user-images.githubusercontent.com/118953938/209572973-42333f33-2353-49d9-b926-d1975a7609e1.png" width=60% height=60%>
 
-<img src="https://user-images.githubusercontent.com/118953938/209572997-0e7b9147-2475-4976-8276-6a49d7802d48.png" width=80% height=80%>
+<img src="https://user-images.githubusercontent.com/118953938/209572997-0e7b9147-2475-4976-8276-6a49d7802d48.png" width=60% height=60%>
 
-<img src="https://user-images.githubusercontent.com/118953938/209573013-44b69fb7-a171-4419-80ee-17390ef520f9.png" width=80% height=80%>
+<img src="https://user-images.githubusercontent.com/118953938/209573013-44b69fb7-a171-4419-80ee-17390ef520f9.png" width=60% height=60%>
 
 
 
