@@ -2415,6 +2415,15 @@ input and output delay for virtual clock
 
 <img src="https://user-images.githubusercontent.com/118953938/209599437-32ebd66f-7b40-44a0-9d47-a9ac76162072.png" width=60% height=60%>
 
+Taken from the slides and trainer for reffrencing
+
+<img src="https://user-images.githubusercontent.com/118953938/209600040-cdcfc954-d437-47e5-8b46-2051d7f0ae51.png" width=60% height=60%>
+
+<img src="https://user-images.githubusercontent.com/118953938/209600057-f86d0a1d-2e7c-4c49-a5bd-cab96033e137.png" width=60% height=60%>
+
+<img src="https://user-images.githubusercontent.com/118953938/209600186-f569761b-7ea2-4e32-9903-58d445a33795.png" width=60% height=60%>
+
+<img src="https://user-images.githubusercontent.com/118953938/209599832-8ab51312-2cb2-47de-83c2-8e46ea65e213.png" width=60% height=60%>
 
 
 
