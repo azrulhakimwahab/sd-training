@@ -2391,6 +2391,15 @@ DESIGN SUCCESSFULLY CONSTRAINED!!
 
 ### :mag_right: SDC Part4: vclk, max_latency, rise_fall IO Delays
 
+Input Delay
+
+![image](https://user-images.githubusercontent.com/118953938/209597754-08fd4e3b-ac31-4c2b-ab58-7888eadb21ee.png)
+
+Output Delay
+
+![image](https://user-images.githubusercontent.com/118953938/209598149-bbba4d6e-a652-45ec-875d-e051f0521101.png)
+
+
 ### :test_tube:	Lab 14- Set_Max_delay
 
 Recall on previous design
