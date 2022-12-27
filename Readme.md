@@ -2403,6 +2403,14 @@ IO Constrains Re-Visited
 
 <img src="https://user-images.githubusercontent.com/118953938/209598556-890ba205-a86d-4744-a8cc-da142d0653e9.png" width=60% height=60%>
 
+Can be overcome by a **Virtual CLock**
+
+		create_clock -name MY_VCLK -period 5 #no clock definition point (automatically inferred as virtual clock)
+		
+input and output delay for virtual clock
+
+<img src="https://user-images.githubusercontent.com/118953938/209599010-d1f04693-291d-4f15-b828-bc72f0633dc1.png" width=60% height=60%>
+
 ### :test_tube:	Lab 14- Set_Max_delay
 
 Recall on previous design
