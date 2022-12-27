@@ -2411,6 +2411,13 @@ input and output delay for virtual clock
 
 <img src="https://user-images.githubusercontent.com/118953938/209599010-d1f04693-291d-4f15-b828-bc72f0633dc1.png" width=60% height=60%>
 
+<img src="https://user-images.githubusercontent.com/118953938/209599369-4176673e-15ff-4316-9872-ed1b65255a73.png" width=60% height=60%>
+
+<img src="https://user-images.githubusercontent.com/118953938/209599437-32ebd66f-7b40-44a0-9d47-a9ac76162072.png" width=60% height=60%>
+
+
+
+
 ### :test_tube:	Lab 14- Set_Max_delay
 
 Recall on previous design
