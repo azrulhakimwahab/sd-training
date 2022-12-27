@@ -2393,12 +2393,15 @@ DESIGN SUCCESSFULLY CONSTRAINED!!
 
 Input Delay
 
-![image](https://user-images.githubusercontent.com/118953938/209597754-08fd4e3b-ac31-4c2b-ab58-7888eadb21ee.png)
+<img src="https://user-images.githubusercontent.com/118953938/209597754-08fd4e3b-ac31-4c2b-ab58-7888eadb21ee.png" width=60% height=60%>
 
 Output Delay
 
-![image](https://user-images.githubusercontent.com/118953938/209598149-bbba4d6e-a652-45ec-875d-e051f0521101.png)
+<img src="https://user-images.githubusercontent.com/118953938/209598149-bbba4d6e-a652-45ec-875d-e051f0521101.png" width=60% height=60%>
 
+IO Constrains Re-Visited
+
+<img src="https://user-images.githubusercontent.com/118953938/209598556-890ba205-a86d-4744-a8cc-da142d0653e9.png" width=60% height=60%>
 
 ### :test_tube:	Lab 14- Set_Max_delay
 
