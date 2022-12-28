@@ -2595,13 +2595,19 @@ There is mo path to OUT_Z yet
 
 <img src="https://user-images.githubusercontent.com/118953938/209573013-44b69fb7-a171-4419-80ee-17390ef520f9.png" width=60% height=60%>
 
+# :book: Day 9- Optimization in synthesi
 
+### :mag_right: Optimizations Combinational Opt
 
+:black_nib:  **Optimization goals**
 
-
-
-
-
+* Cost function based optimizations
+	* Optimization until the cost is met 
+	* Over optimization of one goal will harm other goals
+	* Goals for synthesis
+		* Meet Timing
+		* Meet Area 
+		* Meet Power
 
 
 
