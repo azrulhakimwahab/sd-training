@@ -2609,11 +2609,29 @@ There is mo path to OUT_Z yet
 		* Meet Area 
 		* Meet Power
 
+<img src="https://user-images.githubusercontent.com/118953938/209962353-e044703d-e199-41c7-8fcf-ffc640dfe2aa.png" width=30% height=30%>
+
+:black_nib:  **Combinational logic optimization**
+
+:pushpin: Function: Squeezing the logic to get most optimised design.<br>
+	
+	* Area and Power savings
+	
+:pushpin: Constant Propagation<br>
+	
+	* Direct Optimization
+	
+<img src="https://user-images.githubusercontent.com/118953938/209964812-ece165a5-7324-4379-a38c-dbd4989e934d.png" width=80% height=80%>
 
 
+:pushpin: Boolean Logic Optimization<br>
+	
+	* K-Map
+	* Quine McKluskey
 
+<img src="https://user-images.githubusercontent.com/118953938/209969225-07b887fb-28e0-437d-8ebd-bd522be2a976.png" width=80% height=80%>
 
-
+Resource sharing 
 
 
 
