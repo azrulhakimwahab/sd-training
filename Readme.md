@@ -2631,34 +2631,127 @@ There is mo path to OUT_Z yet
 
 <img src="https://user-images.githubusercontent.com/118953938/209969225-07b887fb-28e0-437d-8ebd-bd522be2a976.png" width=80% height=80%>
 
-Resource sharing 
+**Resource sharing**
 
+<img src="https://user-images.githubusercontent.com/118953938/210024216-8814241c-0451-41ce-a96d-03b04cd5608b.png" width=80% height=80%>
 
+**Logic sharing**
 
+<img src="https://user-images.githubusercontent.com/118953938/210025816-adb82cc0-f074-40b0-adb4-ac478efea91d.png" width=80% height=80%>
 
+**Balanced vs Preferential Implementation**
 
+<img src="https://user-images.githubusercontent.com/118953938/210027705-82324d62-c3b5-400c-90ac-a7d6a1b9d74f.png" width=80% height=80%>
 
+Constraint is very important in a design. It is dependable on the output of the timing to arrange the constraint needed.
 
+### :mag_right: Sequential Optimizations
 
+:black_nib: **Basic**
 
+	1) Sequential Constant Propagation
+	2) Retiming
+	3) Unused Flop removal
+	4) Clock gating
 
+:black_nib: **Advanced**
 
+	1) State optimization
+	2) Sequential logic cloning
 
+### :test_tube:	Lab 16 - part 1 Combinational_optimizations
 
+16.1) Optimization of opt_check.v
 
+**Commands**
 
+		1) sh gvim opt_check*.v -o
+		2) read_verilog opt_check.v
+		3) report_timing
+		4) get_cells *
+		5) report_timing -to y2
+		6) report_timing -to y1
+		7) write -f ddc -out opt_check.ddc
+		
+		In design_vision
+		1) read_ddc opt_check.ddc
 
+**Outputs**
 
+Gvim<br>
+<img src="https://user-images.githubusercontent.com/118953938/210042828-f9e1ff77-98d5-4705-8207-1ce065003ee3.png" width=80% height=80%>
 
+<img src="https://user-images.githubusercontent.com/118953938/210043041-6056efa7-c42e-4c1e-b851-b7c6e70eb2e2.png" width=80% height=80%>
 
+<img src="https://user-images.githubusercontent.com/118953938/210043723-7f893813-aab1-45f9-8e12-10f15d4a7ec0.png" width=80% height=80%>
 
+16.2) Optimization of opt_check2.v
 
+**Commands**
 
+		1) read_verilog opt_check2.v
+		2) link
+		3) compile
+		4) write -f ddc -out opt_check2.ddc
+		
+		In design_vision
+		1) read_ddc opt_check2.ddc
 
+**Outputs**
 
+Expected
 
+<img src="https://user-images.githubusercontent.com/118953938/210055409-ae906791-b603-485a-ba5d-1257701c6379.png" width=80% height=80%>
 
+Real
 
+<img src="https://user-images.githubusercontent.com/118953938/210055498-e8052e9f-018b-4e3b-8289-0e93227315b4.png" width=80% height=80%>
+
+16.3) Optimization of opt_check3.v
+
+**Commands**
+
+		1) read_verilog opt_check3.v
+		2) link
+		3) compile
+		4) write -f ddc -out opt_check3.ddc
+		
+		In design_vision
+		1) read_ddc opt_check3.ddc
+
+**Outputs**
+
+Expected
+
+<img src="https://user-images.githubusercontent.com/118953938/210055605-3d63ab43-968d-4a21-95fc-318a0c619397.png" width=80% height=80%>
+
+Real
+
+<img src="https://user-images.githubusercontent.com/118953938/210055682-f33262f6-07ee-4133-9f1b-c23967f0cb27.png" width=80% height=80%>
+
+16.4) Optimization of opt_check4.v
+
+**Commands**
+
+		1) read_verilog opt_check4.v
+		2) link
+		3) compile
+		4) write -f ddc -out opt_check4.ddc
+		
+		In design_vision
+		1) read_ddc opt_check4.ddc
+
+**Outputs**
+
+Expected
+
+<img src="https://user-images.githubusercontent.com/118953938/210055891-10aead77-5279-4c65-a452-f65d0a9d382c.png" width=80% height=80%>
+
+Real
+
+<img src="https://user-images.githubusercontent.com/118953938/210055972-2132ed8e-1d4c-49e0-bcdc-ca27a3e8cf57.png" width=80% height=80%>
+
+### :test_tube:	Lab 16 - part 2 Resource Sharing Optimizations
 
 
 
