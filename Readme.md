@@ -3163,12 +3163,26 @@ Command
 
 <img src="https://user-images.githubusercontent.com/118953938/210282233-fab93a48-1296-43ca-aec6-88e6f43f73c6.png" width=65% height=65%>
 
+# :book: Day 10- Quality Checks - Quality of Results (QOR)
 
+### :mag_right: Report Timing
 
+:black_nib:  **List of commands**
 
-
-
-
+	1) report_timing -from DDF_A/clk
+	2) report_timing -from DDF_A/clk -to DDF_A/d
+	3) report_timing -fall_from DDF_A/clk
+	4) report_timing -rise_from DDF_b/clk
+	5) report_timing -delay_type min -to DDF_C/d
+	6) report_timing -delay_type min -through INV/a
+	7) report_timing -delay_type max -through AND/b
+	8) report_timing -rise_from DDF_b/clk -delay_type max -nets -cap -trans -sig 4    
+	
+	Default
+	delay_type max (not for specified delay type)
+	
+:black_nib:  **Propagation Delay**
+	
 
 
 
