@@ -2854,14 +2854,36 @@ Theoritical Expectations
 
 ### :mag_right: Special Optimizations
 
+Register Retiming
 
+* Register retiming is a circuit optimization technique that moves registers forward or backward across combinational elements in a circuit. 
+* The aim of this procedure is to shorten the clock cycle or reduce circuit area. There are two basic types of register retiming: Forward retiming and backward retiming.
 
+<img src="https://user-images.githubusercontent.com/118953938/210262288-9e6fff5c-2531-4a51-b37b-e0d5f053e5ae.png" width=70% height=70%>
 
+:black_nib: **Retiming part**
 
+<img src="https://user-images.githubusercontent.com/118953938/210263386-2312f5a9-66a1-461c-af8f-f687d91684f7.png" width=70% height=70%>
 
+<img src="https://user-images.githubusercontent.com/118953938/210263820-69bb4cc0-26e9-49bf-884d-ddb418147a45.png" width=70% height=70%>
 
+:black_nib: **Boundary Optimization**
 
+<img src="https://user-images.githubusercontent.com/118953938/210264695-0b83356d-e863-48de-9079-6f17a5766f74.png" width=100% height=100%>
 
+Applying boundary optimization
+
+Negative: May have problem with the functional design verification<br> 
+Positive: bring most optimal logic<br> 
+
+Commands
+		
+		1) set_boundary_optimization <design><true|false>
+		2) set_boundary_optimization module_sub false
+		
+:black_nib: **Multicycle Path**
+
+<img src="https://user-images.githubusercontent.com/118953938/210266758-d18c392b-e000-4b25-8ea2-b62066cde001.png" width=70% height=70%>
 
 
 
