@@ -2885,6 +2885,243 @@ Commands
 
 <img src="https://user-images.githubusercontent.com/118953938/210266758-d18c392b-e000-4b25-8ea2-b62066cde001.png" width=70% height=70%>
 
+Need to understand the design thoroughly before using it!!!
+
+Command
+
+	set multicycle_path -setup 2 -to prod_reg[*]/D -through [all_inputs]
+
+:black_nib: **False path**
+
+<img src="https://user-images.githubusercontent.com/118953938/210268326-0a837bba-487f-4b0a-8314-c2c25fd7de5d.png" width=70% height=70%>
+
+:black_nib: **External Load vs Internal Load**
+
+<img src="https://user-images.githubusercontent.com/118953938/210269633-c7c4434c-a3c2-459d-955d-afd50a0f1389.png" width=70% height=70%>
+
+<img src="https://user-images.githubusercontent.com/118953938/210269868-58dc3997-f96d-4087-9786-566acaa8a61e.png" width=75% height=75%>
+
+### :mag_right: How Paths are timed MCP?
+
+:black_nib: **Single cycle path**
+
+Single Cycle Datapaths : Single Datapaths is equivalent to the original single-cycle datapath The data memory has only one Address input. The actual memory operation can be determined from the MemRead and MemWrite control signals. There are separate memories for instructions and data.
+
+<img src="https://user-images.githubusercontent.com/118953938/210273809-639be681-9476-4f65-8260-7888f13f5292.png" width=75% height=75%>
+
+:black_nib: **Half cycle path**
+
+A half cycle timing path is one in which launch and capture happen on different clock edges. A half cycle path can be in terms of both setup and hold.
+
+<img src="https://user-images.githubusercontent.com/118953938/210274090-5cbd7f91-5319-40a9-872e-785527946bad.png" width=75% height=75%>
+
+:black_nib: **Multi cycle path**
+
+Multicycle paths are data paths between two registers that operate at a sample rate slower than the FPGA clock rate and therefore take multiple clock cycles to complete their execution. Multi-cycle data path break up instructions into separate steps. It reduces average instruction time. Each step takes a single clock cycle Each functional unit can be used more than once in an instruction, as long as it is used in different clock cycles. It reduces the amount of hardware needed.
+
+<img src="https://user-images.githubusercontent.com/118953938/210275040-b7d7f0d0-b9e9-46aa-892b-8631070d0204.png" width=75% height=75%>
+
+Command
+
+	set multicycle_path -setup 2 -from [all_inputs] -to prod_reg[*]/D 
+	set multicycle_path -hold 1 -from [all_inputs] -to prod_reg[*]/D 
+
+### :test_tube:	Lab 18 - Boundary Optimization
+
+18.1) open (sh gvim check_boundary.v)
+
+<img src="https://user-images.githubusercontent.com/118953938/210275830-31e449b7-f78a-494d-9cdb-df9580ecf238.png" width=75% height=75%>
+
+**Commands**
+
+		1) reset_design
+		2) read_verilog check_boundary.v
+		3) link
+		4) compile_ultra
+		5) write -f ddc -out boundary.ddc
+		6) get_cells
+		
+		In design_vision
+		1) read_ddc boundary.ddc
+
+**Outputs**
+
+<img src="https://user-images.githubusercontent.com/118953938/210276737-efeef769-840d-47c6-a342-ee57d4ad5adc.png" width=75% height=75%>
+
+<img src="https://user-images.githubusercontent.com/118953938/210277098-cee67691-2e1e-40da-8c69-29a8d5ffc8ac.png" width=75% height=75%>
+
+<img src="https://user-images.githubusercontent.com/118953938/210276963-f83785be-18fa-4493-9340-ec78eb218df9.png" width=75% height=75%>
+
+**Commands**
+ 		
+		In design_vision
+		1) reset_design
+		2) read_verilog check_boundary.v
+		3) link
+		4) get_cells
+		5) get_pins u_im/*
+		6) set_boundary_optimization u_im false
+		7) compile_ultra
+
+**Outputs**
+
+<img src="https://user-images.githubusercontent.com/118953938/210277369-bed9ab69-b32e-4334-a687-8381ab1c0886.png" width=75% height=75%>
+
+<img src="https://user-images.githubusercontent.com/118953938/210277557-7d12fdb0-4b17-4090-9c0f-b51ba3641095.png" width=75% height=75%>
+
+### :test_tube:	Lab 19 - Register Retiming
+
+19.1) Open (sh gvim DC_WORKSHOP/verilog_files/check_reg_retime.v)
+
+<img src="https://user-images.githubusercontent.com/118953938/210278373-d8c95f9d-57b5-49ef-ae3c-bab0d0c1f229.png" width=75% height=75%>
+
+**Commands**
+ 		
+		In design_vision
+		1) read_verilog check_reg_retime.v
+		2) link
+		3) compile
+
+**Outputs**
+
+<img src="https://user-images.githubusercontent.com/118953938/210278600-a80035e4-7ae7-4726-910a-92f3dd8305ac.png" width=75% height=75%>
+
+**Commands**
+
+		1) report_timing
+		2) sh gvim reg_retime_cons.tcl-->Setting up constraints
+		3) source reg_retime_cons.tcl
+		4) report_clocks
+		5) report_timing
+		6) compile_ultra -retime
+		7) start_gui
+		
+		1) report_timing
+		2) compile_ultra
+		3) report_timing -from [all_inputs]
+		4) report_timing -from [all_inputs] -trans -cap -nosplit -sig 4
+
+**Outputs**
+
+![image](https://user-images.githubusercontent.com/118953938/210278917-29227d8b-8589-47bf-b06f-dc04208e8b5d.png)
+
+<img src="https://user-images.githubusercontent.com/118953938/210279107-8ef50c92-b837-4ff7-b9d2-760f32cbf119.png" width=75% height=75%>
+
+<img src="https://user-images.githubusercontent.com/118953938/210279257-17b0b846-2ca2-4492-bdf8-04512d1ff926.png" width=75% height=75%>
+
+<img src="https://user-images.githubusercontent.com/118953938/210279313-0a47bf75-7476-4840-ae7d-6e59b8bafdf0.png" width=55% height=55%>
+
+### :test_tube:	Lab 20 - Isolating output ports
+
+<img src="https://user-images.githubusercontent.com/118953938/210279699-588cf67c-ab1c-46c9-a96a-2c6d8c3c1a18.png" width=80% height=80%>
+
+20.1) Open (sh gvim check_boundary.v)
+
+<img src="https://user-images.githubusercontent.com/118953938/210275830-31e449b7-f78a-494d-9cdb-df9580ecf238.png" width=75% height=75%>
+
+**Commands**
+
+		1) reset_design
+		2) read_verilog check_boundary.v
+		3) link
+		4) compile_ultra
+		5) start_gui
+		
+		1) set_isolate_ports -type buffer [all_outputs]
+		2) compile_ultra
+		3)start_gui
+
+**Outputs**
+
+<img src="https://user-images.githubusercontent.com/118953938/210280494-1bbee116-3619-4638-afc6-3f498ad246fe.png" width=75% height=75%>
+
+<img src="https://user-images.githubusercontent.com/118953938/210280793-d68f1828-95b5-44e5-a1d5-c6e7db824a52.png" width=75% height=75%>
+
+**Commands**
+
+		reset_design
+		read_verilog check_boundary.v
+		link
+		compile_ultra
+		create_clock -per 5 -name myclk [get_ports clk]
+		set_input_delay -max 2 [all_inputs] -clock myclk
+		set_output_delay -max 2 [all_outputs] -clock myclk
+		set_load -max 0.3 [all_outputs]
+		report_timing -nosplit -inp -cap -trans -sig 4
+		report_timing -to val_out_reg[0]/D -inp -trans -nosplit -cap -sig 4	
+
+**Outputs**
+
+![image](https://user-images.githubusercontent.com/118953938/210281008-bdc7ee5e-cff6-4008-a934-81188664126b.png)
+
+
+20.2) Ports isolation
+
+**Commands**
+
+		set_isolate_ports -type buffer [all_outputs]
+		compile_ultra
+		report_timing -nosplit -inp -cap -trans -sig 4
+		report_timing -from val_out_reg[0]/CLK -to val_out_reg[0]/D -nosplit -inp -cap -trans -sig 4	
+
+**Outputs**
+
+![image](https://user-images.githubusercontent.com/118953938/210281283-a109ce5a-6ab0-400b-bb7d-2835d71b006a.png)
+
+### :test_tube:	Lab 21 - MultiCycle path
+
+21.1) Open (sh gvim mcp_check.v)
+
+<img src="https://user-images.githubusercontent.com/118953938/210281417-9a41937a-6cab-4eaf-9a65-c3c65df63dc0.png" width=75% height=75%>
+
+**Commands**
+
+		1) read_verilog mcp_check.v
+		2) link
+		3) compile_ultra
+		4) sh gvim mcp_check_cons.tcl
+		5) source mcp_check_cons.tcl
+		6) report_timing
+		7) compile_ultra
+		8) report_timing
+		9) set_multicycle_path -setup 2 -to prod_reg[*]/D -from [all_inputs] 	
+		10) report_timing -to prod_reg[*]/D -from valid_reg/CLK
+		11) report_clock *
+
+**Outputs**
+
+<img src="https://user-images.githubusercontent.com/118953938/210281806-4587ebd6-25ec-4507-9f81-79ca072f8e85.png" width=75% height=75%>
+
+<img src="https://user-images.githubusercontent.com/118953938/210281891-f6ddd6f9-6556-4c69-acb1-0092d01b915f.png" width=75% height=75%>
+
+<img src="https://user-images.githubusercontent.com/118953938/210281950-34845061-42c4-470c-988e-e264887a207c.png" width=65% height=65%>
+
+21.2) Applying MCP
+
+**Commands**
+
+		Hold time
+		1) report_timing -delay min
+		
+		1) set_multicycle_path -hold 1 -from [all_inputs] -to prod_reg[*]/D
+		2) report_timing -delay min -to prod_reg[*]/D -from [all_inputs]
+		3) report_timing -nosplit -inp -cap -trans -sig 4
+
+**Outputs**
+
+<img src="https://user-images.githubusercontent.com/118953938/210282215-5663ad20-8431-4050-ba31-bf8b46d6516b.png" width=65% height=65%>
+
+<img src="https://user-images.githubusercontent.com/118953938/210282233-fab93a48-1296-43ca-aec6-88e6f43f73c6.png" width=65% height=65%>
+
+
+
+
+
+
+
+
+
+
 
 
 
