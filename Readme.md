@@ -2753,15 +2753,106 @@ Real
 
 ### :test_tube:	Lab 16 - part 2 Resource Sharing Optimizations
 
+16.5) Optimization of resource_sharing_mult_check.ddc
 
+**Commands**
 
+		1) sh gvim DC_WORKSHOP/verilog_files/resource_sharing_mult_check.v
+		2) read_verilog DC_WORKSHOP/verilog_files/resource_sharing_mult_check.v
+		3) link
+		4) compile_ultra
+		5) write -f ddc -out DC_WORKSHOP/verilog_files/resource_sharing_mult_check.ddc
+	
+		1) reset_design
+		2) read_ddc DC_WORKSHOP/verilog_files/resource_sharing_mult_check.ddc
 
+**Outputs**
 
+<img src="https://user-images.githubusercontent.com/118953938/210242491-982418a9-1b75-4ad3-8024-e0e139084922.png" width=70% height=70%>
 
+<img src="https://user-images.githubusercontent.com/118953938/210243763-c0d38a7c-986c-48fe-9374-9aac5ce3d821.png" width=70% height=70%>
 
+<img src="https://user-images.githubusercontent.com/118953938/210244460-3f5d137d-7af9-450a-b7a6-8581e530ea26.png" width=50% height=50%>
 
+<img src="https://user-images.githubusercontent.com/118953938/210244842-37a875f8-1868-4565-8ed4-016153ad5b30.png" width=50% height=50%>
 
+<img src="https://user-images.githubusercontent.com/118953938/210247193-7e8b1c53-e18c-4d43-be6b-9276cf87afce.png" width=80% height=80%>
 
+### :test_tube:	Lab 17 - Seq Optimizations
+
+17.1) Display (sh gvim dff_cons* -o)
+
+<img src="https://user-images.githubusercontent.com/118953938/210255623-04c7ac8c-1479-46ed-a2c2-036bf30f77c0.png" width=50% height=50%>
+
+17.2) Optimizations
+
+Theoritical Expectations 
+
+17.2.1(2)) dff_const.v and dff_const2.v
+
+<img src="https://user-images.githubusercontent.com/118953938/210252655-57e28dca-16c1-4935-a08a-ba278869e36c.png" width=80% height=80%>
+
+17.2.3) dff_const3.v
+
+<img src="https://user-images.githubusercontent.com/118953938/210255334-c0a6085f-74ce-4c18-be64-5497a690f976.png" width=80% height=80%>
+
+17.2.4) dff_const4.v
+
+<img src="https://user-images.githubusercontent.com/118953938/210256965-e2ff6076-7ae1-4693-9c14-dac477227609.png" width=80% height=80%>
+
+17.2.5) dff_const5.v
+
+<img src="https://user-images.githubusercontent.com/118953938/210257599-3b377c8e-0e7c-4eab-820b-8fcc192f58e3.png" width=80% height=80%>
+
+**Commands**
+
+		1) reset_design
+		2) read_verilog dff_const1.v
+		3) link
+		4) compile
+		
+		Getting the cells
+		5) get_cells
+		6) foreach_in_collection my_cell [get_cells *] {
+			set cell_name [get_object_name $my_cell];
+			echo $cell_name; 
+			}
+		7) foreach_in_collection my_cell [get_cells *] {
+			set cell_name [get_object_name $my_cell];
+			set rn [get_attribute [get_cells $cell_name] ref_name];  
+			echo $cell_name $rn; 
+			}
+			
+		In design_vision
+		1) read_verilog dff_const1.v
+		2) link
+		3) compile
+
+**Outputs**
+
+17.2.1) dff_const.v
+
+<img src="https://user-images.githubusercontent.com/118953938/210259048-73e535cb-b9d2-4085-86eb-452df0032683.png" width=80% height=80%>
+
+17.2.2) dff_const2.v
+
+<img src="https://user-images.githubusercontent.com/118953938/210259766-f46500cf-36b1-4ee1-a17f-70e252cf082d.png" width=80% height=80%>
+
+<img src="https://user-images.githubusercontent.com/118953938/210260262-5ff65b9c-4312-4414-acbf-03a0dce69ebb.png" width=80% height=80%>
+
+17.2.3) dff_const3.v
+
+<img src="https://user-images.githubusercontent.com/118953938/210260917-34e5c323-a31b-47ff-8629-473c79c489ad.png" width=80% height=80%>
+
+17.2.4) dff_const4.v
+
+<img src="https://user-images.githubusercontent.com/118953938/210261155-420cb6d6-900c-4c5d-8441-2d40193741c1.png" width=80% height=80%>
+
+17.2.5) dff_const5.v
+
+<img src="https://user-images.githubusercontent.com/118953938/210261347-d2c36766-4d60-40b8-89d4-3b86ebe41484.png" width=80% height=80%>
+
+### :mag_right: Special Optimizations
 
 
 
