@@ -2658,6 +2658,38 @@ Constraint is very important in a design. It is dependable on the output of the 
 
 	1) State optimization
 	2) Sequential logic cloning
+	
+:black_nib: **Sequential constant**
+
+Q is grounded
+
+<img src="https://user-images.githubusercontent.com/118953938/210282865-3e46d4c3-1ac2-439d-8565-333c136ad328.png" width=80% height=80%>
+
+Q is sourced/optimized
+
+<img src="https://user-images.githubusercontent.com/118953938/210283451-04e309de-f323-4c44-81b1-e423d56ab7f4.png" width=80% height=80>
+
+:black_nib: **Constant Propagation**
+
+Sequential constant
+
+<img src="https://user-images.githubusercontent.com/118953938/210283920-8cc7e91e-3684-488a-8f0a-61a10d94b5b3.png" width=80% height=80>
+
+:black_nib: **Optimization of Unloaded output**
+
+<img src="https://user-images.githubusercontent.com/118953938/210284215-110cb5ac-339f-4716-9c47-ce8c116d0e95.png" width=80% height=80>
+
+:black_nib: **Controlling sequential optimizations in DC**
+
+	1) compile_seqmap_propagate_constants 
+		For propagation sequential constant (The cct remain the same)
+
+	2) compile_delete_unloaded_sequential_cells 
+		For sequential optimization
+
+
+	3) compile_register_replication 
+		Cloning registers
 
 ### :test_tube:	Lab 16 - part 1 Combinational_optimizations
 
