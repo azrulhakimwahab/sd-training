@@ -2810,6 +2810,24 @@ Real
 
 <img src="https://user-images.githubusercontent.com/118953938/210247193-7e8b1c53-e18c-4d43-be6b-9276cf87afce.png" width=80% height=80%>
 
+<img src="https://user-images.githubusercontent.com/118953938/210284637-478931f4-e2ed-4176-846d-0d599cc253ea.png" width=80% height=80%>
+
+16.6) Constraint area
+
+**Commands**
+
+		1) set_max_area 800
+		2) compile_ultra
+		3) report_timing -sig 4
+		4) report_area
+
+<img src="https://user-images.githubusercontent.com/118953938/210284691-ae644fe8-4db6-4a53-b0cc-110a3a9177f9.png" width=80% height=80%>
+
+<img src="https://user-images.githubusercontent.com/118953938/210284700-5430c83b-d642-4dcd-98cf-aa2664e17b21.png" width=80% height=80%>
+
+<img src="https://user-images.githubusercontent.com/118953938/210284416-79e6945f-add4-44b1-986c-8516381001c7.png" width=80% height=80%>
+
+
 ### :test_tube:	Lab 17 - Seq Optimizations
 
 17.1) Display (sh gvim dff_cons* -o)
