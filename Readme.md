@@ -3260,16 +3260,169 @@ Report timing through U15/Y
 
 ### :test_tube:	Lab 2 - Lab Check_timing, Check_design, Set_max_capacitance, HFN
 
+2.1) Sourcing Constraints lab8_circuit_modified.v
 
+**Commands**
 
+		1) read_verilog lab8_circuit_modified.v
+		2) link
+		3) check_design
+				
+		PRE-sourcing Constraints
+		1) compile_ultra
+		2) check_timing 
+		3) report_constraints
+		
+		Sourcing Constraints
+		1) source lab8_cons_modified.tcl 
+		2) check_timing
+		3) report_constraints
+		
+**Outputs**
 
+<img src="https://user-images.githubusercontent.com/118953938/210373767-07ddc3f8-6710-476d-b6fc-545243704028.png" width=60% height=60%>
 
+<img src="https://user-images.githubusercontent.com/118953938/210375745-878503e2-be53-45f7-b777-746aa7b80d39.png" width=75% height=75%>
 
+<img src="https://user-images.githubusercontent.com/118953938/210376589-903cbe45-eb0b-4974-83ea-0b9459ed5ad4.png" width=75% height=75%>
 
+<img src="https://user-images.githubusercontent.com/118953938/210377171-ae285928-8b92-457b-b117-f270354a9cfc.png" width=75% height=75%>
 
+2.2) New Design
 
+**Commands**
 
+		1) reset_design
+		2) sh gvim mux_generate.v
+		3) :sp mux_generate_128_1.v (in vim)
+		4) read_verilog mux_generate_128_1.v
+		5) link
+		6) compile_ultra
+		7) write -f verilog -out mux_generate_128_1_net.v
+		8) sh gvim mux_generate_128_1_net.v &
+		
+		-> get_cells * -hier -filter "is_sequential == true"
+		-> get_cells * -hier -filter "is_sequential == false"
+		
+		9) report_timing -net -cap -sig 4
+		10) check_timing
+		
+		11) set_max_delay -from [all_inputs] -to [all_outputs] 3.5
+		12) report_timing
 
+**Output**
 
+<img src="https://user-images.githubusercontent.com/118953938/210384244-b7368087-f605-437f-bc18-aacd6a74dccb.png" width=40% height=40%>
 
+<img src="https://user-images.githubusercontent.com/118953938/210384730-56c608f9-d68a-478e-a510-d0c10e82e8da.png" width=80% height=80%>
 
+<img src="https://user-images.githubusercontent.com/118953938/210385574-1c04db92-4da9-452d-b968-d0d79fd59609.png" width=80% height=80%>
+
+<img src="https://user-images.githubusercontent.com/118953938/210386121-55e80930-532f-4f9f-a3eb-2498099942c4.png" width=60% height=60%>
+
+2.3) Max Capacitance
+
+**Commands**
+
+		1) set_max_capacitance 0.025 [current_design]
+		2) report_constraint -all_violators
+		3) compile_ultra
+		4) check_timing 
+		5) report_constraints
+		6) report_timing
+		7) report_timing -net -cap -sig 4
+
+**Outputs**
+
+<img src="https://user-images.githubusercontent.com/118953938/210388352-634f419b-f09d-42a6-b886-6d214e62ca87.png" width=80% height=80%>
+
+<img src="https://user-images.githubusercontent.com/118953938/210388554-35bb2676-c0a3-4563-8ee7-545b8e47f8f8.png" width=40% height=40%>
+
+<img src="https://user-images.githubusercontent.com/118953938/210389195-23865c12-2739-46ed-a3ef-c8b19caf4dd2.png" width=60% height=60%>
+
+* The fanouts capacitance was limited and undergoes optimization 
+* The max capacitance of 25ff, the fanouts will be splitted and buffered
+* Everytime doing synthesis, the capacitance need to be limitedto avoid high fanout and nets can be buffered properly
+* HFN = high fanout net
+
+2.3) New design
+
+**Commands**
+
+		1) sh gvim en_128.v
+		2) reset_design 
+		3) read_verilog en_128.v
+		4) link
+		5) compile_ultra
+		6) report_timing -from en -inp -nets -cap
+		7) set_max_capacitance 0.03 [current_design] -->Breaking/buffering HFN
+		8) report_constraints
+		9) compile_ultra 
+		10) report_timing -from en -inp -nets -cap -sig 4
+		11) write -f ddc -out en_128.ddc
+		
+		Invoking design Vision
+		1) design_vision
+		2) read_ddc en_128.ddc
+		3) start_gui
+
+**Outputs**
+
+<img src="https://user-images.githubusercontent.com/118953938/210393040-065faada-06b4-4c69-8f3d-234ae60c1ebd.png" width=80% height=80%>
+
+<img src="https://user-images.githubusercontent.com/118953938/210393498-68089354-8bb5-458e-89a8-9f8a5dadebdd.png" width=80% height=80%>
+
+<img src="https://user-images.githubusercontent.com/118953938/210394454-2c4c0f04-2ccb-4764-ae02-b825d150e947.png" width=80% height=80%>
+
+2.4) Setting the max transition
+
+**Commands**
+
+		1) report_timing -from en -nets -cap -sig 4 -trans
+		2) set_max_transition 0.150 [current_design]
+		3) report_constraints
+		4) report_constraint -all_violators
+		5) compile_ultra
+		6) report_constraint -all_violators
+		7) report_timing -inp -nets -cap -trans -sig 4 -nosplit
+		8) report_timing -inp -nets -cap -trans -sig 4 -nosplit -from en -to y[116]
+	
+**Outputs**
+
+<img src="https://user-images.githubusercontent.com/118953938/210396058-00d07b61-b667-4004-99c0-35b5fd9aa435.png" width=80% height=80%>
+
+<img src="https://user-images.githubusercontent.com/118953938/210396249-720e4d74-ba31-4da0-aca6-5f40fe990d8e.png" width=50% height=50%>
+
+<img src="https://user-images.githubusercontent.com/118953938/210396932-f14f7350-5d63-4146-b202-c2cbd36ad0ad.png" width=80% height=80%>
+
+<img src="https://user-images.githubusercontent.com/118953938/210397385-3a414338-84df-4440-9388-8057a06e4594.png" width=50% height=50%>
+
+### :mag_right: SUMMARY!!
+		
+:black_nib: **check_design**<br>
+* *To ensure the quality of the design is proper, to check if the design is proper/not, or if there are any missing things in the design.*
+
+:black_nib: **check_timing**<br>
+* *To ensure all the proper constraints are in place.*
+
+:black_nib: **report_constraints**<br>
+* *To check what are the constraints we are checking. If there is any violation, it will report it.*
+
+:black_nib: **set_max_capacitance & set_max_transition**<br>
+* *To check if there is any high fanout net (HFN) or broken or is the design is buffered properly, so that there are no transition issues.*	
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
