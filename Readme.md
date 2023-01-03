@@ -3185,6 +3185,84 @@ Command
 	
 *Propagation delay is the **time required for the input to be propagated to the output.***
 
+<img src="https://user-images.githubusercontent.com/118953938/210297676-5d6cfc2e-23f3-4098-a01b-ea87e66239d3.png" width=85% height=85%>
+
+For the NAND gate<br>
+* The current sinking path (to GND) and current sourcing path (to Y) are different
+* This results to different mobility of electrons and hole
+* Delay also will be different
+* Load on A and load on B will be different too
+
+:black_nib:  **Timing Paths**
+
+<img src="https://user-images.githubusercontent.com/118953938/210304992-8df9943d-e8e7-4f66-adbc-b203dae7822c.png" width=85% height=85%>
+
+<img src="https://user-images.githubusercontent.com/118953938/210306109-df0d73a1-400e-49dc-93a6-de95432e31a4.png" width=85% height=85%>
+
+:black_nib:  **Max_Paths and Nworst**
+
+<img src="https://user-images.githubusercontent.com/118953938/210307900-676c441c-26ae-4ae0-95eb-106822a8a82d.png" width=85% height=85%>
+
+### :test_tube:	Lab 1 - Lab Report timing
+
+1.1) Open (sh gvim lab8_circuit_modified.v)
+
+**Commands**
+
+		1) sh gvim lab8_circuit_modified.v
+		2) :sp lab8_cons_modified.tcl (in vim)
+		3) read_verilog lab8_circuit_modified.v 
+		4) link
+		5) source lab8_cons_modified.tcl
+		6) compile_ultra
+		7) report_timing -sig 4 -nosplit -trans -cap -input_pins -from IN_A > t1.rpt
+		8) sh gvim t1.rpt
+
+**Outputs**
+
+<img src="https://user-images.githubusercontent.com/118953938/210310738-5e7192ac-f009-40e6-8451-212e2bad2a51.png" width=55% height=55%>
+
+<img src="https://user-images.githubusercontent.com/118953938/210313508-a220d862-73da-47ba-a7c7-8a80bffcb6f1.png" width=65% height=65%>
+
+<img src="https://user-images.githubusercontent.com/118953938/210313378-fb6c3afe-1c41-4fdb-adc9-55dde9478549.png" width=65% height=65%>
+
+1.2) Worst Delay
+
+**Commands**
+
+		1) report_timing -rise_from IN_A -sig 4 -transition_time -capacitance -input_pins > t2.rpt
+		2) sh gvim t2.rpt
+		3) :vsp DC_WORKSHOP/verilog_files/t1.rpt   
+		
+		1) report_timing -rise_from IN_A -sig 4 -transition_time -capacitance -input_pins > t2.rpt
+		2) report_timing -rise_from IN_A -sig 4 -transition_time -capacitance -input_pins -to REGA_reg/D > t3.rpt
+		3) sh gvim t1.rpt -O t3.rpt & 
+		
+**Outputs**
+
+<img src="https://user-images.githubusercontent.com/118953938/210318628-c7b38518-e4af-4842-901f-c2d6f4460bd9.png" width=75% height=75%>
+
+<img src="https://user-images.githubusercontent.com/118953938/210318750-b11e3b59-4f23-4c3d-ba2d-7202c1b08358.png" width=75% height=75%>
+
+1.3) Hold and Setup
+
+**Commands**
+
+		1) report_timing -delay min -from  IN_A
+				
+		Report timing through U15/Y
+		1) report_timing -through U15/Y
+		2) report_timing -delay min -through U15/Y
+
+Report timing through U15/Y
+
+![image](https://user-images.githubusercontent.com/118953938/210321903-d419f682-04b1-49ca-bfd0-727c94636968.png)
+
+### :test_tube:	Lab 2 - Lab Check_timing, Check_design, Set_max_capacitance, HFN
+
+
+
+
 
 
 
