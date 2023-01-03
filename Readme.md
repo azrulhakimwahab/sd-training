@@ -3183,7 +3183,7 @@ Command
 	
 :black_nib:  **Propagation Delay**
 	
-
+*Propagation delay is the **time required for the input to be propagated to the output.***
 
 
 
