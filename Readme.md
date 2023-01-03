@@ -3411,18 +3411,34 @@ Report timing through U15/Y
 :black_nib: **set_max_capacitance & set_max_transition**<br>
 * *To check if there is any high fanout net (HFN) or broken or is the design is buffered properly, so that there are no transition issues.*	
 		
+![image](https://user-images.githubusercontent.com/118953938/210400702-ea1ac6b5-7dc1-4938-b106-a8eebbe72597.png)
+
+### :mag_right: Timing Model: ETM and QTM
 		
+* *Timing models are used to **provide accurate timing for various instances of the cells present in the design**.* 
+* *The timing model normally obtained from detailed circuit simulation of the cell to model the actual scenario of the cell operation.*		
 		
+There are 2 types of timing model
+	
+	1) Extracted Timing Model (ETM)
+	2) Quick Timing Model (QTM)
 		
+:black_nib: **Extracted Timing Model (ETM)**
+
+	Block based model (.lib)
+	Contents of block are hidden
+	Original netlist replaced by model containing timing arcs for block interfaces
+	These arcs are a function of input transition and output load
+	Multiple modes per model
+	Single PVT per model
+	Used for implementation (not sign-off) of IP models
+	
+<img src="https://user-images.githubusercontent.com/118953938/210402744-31c07eac-27d7-46e8-b87c-5da1529a08b6.png" width=80% height=80%>
+
+[Source](http://www.pythonclub.org/vlsi/models/etm)
 		
+:black_nib: **Quick Timing Model (QTM)**		
 		
-		
-		
-		
-		
-		
-		
-		
-		
+If a block does not yet have a netlist throughout the design cycle, we may use a QTM to describe its initial time. To get more precise timing later in the cycle, we can swap out each QTM for a netlist block.		
 		
 		
