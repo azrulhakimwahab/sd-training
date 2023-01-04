@@ -3441,4 +3441,54 @@ There are 2 types of timing model
 		
 If a block does not yet have a netlist throughout the design cycle, we may use a QTM to describe its initial time. To get more precise timing later in the cycle, we can swap out each QTM for a netlist block.		
 		
-[The Source info]([http://www.pythonclub.org/vlsi/models/etm](http://mantravlsi.blogspot.com/2014/06/timing-models-etm-qtm-ilm.html)		
+[The Source info](http://www.pythonclub.org/vlsi/models/etm](http://mantravlsi.blogspot.com/2014/06/timing-models-etm-qtm-ilm.html)		
+
+# :book: Day 11- Introduction to the VSDBabySoC
+
+* It is a RISCV-based SoC (very small SoC)
+
+	***RISC-V** is an open-source standard instruction set architecture (ISA) that is managed by the non-profit RISC-V Foundation.* 
+	
+* The primary goal --> to calibrate the analogue portion of it and test three open-source IP cores together for the first time.
+
+### :mag_right: What is SoC and Why is SoC?
+
+:black_nib: **System on chip (SoC)**	
+
+A system on a chip, also known as an SoC, is essentially an integrated circuit or an IC that takes a single platform and integrates an entire electronic or computer system onto it.
+
+* **The components** :  *SoC generally looks to incorporate within itself include a central processing unit, input and output ports, internal memory, as well as analog input and output blocks*
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
