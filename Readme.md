@@ -3441,4 +3441,4 @@ There are 2 types of timing model
 		
 If a block does not yet have a netlist throughout the design cycle, we may use a QTM to describe its initial time. To get more precise timing later in the cycle, we can swap out each QTM for a netlist block.		
 		
-[The Source info](http://www.pythonclub.org/vlsi/models/etm)		
+[The Source info]([http://www.pythonclub.org/vlsi/models/etm](http://mantravlsi.blogspot.com/2014/06/timing-models-etm-qtm-ilm.html)		
