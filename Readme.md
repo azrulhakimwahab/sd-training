@@ -3435,10 +3435,10 @@ There are 2 types of timing model
 	
 <img src="https://user-images.githubusercontent.com/118953938/210402744-31c07eac-27d7-46e8-b87c-5da1529a08b6.png" width=80% height=80%>
 
-[Source](http://www.pythonclub.org/vlsi/models/etm)
+[The Source of the picture and info](http://www.pythonclub.org/vlsi/models/etm)
 		
 :black_nib: **Quick Timing Model (QTM)**		
 		
 If a block does not yet have a netlist throughout the design cycle, we may use a QTM to describe its initial time. To get more precise timing later in the cycle, we can swap out each QTM for a netlist block.		
 		
-		
+[The Source info](http://www.pythonclub.org/vlsi/models/etm)		
