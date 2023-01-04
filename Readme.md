@@ -3458,9 +3458,9 @@ If a block does not yet have a netlist throughout the design cycle, we may use a
 A system on a chip, also known as an SoC, is essentially an integrated circuit or an IC that takes a single platform and integrates an entire electronic or computer system onto it.
 
 * **The components** :  *SoC generally looks to incorporate within itself include a central processing unit, input and output ports, internal memory, as well as analog input and output blocks*
+* Depending on the kind of system that has been reduced to the size of a chip, it can perform a variety of functions including signal processing, wireless communication, artificial intelligence and more.
 
-
-
+:black_nib: **Why System on chip (SoC)?**
 
 
 
