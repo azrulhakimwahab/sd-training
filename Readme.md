@@ -3462,12 +3462,89 @@ A system on a chip, also known as an SoC, is essentially an integrated circuit o
 
 :black_nib: **Why System on chip (SoC)?**
 
+* SoC with equivalent functionality will have increased performance and reduced power consumption as well as a smaller semiconductor die area.
+* SoC can reduce energy waste, save up on spending costs, as well as reduce the space occupied by large systems.
+* Depending upon the requirement, it can also consists of a digital/analog signal processing system or a floating-point unit.
 
+Example
 
+<img src="https://user-images.githubusercontent.com/118953938/210487914-9f04193f-f1b6-4cda-ac30-c254ef8d5eb5.png" width=80% height=80%>
 
+Qualcomm Snapdragon 600 APQ8064T
+* A high-end SoC for mostly Android based smartphones and tablets
+* The chip includes four ARMv7 compatible Krait-300 cores that offer a slightly improved architecture compared to the Krait cores in the S4 processors (according to Anandtech)
 
+:black_nib: **Types of System on chip (SoC)**
 
+In general, there are three distinguishable types of SoCs:
 
+	1) SoCs built around a microcontroller,
+	2) SoCs built around a microprocessor, often found in mobile phones;
+	3) Specialized application-specific integrated circuit SoCs designed for specific applications that do not fit into the above two categories.
+
+:black_nib: **System on chip (SoC) Structure**
+
+* SoC consists of hardware functional units, including microprocessors that run software code, as well as communication subsystems to connect, control, direct and interface between these functional modules.
+* Functional components: processor cores, memory, interfaces, digital signal processor (DSP), others.
+* Intermodule communication**: bus-based communication, network on a chip.
+
+:black_nib: **System on chip (SoC) Design Flow**
+
+<img src="https://user-images.githubusercontent.com/118953938/210489732-fc8aebdd-192f-4066-ae01-ed5b0f0a2792.png" width=40% height=40%>
+
+### :mag_right: What is BabySoc?
+
+* BabySoc is a small yet powerful RISCV-based SoC.
+* The main purpose of designing such a small SoC is to test three open-source IP cores together for the first time and calibrate the analog part of it.
+* BabySoC contains one RVMYTH microprocessor, an 8x-PLL to generate a stable clock, and a 10-bit DAC to communicate with other analog devices.
+
+<img src="https://user-images.githubusercontent.com/118953938/210490739-2b7664d7-bee4-488e-9657-5fdda309cfca.png" width=60% height=60%>
+
+:black_nib: **How this chip were made?**
+
+A Closer Look at How Microchips Are Produced
+
+:black_nib: It Starts With Sand <br>
+The starting point for silicon wafers is a special kind of sand that’s specifically mined before it’s heated and purified to produce a perfect cylinder of silicon. Once these cylinders are formed, they’re slicked into thin wafers and are polished.
+
+:black_nib: Patterns Are Created<br>
+The desired patterns on silicon wafers are created by applying a photosensitive chemical and shining UV light through a stencil. The patterns are required to construct the transistor layout’s structure that was designed by engineers for an integrated circuit (IC).Since wafers are large in size, photolithography or the process of shining UV light through the stencil must be performed multiple times.
+
+:black_nib: Ions Bombard the Patterns<br>
+Next, a special solvent is used to dissolve the photosensitive chemical’s exposed areas in the wafers. To change the patterns’ physical or electrical properties, they’re left exposed on the silicon before being bombarded by charged atoms or ions through the process of implantation.
+
+[Source](https://www.waferworld.com/post/how-are-microchips-made)
+
+:black_nib: **Baby SoC components**
+
+**1) RVMYTH**
+* RVMYTH: RVMYTH core is a simple RISCV-based CPU, introduced in a workshop by RedwoodEDA and VSD.
+	* Reduced instruction set computer (RISC) - In computer engineering, a reduced instruction set computer is a computer designed to simplify the individual instructions given to the computer to accomplish tasks.
+
+**2) Phase-locked loop (PLL)**
+* Phase-locked loop (PLL): a control system that generates an output signal whose phase is related to the phase of an input signal. PLLs are widely used for synchronization purposes, including clock generation and distribution.
+
+* Clock generation
+	* The clocks supplied to these processors come from clock generator PLLs, which multiply a lower-frequency reference clock up to the operating frequency of the processor.
+
+* Clock distribution
+	* The reference clock enters the chip and drives a phase locked loop (PLL), which then drives the system's clock distribution. 
+	* The clock distribution is usually balanced so that the clock arrives at every endpoint simultaneously.
+	* One of those endpoints is the PLL's feedback input. 
+
+**3) Digital-to-analog converter (DAC)**
+* Digital-to-analog converter (DAC): a system that converts a digital signal into an analog signal. DACs are widely used in modern communication systems enabling the generation of digitally-defined transmission signals.
+
+<img src="https://user-images.githubusercontent.com/118953938/210492646-fad99e55-9927-413c-99af-ac3fbd836da0.png" width=60% height=60%>
+
+* A Digital to Analog Converter (DAC) consists of a number of binary inputs and a single output. 
+* In general, the number of binary inputs of a DAC will be a power of two.
+
+* Types of DACs
+	* There are two types of DACs
+
+		1) Weighted Resistor DAC
+		2) R-2R Ladder DAC
 
 
 
