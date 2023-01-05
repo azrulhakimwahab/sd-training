@@ -3518,6 +3518,10 @@ Next, a special solvent is used to dissolve the photosensitive chemical’s expo
 :black_nib: **Baby SoC components**
 
 **1) RVMYTH**
+* RISC stands for Reduced instruction set computer
+* RISC-V(pronounced “risk-five”) ISA is defined as a base integer ISA, which must be present in any implementation, plus optional extensions to the base ISA. 
+	* Each base integer instruction set is characterized by the width of the integer registers and the corresponding size of the address space and by the number of integer registers. 
+	* There are two primary base integer variants, RV32I and RV64I.
 * RVMYTH: RVMYTH core is a simple RISCV-based CPU, introduced in a workshop by RedwoodEDA and VSD.
 	* Reduced instruction set computer (RISC) - In computer engineering, a reduced instruction set computer is a computer designed to simplify the individual instructions given to the computer to accomplish tasks.
 * As we mentioned in What is RVMYTH section, RVMYTH is designed and created by the TL-Verilog language. 
@@ -3548,15 +3552,35 @@ Next, a special solvent is used to dissolve the photosensitive chemical’s expo
 		1) Weighted Resistor DAC
 		2) R-2R Ladder DAC
 
+# :book: Day 12 - BabySoC Modelling
 
+### :mag_right: What does modelling mean?(electronics terminology)
 
+* Modeling and simulation is the use of aphysical or logicalrepresentation of a given system to generatedata and help determine decisions or make predictions about the system.
+* Models are representations that can aid in defining, analyzing, and communicating a set of concepts.M&S is widely used in the VLSI domain.
+* Purpose of modelling :
+	* 1.System models are specifically developed to
+		* support analysis, specification
+		* design
+		* verification
+		* validation of a system,e.as well as to communicate certain information.
 
+### :mag_right: What are we modelling?
 
+:black_nib: **VSDBabySoC modelling**
 
+* Some initial input signals will be fed into vsdbabysoc module
+* That will get the pll start generating the proper CLK for the circuit
+* The clock signal will make the rvmyth to execute instructions and some values are generated, these values are used by DAC core to provide the final output signal named OUT
+* So we have 3 main elements (IP cores) and a wrapper as an SoC and of-course there would be also a testbench module out there.
 
+### :mag_right: IP cores
 
+There will be 3 IP cores that will be modelled:<br>
 
-
+	1. RVMYTH modelling
+	2. PLL modelling
+	3. DAC modelling 
 
 
 
