@@ -3582,14 +3582,31 @@ There will be 3 IP cores that will be modelled:<br>
 	2. PLL modelling
 	3. DAC modelling 
 
+### :test_tube:	Lab 1 - Modelling RVMYTH(RISC-V)
 
+**Commands**
 
+		Copy directory from git hub
+		1) git clone https://github.com/kunalg123/rvmyth/
+		
+		2) cd rvmyth
+		3) csh
+		4) vcs mythcore_test.v tb_mythcore_test.v
+		5) ./simv
+		6) dve -full64 & 
+		
+		To edit the file (fixing errors)
+		gvim mythcore_test.v -o tb_mythcore_test.v
 
+**Outputs**
 
+<img src="https://user-images.githubusercontent.com/118953938/210913833-32ac7b24-3b7b-403d-b72c-7aaf1dacdbaf.png" width=60% height=60%>
 
+<img src="https://user-images.githubusercontent.com/118953938/210914540-3a2155f6-1fd8-4904-aa76-d21dcf7a7272.png" width=60% height=60%>
 
+<img src="https://user-images.githubusercontent.com/118953938/210915068-107f89c3-c833-41d7-a5fe-58ce70e6a6c3.png" width=60% height=60%>
 
-
+<img src="https://user-images.githubusercontent.com/118953938/210915304-5b2e7b4d-7fd8-49d5-ac09-bed75ea72f92.png" width=80% height=80%>
 
 
 
