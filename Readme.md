@@ -3652,16 +3652,26 @@ There will be 3 IP cores that will be modelled:<br>
 
 ### :test_tube:	Lab 4 - Interface blocks together
 
+4.1) PLL
+
 **Commands**
 
 		1) csh
-		2) vcs -lca -debug_access+all mythcore_test.v tb_mythcore_test.v -sverilog
-		3) ../simv -gui &
+		2) vcs rvmyth_pll.v rvmyth_pll_tb.v  -sverilog
+		3) ./simv
+		4) dve -full64 & 
 				
 		To edit the file (fixing errors)
-		gvim mythcore_test.v -o tb_mythcore_test.v
+		gvim rvmyth_pll.v -o rvmyth_pll_tb.v 
 
 **Outputs**
+
+<img src="https://user-images.githubusercontent.com/118953938/210946583-d1360c0d-3e38-4e09-b96f-2909350bb9d0.png" width=60% height=60%>
+
+<img src="https://user-images.githubusercontent.com/118953938/210947037-3e02f45d-daef-41e9-9ef9-3c9d6258920b.png" width=60% height=60%>
+
+<img src="https://user-images.githubusercontent.com/118953938/210947345-79a3847f-60ad-42ea-a77c-f727d82d7f2d.png" width=80% height=80%>
+
 
 
 
