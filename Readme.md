@@ -3613,7 +3613,7 @@ There will be 3 IP cores that will be modelled:<br>
 **Commands**
 
 		1) csh
-		4) vcs avsddac.v avsddac_tb_test.v
+		4) vcs avsddac.v avsddac_tb_test.v -sverilog
 		5) ./simv
 		6) dve -full64 & 
 		
@@ -3628,13 +3628,40 @@ There will be 3 IP cores that will be modelled:<br>
 
 <img src="https://user-images.githubusercontent.com/118953938/210918552-0eb8a4e5-3dc2-4e03-9ae6-904c62792875.png" width=70% height=70%>
 
+<img src="https://user-images.githubusercontent.com/118953938/210919427-64e52d40-c3ef-4710-98cc-b967317cde4b.png" width=70% height=70%>
+
+<img src="https://user-images.githubusercontent.com/118953938/210944285-fa4b0ba3-24b0-4658-945b-6604fbc470e7.png" width=80% height=80%>
 
 
+### :test_tube:	Lab 3 - Simulating in interactive mode(debug mode)
 
+**Commands**
 
+		1) csh
+		2) vcs -lca -debug_access+all mythcore_test.v tb_mythcore_test.v -sverilog
+		3) ../simv -gui &
+				
+		To edit the file (fixing errors)
+		gvim mythcore_test.v -o tb_mythcore_test.v
 
+**Outputs**
 
+<img src="https://user-images.githubusercontent.com/118953938/210945190-a34252e9-5e64-4b64-928b-d2dd89551883.png" width=80% height=80%>
 
+![image](https://user-images.githubusercontent.com/118953938/210944922-110513a7-4add-49e6-872c-7c24d85b1cd3.png)
+
+### :test_tube:	Lab 4 - Interface blocks together
+
+**Commands**
+
+		1) csh
+		2) vcs -lca -debug_access+all mythcore_test.v tb_mythcore_test.v -sverilog
+		3) ../simv -gui &
+				
+		To edit the file (fixing errors)
+		gvim mythcore_test.v -o tb_mythcore_test.v
+
+**Outputs**
 
 
 
