@@ -3608,6 +3608,43 @@ There will be 3 IP cores that will be modelled:<br>
 
 <img src="https://user-images.githubusercontent.com/118953938/210915304-5b2e7b4d-7fd8-49d5-ac09-bed75ea72f92.png" width=80% height=80%>
 
+### :test_tube:	Lab 2 - Modelling DAC
+
+**Commands**
+
+		1) csh
+		4) vcs avsddac.v avsddac_tb_test.v
+		5) ./simv
+		6) dve -full64 & 
+		
+		To edit the file (fixing errors)
+		gvim avsddac.v -o avsddac_tb_test.v
+
+**Outputs**
+
+<img src="https://user-images.githubusercontent.com/118953938/210916319-1e3989b5-649c-4c4f-8b3f-f0a2db47478a.png" width=80% height=80%>
+
+<img src="https://user-images.githubusercontent.com/118953938/210918080-c95a7c24-02f7-45d3-8498-0436c7e97dd4.png" width=80% height=80%>
+
+<img src="https://user-images.githubusercontent.com/118953938/210918552-0eb8a4e5-3dc2-4e03-9ae6-904c62792875.png" width=70% height=70%>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
