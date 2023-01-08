@@ -3164,6 +3164,8 @@ Command
 <img src="https://user-images.githubusercontent.com/118953938/210282233-fab93a48-1296-43ca-aec6-88e6f43f73c6.png" width=65% height=65%>
 
 # :book: Day 10- Quality Checks - Quality of Results (QOR)
+<details><summary> Theories </summary>
+<p>
 
 ### :mag_right: Report Timing
 
@@ -3202,7 +3204,12 @@ For the NAND gate<br>
 :black_nib:  **Max_Paths and Nworst**
 
 <img src="https://user-images.githubusercontent.com/118953938/210307900-676c441c-26ae-4ae0-95eb-106822a8a82d.png" width=85% height=85%>
+</p>
+</details>
 
+<details><summary> Labs </summary>
+<p>
+	
 ### :test_tube:	Lab 1 - Lab Report timing
 
 1.1) Open (sh gvim lab8_circuit_modified.v)
@@ -3397,6 +3404,12 @@ Report timing through U15/Y
 
 <img src="https://user-images.githubusercontent.com/118953938/210397385-3a414338-84df-4440-9388-8057a06e4594.png" width=50% height=50%>
 
+</p>
+</details>
+
+<details><summary> Summary </summary>
+<p>
+	
 ### :mag_right: SUMMARY!!
 		
 :black_nib: **check_design**<br>
@@ -3443,8 +3456,13 @@ If a block does not yet have a netlist throughout the design cycle, we may use a
 		
 [The Source info](http://www.pythonclub.org/vlsi/models/etm](http://mantravlsi.blogspot.com/2014/06/timing-models-etm-qtm-ilm.html)		
 
-# :book: Day 11- Introduction to the VSDBabySoC
+</p>
+</details>
 
+# :book: Day 11- Introduction to the VSDBabySoC
+<details><summary> :mag_right: Theories </summary>
+<p>
+	
 * It is a RISCV-based SoC (very small SoC)
 
 	***RISC-V** is an open-source standard instruction set architecture (ISA) that is managed by the non-profit RISC-V Foundation.* 
@@ -3552,9 +3570,12 @@ Next, a special solvent is used to dissolve the photosensitive chemical’s expo
 		1) Weighted Resistor DAC
 		2) R-2R Ladder DAC
 
+</p>
+</details>
+
 # :book: Day 12 - BabySoC Modelling
 
-<details><summary> Theories </summary>
+<details><summary> :mag_right: Theories </summary>
 <p>
 	
 ### :mag_right: What does modelling mean?(electronics terminology)
@@ -3667,7 +3688,7 @@ There are two types of DACs :
 </p>
 </details>
 
-<details><summary> Labs </summary>
+<details><summary> :test_tube: Labs </summary>
 <p>
 	
 ### :test_tube:	Lab 1 - Modelling RVMYTH(RISC-V)
@@ -3926,11 +3947,23 @@ Synthesizable statements- The statement which directly can be used to generate t
 </details>
 
 
+<details><summary> Labs </summary>
+<p>
+	
+### :test_tube:	Lab 1 - Synthesize using DC	
+
+<details><summary> Reports </summary>
+<p>
+	
+	
+	
+</p>
+</details>
 
 
 
-
-
+</p>
+</details>
 
 
 
