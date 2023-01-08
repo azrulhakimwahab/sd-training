@@ -3759,9 +3759,14 @@ There are two types of DACs :
 
 <img src="https://user-images.githubusercontent.com/118953938/210948952-2baa76a5-9201-465c-95e8-1d8e4cc09e1d.png" width=80% height=80%>
 
+<img src="https://user-images.githubusercontent.com/118953938/211185424-82b1bb38-ad67-401f-9774-64d1a6684269.png" width=70% height=70%>
+
+<img src="https://user-images.githubusercontent.com/118953938/211185449-3e1d4fb4-d2ba-45d9-b9dc-1c06298650f0.png" width=70% height=70%>
+
+<img src="https://user-images.githubusercontent.com/118953938/211185482-bf60afb9-a3b9-44a8-9b3b-7c39b8968ae7.png" width=70% height=70%>
 
 
-
+### :test_tube:	Lab 5 - TASK: 
 
 
 
