@@ -3765,13 +3765,35 @@ There are two types of DACs :
 
 <img src="https://user-images.githubusercontent.com/118953938/211185482-bf60afb9-a3b9-44a8-9b3b-7c39b8968ae7.png" width=70% height=70%>
 
+### :test_tube:	Lab 5 - babySoC
 
-### :test_tube:	Lab 5 - TASK: 
-
-
-
+<img src="https://user-images.githubusercontent.com/118953938/211206466-a3e814e0-1dd5-48bf-bdbe-6a98eda6cb7a.png" width=70% height=70%>
 
 
+### :test_tube:	Lab 6 - TASK: 
 
+6.1) Modes in interactive mode
+
+<img src="https://user-images.githubusercontent.com/118953938/211207103-aa522ca9-ac61-42fb-8259-9ee9fed9731a.png" width=90% height=90%>
+
+[SOURCE](https://picture.iczhiku.com/resource/eetop/WhKDeOKWsJfQibVv.pdf)
+
+6.2) 4-1 mux
+
+<img src="https://user-images.githubusercontent.com/118953938/211206226-9041ec2e-f8a1-411e-8407-55dbbf093a6e.png" width=80% height=80%>
+
+**Commands**
+
+		1) csh
+		2) vcs 4-1mux.v tb_4-1mux.v_TB.v -sverilog
+		3) ./simv
+		4) dve -full64 & 
+				
+		To edit the file (fixing errors)
+		gvim 4-1mux.v -o tb_4-1mux.v
+
+**Outputs**
+
+<img src="https://user-images.githubusercontent.com/118953938/211206374-0394aff7-24fb-4f0a-8359-a93282a998d9.png" width=70% height=70%>
 
 
