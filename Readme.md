@@ -3554,10 +3554,14 @@ Next, a special solvent is used to dissolve the photosensitive chemical’s expo
 
 # :book: Day 12 - BabySoC Modelling
 
+<details><summary> Theories </summary>
+<p>
+	
 ### :mag_right: What does modelling mean?(electronics terminology)
 
 <details><summary> Explainations </summary>
 <p>
+	
 * Modeling and simulation is the use of aphysical or logicalrepresentation of a given system to generatedata and help determine decisions or make predictions about the system.
 * Models are representations that can aid in defining, analyzing, and communicating a set of concepts.M&S is widely used in the VLSI domain.
 * Purpose of modelling :
@@ -3573,6 +3577,7 @@ Next, a special solvent is used to dissolve the photosensitive chemical’s expo
 
 <details><summary> Explainations </summary>
 <p>
+	
 :black_nib: **VSDBabySoC modelling**
 
 * Some initial input signals will be fed into vsdbabysoc module
@@ -3659,11 +3664,17 @@ There are two types of DACs :
 [SOURCE](https://www.google.com/url?sa=i&url=https%3A%2F%2Fmicrocontrollerslab.com%2Fr-2r-ladder-dac-digital-to-analog-converter-working-examples-circuits%2F&psig=AOvVaw3Qqtev3EooD_m6qRj2f0Fm&ust=1673249337134000&source=images&cd=vfe&ved=0CA4QjhxqFwoTCMCzs9a5t_wCFQAAAAAdAAAAABAI)
 </p>
 </details>
+</p>
+</details>
 
+<details><summary> Labs </summary>
+<p>
+	
 ### :test_tube:	Lab 1 - Modelling RVMYTH(RISC-V)
 
 <details><summary> Reports </summary>
 <p>
+	
 **Commands**
 
 		Copy directory from git hub
@@ -3695,6 +3706,7 @@ There are two types of DACs :
 
 <details><summary> Reports </summary>
 <p>
+	
 **Commands**
 
 		1) csh
@@ -3724,6 +3736,7 @@ There are two types of DACs :
 
 <details><summary> Reports </summary>
 <p>
+	
 **Commands**
 
 		1) csh
@@ -3746,6 +3759,7 @@ There are two types of DACs :
 
 <details><summary> Reports </summary>
 <p>
+	
 4.1) PLL
 
 **Commands**
@@ -3795,6 +3809,7 @@ There are two types of DACs :
 
 <details><summary> Reports </summary>
 <p>
+	
 <img src="https://user-images.githubusercontent.com/118953938/211206466-a3e814e0-1dd5-48bf-bdbe-6a98eda6cb7a.png" width=70% height=70%>
 
 
@@ -3805,6 +3820,7 @@ There are two types of DACs :
 
 <details><summary> Reports </summary>
 <p>
+	
 6.1) Modes in interactive mode
 
 <img src="https://user-images.githubusercontent.com/118953938/211207103-aa522ca9-ac61-42fb-8259-9ee9fed9731a.png" width=90% height=90%>
@@ -3830,9 +3846,14 @@ There are two types of DACs :
 <img src="https://user-images.githubusercontent.com/118953938/211206374-0394aff7-24fb-4f0a-8359-a93282a998d9.png" width=70% height=70%>
 </p>
 </details>
+</p>
+</details>
 
 # :book: Day 13 - Post-synthesis simulation
 
+<details><summary> Theories </summary>
+<p>
+	
 ### :mag_right: synthesizable and non- synthesizable constructs
 
 <details><summary> Explainations </summary>
@@ -3867,6 +3888,7 @@ Synthesizable statements- The statement which directly can be used to generate t
 ### :mag_right: Why do pre-synthesis? Why not just do post-synthesis?
 <details><summary> Explainations </summary>
 <p>
+	
 :black_nib: ***Pre-synthesis simulation*** is done according to the logic you have designed for and written -> only functionality.
 
 * The main purpose of pre-synthesis simulation is to verify the logical functionality of your design, without worrying about the specific timing details of a particular implementation.
@@ -3885,6 +3907,7 @@ Synthesizable statements- The statement which directly can be used to generate t
 ### :mag_right: Gate Level Simulation (GLS) (Post synthesis simulation)
 <details><summary> Explainations </summary>
 <p>
+	
 :black_nib: **Introduction**
 
 * The term "gate level" refers to the netlist view of a circuit, usually produced by logic synthesis. 
@@ -3899,7 +3922,8 @@ Synthesizable statements- The statement which directly can be used to generate t
 
 </p>
 </details>
-
+</p>
+</details>
 
 
 
