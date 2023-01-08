@@ -3164,7 +3164,7 @@ Command
 <img src="https://user-images.githubusercontent.com/118953938/210282233-fab93a48-1296-43ca-aec6-88e6f43f73c6.png" width=65% height=65%>
 
 # :book: Day 10- Quality Checks - Quality of Results (QOR)
-<details><summary> Theories </summary>
+<details><summary> :mag_right: Theories </summary>
 <p>
 
 ### :mag_right: Report Timing
@@ -3207,7 +3207,7 @@ For the NAND gate<br>
 </p>
 </details>
 
-<details><summary> Labs </summary>
+<details><summary> :test_tube: Labs </summary>
 <p>
 	
 ### :test_tube:	Lab 1 - Lab Report timing
@@ -3407,7 +3407,7 @@ Report timing through U15/Y
 </p>
 </details>
 
-<details><summary> Summary </summary>
+<details><summary> :black_nib: Summary </summary>
 <p>
 	
 ### :mag_right: SUMMARY!!
@@ -3872,7 +3872,7 @@ There are two types of DACs :
 
 # :book: Day 13 - Post-synthesis simulation
 
-<details><summary> Theories </summary>
+<details><summary> :mag_right: Theories </summary>
 <p>
 	
 ### :mag_right: synthesizable and non- synthesizable constructs
@@ -3947,7 +3947,7 @@ Synthesizable statements- The statement which directly can be used to generate t
 </details>
 
 
-<details><summary> Labs </summary>
+<details><summary> :test_tube: Labs </summary>
 <p>
 	
 ### :test_tube:	Lab 1 - Synthesize using DC	
