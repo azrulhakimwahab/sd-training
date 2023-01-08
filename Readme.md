@@ -3581,6 +3581,77 @@ There will be 3 IP cores that will be modelled:<br>
 	1. RVMYTH modelling
 	2. PLL modelling
 	3. DAC modelling 
+	
+:black_nib: **RVMYTH - Risc-V based MYTH**
+
+* RISC stands for Reduced instruction set computer RISC-V(pronounced “risk-five”) 
+* ISA is defined as a base integer ISA, which must be present in any implementation, plus optional extensions to the base ISA. Each base integer instruction set is characterized by the width of the integer registers and the corresponding size of the address space and by the number of integer registers. 
+* There are two primary base integer variants, RV32I and RV64I
+
+<img src="https://user-images.githubusercontent.com/118953938/211184620-52e4bcf7-5a86-4fb4-8e9d-e353a0c5220a.png" width=60% height=60%>
+
+[SOURCE](https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.chegg.com%2Fhomework-help%2Fquestions-and-answers%2Fsingle-cycle-risc-v-cpu-pc31-20-instr-31-12-shift-left-1-aluop-branch-memread-control-unit-q41204815&psig=AOvVaw3jn7tf0Pnd4BnER6_OVKmY&ust=1673247973997000&source=images&cd=vfe&ved=0CA4QjhxqFwoTCJjmqc20t_wCFQAAAAAdAAAAABAD)
+
+RISC-V waterfall diagram and hazards
+
+<img src="https://user-images.githubusercontent.com/118953938/211184726-68a643c7-e29c-4d28-92aa-50d882781ea8.png" width=60% height=60%>
+
+[SOURCE](https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.vlsisystemdesign.com%2Frisc-v-waterfall-diagram-and-hazards%2F&psig=AOvVaw3b-JtMyP5AvinUpu9CC1Az&ust=1673248099652000&source=images&cd=vfe&ved=0CA4QjhxqFwoTCPiEiIm1t_wCFQAAAAAdAAAAABAg)
+
+:black_nib: **Phase Locked Loop**
+
+* A phase-locked loop (PLL) is an electronic circuit with a voltage or voltage-driven oscillator that constantlyadjusts to match the frequency of an input signal.
+* PLLs are used to generate, stabilize, modulate, demodulate etc
+
+Why off-chip clocks can’t be used all the time?
+* The clock will be a supplyfor a lot of blocks on the chip, it will have delays due to long wires(if used onlyone clock source) also reasons like clock jitter
+* Some blocks might need 200Mhzs and some might need 100Mhz point is differentfrequencies just onone small chip
+* A concept of ppm(clock accuracy) comes in, when ever quartz is acquired, it comes with a x ppm error
+
+How is a clock generated?<br>
+Ans: Quartz crystal oscillator
+
+Components
+* Phase detector
+* Loop filte
+* Voltage controlled oscillator
+* Frequency divider 
+
+<img src="https://user-images.githubusercontent.com/118953938/211184913-9d280749-2beb-4707-bbb1-9fb54bb08fe3.png" width=60% height=60%>
+
+[SOURCE](https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.analog.com%2Fen%2Fanalog-dialogue%2Farticles%2Fphase-locked-loop-pll-fundamentals.html&psig=AOvVaw2gRnFtO_9BzuuhZayqGYBT&ust=1673248611662000&source=images&cd=vfe&ved=0CA4QjhxqFwoTCMCKuv22t_wCFQAAAAAdAAAAABAD)
+
+Many FPGAs use a phase-locked loop (PLL) to increase the internal clock speed. The iCE40 on the IceStick allows you to run up to 275 MHz by setting the internal PLL with the onboard 12 MHz reference clock. However, you will often find the higher clock speed increases the chances of glitches in your design.
+
+:black_nib: **Digital-to-Analog Converter**
+
+* A Digital to Analog Converter (DAC) converts a digital input signal into an analog output signal
+* The digital signal is represented with a binary code, which is a combination of bits 0 and 1. A Digital to Analog Converter (DAC) consists of a number of binary inputs and a single output.
+
+**Principle**<br>
+Digital to analog conversions can be performed using resistor networks and the conversion to an analog signal is usually in the order of nanoseconds. Since the digital information is a step approximation of the input signal, the resulting output from a D to A converter reflects this step nature of the signal.
+
+There are two types of DACs :
+* Weighted Resistor DAC
+
+	* A weighted resistor DAC produces an analog output, which is almost equal to the digital (binary) input by using binary weighted resistors in the inverting adder circuit. 
+	* In short, a binary weighted resistor DAC is called as weighted resistor DAC.
+
+	<img src="https://user-images.githubusercontent.com/118953938/211185227-29cc8d22-2c0c-4b58-ba20-19272759abdc.png" width=60% height=60%>
+
+[SOURCE](https://www.google.com/url?sa=i&url=https%3A%2F%2Fmicrocontrollerslab.com%2Fbinary-weighted-resistor-dac-working-example-circuits-advantages%2F&psig=AOvVaw3FRSuZxttJipvh1U5KQNmT&ust=1673249168009000&source=images&cd=vfe&ved=0CA4QjhxqFwoTCMiSxIW5t_wCFQAAAAAdAAAAABAD)
+
+* R-2R Ladder DAC
+
+	* The ladder arrangement consists of two resistors i.e. a base resistor R and a 2R resistor which is twice the value of the base resistor. 
+	* This feature helps to maintain a precise output analog signal without using a wide range of resistor values. 
+	* A pair of R and 2R is used for one input bit.
+	* The chief benefit of the R-2R DAC is that the number of resistors required to realize the design is much fewer than the string DAC.
+
+	<img src="https://user-images.githubusercontent.com/118953938/211185317-56ec7063-983d-47ff-98f2-90addc593f57.png" width=60% height=60%>
+	
+[SOURCE](https://www.google.com/url?sa=i&url=https%3A%2F%2Fmicrocontrollerslab.com%2Fr-2r-ladder-dac-digital-to-analog-converter-working-examples-circuits%2F&psig=AOvVaw3Qqtev3EooD_m6qRj2f0Fm&ust=1673249337134000&source=images&cd=vfe&ved=0CA4QjhxqFwoTCMCzs9a5t_wCFQAAAAAdAAAAABAI)
+
 
 ### :test_tube:	Lab 1 - Modelling RVMYTH(RISC-V)
 
@@ -3672,8 +3743,21 @@ There will be 3 IP cores that will be modelled:<br>
 
 <img src="https://user-images.githubusercontent.com/118953938/210947345-79a3847f-60ad-42ea-a77c-f727d82d7f2d.png" width=80% height=80%>
 
+4.1) DAC and RVMYTH
 
+**Commands**
 
+		1) csh
+		2) vcs rvmyth_avsddac.v rvmyth_avsddac_TB.v -sverilog
+		3) ./simv
+		4) dve -full64 & 
+				
+		To edit the file (fixing errors)
+		gvim rvmyth_avsddac.v -o rvmyth_avsddac_TB.v  
+
+**Outputs**
+
+<img src="https://user-images.githubusercontent.com/118953938/210948952-2baa76a5-9201-465c-95e8-1d8e4cc09e1d.png" width=80% height=80%>
 
 
 
