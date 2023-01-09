@@ -3919,9 +3919,27 @@ There are two types of DACs :
 <details><summary> Reports </summary>
 <p>
 	
-<img src="https://user-images.githubusercontent.com/118953938/211206466-a3e814e0-1dd5-48bf-bdbe-6a98eda6cb7a.png" width=70% height=70%>
+**Commands**
+	
+		1) csh
+		2) vcs -sverilog vsdbabysoc.v testbench.v 
+		3) ./simv
+		4) dve  -full64 &
+	
+		Open file
+		1) gvim vsdbabysoc.v -o testbench.v 
+	
+**Outputs**
+	
+<img src="https://user-images.githubusercontent.com/118953938/211261877-ddbd630a-8d6b-44ec-9819-8412ac9cecf8.png" width=80% height=80%>
+	
+<img src="https://user-images.githubusercontent.com/118953938/211261990-f07e9f38-3d3e-40a1-8c1b-79331a496078.png" width=80% height=80%>
 
+<img src="https://user-images.githubusercontent.com/118953938/211262186-d182453a-e37b-4259-86eb-b66313d9e609.png" width=70% height=70%>
 
+<img src="https://user-images.githubusercontent.com/118953938/211262413-8ec3fb74-95dd-44e2-8995-74f10062c006.png" width=80% height=80%>
+
+	
 </p>
 </details>
 
