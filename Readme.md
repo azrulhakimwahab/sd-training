@@ -4066,10 +4066,34 @@ Synthesizable statements- The statement which directly can be used to generate t
 <details><summary> :test_tube: Labs </summary>
 <p>
 	
-### :test_tube:	Lab 1 - Synthesize using DC	
+### :test_tube:	Lab 1 - File conversion (convert .lib to .dc)	
 
 <details><summary> Reports </summary>
 <p>
+
+1.1) Invoking lc_shell
+	
+**Commands**
+	
+		Cheetah environment
+		1) mkdir /nfs/site/disks/zsc11_mip_xmphy_0021/users/wahabm
+		2) Git clone https://github.com/manili/VSDBabySoC/tree/main/src/lib
+		3)  set block = ddrphy
+		4) setenv block ddrphy
+		5) source /nfs/site/disks/zsc11_mip_xmphy_0002/proj_root_ulc/setup/setup_pv.csh $block
+		6) /p/hdk/bin/cth_psetup -proj ip/2209sp3 -cfg IP78P3H180O12_22WW47 -cfg_ov /nfs/site/disks/ipg_da_00001/da/cth_overrides/sde_2209sp3_converged.cth -ward $PWD -verbose -x '$SETUP_R2G -force'
+	
+		Invoking lc_shell
+		1) lc_shell
+
+**Outputs**
+	
+<img src="https://user-images.githubusercontent.com/118953938/211344568-1731b876-b948-4354-bc70-ec89aa8860aa.png" width=90% height=90%>
+
+1.2) File conversion
+	
+	
+	
 	
 	
 	
