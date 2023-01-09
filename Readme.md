@@ -52,7 +52,6 @@ Synthesis is a process of converting RTL (synthesizable Verilog code) into a tec
 2) Static Timing Analysis
 </p>
 </details>
-################################################################################################
 
 <details><summary> Labs </summary>
 <p>
@@ -64,10 +63,14 @@ Synthesis is a process of converting RTL (synthesizable Verilog code) into a tec
 <img src="https://user-images.githubusercontent.com/118953938/205214388-1e25012b-6851-47a6-9b7c-437779e538ab.png" width=50% height=50%>
 
 Successfully executed!
-
+</p>
+</details>
 
 # :book: Day 1-Introduction to Verilog RTL design and Synthesis
 
+<details><summary> Theories </summary>
+<p>
+	
 ## Quick theory recap
 
 **1) RTL (Register−Transfer Level)**- A design abstraction which models a synchronous digital circuit in terms of the flow of digital signals between hardware registers, and the logical operations performed on those signals<br />
@@ -81,10 +84,12 @@ Successfully executed!
 
 <img src="https://user-images.githubusercontent.com/118953938/205651867-5bfd9786-fe3b-493a-8d9d-5f835ea4c9db.png" width=50% height=50%>
 
-##########################################################################################################
 </p>
 </details>
 
+<details><summary> Labs </summary>
+<p>
+	
 ## Lab Work
 ### Lab 1- Introduction to Lab
 1.1) Copying directory from source <br />
@@ -178,12 +183,16 @@ Conversion from the synthesis to logic circuit can be done by reading the diagra
 
 **3.8) (simplified) write_verilog -noattr good_mux_netlist.v and !vim good_mux_netlist.v <br />**
 <img src="https://user-images.githubusercontent.com/118953938/205591648-9d3c6e7b-114c-45bb-843b-4a0a11c3d41b.png" width=50% height=50%>
-
+</p>
+</details>
 
 # :book: Day 2- Timing libs(QTMs/ETMs), hierarchical vs flat synthesis and efficient flop coding styles
 
 **Note/: Theory was put between the labs**
 
+<details><summary> Labs </summary>
+<p>
+	
 ### Lab Work
 ### Lab 4 -Introduction to timing .libs Part 1
 ‌
@@ -482,6 +491,9 @@ Example: 4-bit synchronous counter<br />
 **Output**
 
 ![image](https://user-images.githubusercontent.com/118953938/206256679-97b653f8-26b0-4d4b-8bde-2963a52edce9.png)
+
+</p>
+</details>
 
 # :book: Day 3 - Combinational and sequential optimizations
 
