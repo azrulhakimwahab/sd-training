@@ -1,18 +1,8 @@
 # :book: My Respository
 
-## Contents
+## :book: Day 0-System/Tool Setup Check. GitHub ID creation
 
-[DAY 0 System/Tool Setup Check. GitHub ID creation](https://github.com/azrulhakimwahab/sd-training/blob/main/Report.md#day-0)
-
-[DAY 1 Introduction to Verilog RTL design and Synthesis](https://github.com/azrulhakimwahab/sd-training/blob/main/Report.md#day-1)
-
-[DAY 2 Timing libs(QTMs/ETMs), hierarchical vs flat synthesis and efficient flop coding styles](https://github.com/azrulhakimwahab/sd-training/blob/main/Readme.md#day-2--timing-libsqtmsetms-hierarchical-vs-flat-synthesis-and-efficient-flop-coding-styles)
-
-[DAY 3 Combinational and sequential optimizations](https://github.com/azrulhakimwahab/sd-training/blob/main/Readme.md#book-day-3---combinational-and-sequential-optimizations)
-
-# :book: Day 0-System/Tool Setup Check. GitHub ID creation
-
-<details><summary> Theories </summary>
+<details><summary> :mag_right: Theories </summary>
 <p>
 	
 ## Theory Recap
@@ -53,7 +43,7 @@ Synthesis is a process of converting RTL (synthesizable Verilog code) into a tec
 </p>
 </details>
 
-<details><summary> Labs </summary>
+<details><summary> :test_tube: Labs </summary>
 <p>
 	
 ## Lab Work
@@ -66,9 +56,9 @@ Successfully executed!
 </p>
 </details>
 
-# :book: Day 1-Introduction to Verilog RTL design and Synthesis
+## :book: Day 1-Introduction to Verilog RTL design and Synthesis
 
-<details><summary> Theories </summary>
+<details><summary> :mag_right: Theories </summary>
 <p>
 	
 ## Quick theory recap
@@ -87,7 +77,7 @@ Successfully executed!
 </p>
 </details>
 
-<details><summary> Labs </summary>
+<details><summary> :test_tube: Labs </summary>
 <p>
 	
 ## Lab Work
@@ -186,11 +176,11 @@ Conversion from the synthesis to logic circuit can be done by reading the diagra
 </p>
 </details>
 
-# :book: Day 2- Timing libs(QTMs/ETMs), hierarchical vs flat synthesis and efficient flop coding styles
+## :book: Day 2- Timing libs(QTMs/ETMs), hierarchical vs flat synthesis and efficient flop coding styles
 
 **Note/: Theory was put between the labs**
 
-<details><summary> Labs </summary>
+<details><summary> :test_tube: Labs </summary>
 <p>
 	
 ### Lab Work
@@ -495,8 +485,11 @@ Example: 4-bit synchronous counter<br />
 </p>
 </details>
 
-# :book: Day 3 - Combinational and sequential optimizations
+## :book: Day 3 - Combinational and sequential optimizations
 
+<details><summary> :mag_right: Theories </summary>
+<p>
+	
 ### :mag_right: Combinational Logic Optimization
 is a process of finding an equivalent representation of the specified logic circuit under one or more specified constraints. This process is a part of a logic synthesis applied in digital electronics and integrated circuit design.<br />
 
@@ -541,9 +534,15 @@ optimization on a type of logic circuit whose output depends on the present valu
 
 
         * Sequential logic cloning will help to reduce the large routing delay from the design
+</p>
+</details>
 
+<details><summary> :test_tube: Labs </summary>
+<p>
+	
 ### :test_tube:	Lab 6- Combinational Logic Optimisations Part 1/2
 
+	
 **:mag_right: Multiplexer**- A multiplexer is a circuit used to select and route any one of the several input signals to a single output. A simple example of an non-electronic circuit of a multiplexer is a single pole multi-position switch. Multi-position switches are widely used in many electronics circuits. <br />
 * Multiplexers are part of computer systems to select data from a specific source, be it a memory chip or a hardware peripheral. A computer uses multiplexers to control the data and address buses, allowing the processor to select data from multiple data sources.  <br />
 
@@ -709,9 +708,15 @@ Open files (gvim dff_const1.v -o dff_const2.v)<br />
 <img src="https://user-images.githubusercontent.com/118953938/206828220-c98e737b-e9e3-42d9-9182-052a43be7e67.png" width=30% height=30%><br />
 
 ![image](https://user-images.githubusercontent.com/118953938/206829257-34beedea-58a5-493b-987c-42449a48a15b.png)
+</p>
+</details>
 
-# :book: Day 4 - GLS, Synthesis-Simulation mismatch and Blocking/Non-blocking statements
 
+## :book: Day 4 - GLS, Synthesis-Simulation mismatch and Blocking/Non-blocking statements
+
+<details><summary> :mag_right: Theories </summary>
+<p>
+	
 ### :mag_right: Gate Level Simulation (GLS)
 The term "gate level" refers to the netlist view of a circuit, usually produced by logic synthesis. 
 * As a process of running the testbench with netlist under Design Under Test (DUT)
@@ -764,7 +769,12 @@ Synth Sim Mismatch
 
 **3) Non Standard Verilog Coding**
 
+</p>
+</details>
 
+<details><summary> :test_tube: Labs </summary>
+<p>
+	
 ### :test_tube:	Lab 8- Labs on GLS and Synthesis-Simulation Mismatch Part 1/2
 
 8.1) ternary_operator_mux.v
@@ -857,9 +867,14 @@ Synth Sim Mismatch
 
 <img src="https://user-images.githubusercontent.com/118953938/207240419-373ed5c4-45b6-4ccb-89c8-3fe92c003b98.png" width=70% height=70%>
 
+</p>
+</details>
 
-# :book: Day 5 - Design For Testability
+## :book: Day 5 - Design For Testability
 
+<details><summary> :mag_right: Theories </summary>
+<p>
+	
 ### :mag_right: DFT definition
 
 * Design For Testability (or Design for Test, or DFT) refers to design techniques that make products easier to test.
@@ -965,9 +980,14 @@ Automatic test equipment (ATE) is any apparatus that uses automation to swiftly 
 3.Parallel Capture 
 4.First Scan-Out Phase
 5.Scan-Out Phase
+</p>
+</details>
 
-# :book: Day 6 - Introduction to Logic Synthesis
+## :book: Day 6 - Introduction to Logic Synthesis
 
+<details><summary> :mag_right: Theories </summary>
+<p>
+	
 ### :mag_right: Definition and details about Logic Synthesis
 
 **It is the process of transforming RTL to gate-level netlist. Synthesis process can be optimized for Speed(timing)/Area/Testability (DFT)/Power(DFP)/Run time. Inputs : RTL, Technology libraries, Constraints (Environment, clocks, IO delays etc.). Outputs : Netlist , SDC, Reports etc.**
@@ -1121,6 +1141,12 @@ A Synthesis tool targeted for ASIC design flow from Synopsys
 
 ![image](https://user-images.githubusercontent.com/118953938/208954251-3d2db13c-5b47-4562-ac92-3b516ac7540d.png)
 
+</p>
+</details>
+
+<details><summary> :test_tube: Labs </summary>
+<p>
+	
 ### :test_tube:	Lab 1- Invoking dc basic setup
 
 1.1) Invoking
@@ -1413,9 +1439,14 @@ Can also be printed in gvim
         source myscript.tcl
         
 <img src="https://user-images.githubusercontent.com/118953938/208968503-4b9e0807-c6d4-4b7e-aac3-6e07a756d62d.png" width=40% height=40%>
+</p>
+</details>
 
- # :book: Day 7-Basic SDC constraints
+ ## :book: Day 7-Basic SDC constraints
 
+<details><summary> :mag_right: Theories </summary>
+<p>
+	
 ### :mag_right: Introduction to Static Timing Analysis (STA)
 
 :black_nib: What is **Static Timing Analysis (STA)**? <br>
@@ -1531,6 +1562,12 @@ Always the timing paths start at one of the start points and ends at one of the 
 		-> IN 2 REG: constrained by input external delay, input transition and clock period
 		-> The IO paths needs to be constrained for both Max delay (setup) and Min delay (hold)
 
+</p>
+</details>
+
+<details><summary> :test_tube: Labs </summary>
+<p>
+	
 ### :test_tube:	Lab 5- Timing dot Libs
 
 5.1) opening '.lib' file
@@ -1690,9 +1727,15 @@ Getting selected attributes such as clock, area and capacitance value
 **Output**
 
 <img src="https://user-images.githubusercontent.com/118953938/209170520-8fb33463-6f33-4a9f-97fe-7b8adc60dfa1.png" width=80% height=80%>
+</p>
+</details>
 
-# :book: Day 8 - Advanced SDC Constraints
 
+## :book: Day 8 - Advanced SDC Constraints
+
+<details><summary> :mag_right: Theories </summary>
+<p>
+	
 ### :mag_right: Clock - Clock Tree Modelling - Uncertainty
 
 :black_nib: **Clock Tree**---> **clock distribution network** within a system or hardware design.
@@ -1832,9 +1875,15 @@ Output<br>
 		set_output_delay -min 0.5 -clock [get_clocks MY_CLK][get_ports Out_y];
 		set_output_load -max 80 [get_ports Out_y];
 		set_output_load -min 20 [get_ports Out_y];
+</p>
+</details>
 
+<details><summary> :test_tube:	Labs </summary>
+<p>
+	
 ### :test_tube:	Lab 8- Exploring dot Lib
 
+	
 8.1) Opening lab_8 circuit
 
 **Command**
@@ -2617,8 +2666,15 @@ There is mo path to OUT_Z yet
 
 <img src="https://user-images.githubusercontent.com/118953938/209573013-44b69fb7-a171-4419-80ee-17390ef520f9.png" width=60% height=60%>
 
-# :book: Day 9- Optimization in synthesi
+</p>
+</details>
 
+
+## :book: Day 9- Optimization in synthesi
+
+<details><summary> :mag_right: Theories </summary>
+<p>
+	
 ### :mag_right: Optimizations Combinational Opt
 
 :black_nib:  **Optimization goals**
@@ -2713,6 +2769,12 @@ Sequential constant
 	3) compile_register_replication 
 		Cloning registers
 
+</p>
+</details>
+
+<details><summary> :test_tube:	Lab </summary>
+<p>
+	
 ### :test_tube:	Lab 16 - part 1 Combinational_optimizations
 
 16.1) Optimization of opt_check.v
@@ -3184,8 +3246,12 @@ Command
 <img src="https://user-images.githubusercontent.com/118953938/210282215-5663ad20-8431-4050-ba31-bf8b46d6516b.png" width=65% height=65%>
 
 <img src="https://user-images.githubusercontent.com/118953938/210282233-fab93a48-1296-43ca-aec6-88e6f43f73c6.png" width=65% height=65%>
+</p>
+</details>
 
-# :book: Day 10- Quality Checks - Quality of Results (QOR)
+
+## :book: Day 10- Quality Checks - Quality of Results (QOR)
+	
 <details><summary> :mag_right: Theories </summary>
 <p>
 
@@ -3481,7 +3547,7 @@ If a block does not yet have a netlist throughout the design cycle, we may use a
 </p>
 </details>
 
-# :book: Day 11- Introduction to the VSDBabySoC
+## :book: Day 11- Introduction to the VSDBabySoC
 <details><summary> :mag_right: Theories </summary>
 <p>
 	
@@ -3595,7 +3661,7 @@ Next, a special solvent is used to dissolve the photosensitive chemical’s expo
 </p>
 </details>
 
-# :book: Day 12 - BabySoC Modelling
+## :book: Day 12 - BabySoC Modelling
 
 <details><summary> :mag_right: Theories </summary>
 <p>
@@ -3902,7 +3968,7 @@ Move both files to a new directory
 </p>
 </details>
 
-# :book: Day 13 - Post-synthesis simulation
+## :book: Day 13 - Post-synthesis simulation
 
 <details><summary> :mag_right: Theories </summary>
 <p>
