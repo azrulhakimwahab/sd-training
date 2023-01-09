@@ -11,6 +11,10 @@
 [DAY 3 Combinational and sequential optimizations](https://github.com/azrulhakimwahab/sd-training/blob/main/Readme.md#book-day-3---combinational-and-sequential-optimizations)
 
 # :book: Day 0-System/Tool Setup Check. GitHub ID creation
+
+<details><summary> Theories </summary>
+<p>
+	
 ## Theory Recap
 **IC Package**-Integrated circuits are put into protective packages to allow easy handling and assembly onto printed circuit boards and to protect the devices from damage.Exp:<br />
 <img src="https://user-images.githubusercontent.com/118953938/205218471-519b2b8c-384c-4015-b869-af05d6407829.png" width=30% height=30%>
@@ -46,9 +50,13 @@ Synthesis is a process of converting RTL (synthesizable Verilog code) into a tec
 ### Next Review
 1) Logic Synthesis
 2) Static Timing Analysis
-
+</p>
+</details>
 ################################################################################################
 
+<details><summary> Labs </summary>
+<p>
+	
 ## Lab Work
 
 ### Intel Unix System
@@ -74,6 +82,8 @@ Successfully executed!
 <img src="https://user-images.githubusercontent.com/118953938/205651867-5bfd9786-fe3b-493a-8d9d-5f835ea4c9db.png" width=50% height=50%>
 
 ##########################################################################################################
+</p>
+</details>
 
 ## Lab Work
 ### Lab 1- Introduction to Lab
@@ -3865,6 +3875,16 @@ There are two types of DACs :
 **Outputs**
 
 <img src="https://user-images.githubusercontent.com/118953938/211206374-0394aff7-24fb-4f0a-8359-a93282a998d9.png" width=70% height=70%>
+Move both files to a new directory
+	
+<img src="https://user-images.githubusercontent.com/118953938/211229590-880de289-9bdc-48bb-8c17-321d01e99928.png" width=70% height=70%>
+
+<img src="https://user-images.githubusercontent.com/118953938/211229689-ed4623db-4b74-4bae-aa3b-b8b5fdbac564.png" width=70% height=70%>
+	
+<img src="https://user-images.githubusercontent.com/118953938/211229779-5fceade5-3f7d-449c-8c54-7d6ad9508845.png" width=70% height=70%>
+	
+
+
 </p>
 </details>
 </p>
