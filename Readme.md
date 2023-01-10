@@ -4092,16 +4092,50 @@ Synthesizable statements- The statement which directly can be used to generate t
 
 1.2) File conversion
 	
+**Commands**
 	
+		in lc_shell
+		1) read_lib avsddac.lib
+		2) write_lib avsddac -format db -output avsddac.db
 	
+		Edit file .db
+		1) sh gvim avsddac.lib
+			
+**Outputs**
+	
+<img src="https://user-images.githubusercontent.com/118953938/211437182-b683d640-f826-4770-9456-237e376b709d.png" width=90% height=90%>
+
+<img src="https://user-images.githubusercontent.com/118953938/211437416-8aa44056-cb8c-4147-a500-c119307daaeb.png" width=70% height=70%>
+
+<img src="https://user-images.githubusercontent.com/118953938/211437651-038792f4-78a8-4ec1-90b6-dbd7320e0d9b.png" width=90% height=90%>
+
+</p>
+</details>
+
+### :test_tube:	Lab 2 - Synthsize using DC	
+
+<details><summary> Reports </summary>
+<p>
+
+**Commands**
+	
+		in dc_shell
+		1) set target_library {/nfs/png/home/wahabm/sky130RTLDesignAndSynthesisWorkshop/DC_WORKSHOP/lib/sky130_fd_sc_hd__tt_025C_1v80.db /nfs/png/home/wahabm/sky130RTLDesignAndSynthesisWorkshop/DC_WORKSHOP/lib/avsddac.db
+        }
+     		2) set link_library {* /nfs/png/home/wahabm/sky130RTLDesignAndSynthesisWorkshop/DC_WORKSHOP/lib/sky130_fd_sc_hd__tt_025C_1v80.db /nfs/png/home/wahabm/sky130RTLDesignAndSynthesisWorkshop/DC_WORKSHOP/lib/avsddac.db}
+     		3) read_verilog rvmyth_avsddac.v
+		4) write -f verilog -out avsddac_net.v 
+	
+		Edit the file
+     		1) sh gvim rvmyth_avsddac.v
+			
+**Outputs**
 	
 	
 	
 </p>
 </details>
-
-
-
+	
 </p>
 </details>
 
