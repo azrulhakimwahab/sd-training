@@ -4142,11 +4142,20 @@ Synthesizable statements- The statement which directly can be used to generate t
 </details>
 
 
+## :book: Day 14 - Synopsys DC and timing analysis
+
+<details><summary> :mag_right: Theories </summary>
+<p>
+
+</p>
+</details>
 
 
+<details><summary> :test_tube:	Labs </summary>
+<p>
 
-
-
+</p>
+</details>
 
 
 
