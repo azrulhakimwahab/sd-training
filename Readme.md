@@ -4120,8 +4120,8 @@ Synthesizable statements- The statement which directly can be used to generate t
 **Commands**
 	
 		in dc_shell
-		1) set target_library {/nfs/png/home/wahabm/sky130RTLDesignAndSynthesisWorkshop/DC_WORKSHOP/lib/sky130_fd_sc_hd__tt_025C_1v80.db /nfs/png/home/wahabm/sky130RTLDesignAndSynthesisWorkshop/DC_WORKSHOP/lib/avsddac.db
-        }
+		Set the target library
+		1) set target_library {/nfs/png/home/wahabm/sky130RTLDesignAndSynthesisWorkshop/DC_WORKSHOP/lib/sky130_fd_sc_hd__tt_025C_1v80.db /nfs/png/home/wahabm/sky130RTLDesignAndSynthesisWorkshop/DC_WORKSHOP/lib/avsddac.db}
      		2) set link_library {* /nfs/png/home/wahabm/sky130RTLDesignAndSynthesisWorkshop/DC_WORKSHOP/lib/sky130_fd_sc_hd__tt_025C_1v80.db /nfs/png/home/wahabm/sky130RTLDesignAndSynthesisWorkshop/DC_WORKSHOP/lib/avsddac.db}
      		3) read_verilog rvmyth_avsddac.v
 		4) write -f verilog -out avsddac_net.v 
@@ -4131,8 +4131,10 @@ Synthesizable statements- The statement which directly can be used to generate t
 			
 **Outputs**
 	
+<img src="https://user-images.githubusercontent.com/118953938/211440311-c78f7a13-0e2b-4ab7-95d6-33722e887651.png" width=80% height=80%>
 	
-	
+<img src="https://user-images.githubusercontent.com/118953938/211440704-4e3a08e1-46e4-423d-a5f8-b89e432edbb4.png" width=80% height=80%>
+
 </p>
 </details>
 	
