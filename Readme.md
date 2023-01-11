@@ -4121,11 +4121,13 @@ Synthesizable statements- The statement which directly can be used to generate t
 </p>
 </details>
 
-### :test_tube:	Lab 2 - Synthsize using DC	
+### :test_tube:	Lab 2 - Pre-synthesis using DC	
+
+2.1) Synthesize of rvmyth_avsddac.v
 
 <details><summary> Reports </summary>
 <p>
-
+	
 **Commands**
 	
 		in dc_shell
@@ -4137,6 +4139,9 @@ Synthesizable statements- The statement which directly can be used to generate t
 	
 		Edit the file
      		1) sh gvim rvmyth_avsddac.v
+	
+		Set as top module
+		read_file {rvmyth_avsddac.v avsddac.v mythcore_test.v clk_gate.v} -autoread -format verilog -top rvmyth_avsddac
 			
 **Outputs**
 	
@@ -4144,12 +4149,73 @@ Synthesizable statements- The statement which directly can be used to generate t
 	
 <img src="https://user-images.githubusercontent.com/118953938/211440704-4e3a08e1-46e4-423d-a5f8-b89e432edbb4.png" width=80% height=80%>
 
+<img src="https://user-images.githubusercontent.com/118953938/211866015-f13b065d-1091-4a1a-a386-faf040319870.png" width=80% height=80%>
+
+<img src="https://user-images.githubusercontent.com/118953938/211867466-0c1f0936-5578-47e9-878f-176702a12511.png" width=80% height=80%>
+	
+<img src="https://user-images.githubusercontent.com/118953938/211867877-1331522f-1d5e-4074-b45d-c74569b4e2b1.png" width=50% height=50%>
+
+2.1.1) Info check rvmyth_avsddac.v
+	
+**Commands**
+	
+		in dc_shell
+		1) report_constraint
+		2) check_design
+		3) report_timing
+		
+**Outputs**
+	
+![image](https://user-images.githubusercontent.com/118953938/211869935-2443b353-ccd6-4171-b45c-cf8d46ce3cc0.png)
+
 </p>
 </details>
 	
+2.2) Synthesize of rvmyth_pll.v
+
+<details><summary> Reports </summary>
+<p>
+	
+**Commands**
+	
+		in dc_shell
+		Set the target library
+		1) set target_library {/nfs/png/home/wahabm/sky130RTLDesignAndSynthesisWorkshop/DC_WORKSHOP/lib/sky130_fd_sc_hd__tt_025C_1v80.db /nfs/png/home/wahabm/sky130RTLDesignAndSynthesisWorkshop/DC_WORKSHOP/lib/avsdpll.db}
+     		2) set link_library {* /nfs/png/home/wahabm/sky130RTLDesignAndSynthesisWorkshop/DC_WORKSHOP/lib/sky130_fd_sc_hd__tt_025C_1v80.db /nfs/png/home/wahabm/sky130RTLDesignAndSynthesisWorkshop/DC_WORKSHOP/lib/avsdpll.db}
+     		3) read_verilog avsd_pll_1v8.v
+		4) write -f verilog -out rvmyth_avsdpll_net.v 
+	
+		Edit the file
+     		1) sh gvim avsd_pll_1v8.v
+	
+		Set as top module
+		read_file {avsd_pll_1v8.v mythcore_test.v clk_gate.v rvmyth_pll.v} -autoread -format verilog -top rvmyth_pll_interface
+			
+**Outputs**
+
+<img src="https://user-images.githubusercontent.com/118953938/211877215-b9138944-0c25-4c49-927a-9fae5a7396f6.png" width=80% height=80%>
+
+<img src="https://user-images.githubusercontent.com/118953938/211877660-3e9691cf-44d4-4ee9-958d-f14dc5230ca0.png" width=80% height=80%>
+
+<img src="https://user-images.githubusercontent.com/118953938/211877962-51fe2b26-bfb8-4432-b696-93bf79e248a1.png" width=80% height=80%>
+	
+2.1.1) Info check rvmyth_avsddac.v
+	
+**Commands**
+	
+		in dc_shell
+		1) report_constraint
+		2) check_design
+		3) report_timing
+		
+**Outputs**
+	
+![image](https://user-images.githubusercontent.com/118953938/211878249-73e242b2-4407-4230-9f6c-b424a93935c6.png)
+	
 </p>
 </details>
-
+</p>
+</details>
 
 ## :book: Day 14 - Synopsys DC and timing analysis
 
@@ -4202,6 +4268,21 @@ How is PVT data measured?<br>
 
 </p>
 </details>
+	
+### :mag_right: Timing Terminologies
+<details><summary> Explainations </summary>
+<p>
+
+:black_nib: **Worst Negative Slack (WNS)**
+* Negative slack means the design has not achieved the specified timings at the specified frequency. 
+* WNS is the worst timing violations that happened in the timing reports
+* Slack has to be positive always and negative slack indicates a violation in timing.
+	
+:black_nib: **Worst Negative Slack (WNS)**
+	
+	
+</p>
+</details>	
 </p>
 </details>
 
