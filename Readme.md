@@ -4059,9 +4059,18 @@ Synthesizable statements- The statement which directly can be used to generate t
 
 </p>
 </details>
+	
+### :mag_right: Timing Terminologies
+<details><summary> Explainations </summary>
+<p>
+	
+:black_nib: **Worst Negative Slack (WNS)**
+* 
+	
 </p>
 </details>
-
+</p>
+</details>
 
 <details><summary> :test_tube: Labs </summary>
 <p>
@@ -4147,9 +4156,54 @@ Synthesizable statements- The statement which directly can be used to generate t
 <details><summary> :mag_right: Theories </summary>
 <p>
 
+### :mag_right: Process,Voltage andTemperature (PVT)
+<details><summary> Explainations </summary>
+<p>
+
+* Process variations are caused by changes in manufacturing conditions such as temperature, pressure, and dopant concentrations. Deviations in the semiconductor fabrication process are accounted for by this variance.
+* Integrated circuits are designed in such away that they can function in a wide variety of temperatures and voltages,rather than a single temperature and voltage.
+
+:triangular_flag_on_post: Fun facts
+
+How is PVT data measured?<br>
+*Gammadot measures PvT behaviour using a high pressure indirect dilatometry system developed by Rapra Technology Ltd. The technique employs a stainless steel bellows test cell with Mercury as the containing fluid. Volume changes related to changes in temperature & pressure are monitored via a displacement transducer.*
+		
+:black_nib: **Process**
+	
+* Variations in the process parameters can be impurity concentration densities, oxide thicknesses and diffusion depths. 
+* These are caused bye non uniform conditions during depositions and/or during diffusions of the impurities. 
+* This introduces variations in the sheet resistance and transistor parameters such as threshold voltage. 
+* Variations are in the dimensions of the devices, mainly resulting from the limited resolution of the photolithographic process. This causes (W/L) variations in MOS transistors.
+
+<img src="https://user-images.githubusercontent.com/118953938/211741306-84024c07-c479-4e2b-893b-756bd0d6de36.png" width=30% height=30%>
+
+:black_nib: **Voltage**	
+	
+* As we are going to the lower nodes the supply voltage for a chip is also going to less. 
+* Let’s say the chip is operating at 1.2V. So, there are chances that at certain instances of time this voltage may vary. It can go to 1.5V or 0.8V. To take care of this scenario, we consider voltage variation.
+
+	* There are multiple reasons for voltage variation.
+		* IR drop is caused by the current flow over the power grid network. 
+		* Supply noise caused by parasitic inductance in combination with resistance and capacitance. when the current is flowing through parasitic inductance (L) it will causes the voltage bounce.
+	
+<img src="https://user-images.githubusercontent.com/118953938/211746572-dbc141d8-75e1-4399-a80d-4dcf54402000.png" width=30% height=30%>
+	
+:black_nib: **Temperature**
+	
+* Effects on performance caused by temperature fluctuations are most often handled as linear scaling effects, but some submicron silicon processes require nonlinear calculations.
+* This is due to the power dissipation in the MOS-transistors. 
+* The power consumption is mainly due to switching, short-circuit and leakage power consumption.
+	
+<img src="https://user-images.githubusercontent.com/118953938/211745176-3c4ee097-8f92-4ced-9e20-93457da5d717.png" width=30% height=30%><br>
+
+<img src="https://user-images.githubusercontent.com/118953938/211747176-47c8d9d6-3407-4b7d-8d50-22b340abf1e6.png" width=30% height=30%>
+	
+[SOURCE](https://www.idc-online.com/technical_references/pdfs/electrical_engineering/Process_Voltage_Temperature_PVT_Variations_and_Static_Timing_Analysis.pdf)	
+
 </p>
 </details>
-
+</p>
+</details>
 
 <details><summary> :test_tube:	Labs </summary>
 <p>
