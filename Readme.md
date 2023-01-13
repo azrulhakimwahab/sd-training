@@ -4370,17 +4370,57 @@ There are 3 parts of the design
 <details><summary> Explainations </summary>
 <p>
 
-	
-	
-	
-	
-	
+Open Source Digital ASIC Design
 
+![image](https://user-images.githubusercontent.com/118953938/212275017-ede9f6f3-ac2d-416e-8e8c-12c06f34fc60.png)
+	
+OpenLane 
+* is an automated RTL to GDSII flow based on several components including OpenROAD, Yosys, Magic, Netgen, CVC, SPEF-Extractor, KLayout and a number of custom scripts for design exploration and optimization. The flow performs all ASIC implementation steps from RTL all the way down to GDSII.	
+	
 </p>
 </details>
 
+:black_nib: **Simplified RTL2GDS flow**
 
+<details><summary> Explainations </summary>
+<p>
 
+<img src="https://user-images.githubusercontent.com/118953938/212336302-7a97e14c-4bc6-4193-b364-211b827cce06.png" width=80% height=80%>
+	
+:green_circle: Synthesis: 
+* Converts RTL design to a circuit out of the components from standard cell library(SCL).
+* Standard cells have regular layout. each cell has different views/models. For eg: Liberty View-This include power and delay models
+
+:green_circle: Floor and Power Planning: 
+* Plan the silicon area and robust power distribution to power the circuits. 
+* Chip Floor Planning: Partition the chip die between different system building blocks and place the I\O Pads. 
+* Macro-Floor Planning:Dimensions, pin-locations,rows and routing tracks are defined. 
+* Power network is constucted where chip is power by multiple Vdd and Groung Pins.
+* These pins ar connected to components through vertical and horizontal metal straps.These use upper metal layers which are wider and have lower resistance
+
+:green_circle: Placement: 
+* Place the cells on the floor plan rows, aligned with the sites.
+* Closer cells should be placed adjacent to reduce interconnect delay 
+	* There are 2 types of placement: 
+		* Global Placement- Find optimal posiiton for all cellsand these are not legal so cells may overlap. 
+		* Detailed Placement-The detials obtained from Global Placement are minimally altered
+
+:green_circle: Clock Tree Synthesis: 
+* Clock Tree Synthesis (CTS) is the technique of balancing the clock delay to all clock inputs by inserting buffers/inverters along the clock routes of an ASIC design
+* To deliver clock to all sequential circuis (eg;FFs) -With minimum skew-Can be ensured by H-Tree or X-tree
+
+:green_circle: Routing:
+* Implement interconnect using metal layers.
+* This requires to enquire a valid horizontal and vertical patterns to implement the nets. 
+* PDK defies the thickess, pitch, width of the metal layer and also the vias required to connect different metal layers.
+	
+:green_circle: Sign Off:
+* Sign off is a process of logical and physical verification of the chip.
+* Physical Verifications
+	* Design Rules Checking (DRC)
+	* Layout vs. Schematic
+* Timing Verification
+	* Static Timing Analysis
 
 </p>
 </details>
@@ -4388,7 +4428,8 @@ There are 3 parts of the design
 	
 	
 	
-	
+</p>
+</details>	
 	
 	
 	
