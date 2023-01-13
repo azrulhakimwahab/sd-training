@@ -4199,7 +4199,7 @@ Synthesizable statements- The statement which directly can be used to generate t
 
 <img src="https://user-images.githubusercontent.com/118953938/211877962-51fe2b26-bfb8-4432-b696-93bf79e248a1.png" width=80% height=80%>
 	
-2.1.1) Info check rvmyth_avsddac.v
+2.1.1) Info check rvmyth_avsdpll.v
 	
 **Commands**
 	
@@ -4289,8 +4289,123 @@ How is PVT data measured?<br>
 <details><summary> :test_tube:	Labs </summary>
 <p>
 
+	
+
+</p>
+</details>
+
+## :book: Day 15 - Inception of open-source EDA, OpenLANE and Sky130 PDK
+
+<details><summary> :mag_right: Theories </summary>
+<p>
+
+### :mag_right: SKY130_D1_SK1 - How to talk to computers
+
+:black_nib: **Introduction to QFN-48 Package, chip, pads, core, die and IPs**
+
+<details><summary> Explainations </summary>
+<p>
+
+Understanding chips and terminilogies
+	
+<img src="https://user-images.githubusercontent.com/118953938/212225635-92f919b2-a523-4288-815a-e58f1d837fba.png" width=80% height=80%>
+
+A microcontroller board based on the ATmega32U4 and comes with 23 digital input/output pins. It is developed by Arduino.cc, aiming to provide easy to use interface with the ability to perform a number of functions on a single chip. 
+
+<img src="https://user-images.githubusercontent.com/118953938/212234321-d3aabbb6-8983-4ac7-bba4-cfaf53b3ef22.png" width=80% height=80%>
+	
+For more infomation, can go through REPO day-0. Link as below:
+	
+https://github.com/azrulhakimwahab/sd-training/edit/main/Readme.md#book-day-0-systemtool-setup-check-github-id-creation
+
+
+</p>
+</details>
+
+:black_nib: **Introduction to RISC-V**
+
+<details><summary> Explainations </summary>
+<p>
+
+What is RISC-V(Five)?
+	
+* RISC-V (“risk-five”) is an instruction set architecture (ISA) rooted in reduced instruction set computer (RISC) principles. 
+* RISC-V is unique, even revolutionary, because it is a common, free, open-source ISA to which software can be ported, hardware can be developed, and processors can be built to support it.
+* Open-source nature of RISC-V is crucial because it allows smaller developers and manufacturers to design and build hardware without the cost of licensing proprietary ISAs and paying royalties. As a result, companies of all sizes can innovate and create, putting the best products on the market for the advancement of the industry and benefit of the consumer.
+	
+<img src="https://user-images.githubusercontent.com/118953938/212253748-bd16166f-8524-4f03-8ec1-d6723e501cbd.png" width=80% height=80%>	
+	
+</p>
+</details>
+
+:black_nib: **From Software Applications to Hardware**
+
+<details><summary> Explainations </summary>
+<p>
+
+![image](https://user-images.githubusercontent.com/118953938/212256478-3aeaa2a3-c237-46a7-bb77-c2d6686e7692.png)
+
+![image](https://user-images.githubusercontent.com/118953938/212259976-4b80a87e-95ae-47b4-8e0a-1e43916a6430.png)
+
+:green_circle: **Operating system (OS)** is system software that manages computer hardware, software resources, and provides common services for computer programs.	
+
+:green_circle: **Instruction Set Architecture (ISA)** is part of the abstract model of a computer that defines how the CPU is controlled by the software. The ISA acts as an interface between the hardware and the software, specifying both what the processor is capable of doing as well as how it gets done.
+	
+Fun fact<br>
+:green_circle: How does software get into hardware?<br>
+*Software is stored in the hardware as magnetic domains on the hard drive or floppy disc, or as low and high voltages in computer chips. When you type on a keyboard, each character is converted into an electrical series of 0's and 1's which are then stored as low and high voltages in the computer chips called RAM.*
+
+There are 3 parts of the design 
+	
+	Part 1 : RISC-V Instruction Set Architecture
+	Part 2 : RTL and Synthesis of RISC-V based CPU core -pcorv32
+	Part 3 : Physical Design Implimentation of pcorv32
+</p>
+</details>
+
+### :mag_right: SKY130_D1_SK2 - SoC design and OpenLANE
+
+:black_nib: **Introduction to all components of open-source digital asic design**
+
+<details><summary> Explainations </summary>
+<p>
+
+	
+	
+	
+	
+	
+
 </p>
 </details>
 
 
+
+
+</p>
+</details>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 
