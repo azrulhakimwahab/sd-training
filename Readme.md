@@ -4426,16 +4426,55 @@ OpenLane
 </details>
 	
 	
+:black_nib: **Introduction to OpenLANE and Strive chipsets**
+
+<details><summary> Explainations </summary>
+<p>
+
+**OpenLANE**<br>
+*OpenLane is an open-source VLSI flow built around open-source tools. That is, it's a collection of scripts that run these tools, in the right order, transforming their inputs and outputs as appropriate, and organising the results (like Berkeley's own HAMMER.)*
+* Started as an Open-Source Flow for a True Open Source Tape-out Experiment 
+* A family of SOCs called striVe (Open PDK, Open EDA, Open RTL)
+
+<img src="https://user-images.githubusercontent.com/118953938/212344661-3b7097eb-97be-48a6-8300-af8fb3271f3a.png" width=50% height=50%>
+
+The Main Goal of the OpenLANE are:
+* Produce a clean GDSII with no human intervention (no-human-in-the-loop)
+	* What does 'Clean' means:
+		* no LVS violations
+		* no DRC violations
+		* no Timing Violations
+
+Other Informations:
+* Tuned/Used for SkyWater130nm Open PDK and also, supports XFAB180 and GF130G
+* Containerized
+	* Means functional out of the box
+	* Instructions to build and run natively will follow
+* Can be used to harden (generate GDSII on the final layout) Macros and Chips
+	* 2 modes of operations:
+		* Autonomous = push button flow (figure the flow, time based on the design side and back to the GDS tool)
+		* Interactive = run commands and steps one by one (can do experimentation and check results)
+* Design Space Exploration:
+	* Find the best set of flow configurations
+* Large number of design examples
+	* 43 designs with their best configurations
+	* More designs will be added soon	
+		
+</p>
+</details>	
+	
+:black_nib: **Introduction to OpenLANE detailed ASIC design flow**
+
+<details><summary> Explainations </summary>
+<p>	
+	
+<img src="https://user-images.githubusercontent.com/118953938/212360183-528e067e-69fd-42c0-a279-361b679da3fa.png" width=80% height=80%>
 	
 	
 </p>
 </details>	
-	
-	
-	
-	
-	
-	
+</p>
+</details>		
 	
 	
 	
