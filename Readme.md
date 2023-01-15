@@ -4467,21 +4467,232 @@ Other Informations:
 
 <details><summary> Explainations </summary>
 <p>	
+
+The flow, depicted below, consists of several highly customizable stages. In the initial stage the RTL source files written in an HDL (Hardware Description Language) are synthesized, technology mapped and analyzed in terms of timing. In the following step the floorplan and power distribution network are prepared for the design placement. Once finished, the design and clock placement is performed followed by global routing. With the physical layout ready in the form of a DEF (Design Exchange Format) file, it’s possible to perform several DRC checks, including Antenna Net or LVS (Layout vs. Schematic), to eventually generate the final GDSII layout file which contains a complete layout description that is now ready to be sent to the foundry.
 	
 <img src="https://user-images.githubusercontent.com/118953938/212360183-528e067e-69fd-42c0-a279-361b679da3fa.png" width=80% height=80%>
 	
+1) Synthesis exploration
+* Synthesis exploration utility is used to generate report that shows the design delay and area.
+
+2) DFT 
+DFT will do these synthesis
+* Scan Insertion-to increase the overall testability of a circuit.
+* Automatic Test Pattern Generation (ATPG)-Scan facilitates the pattern-generating process for detecting the previously described defects.
+* Fault Coverage-percentage of some type of fault that can be detected during the test of any engineered system. 
+* Fault Simulation-evaluates how a digital circuit will behave in the presence of manufacturing defects.
+
+<img src="https://user-images.githubusercontent.com/118953938/212448524-0cdf4f21-b976-4166-b26f-b252a4fd4c34.png" width=50% height=50%>
+
+3) Physical implementation (Place and Route)
+
+Using OpenRoad open source to perform the implementation. It will involves these steps:
+
+	1) Floor/Power Planning
+	2) End Decoupling Capacitors and Tap cells insertion
+	3) Placement: Global and Detailed
+	4) Post placement optimization
+	5) Clock Tree Synthesis (CTS)- > Post Placement optimization modifies the netlist
+	6) Routing: Global and Detailed
 	
+
+4) Logic Equivalent Check (LEC) 
+
+* Logic equivalence checking (LEC) looks at the combinatorial structure of the design to determine if the structure of two alternative implementations will exhibit the same behavior. 
+* If operations such as retiming are applied to a design, the structure of the design will no long map between the two representations.
+* is used to formally confirm that the function did not change after modifying the netlist.
+* Yosys is used as the Open source application.
+
+5) Dealing with Antenna Rules Violations
+
+* Antenna Diodes Insertion is the name of a particular action used during physical implementation. 
+* This step is required for antenna worst violations. 
+* When a long enough length of metal wire is created, it can function as an antenna.
+
+	* **Diode Insertion**: *Diode helps dissipate charges accumulated on metal. Diode should be placed as near as possible to the gate of device on low level of metal.*
+	
+Reactive ion etching causes charge to accumulate on the wire
+Transistor gates can be damaged during fabrication
+Solutions
+
+Bridging attaches a higher layer intermediary (Requires router awareness)
+Add antenna diode cell to leak away charges (Antenna diodes are provided by SCL)
+	
+How do you fix antenna violations in physical design?
+* Techniques to fix the antenna violations as follows:
+	* Routing on Higher Metal Layer: Long metal can be taken to higher metal routing layer. This is known as metal jumping. ...
+	* Reduce the via-area: Large via area also results in process antenna violation. ...
+	* Diode Insertion: Diode helps dissipate charges accumulated on metal.
 </p>
 </details>	
 </p>
+</details>	
+
+<details><summary> :test_tube: Labs </summary>
+<p>
+	
+### :test_tube:	Lab 1 - Pre-synthesis using DC	
+
+1.1) Opening directories and checking files
+
+<details><summary> Reports </summary>
+<p>
+
+**Commands**
+	
+		1) cd <filename>
+		2) ls <filename> or
+		3) ls -ltr
+	
+**Outputs**
+	
+<img src="https://user-images.githubusercontent.com/118953938/212522889-1b527474-30dc-4d16-a9b1-3f61c2ec4dee.png" width=70% height=70%>
+
+<img src="https://user-images.githubusercontent.com/118953938/212523400-871bfd04-4439-430d-860c-4e18a7f290a0.png" width=70% height=70%>
+	
+<img src="https://user-images.githubusercontent.com/118953938/212523487-6b6d263a-ba48-431f-b4f9-3f0ca572e49f.png" width=70% height=70%>
+
+<img src="https://user-images.githubusercontent.com/118953938/212523529-14f2dda2-aed8-46a8-89f2-583b61213cff.png" width=70% height=70%>
+	
+<img src="https://user-images.githubusercontent.com/118953938/212523567-023e1038-2048-46ed-ad4a-e9dc71dc3fb9.png" width=70% height=70%>
+
+<img src="https://user-images.githubusercontent.com/118953938/212523785-d23c4494-0d65-44c6-9c08-68b16556605d.png" width=70% height=70%>
+
+	
+</p>
 </details>		
 	
+### :test_tube:	Lab 2 - Design Preparation Step	
+
+2.1) Invoking openlane
+
+<details><summary> Reports </summary>
+<p>
 	
+**Commands**
+
+<img src="https://user-images.githubusercontent.com/118953938/212528648-9b0c0c6b-2cd4-436f-b039-ffb192657d8b.png" width=70% height=70%>
+
+SOURCE- https://github.com/nickson-jose/openlane_build_script
+
+		1) cd work/tools/openlane_working_dir/openlane
+		2) make mount
+		3) pwd
+		4) ls -ltr
+		5) ./flow.tcl -interactive
+		6) package require openlane 0.9
+		7) prep -design picorv32a
 	
+**Outputs**
 	
+![image](https://user-images.githubusercontent.com/118953938/212528209-96c943aa-4e44-451d-b455-ccf3d8172b4a.png)
+
+<img src="https://user-images.githubusercontent.com/118953938/212528225-8583418e-a2ab-410b-bb21-d4b74149ae70.png" width=70% height=70%>
+
+<img src="https://user-images.githubusercontent.com/118953938/212528238-2ca7fe9b-5eaf-4438-90f4-07cba09eb2e7.png" width=70% height=70%>
+
+</p>
+</details>
 	
+2.2) Priority files
+
+<details><summary> Reports </summary>
+<p>
+
+**Commands**
 	
+		1) cd /Desktop/work/tools/openlane_working_dir/openlane/designs/picorv32a
+		2) ls
+		3) vim <filename>
 	
+**Outputs**
+	
+<img src="https://user-images.githubusercontent.com/118953938/212528388-d26786db-52e3-44f3-b0e7-717bdecbd792.png" width=70% height=70%>
+
+<img src="https://user-images.githubusercontent.com/118953938/212528417-c6e8ab31-c681-4082-b84f-d000a48b0ace.png" width=70% height=70%>
+
+<img src="https://user-images.githubusercontent.com/118953938/212528756-73bee193-31be-4f2d-81e8-e6f2b2192cf0.png" width=70% height=70%>
+
+<img src="https://user-images.githubusercontent.com/118953938/212528809-7126104a-a5bb-4985-bae4-4eaaf28a647e.png" width=70% height=70%>
+
+</p>
+</details>
+	
+### :test_tube:	Lab 3 - Review files after design prep and run synthesis
+	
+3.1) Rev files
+
+<details><summary> Reports </summary>
+<p>
+
+**Commands**
+	
+		1) cd /Desktop/work/tools/openlane_working_dir/openlane/designs/picorv32a/runs/13-01_14-09
+		2) ls
+		3) vim <filename>
+	
+**Outputs**
+	
+<img src="https://user-images.githubusercontent.com/118953938/212529419-84d800fb-9507-4e43-8cd9-b5b27149ad70.png" width=70% height=70%>
+	
+<img src="https://user-images.githubusercontent.com/118953938/212529585-957db0f8-994f-4e9d-9303-27b1d127487d.png" width=70% height=70%>
+
+<img src="https://user-images.githubusercontent.com/118953938/212529609-0b36a1ae-346a-4db8-bdd5-45118ee143dd.png" width=70% height=70%>
+
+<img src="https://user-images.githubusercontent.com/118953938/212529627-4967709a-2f82-462d-ba3e-29d48ac711d2.png" width=70% height=70%>
+	
+<img src="https://user-images.githubusercontent.com/118953938/212530047-e41d1005-7dcc-4479-a0ce-588ab1362407.png" width=70% height=70%>
+	
+</p>
+</details>	
+
+### :test_tube:	Lab 4 - OpenLANE Project Git Link Description
+	
+<details><summary> Reports </summary>
+<p>	
+	
+For more information, can refer the following link:
+https://github.com/efabless/OpenLane
+	
+**Content**
+	
+Command line arguments<br>
+https://github.com/efabless/OpenLane#command-line-arguments
+	
+OpenLane Architecture<br>
+https://github.com/efabless/OpenLane#openlane-architecture
+	
+<img src="https://user-images.githubusercontent.com/118953938/212541315-da4d3937-c7cb-4069-899c-44496210abb8.png" width=70% height=70%>
+<img src="https://user-images.githubusercontent.com/118953938/212541342-e65dff1b-a6d4-4da1-bba9-f9a4f45461f8.png" width=70% height=70%>
+<img src="https://user-images.githubusercontent.com/118953938/212541359-fd5930dc-1746-4dac-99d7-f2a3846c85b4.png" width=70% height=70%>
+
+Key opensource
+	
+<img src="https://user-images.githubusercontent.com/118953938/212541460-a6096b6b-b59a-4a50-a92b-b0d27811b7a8.png" width=70% height=70%>
+
+</p>
+</details>	
+
+### :test_tube:	Lab 5 - OpenLANE Project Git Link Description
+
+5.1) Finding flop ratio
+	
+<details><summary> Reports </summary>
+<p>	
+
+From already ran synthesis
+	
+<img src="https://user-images.githubusercontent.com/118953938/212531597-745d05d8-4ffe-4b7e-b2f4-244112372a32.png" width=80% height=80%>
+	
+<img src="https://user-images.githubusercontent.com/118953938/212541013-1900cad9-b295-4d3d-b18e-385852347989.png" width=80% height=80%>
+	
+<img src="https://user-images.githubusercontent.com/118953938/212541102-bd8ae998-edb2-4e30-8669-f44b6d160ed2.png" width=80% height=80%>
+
+</p>
+</details>	
+</p>
+</details>	
+		
 	
 	
 	
