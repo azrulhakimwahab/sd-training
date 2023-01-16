@@ -4693,10 +4693,16 @@ From already ran synthesis
 </p>
 </details>	
 		
+## :book: Day 15 - Good floorplan vs bad floorplan and introduction to library cells
+
+<details><summary> :mag_right: Theories </summary>
+<p>
+
+### :mag_right: SKY130_D2_SK1 - Chip Floor planning considerations	
 	
 	
 	
-	
-	
+</p>
+</details>	
 	
 
