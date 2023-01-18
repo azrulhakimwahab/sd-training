@@ -4698,11 +4698,67 @@ From already ran synthesis
 <details><summary> :mag_right: Theories </summary>
 <p>
 
-### :mag_right: SKY130_D2_SK1 - Chip Floor planning considerations	
+Floorplanning involves determining the locations, shape, size of modules in a chip and as such it estimates the chip area, delay and the wiring congestion, thereby providing a ground work for layout.
+	
+### :mag_right: Chip Floor planning considerations	
+
+:black_nib: **Utilization factor and aspect ratio**
+	
+<details><summary> Explainations </summary>
+<p>
+	
+<img src="https://user-images.githubusercontent.com/118953938/213098271-0d02f281-1b92-4045-81d8-e17f467ceac0.png" width=80% height=80%>
+	
+<img src="https://user-images.githubusercontent.com/118953938/213188526-b0f12ce3-af5f-450c-88bb-ea4ad5f2ecaa.png" width=80% height=80%>
+
+<img src="https://user-images.githubusercontent.com/118953938/213191891-abfbe533-803d-4f47-a497-1e331cda737f.png" width=80% height=80%>
+
+<img src="https://user-images.githubusercontent.com/118953938/213192156-34dcefaf-bf84-4d6a-8f15-4f6ceda19181.png" width=80% height=80%>
+
+<img src="https://user-images.githubusercontent.com/118953938/213194524-108256e2-957b-4afb-8529-74789cd17d87.png" width=80% height=80%>
+
+<img src="https://user-images.githubusercontent.com/118953938/213201947-7b3dc6ad-2bb8-404e-a2c3-80f7f32fa915.png" width=80% height=80%>
+	
+<img src="https://user-images.githubusercontent.com/118953938/213201348-58d57b6d-e734-48f2-a1a0-fafaba804f50.png" width=80% height=80%>
+
+
+</p>
+</details>	
+
+:black_nib: **Concept of pre-placed cells**	
+
+<details><summary> Explainations </summary>
+<p>
+	
+<img src="https://user-images.githubusercontent.com/118953938/213205957-ae1d54a4-c0d3-4143-9424-22f4ed70d035.png" width=80% height=80%>
+	
+<img src="https://user-images.githubusercontent.com/118953938/213210356-a5fc6d0b-8289-431f-86d1-d999a44c6375.png" width=80% height=80%>
+
+<img src="https://user-images.githubusercontent.com/118953938/213212402-f9a103f8-194c-41df-b09c-26578b64365b.png" width=80% height=80%>
+
+* Need to cut the block accordingly
+* 
+	
 	
 	
 	
 </p>
-</details>	
+</details>
+</p>
+</details>
 	
-
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
