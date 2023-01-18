@@ -4693,7 +4693,7 @@ From already ran synthesis
 </p>
 </details>	
 		
-## :book: Day 15 - Good floorplan vs bad floorplan and introduction to library cells
+## :book: Day 16 - Good floorplan vs bad floorplan and introduction to library cells
 
 <details><summary> :mag_right: Theories </summary>
 <p>
