@@ -4969,19 +4969,269 @@ Library	<br>
 <img src="https://user-images.githubusercontent.com/118953938/213405109-e518b833-b99a-4af8-a439-f6ce0b010a6b.png" width=80% height=80%>
 
 <img src="https://user-images.githubusercontent.com/118953938/213405643-737b694c-6456-4298-ac2d-3c91ba276c8e.png" width=80% height=80%>
-	
+
+<img src="https://user-images.githubusercontent.com/118953938/213477335-247180b2-01da-4a65-a7c3-07e1997c745c.png" width=80% height=80%>
+
+<img src="https://user-images.githubusercontent.com/118953938/213477398-f4a28fab-c9d5-4770-9a5c-0ab4b19257c2.png" width=80% height=80%>
+
+<img src="https://user-images.githubusercontent.com/118953938/213477466-50835244-5e73-4446-a254-8085d17e67c8.png" width=80% height=80%>
+
+<img src="https://user-images.githubusercontent.com/118953938/213477540-01f5c2ca-a9a1-406c-8569-23942a54e6c7.png" width=80% height=80%>
+
 </p>
 </details>	
 
-:black_nib: **Inputs for cell design flow**
+:black_nib: **Circuit Design Step**
 	
 <details><summary> Explainations </summary>
 <p>
 	
+<img src="https://user-images.githubusercontent.com/118953938/213473528-9c49d17c-3273-451d-ab2b-1bfaecf2a830.png" width=80% height=80%>
+	
+<img src="https://user-images.githubusercontent.com/118953938/213479466-d93b1726-4eac-44cf-a89f-83b93b105f6f.png" width=80% height=80%>
+
+<img src="https://user-images.githubusercontent.com/118953938/213479681-b3e1dd0a-f832-409c-8def-29da4389a1f2.png" width=80% height=80%>
+
+<img src="https://user-images.githubusercontent.com/118953938/213481005-f1e34d25-9e14-41b9-933a-ab85337cf0d0.png" width=30% height=30%>
+
+</p>
+</details>	
+	
+:black_nib: **Layout design step**
+	
+<details><summary> Explainations </summary>
+<p>	
+	
+<img src="https://user-images.githubusercontent.com/118953938/213482433-b1e48319-2a3c-4026-81f2-a060f22ba2a4.png" width=80% height=80%>
+	
+* Identify Euler's path when it is a single-trace path where the function carried by by a mos transistor (pmos and nmos)
+* Then draw a stick diagram. The generated stick diagram must next be transformed into an appropriate layout in accordance with the guidelines in the pdks and design characterization from earlier phases.
+* The tool, such as magic open source tool, will then be used to insert the finished layout design.
+* The design's output would be in the form of an extracted spice netlist, GDSII, and LEF. The last stage is characterising the design to determine its purpose, power.libs, and timing noise.
+	
+<img src="https://user-images.githubusercontent.com/118953938/213486209-e19634a8-5df5-48d8-8f5a-0ba76be58b0f.png" width=80% height=80%>
+<img src="https://user-images.githubusercontent.com/118953938/213486513-de4b3f5a-2fc2-4615-8d73-5a8fd403353b.png" width=80% height=80%>
+<img src="https://user-images.githubusercontent.com/118953938/213487664-5b224249-231d-42c0-86ac-0e62554846ea.png" width=80% height=80%>
+
+	
+</p>
+</details>	
+	
+:black_nib: **Typical characterization flow**
+	
+<details><summary> Explainations </summary>
+<p>	
+	
+<img src="https://user-images.githubusercontent.com/118953938/213491413-f6f521f3-1ad5-43b1-a38f-7b59358d21c2.png" width=80% height=80%>
+	
+1) Review the models and the tech file from the layout
+2) Review the extracted spice netlist
+3) Define or recognize the behaviour of the buffer
+4) Review the subcircuit of the inverter
+5) Attach the necessary power sources
+6) Apply the stimulus
+7) Provide the necessary the output load capacitance
+8) Provide the necessary simulation command	
+	
+<img src="https://user-images.githubusercontent.com/118953938/213492000-b95d1760-aa37-48b6-8eaa-46503f144d44.png" width=80% height=80%>
+
+<img src="https://user-images.githubusercontent.com/118953938/213492431-7f87930b-cb54-4292-89e9-53e5f278f9d9.png" width=80% height=80%>
+	
+<img src="https://user-images.githubusercontent.com/118953938/213492951-e88b64ed-1e01-417d-8a17-5cd66a142743.png" width=80% height=80%>
+		
+</p>
+</details>		
+	
+### :mag_right: General timing characterization parameters	
+
+:black_nib: **Timing threshold definitions**
+	
+<details><summary> Explainations </summary>
+<p>
+	
+**Timing Treshold**
+
+:pushpin: Slew Treshold
+	
+<img src="https://user-images.githubusercontent.com/118953938/213496343-e48ead8f-0381-478a-b914-24d804f10c01.png" width=80% height=80%>
+	
+<img src="https://user-images.githubusercontent.com/118953938/213496958-c1e9c13c-8786-4fa7-b115-f3ecb7fafdd9.png" width=80% height=80%>
+
+:paperclip: **Slew Low rise**: <br>
+* Describes the power supply's lowest condition (0V), which is nearer to zero. Usually, 20% of the bottom power supply is used. To compute the slew, however, we also need to know the slew high increase threshold.
+	
+:paperclip: **Slew High rise**: <br>
+* The normal figure is 20% or so from the top of the power supply. Take the temporal difference between the two variables to get the degree of slew.
+	
+:pushpin: In and Out Treshold	
+	
+<img src="https://user-images.githubusercontent.com/118953938/213499383-e30ede90-c7ea-47ae-acd4-53a3e444f693.png" width=80% height=80%>
+
+<img src="https://user-images.githubusercontent.com/118953938/213499962-5c4032e9-e605-45ba-961f-3ee66d69ae9f.png" width=80% height=80%>
+
+:paperclip: **In rise threshold**: <br>
+* A point in the output waveform where the delay can be determined, and a threshold for the delay up to 50% of the slew waveform on the ideal waveform.
+	
+:paperclip: **Out rise threshold**: <br>
+* The output rising waveform, at which 50% of the delay can be calculated.	
+
+</p>
+</details>	
+	
+:black_nib: **Propagation delay and transition time**
+	
+<details><summary> Explainations </summary>
+<p>
+	
+The propagation delay times are defined as the time delay between the 50% crossing of the input and the corresponding 50% crossing of the output. The rise time and the fall time of the output signal are defined as the time required for the voltage to change from its 10% level to its 90% level (or vice versa).
+	
+What causes propagation delay?<br>
+*Propagation delay typically refers to the rise time or fall time in logic gates. This is the time it takes for a logic gate to change its output state based on a change in the input state. It occurs due to inherent capacitance in the logic gate.*
+	
+It is preferable for the propagation delay to be positive rather than negative. Hence, the threshold point must be carefully adjusted.
+	
+<img src="https://user-images.githubusercontent.com/118953938/213504315-c88dc567-def0-4aae-b7bc-12aadf4de68f.png" width=80% height=80%>
+	
+<img src="https://user-images.githubusercontent.com/118953938/213505167-5191add2-c939-4309-876d-63c049ba8150.png" width=80% height=80%>
+
+<img src="https://user-images.githubusercontent.com/118953938/213505982-051378f2-769a-470b-8f49-ee96c387de0b.png" width=80% height=80%>
+
+* The input appears to have a significant wire delay, producing a massive slew (red line). 
+* This might be as a result of the two inverters being situated far away from one another. 
+* The design of the circuit is particularly crucial since it might result in a negative delay even when the threshold points have been chosen correctly.
+	
+<img src="https://user-images.githubusercontent.com/118953938/213507709-dac68748-018f-41d9-88b5-d35999c35461.png" width=80% height=80%>
+
+<img src="https://user-images.githubusercontent.com/118953938/213509653-2eb11927-9b77-4a6e-9ead-9a888aff4cdd.png" width=80% height=80%>
+
+
+</p>
+</details>	
+	
+</p>
+</details>		
+	
+<details><summary> :test_tube: Labs </summary>
+<p>
+	
+### :test_tube:	Lab 1 - Chip Floor planning considerations	
+
+1.1) Steps to run floorplan using OpenLANE
+
+<details><summary> Reports </summary>
+<p>
+
+**Commands**
+	
+		1) cd Desktop/work/tools/openlane_working_dir/openlane/configuration
+		2) vim README.md
+		3) cd Desktop/work/tools/openlane_working_dir/openlane/designs/picorv32a
+		4) vim config.tcl
+	
+		in the openlane
+		1) run_floorplan
+	
+**Outputs**	
+
+<img src="https://user-images.githubusercontent.com/118953938/213515933-aab8a0f9-c5fc-42e2-8ab2-efb493d91ca5.png" width=80% height=80%>
+<img src="https://user-images.githubusercontent.com/118953938/213516759-01843866-e179-48aa-a057-ac8a1ae71513.png" width=80% height=80%>
+<img src="https://user-images.githubusercontent.com/118953938/213517090-6bf0501b-0445-4842-89c5-fcc48b978d4e.png" width=80% height=80%>
+<img src="https://user-images.githubusercontent.com/118953938/213517560-0b7037ad-eda1-43b2-9112-e1433ba92440.png" width=80% height=80%>
+<img src="https://user-images.githubusercontent.com/118953938/213518190-5b798793-e7fa-4cf7-b52f-a13d97905b9d.png" width=80% height=80%>
+<img src="https://user-images.githubusercontent.com/118953938/213518440-bdc6a8c7-a57c-411f-9098-649ec2c49df8.png" width=80% height=80%>
+<img src="https://user-images.githubusercontent.com/118953938/213518948-b4cf411f-d2df-4382-aeaf-70d59ed9be54.png" width=80% height=80%>
+		
+</p>
+</details>		
+
+1.2) Review floorplan files and steps to view floorplan
+
+<details><summary> Reports </summary>
+<p>
+
+**Commands**
+	
+		1) cd Desktop/work/tools/openlane_working_dir/openlane/designs/picorv32a/runs/15-01_08-16/logs/floorplan
+		2) vim 4-ioPlacer.log
+		3) cd Desktop/work/tools/openlane_working_dir/openlane/designs/picorv32a/runs/15-01_08-16
+		4) vim config.tcl
+		5) cd Desktop/work/tools/openlane_working_dir/openlane/designs/picorv32a/runs/15-01_08-16/results/floorplan
+		6) vim picorv32a.floorplan.def
+	
+**Outputs**	
+	
+<img src="https://user-images.githubusercontent.com/118953938/213522322-6b4b69d9-5480-4026-90a1-480ef0e1cf86.png" width=80% height=80%>
+<img src="https://user-images.githubusercontent.com/118953938/213522586-b6d597ff-2969-4c79-b1ea-fd275f598e16.png" width=80% height=80%>
+<img src="https://user-images.githubusercontent.com/118953938/213522691-23729a21-6843-4458-ae49-694855b9c580.png" width=80% height=80%>
+	
+</p>
+</details>		
+	
+1.3) Review floorplan layout in Magic
+
+<details><summary> Reports </summary>
+<p>	
+
+**Commands**
+	
+		1) magic -T ~/Desktop/work/tools/openlane_working_dir/pdks/sky130A/libs.tech/magic/sky130A.tech lef read ../../tmp/merged.lef def read picorv32a.floorplan.def &
+		2) 'S' key = Select
+		3) 'V' key = Zoom to fit
+		4) %what = Knowing the cell's information 
+	
+**Outputs**	
+	
+<img src="https://user-images.githubusercontent.com/118953938/213529432-3233bc0d-0afd-41b9-8d70-5d12cb0a1233.png" width=80% height=80%>
+<img src="https://user-images.githubusercontent.com/118953938/213530052-3e34baa7-e942-4760-9f4f-31b9e8179cc8.png" width=80% height=80%>
+<img src="https://user-images.githubusercontent.com/118953938/213530155-f9ac8a8e-4e6b-4848-aaea-2e654558a1f0.png" width=80% height=80%>
+<img src="https://user-images.githubusercontent.com/118953938/213530232-222efdcd-c1de-4903-b64e-8498d76ec57d.png" width=80% height=80%>
+<img src="https://user-images.githubusercontent.com/118953938/213530325-31d9359a-10dd-435b-9bbb-4d28f46fa75f.png" width=80% height=80%>
+
+</p>
+</details>	
+	
+### :test_tube:	Lab 2 - Library Binding and Placement	
+
+2.1) Congestion aware placement using RePlAce
+
+<details><summary> Reports </summary>
+<p>
+
+:pushpin: Global Placement
+
+* No legalisation is taking place
+	* Reducing wire length
+
+:pushpin: Detail Placement
+
+* There is legalisation (more on timing point of view)
+	* Standard cells are placed inside the rows and no overlaps
+	
+	
+**Commands**
+	
+		In openlane
+		1) run_placement
+	
+		in Terminal
+		1) cd ~/Desktop/work/tools/openlane_working_dir/openlane/designs/picorv32a/runs/15-01_08-16/results/placement
+		2) magic -T ~/Desktop/work/tools/openlane_working_dir/pdks/sky130A/libs.tech/magic/sky130A.tech lef read ../../tmp/merged.lef def read picorv32a.placement.def &
+
+			
+**Outputs**	
+	
+<img src="https://user-images.githubusercontent.com/118953938/213534358-e4098b94-b814-416b-8e08-fe64521e0d08.png" width=80% height=80%>
+<img src="https://user-images.githubusercontent.com/118953938/213534546-edfdb6c2-7647-4b76-a65d-16c9aa94a8e5.png" width=80% height=80%>
+<img src="https://user-images.githubusercontent.com/118953938/213534653-29c31efe-7ef5-4d78-b29a-0504ee8a2803.png" width=80% height=80%>
+	
+	
 	
 	
 </p>
 </details>	
+</p>
+</details>	
+
 	
 	
 	
