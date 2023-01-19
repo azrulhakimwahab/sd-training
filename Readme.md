@@ -4737,28 +4737,136 @@ Floorplanning involves determining the locations, shape, size of modules in a ch
 <img src="https://user-images.githubusercontent.com/118953938/213212402-f9a103f8-194c-41df-b09c-26578b64365b.png" width=80% height=80%>
 
 * Need to cut the block accordingly
-* 
+* Extend those IO pins of the two blocks and detached those blocks with the black boxes
+* The side viewing from the top/main netlist will thus be unable to see those two blocks. We will now divide the black boxes into two distinct IP addresses or modules since those portions of the boxes are no longer accessible to the top netlist that we have built.
+* Separating such blocks has the benefit of making it easier to utilise them repeatedly when necessary with other users, where they will be constructed individually based on their functionality. 
+* Additionally, those blocks can each be utilised independently numerous times as needed.
 	
+<img src="https://user-images.githubusercontent.com/118953938/213330315-b01bafd0-312c-49c5-ba6c-b4ca49f0390d.png" width=80% height=80%>
+
+Reusing existing implementations eliminates the requirement for new ones (instantiated multiple times onto the netlist)	
+	
+<img src="https://user-images.githubusercontent.com/118953938/213336552-d3fb457a-b6c3-406f-b58a-25280771ec9b.png" width=80% height=80%>
+
+* The arrangement of these IP's in a chip is referred as Floorplanning
+* These IP's/blocks have user-defined locations, and hence are placed in chip before automated placement-and-routing and are called as pre-placed cells
+* Automated placement and routing tools places the remaining logical cells in the design onto chip
+
+<img src="https://user-images.githubusercontent.com/118953938/213337624-78d79f14-4f8c-4cc8-993c-0c2315e44685.png" width=80% height=80%>
+
+</p>
+</details>
+	
+:black_nib: **De-coupling capacitors**	
+
+<details><summary> Explainations </summary>
+<p>
+	
+<img src="https://user-images.githubusercontent.com/118953938/213339124-e61c2458-e020-478d-868d-bee3aa9b4530.png" width=80% height=80%>
+	
+	1) Consider capacitance to be zero for the discussion. Rdd, Rss, Ldd and Lss are well defined values.
+	2) During switching operation, the circuit demands switching current i.e. peak current (Ipeak).
+	3) Now, due to the presence of Rdd and Ldd, there will be a voltage drop across them and the voltage at Node 'A' would be Vdd' instead of Vdd.
+	
+<img src="https://user-images.githubusercontent.com/118953938/213339622-38356baa-36d9-4838-9fc8-b6f3c0177875.png" width=80% height=80%>
+
+If Vdd' goes below the noise margin, due to Rdd and Ldd, the logic '1' at the output of circuit won't be detected as logic '1' at the input of the circuit following this circuit.	
+	
+**Noise Margin Summary**
+	
+<img src="https://user-images.githubusercontent.com/118953938/213342153-e6d07688-e03a-4eee-a29c-f9d0faa331fc.png" width=80% height=80%>
+
+* The noise margin is the amount by which the signal exceeds the threshold for a proper '0' or '1'. 
+* For example, a digital circuit might be designed to swing between 0.0 and 1.2 volts, with anything below 0.2 volts considered a '0', and anything above 1.0 volts considered a '1'. 
+* Then the noise margin for a '0' would be the amount that a signal is below 0.2 volts, and the noise margin for a '1' would be the amount by which a signal exceeds 1.0 volt. In this case noise margins are measured as an absolute voltage, not a ratio. Noise margins for CMOS chips are usually much greater than those for TTL because the VOH min is closer to the power supply voltage and VOL max is closer to zero.
+* Everything in between Vol and Vll is regarded as logic 0. Any voltage between Vll and Vih will be regarded as being in the undefined range.
+* Logic can be shifted from logic 1 to logic 0 or from the interception point of (b) to logic 0 in the region that is not specified. Undefined area is dangerous in this instance.
+* When a voltage is between two points, Vih and Voh, it is always regarded as 1V, or logic 1.
+* Since it is impossible to tell if a voltage is in logic 1 or not, we must make sure that it didn't reach an undefined zone.
+* That is the issue when there is a significant physical distance between the circuit and the primary power supply.
+	
+<img src="https://user-images.githubusercontent.com/118953938/213343521-5cbae7b3-3f3e-4740-aa98-5f322143fa9b.png" width=80% height=80%>
+
+* Decoupling capacitors must be added to address this problem.
+* Consider that the decoupling capacitor is a large capacitor that is fully charged, and that the equivalent voltage across it is similar to that of the power supply. Circuit add the decoupling capacitor in parallel.
+* The circuit would be uncoupled from the main supply via a decoupling capacitor. The circuit pulls electricity from Cd each time it changes. While the RL network is utilised to recharge the Cd
+	
+<img src="https://user-images.githubusercontent.com/118953938/213344217-41ce7b87-f617-4b02-8cc5-85e0b48372af.png" width=80% height=80%>
+		
+</p>
+</details>
+	
+:black_nib: **Power planning**	
+
+<details><summary> Explainations </summary>
+<p>	
+
+Power planning means to provide power to the every macros, standard cells, and all other cells are present in the design. Power and Ground nets are usually laid out on the metal layers. In this create power and ground structure for both IO pads and core logic.
+	
+<img src="https://user-images.githubusercontent.com/118953938/213348226-5d22c57c-1281-477b-962d-4ea92f280fa8.png" width=80% height=80%>
+
+<img src="https://user-images.githubusercontent.com/118953938/213352535-b44a85b3-70e2-47b5-ab23-500327cb2073.png" width=80% height=80%>
+	
+* Imagine there are four distinct macros or blocks that typically come with varied functionality in a whole chip and contain drivers, loads, and other components.
+* For four blocks, the power source was available. As a result, it will be difficult to instal all of the decoupling capacitors since the supply from the source will not be steady.
+* Consider if the orange line was a 16-bit bus. Logic 0 will discharge to Ground while logic 1 signals that the capacitor is being charged to Vdd.
+* The inverter is linked to this 16-bit bus, causing the output to be the opposite of the input. Logic 1 will be turned off, and logic 0 will be charged in its place.	
+
+<img src="https://user-images.githubusercontent.com/118953938/213354219-6faa5e42-56d0-447d-9a0e-2fd02489ed89.png" width=80% height=80%>
+
+* Through a single Ground tap point, all capacitors that were charged to volts will be discharged to 0 volts. Ground tap point will bounce as a result of this.
+* The voltage may shift from logic 1 to logic 0 at that time, which is unexpected, if this bounce surpasses the noise margin threshold and reaches an undefinable state.
+* Through a single Vdd tap point, all capacitors that were at "0" volts must be charged to "V" volts. This will result in a decrease in voltage at the Vdd tap point.
+* Due to the simultaneous operation of several tap sites, the degree of Ground Bounce and Voltage Droop will rise.	
+	
+<img src="https://user-images.githubusercontent.com/118953938/213354603-eb7a8eac-0578-4151-81cf-b0039585b8b5.png" width=80% height=80%>
+
+It may reach the undefined state if the magnitude of the ground boundary or voltage droop exceeds the noise margin level. The issue is that there is only one point of supply (single source).
+	
+<img src="https://user-images.githubusercontent.com/118953938/213354967-3b97a5c6-857a-41db-9b01-991c07172859.png" width=80% height=80%>
+
+Instead of using only one power supply, we must **employ several power supplies (i.e., multiple Vdd and Vss) to resolve this problem**. The closest block will get many power sources, ensuring that it receives the power supply in time. As a result, every logic will use the closest power source. The load and the driver can also be brought near to one another in the "L" sense.
+	
+</p>
+</details>	
+	
+:black_nib: **Pin placement and logical cell placement blockage**	
+
+<details><summary> Explainations </summary>
+<p>
+	
+<img src="https://user-images.githubusercontent.com/118953938/213367410-316a1f81-9a31-45a9-97c8-dcb00d2180aa.png" width=80% height=80%>
+	
+<img src="https://user-images.githubusercontent.com/118953938/213367876-02b695bf-68c8-4414-907c-a40b8c12269a.png" width=80% height=80%>
+
+**Pin placement**
+	
+<img src="https://user-images.githubusercontent.com/118953938/213368400-4efe942e-83c5-444c-ac82-e6efd2ea896a.png" width=80% height=80%>
+	
+* The input port is configured to be on the LHS of the design plan, while the output port is set to be on the RHS.
+* The placement of input and output ports is unpredictable since it depends on our design strategy. Depending on the blocks, the pins are put. Blocks A, B, and C cannot have any cells or flip flips placed there.
+* Since the clock is the port that is controlling all the cells and transmitting the signals to all flip flops, the clock ports, which are CLK1, CLK2, and Clkout, are larger than data ports.
+* The less resistance, the larger the size.
+	
+<img src="https://user-images.githubusercontent.com/118953938/213368828-75afd081-f522-4b36-8e34-ae8f53930ae6.png" width=80% height=80%>
+
+</p>
+</details>	
+	
+### :mag_right: Chip Floor planning considerations	
+
+:black_nib: **Utilization factor and aspect ratio**
+	
+<details><summary> Explainations </summary>
+<p>	
+	
+</p>
+</details>	
+		
 	
 	
 	
 </p>
-</details>
-</p>
-</details>
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
+</details>	
 	
 	
