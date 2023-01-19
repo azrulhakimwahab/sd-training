@@ -4853,20 +4853,138 @@ Instead of using only one power supply, we must **employ several power supplies 
 </p>
 </details>	
 	
-### :mag_right: Chip Floor planning considerations	
+### :mag_right: Library Binding and Placement	
 
-:black_nib: **Utilization factor and aspect ratio**
+:black_nib: **Netlist binding and initial place design**
 	
 <details><summary> Explainations </summary>
 <p>	
+
+<img src="https://user-images.githubusercontent.com/118953938/213372616-2943d14f-acc3-4c90-b1dc-70905ba76f05.png" width=80% height=80%>
+
+The AND gate, inverter, and other conventional shapes will be used for combinational logic gates. However, the combinational logic gate will actually be modified into a box. The physical dimension will replace the physical gate. As a result, all of the gates will be altered as shown in the image.
+	
+<img src="https://user-images.githubusercontent.com/118953938/213377755-38b4151d-9a6b-4818-97ae-a5906fe48907.png" width=80% height=80%>
+	
+* The library can also be divided into sub-libraries, with the first library simply including delay information in the second library while the first contains shape and size.
+* Depending on the time circumstances and the spaces that are available in the layout, the library offers a variety of possibilities inside the same cell. 
+* The resistance decreases as cell size increases.	
+	
+<img src="https://user-images.githubusercontent.com/118953938/213383920-d7232fa8-ebbd-4164-b687-52cc23939aff.png" width=80% height=80%>
+<img src="https://user-images.githubusercontent.com/118953938/213384199-38790394-9a32-400a-9ed4-b23f3de4730e.png" width=80% height=80%>
+
+* The floorplan's arrangements are chosen by taking the connections between the physical cells—that is, the positions that are closest to inputs and outputs—into account.
+* Make sure that no cells are introduced during the placement step that might cause the black boxes and decap cells to overlap. To avoid making the routing too lengthy, placement must also take timing into consideration.
 	
 </p>
 </details>	
 		
+:black_nib: **Optimize placement using estimated wire-length and capacitance**
+	
+<details><summary> Explainations </summary>
+<p>		
+
+**What is Placement Optimization?**<br>
+*Optimization is the process of iterating through a design such that it meets timing, area and power specifications. The design must satisfy these multiple design objectives.*
+
+Goals of Placement:
+* Timing, Power and Area optimizations.
+* Minimum congestion.
+* Minimal cell density, pin density and congestion hot-spots.
+* Minimal timing DRVs.
+	
+<img src="https://user-images.githubusercontent.com/118953938/213386348-781cc34f-d5b4-41a1-9980-e28302cbbbec.png" width=80% height=80%>
+
+<img src="https://user-images.githubusercontent.com/118953938/213388172-0cc2c74e-d954-42ae-b8df-58f8c6a08706.png" width=80% height=80%>
+	
+* Let's use Din2 to FF1 in the figure as an example to illustrate how various estimations are used to optimise.
+* As we can see, the path from Din2 to FF1 would result in the worst possible data slew (long distance), as larger capacitance causes the amount needed to charge the capacitance to increase (transition).
+	
+<img src="https://user-images.githubusercontent.com/118953938/213387861-df9dc91a-34d6-42ce-befa-dd8a7450872a.png" width=80% height=80%>
+
+* The repeaters are installed based on the wire length and capacitance that are estimated prior to routing.
+* In this situation, a buffer is inserted (to reduce capacitance) and serves as repeaters, reconditioning the signals and creating new signals or duplicating the signal distortion-free. More repeaters would result in some data loss.	
+	
+</p>
+</details>	
+	
+:black_nib: **Final placement optimization**
+	
+<details><summary> Explainations </summary>
+<p>	
+	
+<img src="https://user-images.githubusercontent.com/118953938/213390106-642ec500-fcfe-4283-bd4b-98d9d64313cd.png" width=80% height=80%>
+
+* Due to the duration of the signal transmission, buffers are introduced. For instance, because of the excessive distance between FF1 and Din4, we require repeaters to recondition the signal and deliver it to FF1.
+* The length from FF1 to 1 is enough, but since we will be crossing other FF and a buffer, we must create it on a distinct layer.
+* There is a significant distance between 1 and 2. So, we think about adding the buffer. The lesser the delay, the closer the gate and FF are near one another.
+* Additionally, we must examine the timing setup to see whether or not our placement is suitable and to determine whether or not the parameters have been satisfied.
+
+<img src="https://user-images.githubusercontent.com/118953938/213390581-0da3c6a7-8971-462c-a43c-2de624d033bb.png" width=80% height=80%>
+
+</p>
+</details>	
+	
+:black_nib: **Need for libraries and characterization**
+	
+<details><summary> Explainations </summary>
+<p>	
+		
+**Library characterization and modelling**
+	
+<img src="https://user-images.githubusercontent.com/118953938/213393481-c6a4c6b3-0abc-46aa-8329-cbf6afced796.png" width=80% height=80%>
+
+One thing in common to all of the stages
+	
+**Gates or Cells**<br>
+Library	<br>
+* AND Gate
+* Or Gate
+* Buffer
+* Inverter
+* DFF
+* Latch
+* ICG
+* etc
+	
+</p>
+</details>		
+
+### :mag_right: Cell design and characterization flows	
+
+:black_nib: **Inputs for cell design flow**
+	
+<details><summary> Explainations </summary>
+<p>
+	
+<img src="https://user-images.githubusercontent.com/118953938/213402326-4ab2ff29-b689-45d8-aa03-83d70889150d.png" width=80% height=80%>
+
+* All of our standard cells and other collateral are kept in the library. 
+* A library has many features in various shapes and sizes. Additionally, it has standard cells with various threshold voltages.
+	
+<img src="https://user-images.githubusercontent.com/118953938/213403189-40af80e4-8b64-4b98-9784-1cd9bbc0f429.png" width=80% height=80%>
+	
+<img src="https://user-images.githubusercontent.com/118953938/213404351-77355b27-b7ec-4d0d-b3fd-86b9509b1ed8.png" width=80% height=80%>
+	
+<img src="https://user-images.githubusercontent.com/118953938/213405109-e518b833-b99a-4af8-a439-f6ce0b010a6b.png" width=80% height=80%>
+
+<img src="https://user-images.githubusercontent.com/118953938/213405643-737b694c-6456-4298-ac2d-3c91ba276c8e.png" width=80% height=80%>
+	
+</p>
+</details>	
+
+:black_nib: **Inputs for cell design flow**
+	
+<details><summary> Explainations </summary>
+<p>
 	
 	
 	
 </p>
 </details>	
+	
+	
+	
+	
 	
 	
