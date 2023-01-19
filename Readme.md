@@ -5235,7 +5235,37 @@ It is preferable for the propagation delay to be positive rather than negative. 
 [BACK TO DAY 16](https://github.com/azrulhakimwahab/sd-training/blob/main/Readme.md#book-day-16---good-floorplan-vs-bad-floorplan-and-introduction-to-library-cells)<br>
 [BACK TO TOP](https://github.com/azrulhakimwahab/sd-training/blob/main/Readme.md#book-my-respository)
 	
+## :book: Day 17 - Design library cell using Magic Layout and ngspice characterization
+
+<details><summary> :mag_right: Theories </summary>
+<p>
 	
+### :mag_right: Chip Floor planning considerations	
+
+:black_nib: **Utilization factor and aspect ratio**
 	
+<details><summary> Explainations </summary>
+<p>
+
+</p>
+</details>
 	
+</p>
+</details>
+	
+<details><summary> :test_tube: Labs </summary>
+<p>
+	
+### :test_tube:	Lab 1 - Tech File Labs	
+
+1.1) Steps to run floorplan using OpenLANE
+
+<details><summary> Reports </summary>
+<p>
+
+</p>
+</details>
+	
+</p>
+</details>
 	
