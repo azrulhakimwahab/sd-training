@@ -5255,8 +5255,10 @@ It is preferable for the propagation delay to be positive rather than negative. 
 	
 <details><summary> :test_tube: Labs </summary>
 <p>
+
+### :microscope: Labs for CMOS inverter ngspice simulations
 	
-### :test_tube:	Lab 1 - Tech File Labs	
+#### :test_tube: Lab 0 - IO placer revision	
 
 1.1) Steps to run floorplan using OpenLANE
 
