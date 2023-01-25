@@ -5240,18 +5240,155 @@ It is preferable for the propagation delay to be positive rather than negative. 
 <details><summary> :mag_right: Theories </summary>
 <p>
 	
-### :mag_right: Chip Floor planning considerations	
+### :mag_right: CMOS inverter ngspice simulations	
 
-:black_nib: **Utilization factor and aspect ratio**
+:black_nib: **SPICE deck creation for CMOS inverter**
 	
 <details><summary> Explainations </summary>
 <p>
 
+**SPICE deck**
+* A SPICE input file is known as a “spice deck” or simply “deck” because, at one time, several such files would be printed on cards and the whole 'deck' of cards would then be fed into the computer *
+	
+1) Component Conectivity	
+* Having the conectivity information of the netlist 
+* It also has a tap points 
+	
+1.1) Create a SPICE DECK
+* Create a SPICE DECK on a compleated netlist containg P-MOS and N-MOS
+	* Why? - need to define the connectivity of substrate 
+	
+<img src="https://user-images.githubusercontent.com/118953938/214565347-ceed9977-2678-485f-b115-878de8befe74.png" width=40% height=40%>
+	
+2) Component Value	
+* Setting up the channel/components values
+	
+2.1) Need to define the value of channel length and load capacitance
+* Ideally, the P-mos shoud be twice or trice bigger than the N-mos	
+
+<img src="https://user-images.githubusercontent.com/118953938/214566998-d5eae0eb-4355-4ce9-8019-d33002dde133.png" width=40% height=40%>
+	
+2.2) Defining the value of input and supply voltage	
+	
+<img src="https://user-images.githubusercontent.com/118953938/214567662-47ddb2fc-3e10-4f2b-94b5-3c051f4fcc1f.png" width=40% height=40%>
+	
+3) Identify 'nodes'
+* NODES = a node is any region on a circuit between two circuit elements
+	
+<img src="https://user-images.githubusercontent.com/118953938/214569573-799ad35b-dcf3-4083-86ee-86c725008f4f.png" width=40% height=40%>
+	
+4) Naming the 'nodes'
+* naming the nodes to make it easier to identify
+	
+<img src="https://user-images.githubusercontent.com/118953938/214570298-d1ac61ad-4908-44e9-b3ab-052c5afd47ed.png" width=40% height=40%>
+
+**Writing a SPICE deck**	
+
+**P-MOS Transistor**
+	
+<img src="https://user-images.githubusercontent.com/118953938/214571898-71af92f0-f857-4d5c-9179-8c628e5cfac3.png" width=80% height=80%>
+
+**N-MOS Transistor**
+	
+<img src="https://user-images.githubusercontent.com/118953938/214573776-bcb0fb15-97e1-4285-babf-cc8ef3fb04e4.png" width=80% height=80%>
+
+**Simulation Commands**
+
+<img src="https://user-images.githubusercontent.com/118953938/214574860-97215913-5bdd-4824-9958-f7df2a254017.png" width=80% height=80%>
+
 </p>
 </details>
+
+:black_nib: **SPICE simulation lab for CMOS inverter**
+	
+<details><summary> Explainations </summary>
+<p>	
+
+<img src="https://user-images.githubusercontent.com/118953938/214584062-057aad98-b48d-4191-83a2-55292331b2d5.png" width=80% height=80%>
+
+<img src="https://user-images.githubusercontent.com/118953938/214584104-e08a1fdd-a887-4cc7-8b1f-966570f7ff4d.png" width=80% height=80%>
+	
+<img src="https://user-images.githubusercontent.com/118953938/214585412-14012cca-1719-4f37-a106-9fb7d7698046.png" width=80% height=80%>
+	
+<img src="https://user-images.githubusercontent.com/118953938/214586620-af7abd68-0c81-4745-8273-d99d813f2f62.png" width=80% height=80%>
+	
+<img src="https://user-images.githubusercontent.com/118953938/214587656-e8fa0454-14c0-4518-b6bb-7ff8e1b679e1.png" width=80% height=80%>
+
+<img src="https://user-images.githubusercontent.com/118953938/214588925-085c2d4c-a3f3-452f-a2e4-375f8fcc3972.png" width=80% height=80%>
+
+<img src="https://user-images.githubusercontent.com/118953938/214590462-c60a8d06-a1b8-4a46-a9bf-e39014117684.png" width=80% height=80%>
+
+</p>
+</details>
+
+:black_nib: **Switching Threshold Vm**
+	
+<details><summary> Explainations </summary>
+<p>		
+	
+The switching threshold of VM can be obtained from the VTC graph where Vin=Vout. At this point, both transistors are in the saturation region. By ignoring channel modulation, we can equate the transistor currents.
+	
+<img src="https://user-images.githubusercontent.com/118953938/214592145-9903b596-5597-4330-a5c8-3c5e6f610db2.png" width=80% height=80%>
+
+At the interception
+* Pmos and Nmos are in the sturation region where it will 'On' 
+* Leads to a probability of having leakage current from power to ground
+	
+<img src="https://user-images.githubusercontent.com/118953938/214593700-483fb82d-dfe5-448f-8e48-64280cf2ba27.png" width=80% height=80%>
+
+<img src="https://user-images.githubusercontent.com/118953938/214594632-147f187f-6588-4dac-911e-b0d7cec8f922.png" width=80% height=80%>
+
+</p>
+</details>	
+
+:black_nib: **Static and dynamic simulation of CMOS inverter**
+	
+<details><summary> Explainations </summary>
+<p>		
+	
+<img src="https://user-images.githubusercontent.com/118953938/214597480-9a01856d-dda2-4678-b7ef-1300a4f514e6.png" width=80% height=80%>
+	
+* Going to supply the pulse into the CMOS and see what is the output
+
+<img src="https://user-images.githubusercontent.com/118953938/214601913-018e9635-78aa-411a-aa4f-1267bbf3d20d.png" width=80% height=80%>
+
+<img src="https://user-images.githubusercontent.com/118953938/214601775-daae415e-bbc6-4085-930d-b1707a8b07e3.png" width=80% height=80%>
+
+<img src="https://user-images.githubusercontent.com/118953938/214602794-78320959-0660-4bfb-9c2d-d4f116f352a6.png" width=80% height=80%>
+
+<img src="https://user-images.githubusercontent.com/118953938/214604164-7ab189cf-f04b-4e80-b978-f9bf0f6d4530.png" width=80% height=80%>
+
+<img src="https://user-images.githubusercontent.com/118953938/214606250-0d9bda34-c16f-4450-80f9-34976d8b601b.png" width=80% height=80%>
+
+<img src="https://user-images.githubusercontent.com/118953938/214605570-ce5b2052-7017-4859-b0e1-3d6f87ce22d9.png" width=80% height=80%>
+
+<img src="https://user-images.githubusercontent.com/118953938/214605982-a70288e3-a2ed-49b9-8bcc-c5246fe96349.png" width=80% height=80%>
+
+
+</p>
+</details>	
+	
+### :mag_right:  Inception of Layout Â CMOS fabrication process
+
+:black_nib: **Create Active regions**
+	
+<details><summary> Explainations </summary>
+<p>	
+	
+**16-MASK CMOS Process**
+	
+1) Selecting a substrate
+
+<img src="https://user-images.githubusercontent.com/118953938/214608133-d5f8b343-e200-40b3-9d39-7d3f0d83c537.png" width=40% height=40%>
+	
 	
 </p>
-</details>
+</details>	
+	
+	
+	
+</p>
+</details>		
 	
 <details><summary> :test_tube: Labs </summary>
 <p>
@@ -5264,7 +5401,10 @@ It is preferable for the propagation delay to be positive rather than negative. 
 
 <details><summary> Reports </summary>
 <p>
-
+	
+**Commands**
+	
+		
 </p>
 </details>
 	
