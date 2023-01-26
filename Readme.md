@@ -5378,13 +5378,94 @@ At the interception
 **16-MASK CMOS Process**
 	
 1) Selecting a substrate
-
-<img src="https://user-images.githubusercontent.com/118953938/214608133-d5f8b343-e200-40b3-9d39-7d3f0d83c537.png" width=40% height=40%>
+* Doping process: the process of adding impurities to intrinsic semiconductors to alter their properties
 	
+<img src="https://user-images.githubusercontent.com/118953938/214608133-d5f8b343-e200-40b3-9d39-7d3f0d83c537.png" width=50% height=50%>
+	
+2) Creating active region for transistors
+* Will be having pockets as the active region 
+	
+Steps<br>
+2.1) Create isolation between the pockets by adding a layer of silicon dioxide<br>
+	
+2.2) Addition of nitrate active elements<br>
+	
+2.3) Defining the pocket region by depositing a layer of photoresist<br>
+
+<img src="https://user-images.githubusercontent.com/118953938/214725183-91658ba3-e59b-4432-9d4b-33abe4c2bdee.png" width=50% height=50%>
+
+2.4) Masking = When fabrication and masking processes are carried out, photoresist will generate a mask and shield the layout from chemical reactions if UV light is used.<br>	
+	
+<img src="https://user-images.githubusercontent.com/118953938/214727729-3b31d46a-0d31-4432-a92c-3def038219c5.png" width=50% height=50%>
+<img src="https://user-images.githubusercontent.com/118953938/214728571-79f054fd-2808-4f0e-9ce5-7fad91a43734.png" width=70% height=70%>
+	
+2.5) Removing the mask. Only the exposed area will be affected by any chemical reactions or deposition/etching processes.<br>
+	
+2.6) Only the region behind the protective layer will be protected during the silicon nitrate etch, with the rest area being removed.<br>
+
+<img src="https://user-images.githubusercontent.com/118953938/214732706-c9a6735e-c20f-4b36-ae41-2b7eb4391060.png" width=80% height=80%>
+
+2.7) Remove the Silicon nitrate using phosphoric acid	
+	
+<img src="https://user-images.githubusercontent.com/118953938/214733252-46ef6ca4-b9e0-4256-a4fb-28671d0c9d4e.png" width=70% height=70%>
 	
 </p>
 </details>	
 	
+:black_nib: **Formation of N-well and P-well**
+	
+<details><summary> Explainations </summary>
+<p>		
+
+3) Formation of N-well and P-well
+
+N-well = P-MOS application <br>
+P-well = N-MOS application<br>
+	
+Steps<br>
+3.1) Deposit a layer of photoresist and define which layer that would be protected
+	
+<img src="https://user-images.githubusercontent.com/118953938/214736338-886055c0-7949-47de-b863-524dfb07cd94.png" width=70% height=70%>
+	
+3.2) The UV light will expose the photoresist, and only the exposed portion of the photoresist will respond to the UV light while the shielded area remains unchanged and does not.	
+	
+<img src="https://user-images.githubusercontent.com/118953938/214737542-af3a79d6-c21c-404b-84e1-a6c9e7781bb4.png" width=70% height=70%>
+
+3.3)The mask is taken off, and a p-well is created by introducing Boron (a p-type material), which diffuses into the substrate via the oxide layer.<br>
+	
+3.4) The procedure for creating an N-well is the same as that for creating a P-well, except that an N-well employs phosphorus (a substance of the n-type) to implant or diffuse into the substrate at a 400 keV energy level.<br>
+	
+<img src="https://user-images.githubusercontent.com/118953938/214747816-5e8885a5-73c5-4e7b-9cb8-21dccc504b44.png" width=80% height=80%>
+	
+3.5) After the N- and P-wells have developed completely, we must disperse the well to ensure that it takes up at least half of the substrate area. As a result, we can fabricate pmos and nmos in a room that is clear. Place the entire substrate, including the N- and P-wells, in a driving furnace set to a high temperature of roughly 100°C for 4-6 hours. <br>
+	
+3.6) As a result, a clear well will be formed by driving in and diffusing boron and phosphorus into the substrate. While P-well produces nmos transistors, N-well produces pmos transistors.	<br>
+	
+3.7) Add the substrate into a high temperature furnace
+	
+<img src="https://user-images.githubusercontent.com/118953938/214748920-1b73b309-7aa5-440e-84ae-97f00f51e1f7.png" width=80% height=80%>
+	
+</p>
+</details>		
+	
+:black_nib: **Formation of gate terminal**
+	
+<details><summary> Explainations </summary>
+<p>			
+	
+4) Formation of gate
+	
+The most important part of the N-MOS and P-MOS transistor
+	
+
+	
+	
+	
+	
+	
+	
+</p>
+</details>	
 	
 	
 </p>
