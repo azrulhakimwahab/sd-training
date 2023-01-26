@@ -5657,10 +5657,198 @@ STeps
 	
 **Commands**
 	
+**Outputs**
+	
+<img src="https://user-images.githubusercontent.com/118953938/214769111-0f82d679-0af6-41ac-bd5c-40214664e515.png" width=70% height=70%>
+
+<img src="https://user-images.githubusercontent.com/118953938/214769256-2046d822-1df3-4b0e-9f80-17a26f548348.png" width=70% height=70%>
 		
 </p>
 </details>
 	
+#### :test_tube: Lab 1 - Lab steps to git clone vsdstdcelldesign	
+
+<details><summary> Reports </summary>
+<p>
+	
+**Commands**
+	
+		cd ~/Desktop/work/tools/openlane_working_dir/openlane
+		git clone https://github.com/nickson-jose/vsdstdcelldesign.git
+		cd vsdstdcelldesign
+	
+		cd ~/Desktop/work/tools/openlane_working_dir/pdks/sky130A/libs.tech/magic
+		cp sky130A.tech ~/Desktop/work/tools/openlane_working_dir/openlane/vsdstdcelldesign
+		magic -T sky130A.tech sky130_inv.mag
+	
+**Outputs**
+	
+<img src="https://user-images.githubusercontent.com/118953938/214774940-55218b67-5bf7-4620-ae83-0c46b5760e0f.png" width=70% height=70%>
+
+<img src="https://user-images.githubusercontent.com/118953938/214775113-4b1a26da-6c93-47c1-a3e5-f7391250c1ae.png" width=70% height=70%>
+
 </p>
 </details>
+
+	
+### :microscope: Inception of Layout & CMOS fabrication process
+	
+#### :test_tube: Lab 1 - Lab introduction to Sky130 basic layers layout and LEF using inverter	
+
+<details><summary> Reports </summary>
+<p>
+
+	
+<img src="https://user-images.githubusercontent.com/118953938/214777274-49e2ead9-815a-4036-90c4-c4c081f35a8f.png" width=40% height=40%>
+
+<img src="https://user-images.githubusercontent.com/118953938/214782728-3b4964a5-1e9e-486e-822c-e8af4ab30ce2.png" width=40% height=40%>
+
+<img src="https://user-images.githubusercontent.com/118953938/214783612-6f3acd81-87c0-4587-b4f1-0f83465db496.png" width=40% height=40%>
+
+<img src="https://user-images.githubusercontent.com/118953938/214784973-44fda085-66de-4177-a268-406789102d0c.png" width=80% height=80%>
+
+More information can be reffered here: https://github.com/nickson-jose/vsdstdcelldesign	
+		
+</p>
+</details>
+
+#### :test_tube: Lab 2 - Lab steps to create std cell layout and extract spice netlist	
+
+<details><summary> Reports </summary>
+<p>	
+	
+<img src="https://user-images.githubusercontent.com/118953938/214790548-e673938c-3c6d-4102-a68f-ae213454f0ad.png" width=50% height=50%>
+	
+**Commands**
+		
+		
+		In tk_con
+		pwd
+		extract all                       
+		ext2spice cthresh 0 rthresh 0     
+		ext2spice
+	
+**Outputs**
+	
+<img src="https://user-images.githubusercontent.com/118953938/214790973-4574959f-103b-474f-a89f-8c7db003668a.png" width=50% height=50%>
+
+<img src="https://user-images.githubusercontent.com/118953938/214791124-59b73a84-e5af-486c-84e3-4febbf7d97cf.png" width=50% height=50%>
+
+<img src="https://user-images.githubusercontent.com/118953938/214791276-6af0eab1-309f-46be-88b6-ae5a71de8bdf.png" width=50% height=50%>
+
+	
+	
+</p>
+</details>
+
+### :microscope: Sky130 Tech File Labs
+	
+#### :test_tube: Lab 1 - Lab steps to create final SPICE deck using Sky130 tech	
+
+<details><summary> Reports </summary>
+<p>	
+	
+<img src="https://user-images.githubusercontent.com/118953938/214809254-f0b27b28-7627-41a1-b2e8-aad73895d975.png" width=50% height=50%>
+	
+<img src="https://user-images.githubusercontent.com/118953938/214813295-97f1a5ee-b9c0-452f-80ad-d0408a020a1f.png" width=80% height=80%>
+	
+* Change the scale so that it reflects the magic tool's value. 
+* Comprise the PMOS and NMOS library files. To add the transient analysis controls, comment out the subckt and.end lines. Establish supply voltages. 
+* Defines the transient analysis's specifications as well as the input pulse. 
+* Rename the nmos and pmos models as specified in the model lib file. 
+* Run the spice simulation by typing "ngspice sky130A inv.spice".	
+</p>
+</details>		
+	
+#### :test_tube: Lab 2 - Lab steps to characterize inverter using sky130 model files	
+
+<details><summary> Reports </summary>
+<p>	
+
+**Commands**
+		
+		ngspice sky130_inv.spice
+	
+		in ngspice
+		plot y vs time a
+	
+**Outputs**
+	
+<img src="https://user-images.githubusercontent.com/118953938/214820147-bc4b701d-4775-4bdb-b585-7252eae3ad2d.png" width=50% height=50%>
+	
+<img src="https://user-images.githubusercontent.com/118953938/214820881-3d2c9219-49a4-4526-9fb9-7f67bf62388b.png" width=80% height=80%>
+
+<img src="https://user-images.githubusercontent.com/118953938/214820931-644d5b0a-83eb-4b43-a3c0-881fea53dd15.png" width=80% height=80%>
+
+<img src="https://user-images.githubusercontent.com/118953938/214822456-57254c48-7736-4c2c-9e2a-3b604e9fbb7a.png" width=80% height=80%>
+
+<img src="https://user-images.githubusercontent.com/118953938/214831165-3252b4aa-937f-4e94-88cf-cc8b26b3fc75.png" width=80% height=80%>
+
+<img src="https://user-images.githubusercontent.com/118953938/214831837-e44a9c2e-06e9-485c-8cc7-88fc217d5957.png" width=80% height=80%>
+
+	
+</p>
+</details>	
+
+#### :test_tube: Lab 3 - Lab introduction to Magic tool options and DRC rules	
+
+<details><summary> Reports </summary>
+<p>	
+
+<img src="https://user-images.githubusercontent.com/118953938/214833473-5afe4011-be49-4484-84b1-28c65cdfe13e.png" width=80% height=80%>
+
+**Introduction to DRC**
+
+Design Rule Checking (DRC) verifies as to whether a specific design meets the constraints imposed by the process technology to be used for its manufacturing. DRC checking is an essential part of the physical design flow and ensures the design meets manufacturing requirements and will not result in a chip failure. The process technology rules are provided by process engineers and/or fabrication facility.
+	
+Example of DRCs:
+	
+		1) Minimum width and spacing for metal
+		2) Minimum area
+		3) Different net spacing
+		4) Short violation
+		5) Less than min edge length
+	
+**Introduction to Magic tool**
+	
+Magic is a venerable VLSI layout tool, written in the 1980's at Berkeley by John Ousterhout, now famous primarily for writing the scripting interpreter language Tcl. Due largely in part to its liberal Berkeley open-source license, magic has remained popular with universities and small companies.	
+	
+For more information. Can visit these links
+	
+Link for Open Circuit Design: http://opencircuitdesign.com/
+
+Link for Magic tool: http://opencircuitdesign.com/magic/index.html
+	
+</p>
+</details>		
+	
+#### :test_tube: Lab 4 - Lab introduction to Sky130 pdk's and steps to download labs	
+
+<details><summary> Reports </summary>
+<p>	
+	
+	
+	
+	
+	
+</p>
+</details>	
+	
+	
+	
+	
+	
+</p>
+</details>		
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 	
