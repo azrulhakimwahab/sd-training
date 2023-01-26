@@ -5457,17 +5457,189 @@ Steps<br>
 	
 The most important part of the N-MOS and P-MOS transistor
 	
+**Refreshment on Circuit design and SPICE simulation**
+	
+![image](https://user-images.githubusercontent.com/118953938/214750781-5d07cf3d-a9f6-4f76-9e6e-05a7bc4d89ef.png)
+	
+Steps
 
+4.1) Mask 4 is used to regulate and maintain the substrate's doping concentrations.
 	
+4.2) The remaining steps remain the same as previously mentioned. Therefore, the remaining phases of the procedure will be repeated.
+
+4.3) Then add Mask 5 to the P-well and proceed similarly for the pmos. The rest of the pmos procedure must be carried out, as well as controlling the threshold voltage of pmos. Arsenic and phosphorus can be employed to keep the substrate's energy level low while diffusing into it.
 	
+![image](https://user-images.githubusercontent.com/118953938/214751785-41cba0d2-bf05-4c1e-a06e-0ab83ae7fd04.png)
 	
+4.4) As a result of the implantation operation, the oxide has to be fixed. Hydrofluoric (HF) acid can be used to remove the oxide as part of the fixing procedure. 
 	
+4.5) When a polysilicon layer is deposited using the deposition process, a thick polysilicon layer will develop where the gate area is intended to have a low resistance.
 	
+![image](https://user-images.githubusercontent.com/118953938/214752386-bfe0781c-31ae-4b33-815b-b9e156b818ec.png)
+
+4.6) Since the gate has a low resistance, we must dope it with additional impurities, such as phosphorus and arsenic, and spread them across the entire polysilicon layer in order to have low sheet resistance in addition to low gate resistance. Use Mask6 as a polysilicon gate mask.
+	
+<img src="https://user-images.githubusercontent.com/118953938/214752880-830b226b-34c4-42c1-aa45-8ac3286072b0.png" width=80% height=80%>
+	
+**TOP VIEW OF THE DESIGN**
+	
+<img src="https://user-images.githubusercontent.com/118953938/214753122-a24601c5-2864-4572-846e-39c8cda3582d.png" width=60% height=60%>
+
+4.7) Mask 6 may now be removed, and the remaining polysilicon that is outside of the photoresist can be etched out of it to make the polysilicon gate.
+	
+![image](https://user-images.githubusercontent.com/118953938/214753737-445f8092-53bd-4c1a-9032-6fd67a86ea1d.png)
+
+</p>
+</details>	
+	
+:black_nib: **Lightly doped drain (LDD) formation**
+	
+<details><summary> Explainations </summary>
+<p>	
+	
+A Lightly Doped Drain (LDD) structure is known to be very effective in preventing hot electrons in modern NMOS transistors. 
+	
+Modern MOSFETs often incorporate a lightly-doped drain (LDD) region. Due to the presence of the LDD region, these so called LDD MOSFETs have a smaller electric field near the drain region and therefore a reduced hot-carrier effect over the conventional MOSFET
+	
+5) Lightly doped drain (LDD) formation	
+	
+**Two dopping profiles**
+	
+* Hot electron effect
+	1) Electric field E=V/d
+	2) High energy carriers break Si-Si bonds
+	3) 3.2eV barrier b/w Si conduction band
+	4) SiO2 conduction band
+
+* short channel efect
+	1) For short channels, drain field penetrates channel	
+	
+<img src="https://user-images.githubusercontent.com/118953938/214754739-4d127d07-cfb8-4fbc-b9c5-d92ff5d571a7.png" width=70% height=70%>
+	
+Steps
+	
+5.1) The process began by adding Mask 7 to protect the appropriate region based on the gate generated in the previous session, and the other photolithography stages are the same.
+	
+5.2) However, we must execute the ion implantation operation by doping it with phosphorus in order to build the nmos at P-well (N-type material)
+	
+![image](https://user-images.githubusercontent.com/118953938/214755325-8b2c520e-21ca-4b43-9f30-f4afca07dc38.png)
+
+5.3) Create Mask 8, then proceed with the other stages. Next, ion implantation is achieved by doping with Boron to prevent the emergence of additional sources and drains, create some space around the gate.
+	
+![image](https://user-images.githubusercontent.com/118953938/214759944-b2438065-94c2-4335-92b8-59aa091eb663.png)
+
+5.4) Etching using anisotropic plasma. The side-wall spacers will be produced by the etching.	
+	
+![image](https://user-images.githubusercontent.com/118953938/214760297-17fb0ab5-5fed-4f2b-b56b-17390489a1d3.png)
 	
 </p>
 </details>	
 	
+:black_nib: **Source and drain formation**
 	
+<details><summary> Explainations </summary>
+<p>	
+	
+* Source: Source is the terminal through which the majority charge carriers are entered in the FET. 
+* Drain: Drain is the terminal through which the majority charge carriers exit from the FET. 
+* Gate: The gate terminal is formed by diffusion of an N-type semiconductor with a P-type semiconductor.	
+
+6) Source and drain formation	
+	
+Steps
+	
+6.1) In order to prevent channel link from accessing the substrate, add a thin coating of screen oxide.
+
+6.2) Add Mask 9, then resume the photolithography process as beforeand expose the structure to arsenic using energy of 75 keV.
+	
+![image](https://user-images.githubusercontent.com/118953938/214761759-a0c2dcd7-d159-4dfe-a65a-b8e10464a691.png)
+
+6.3) Photolithography is performed once Mask10 is added.
+
+6.4) Use Boron and ion implantation with 50 oeV of energy. The result will be P+ P- N.
+	
+6.5) Place into a high-temperature furnace to anneal at a high temperature and further penetrate the N- and P-wells.
+	
+![image](https://user-images.githubusercontent.com/118953938/214762086-ee6acf13-625d-4ddc-bd86-2912bc81c184.png)
+	
+</p>
+</details>	
+	
+:black_nib: **Local interconnect formation**
+	
+<details><summary> Explainations </summary>
+<p>	
+	
+7) Local interconnect formation
+	
+STeps
+	
+7.1) To make room for the drain, source, and gate area for constructing contact, remove the thin screen oxide.
+
+7.2) In a solution of hydrofluoric acid, etch the thin oxide.
+
+7.3) Titanium/wafer surface may be deposited using sputtering.
+	
+<img src="https://user-images.githubusercontent.com/118953938/214762963-91c38f65-c2bf-4784-885b-0a59960dab08.png" width=60% height=60%>
+	
+7.4) By heating the wafer in a nitrogen environment, you may make contact with the Titanium that has been deposited.
+	
+7.5) Titanium nitrate is utilised for local communication, whereas the heating procedure created low resistance titanium silicon dioxide that may be used for local connection.	
+	
+<img src="https://user-images.githubusercontent.com/118953938/214763787-dbc2ecf0-f609-4457-bc28-90d60f2b2ec7.png" width=90% height=90%>
+	
+7.6) Repeat the lithography procedure, adding Mask 11. In order to clean the RCA, then remove Mask 11 and etch any excess Titanium nitrate.
+
+7.7) Interconnects made of local Titanium Nitrate were applied to link locally and raise to the top.	
+
+![image](https://user-images.githubusercontent.com/118953938/214764634-0e8dd11b-ac66-4092-a71e-403c5983bf04.png)
+
+</p>
+</details>	
+	
+:black_nib: **Higher level metal formation**
+	
+<details><summary> Explainations </summary>
+<p>		
+
+8) Higher level metal formation
+
+8.1) The non-linear surface topography makes it unsuitable for metal interaction.
+	
+8.2) A thick layer of silicon dioxide doped with boron and phosphorus will be placed to correct it. When it comes to protecting against mobile sodium ions, phosphorus will operate as a barrier, while boron will lower the surface's temperature, polish it, and create a flat surface.
+
+<img src="https://user-images.githubusercontent.com/118953938/214765369-339ab9c0-98c3-4b14-9129-df8d17adf571.png" width=80% height=80%>
+	
+8.3) Repeat the lithography procedure, adding Mask12.
+	
+<img src="https://user-images.githubusercontent.com/118953938/214765575-4fbe52db-df3d-4179-b373-8618fac758a4.png" width=80% height=80%>
+	
+8.4) Eliminate the mask, then etch the silicon dioxide away. Titanium nitrate should then be applied once the photoresist has been removed. Titanium nitrate is an excellent layer for silicon dioxide as well as for bottom and top connection.
+
+8.5)Deposit a blanket tungsten layer.
+	
+![image](https://user-images.githubusercontent.com/118953938/214766381-a81a51cf-c4f0-442c-b9e7-2988b08c3df1.png)
+
+8.6) Repolish and add aluminium to the contact hole to allow it to make touch with higher metal layer.
+
+8.7) Mask13 should be added, the lithography process repeated, the mask should be removed, and the metal should be plasma-etched.
+	
+![image](https://user-images.githubusercontent.com/118953938/214767701-a7ff7cb1-22f6-4dcd-8f51-424cf2bd83d3.png)
+
+8.8) Completely remove the photoresist. Put silicon dioxide on it and polish it one more.
+	
+8.9) Repeat Steps 1 through 3 adding Mask 14 and depositing tungsten to create the contacts and titanium nitrate to serve as a barrier.
+	
+![image](https://user-images.githubusercontent.com/118953938/214768202-6eb5cb26-3ef9-48f3-8785-b40f131d09d7.png)
+
+8.10) Make Mask15 thicker than it currently is and add it as the third level connector using aluminium. Next, add a chip protective layer.
+
+8.11) The fabrication of 16-mask C-mos is completed when adding Mask16 to the chip's contact outside.
+
+![image](https://user-images.githubusercontent.com/118953938/214768780-84ff5f4c-4436-46bc-be50-fb8ec75eedf8.png)
+	
+</p>
+</details>	
 </p>
 </details>		
 	
