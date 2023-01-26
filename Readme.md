@@ -5827,8 +5827,195 @@ Link for Magic tool: http://opencircuitdesign.com/magic/index.html
 <details><summary> Reports </summary>
 <p>	
 	
+**Commands**
+	
+		wget http://opencircuitdesign.com/open_pdks/archive/drc_tests.tgz   --> import magic layout into the tool
+		tar xfz drc_tests.tgz                                               --> extracting the file
+		cd  drc_tests
+		ls
+		cat .magicrc                                                        --> finding the tech file
+	
+		magic -d XR  
+		
+		in tkcon
+		drc why --> to know the error
+	
+**Outputs**
+	
+<img src="https://user-images.githubusercontent.com/118953938/214844891-18592b3c-48e2-4325-bea1-c914d6210b96.png" width=60% height=60%>
+	
+<img src="https://user-images.githubusercontent.com/118953938/214845184-773fd800-4600-4a96-8083-1454bbfebc63.png" width=60% height=60%>
+
+<img src="https://user-images.githubusercontent.com/118953938/214845380-7f4686ca-7775-46f9-a665-22da55c61d3b.png" width=50% height=60%>
+
+<img src="https://user-images.githubusercontent.com/118953938/214845521-1a3a0060-0b9e-47af-adfa-06f731d8e3c9.png" width=80% height=80%>
+
+<img src="https://user-images.githubusercontent.com/118953938/214849090-a260760f-c17e-4422-8639-c67e93aaa2af.png" width=80% height=80%>
+
+<img src="https://user-images.githubusercontent.com/118953938/214845881-f13f3f74-ffb3-4ad0-a8bc-b03c1bd26c7d.png" width=40% height=40%>
+	
+<img src="https://user-images.githubusercontent.com/118953938/214846143-fdf57243-e46a-42bc-983d-ff62e9c0d359.png" width=80% height=80%>
+
+	
+</p>
+</details>	
+	
+#### :test_tube: Lab 5 - Lab introduction to Magic and steps to load Sky130 tech-rules	
+
+<details><summary> Reports </summary>
+<p>		
+
+**Commands**
+	
+		cif see VIA2 --> making the squares
+		feed clear --> clear up the box area
+	
+**Outputs**	
+	
+<img src="https://user-images.githubusercontent.com/118953938/214845521-1a3a0060-0b9e-47af-adfa-06f731d8e3c9.png" width=80% height=80%>
+
+<img src="https://user-images.githubusercontent.com/118953938/214849090-a260760f-c17e-4422-8639-c67e93aaa2af.png" width=80% height=80%>
+
+<img src="https://user-images.githubusercontent.com/118953938/214854061-701cff3d-0f66-4f81-8243-8142eb7e1f86.png" width=80% height=80%>
+
+<img src="https://user-images.githubusercontent.com/118953938/214854520-a21e6351-6292-4774-beb1-fce6554d58ce.png" width=80% height=80%>
+
+<img src="https://user-images.githubusercontent.com/118953938/214854962-15bf02f2-67dd-4ae5-81f9-fea4ea174061.png" width=80% height=80%>
+
+	
+</p>
+</details>		
+	
+#### :test_tube: Lab 6 - Lab exercise to fix poly.9 error in Sky130 tech-file	
+
+<details><summary> Reports </summary>
+<p>		
+
+**Commands**	
+	
+		load poly
+		cd ~/Desktop/work/tools/drc_tests
+		vim sky130A.tech
+		tech load sky130A.tech              --> reloading the tech file
+		drc check                           
+		drc why            
+
+**Ooutputs**
+	
+<img src="https://user-images.githubusercontent.com/118953938/214864443-7d34bce9-a343-42c9-b379-3614127992a0.png" width=80% height=80%>
+
+<img src="https://user-images.githubusercontent.com/118953938/214864637-1647f458-4b4b-44da-ae2a-4d75bb930ed9.png" width=60% height=60%>
+
+<img src="https://user-images.githubusercontent.com/118953938/214864771-340985a6-1c41-4aff-a35e-960423594f76.png" width=60% height=60%>
+
+<img src="https://user-images.githubusercontent.com/118953938/214864951-df603b58-3ac2-4d5a-9acd-9df5e2fc700f.png" width=60% height=60%>
+
+<img src="https://user-images.githubusercontent.com/118953938/214865327-e59795ba-107d-430d-97ba-49d776e59e1e.png" width=60% height=60%>
+
+<img src="https://user-images.githubusercontent.com/118953938/214865776-df2b0402-ba06-448e-9ad7-506d2e1d6b69.png" width=60% height=60%>
+
+<img src="https://user-images.githubusercontent.com/118953938/214865918-611b4fbd-4bf7-4815-94bb-2ec045e9b8ad.png" width=60% height=60%>
+
+</p>
+</details>	
 	
 	
+#### :test_tube: Lab 7 - Lab exercise to implement poly resistor spacing to diff and tap
+
+<details><summary> Reports </summary>
+<p>		
+	
+	
+	
+	
+</p>
+</details>	
+	
+#### :test_tube: Lab 8 - Lab challenge exercise to describe DRC error as geometrical construct
+	
+<details><summary> Reports </summary>
+<p>		
+
+**COmmands**
+	
+		load nwell.mag
+		cif ostyle drc
+		cif see dnwell_shrink
+		cif see nwell_missing 
+		
+**Outputs**	
+	
+<img src="https://user-images.githubusercontent.com/118953938/214875331-9d2f5c2e-caef-4d9f-8825-5f14b1a7f687.png" width=60% height=60%>
+
+<img src="https://user-images.githubusercontent.com/118953938/214875484-158e596d-8ac8-43bd-b91f-5abaefc0d6ec.png" width=60% height=60%>
+
+<img src="https://user-images.githubusercontent.com/118953938/214875634-ce97eb04-39ff-45f3-a20c-b61cde5fe130.png" width=80% height=80%>
+
+<img src="https://user-images.githubusercontent.com/118953938/214875764-640a5778-4d85-405d-ab69-0d79a34e83c9.png" width=80% height=80%>
+
+<img src="https://user-images.githubusercontent.com/118953938/214875870-eca0b48e-a62d-49d9-b2bd-72c7220c2aee.png" width=80% height=80%>
+
+<img src="https://user-images.githubusercontent.com/118953938/214876024-5ff4f490-ca5f-497c-9a3b-7395ffe4db1c.png" width=80% height=80%>
+
+	
+	
+</p>
+</details>		
+	
+	
+#### :test_tube: Lab 9 - Lab challenge exercise to describe DRC error as geometrical construct
+	
+<details><summary> Reports </summary>
+<p>		
+
+**COmmands**
+	
+		vim sky130A.tech
+		tech load sky130A.tech             
+		drc check                          
+		drc style drc(full)
+		drc check 
+		
+**Outputs**	
+
+<img src="https://user-images.githubusercontent.com/118953938/214883329-6f0926e5-6e12-469e-ab91-74e47cc7de0a.png" width=60% height=60%>
+
+<img src="https://user-images.githubusercontent.com/118953938/214883416-0b2c5d44-c81a-4ef2-a703-d1f57f4bd4b3.png" width=60% height=60%>
+
+<img src="https://user-images.githubusercontent.com/118953938/214883752-518865e0-9db5-4aa8-933e-b05098bb1ac5.png" width=60% height=60%>
+
+**Modifying the tech file**
+
+<img src="https://user-images.githubusercontent.com/118953938/214884285-7c1153bc-9765-400b-b8d1-e09833eb0ec3.png" width=60% height=60%>
+	
+<img src="https://user-images.githubusercontent.com/118953938/214884122-560b2c50-da64-4f4b-9598-61256340e921.png" width=60% height=60%>
+
+<img src="https://user-images.githubusercontent.com/118953938/214884442-0b39b2ff-9456-4901-91a9-5fdbf0112e52.png" width=60% height=60%>
+
+
+</p>
+</details>		
+
+</p>
+</details>	
+	
+	
+	
+	
+## :book: Day 18 - Pre-layout timing analysis and importance of good clock tree
+
+<details><summary> :mag_right: Theories </summary>
+<p>
+
+### :mag_right: Timing modelling using delay tables
+	
+:black_nib: **Introduction to timing libs and steps to include new cell in synthesis**
+	
+<details><summary> Explainations </summary>
+<p>		
+	
+	
+
 	
 	
 </p>
@@ -5837,13 +6024,9 @@ Link for Magic tool: http://opencircuitdesign.com/magic/index.html
 	
 	
 	
-	
 </p>
-</details>		
-	
-	
-	
-	
+</details>	
+		
 	
 	
 	
