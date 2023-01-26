@@ -5924,8 +5924,14 @@ Link for Magic tool: http://opencircuitdesign.com/magic/index.html
 <details><summary> Reports </summary>
 <p>		
 	
-	
-	
+<img src="https://user-images.githubusercontent.com/118953938/214970938-a52aaca9-509e-47b2-8514-8048b0e37e44.png" width=80% height=80%>
+
+**Modify the sky130A.tech file**	
+
+<img src="https://user-images.githubusercontent.com/118953938/214971183-5d38f500-ef23-4311-957d-e2e9797b75d2.png" width=60% height=60%>
+
+<img src="https://user-images.githubusercontent.com/118953938/214971685-4bc8e38a-27f4-4351-942d-fab66cdff7ff.png" width=60% height=60%>
+
 	
 </p>
 </details>	
