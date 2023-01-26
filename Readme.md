@@ -6019,8 +6019,8 @@ Link for Magic tool: http://opencircuitdesign.com/magic/index.html
 <details><summary> Explainations </summary>
 <p>		
 	
-<img src="https://user-images.githubusercontent.com/118953938/214889325-82656737-e9a4-4938-8dfe-0f8ff2a5d1a6.png" width=40% height=40%>
-
+<img src="https://user-images.githubusercontent.com/118953938/214972198-6c4d7858-3c94-48db-b2f9-e7afaccc6221.png" width=50% height=50%>
+	
 **AND Gate**
 * The enable of an AND gate is high active. That is, when the enable is high the input signal will appear on the output. 
 * When the AND gate enable input is low, the output will remain a constant low signal. 
@@ -6031,7 +6031,16 @@ Link for Magic tool: http://opencircuitdesign.com/magic/index.html
 * This means that the output will be a copy of the input signal when the enable is low. 
 * When the enable input of an OR gate is high, the output of the gate will be a constant high signal.
 	
-<img src="https://user-images.githubusercontent.com/118953938/214893494-2d27d124-ca19-4849-a803-a36b8856c52d.png" width=50% height=50%>
+<img src="https://user-images.githubusercontent.com/118953938/214972316-eec1533e-b76f-4fb8-8ae8-e16183a25c1f.png" width=70% height=70%>
+
+* The input transition and output load of a cell are varied against the cell's delay to characterise the delay table.
+* For various sizes and threshold tables, each cell will have its own delay table.
+
+<img src="https://user-images.githubusercontent.com/118953938/214973293-2b9c9f12-d62c-44e2-9f8c-edfe8f9b38de.png" width=70% height=70%>
+
+**Examole of the delay table**
+	
+<img src="https://user-images.githubusercontent.com/118953938/214973515-434f7cb3-4ff8-4033-8d23-c659eaee57c1.png" width=50% height=50%>
 
 **Clock Gating**
 * Clock gating is a power-saving feature in semiconductor microelectronics that enables switching off circuits. 
