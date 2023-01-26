@@ -5368,7 +5368,7 @@ At the interception
 </p>
 </details>	
 	
-### :mag_right:  Inception of Layout Â CMOS fabrication process
+### :mag_right:  Inception of Layout CMOS fabrication process
 
 :black_nib: **Create Active regions**
 	
@@ -5650,19 +5650,18 @@ STeps
 	
 #### :test_tube: Lab 0 - IO placer revision	
 
-1.1) Steps to run floorplan using OpenLANE
-
 <details><summary> Reports </summary>
 <p>
 	
-**Commands**
-	
+
 **Outputs**
 	
 <img src="https://user-images.githubusercontent.com/118953938/214769111-0f82d679-0af6-41ac-bd5c-40214664e515.png" width=70% height=70%>
 
 <img src="https://user-images.githubusercontent.com/118953938/214769256-2046d822-1df3-4b0e-9f80-17a26f548348.png" width=70% height=70%>
-		
+
+<img src="https://user-images.githubusercontent.com/118953938/214892637-5defd58e-5397-4c29-9e6c-6423de2fb8e6.png" width=40% height=40%>
+
 </p>
 </details>
 	
@@ -6009,15 +6008,40 @@ Link for Magic tool: http://opencircuitdesign.com/magic/index.html
 
 ### :mag_right: Timing modelling using delay tables
 	
-:black_nib: **Introduction to timing libs and steps to include new cell in synthesis**
+:black_nib: **Introduction to delay tables**
 	
 <details><summary> Explainations </summary>
 <p>		
 	
-	
+<img src="https://user-images.githubusercontent.com/118953938/214889325-82656737-e9a4-4938-8dfe-0f8ff2a5d1a6.png" width=40% height=40%>
 
+**AND Gate**
+* The enable of an AND gate is high active. That is, when the enable is high the input signal will appear on the output. 
+* When the AND gate enable input is low, the output will remain a constant low signal. 
+* A two input OR gate can also be used with one input the desired signal and the other input is the enable.	
+
+**OR Gate**
+* The enable input of an OR gate is low active. 
+* This means that the output will be a copy of the input signal when the enable is low. 
+* When the enable input of an OR gate is high, the output of the gate will be a constant high signal.
 	
+<img src="https://user-images.githubusercontent.com/118953938/214893494-2d27d124-ca19-4849-a803-a36b8856c52d.png" width=50% height=50%>
+
+**Clock Gating**
+* Clock gating is a power-saving feature in semiconductor microelectronics that enables switching off circuits. 
+* Many electronic devices use clock gating to turn off buses, controllers, bridges and parts of processors, to reduce dynamic power consumption.	
 	
+Why is clock gating used?<br>
+* The technique of clock gating is used to reduce the clock power consumption by cutting off the idle clock cycles.	
+
+What are types of clock gating?<br>
+* There are two types of clock gating styles available. 
+* They are: 
+	1) Latch-based clock gating 
+	2) Latch-free clock gating.
+* The latch-free clock gating style uses a simple AND or OR gate (depending on the edge on which flip-flops are triggered).
+
+
 </p>
 </details>	
 	
@@ -6028,10 +6052,21 @@ Link for Magic tool: http://opencircuitdesign.com/magic/index.html
 </details>	
 		
 	
+<details><summary> :test_tube: Labs </summary>
+<p>
+
+### :microscope: Timing modelling using delay tables
+	
+#### :test_tube: Lab 1 - Lab steps to convert grid info to track info	
+
+<details><summary> Reports </summary>
+<p>	
 	
 	
 	
 	
+</p>
+</details>	
 	
-	
-	
+</p>
+</details>
