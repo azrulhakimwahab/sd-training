@@ -6038,7 +6038,7 @@ Link for Magic tool: http://opencircuitdesign.com/magic/index.html
 
 <img src="https://user-images.githubusercontent.com/118953938/214973293-2b9c9f12-d62c-44e2-9f8c-edfe8f9b38de.png" width=70% height=70%>
 
-**Examole of the delay table**
+**Example of the delay table**
 	
 <img src="https://user-images.githubusercontent.com/118953938/214973515-434f7cb3-4ff8-4033-8d23-c659eaee57c1.png" width=50% height=50%>
 
@@ -6056,16 +6056,52 @@ What are types of clock gating?<br>
 	2) Latch-free clock gating.
 * The latch-free clock gating style uses a simple AND or OR gate (depending on the edge on which flip-flops are triggered).
 
+</p>
+</details>	
+	
+:black_nib: **Delay table usage Part 1 and Part 2**
+	
+<details><summary> Explainations </summary>
+<p>		
+	
+**Example of the delay table**
+	
+<img src="https://user-images.githubusercontent.com/118953938/214975473-b33f6353-9b20-413f-bd93-8bb7552e14d7.png" width=50% height=50%>
+	
+* Delay table = representation of the delays for one of the cells 
+* Similar delay table will be created for each and every kind of gates
+* Table on the top shows the table buffer of '1'
+* The buffer was taken out of the circuit and characterized based on different range of input slew with different output capacitance
+	
+<img src="https://user-images.githubusercontent.com/118953938/214975825-74cfa5b3-181b-41c2-8f4c-3dab4aa40804.png" width=80% height=80%>
+	
+* A characterisation table for input transition will be similar to how a delay table is to how a delay table is.
+* The total of the delays experienced by each individual cell along that path will represent the latency at the endpoints.
+* It is preferable to have the nodes at each level driving the same load because if the output load driven for a cell is altered, the total skew value between two endpoints will not be zero, resulting in various delay values being visible between endpoints.	
+	
+<img src="https://user-images.githubusercontent.com/118953938/214984885-598604a8-2d1f-40bf-821b-2f5e45a1b61f.png" width=80% height=80%>
+	
+<img src="https://user-images.githubusercontent.com/118953938/214987007-f4c634cd-9240-4479-9621-3fe3c796f442.png" width=80% height=80%>
+	
+<img src="https://user-images.githubusercontent.com/118953938/214987509-eaff2540-8eef-4a78-8601-99d8cdcda2d2.png" width=80% height=80%>
+	
+* By employing a different buffer size at the same level that can accomplish the same amount of delay as the other buffer at the same level based on its delay table, we can also maintain the skew to be zero in the presence of variable load.
+* Early on in the clock tree design stage, these are the kinds of issues that should be taken into consideration.
+* Now that CTS is power aware, it is necessary to take into account endpoints that are only active sometimes.
+* We do not need to transmit the clock into those cells in this instance while they are dormant.	
+	
+<img src="https://user-images.githubusercontent.com/118953938/214987955-8aab2d1e-eb1d-40fb-9059-4563eaac714a.png" width=80% height=80%>
 
 </p>
 </details>	
+
 	
 	
 	
 	
 </p>
 </details>	
-		
+	
 	
 <details><summary> :test_tube: Labs </summary>
 <p>
