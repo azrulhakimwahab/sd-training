@@ -6113,11 +6113,132 @@ What are types of clock gating?<br>
 <details><summary> Reports </summary>
 <p>	
 	
+**Library Exchange Format (LEF)**
+
+Library Exchange Format is a specification for representing the physical layout of an integrated circuit in an ASCII format. It includes design rules and abstract information about the standard cells. LEF only has the basic information required at that level to serve the purpose of the concerned CAD tool.	
+	
+Main guidelines:
+
+		The input and output ports must lie on the intersection of the vertical and horizontal tracks
+		The width of standard cell should be on the track pitch, and the height should be on the track vertical pitch	
+	
+* Layers and metal traces	
+	
+<img src="https://user-images.githubusercontent.com/118953938/215332692-7104eeea-aed4-42a9-ac4f-42c6f472ca8f.png" width=80% height=80%>
+	
+* Adding grids
+	
+<img src="https://user-images.githubusercontent.com/118953938/215332788-e522e906-6899-4a8c-8a2c-468570a217b7.png" width=80% height=80%>
+
+<img src="https://user-images.githubusercontent.com/118953938/215332906-96164312-cc45-41d4-b5dd-6a48c775b935.png" width=80% height=80%>
+
+<img src="https://user-images.githubusercontent.com/118953938/215332933-72be71bf-cea6-4581-bbba-1473f149695f.png" width=80% height=80%>
+
+The junction of the horizontal and vertical rails is where ports are located. It makes sure that the routes can go in both x and y directions to reach the ports.
+Verified that the input and output ports adhere to the rule that states that they should be located at the junction of horizontal and vertical tracks.
+	
+</p>
+</details>	
+
+#### :test_tube: Lab 2 - Lab steps to convert magic layout to std cell LEF	
+
+<details><summary> Reports </summary>
+<p>	
+
+* To guarantee that the layout is completed as required, the standard cell's width and height must be odd multiples of the x and y pitches.
+
+* The layers are always described when a layout is created, but ports are not present since ports have no significance to the magic. 
+* To extract the lef file, port definitions are necessary. The pins of the macros will be used to specify the ports.
+	
+<img src="https://user-images.githubusercontent.com/118953938/215332993-35d56adc-868e-4098-bb0a-3b66ff22c60c.png" width=80% height=80%>
+
+<img src="https://user-images.githubusercontent.com/118953938/215335988-4aeb819a-4f55-4999-94b5-c1f2491953a8.png" width=80% height=80%>
+
+<img src="https://user-images.githubusercontent.com/118953938/215336018-7905e62e-9818-4c31-ac9f-afeb75d09754.png" width=80% height=80%>
+
+<img src="https://user-images.githubusercontent.com/118953938/215336066-17431c87-98b0-4e17-a1ba-9a1e18b721d7.png" width=80% height=80%>
+	
+<img src="https://user-images.githubusercontent.com/118953938/215336091-3734860c-6c2f-409f-99e9-a6369dbc625c.png" width=80% height=80%>
+
+	
+</p>
+</details>	
+	
+#### :test_tube: Lab 3 - Introduction to timing libs and steps to include new cell in synthesis	
+
+<details><summary> Reports </summary>
+<p>
+	
+<img src="https://user-images.githubusercontent.com/118953938/215336358-29ed190e-7512-4afd-b398-1498eabf8f65.png" width=80% height=80%>
+
+<img src="https://user-images.githubusercontent.com/118953938/215336381-f6613b79-4f18-435a-8575-bb9535e7e5ae.png" width=80% height=80%>
+
+<img src="https://user-images.githubusercontent.com/118953938/215336395-2542fcb1-a2a0-4b87-83e2-ecbcdc172bb4.png" width=80% height=80%>)
+	
+	
+</p>
+</details>
+
+
+#### :test_tube: Lab 4 - Introduction to timing libs and steps to include new cell in synthesis	
+
+<details><summary> Reports </summary>
+<p>
+	
+<img src="https://user-images.githubusercontent.com/118953938/215336525-58a833d9-fc06-462b-afb3-6b6e5c222fb5.png" width=80% height=80%>)
+
+<img src="https://user-images.githubusercontent.com/118953938/215336578-b2a65489-135b-4470-8c37-5cc3b9f060c9.png" width=80% height=80%>)
+
+<img src="https://user-images.githubusercontent.com/118953938/215337619-d6ea2d1c-1d88-4caa-89ba-2e7de0b4ffef.png" width=80% height=80%>)
+
+<img src="https://user-images.githubusercontent.com/118953938/215337668-74768f93-f7f8-48bd-91a1-2a4bdb3d5a69.png" width=80% height=80%>)
+
+<img src="https://user-images.githubusercontent.com/118953938/215337702-53458b96-1c1d-43b2-a209-ce4bb415c453.png" width=80% height=80%>)
+
+<img src="https://user-images.githubusercontent.com/118953938/215337738-01c5aee8-58c5-48d5-99e7-8d5f125e097d.png" width=80% height=80%>)
+
+<img src="https://user-images.githubusercontent.com/118953938/215337769-60a46605-0d24-48dd-bb00-27e3bee94f5b.png" width=80% height=80%>)
+
+	
+</p>
+</details>	
+	
+### :microscope: Timing analysis with ideal clocks using openSTA
+	
+#### :test_tube: Lab 1 - Lab steps to configure OpenSTA for post-synth timing analysis	
+
+<details><summary> Reports </summary>
+<p>		
+	
+<img src="https://user-images.githubusercontent.com/118953938/215337914-d9d07fdc-3e79-47b7-b073-3595e2e0b7ae.png" width=80% height=80%>)
+
+<img src="https://user-images.githubusercontent.com/118953938/215338050-0f659c39-a23c-4ea0-86ba-3cec826d87e5.png" width=80% height=80%>)
+
+<img src="https://user-images.githubusercontent.com/118953938/215338081-cc86f595-faec-46d6-b0fb-4d8256430c22.png" width=80% height=80%>)
+
+<img src="https://user-images.githubusercontent.com/118953938/215338127-768e552f-8d17-41f3-afc4-378f4f37c03f.png" width=80% height=80%>)
+	
+	
+</p>
+</details>	
+
+#### :test_tube: Lab 2 - Lab steps to optimize synthesis to reduce setup violations	
+
+<details><summary> Reports </summary>
+<p>	
 	
 	
 	
 </p>
 </details>	
 	
+	
 </p>
-</details>
+</details>		
+	
+	
+	
+	
+	
+	
+	
