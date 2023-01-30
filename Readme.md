@@ -6387,7 +6387,7 @@ Verified that the input and output ports adhere to the rule that states that the
 
 <img src="https://user-images.githubusercontent.com/118953938/215336381-f6613b79-4f18-435a-8575-bb9535e7e5ae.png" width=80% height=80%>
 
-<img src="https://user-images.githubusercontent.com/118953938/215336395-2542fcb1-a2a0-4b87-83e2-ecbcdc172bb4.png" width=80% height=80%>)
+<img src="https://user-images.githubusercontent.com/118953938/215336395-2542fcb1-a2a0-4b87-83e2-ecbcdc172bb4.png" width=80% height=80%>
 	
 	
 </p>
@@ -6399,19 +6399,19 @@ Verified that the input and output ports adhere to the rule that states that the
 <details><summary> Reports </summary>
 <p>
 	
-<img src="https://user-images.githubusercontent.com/118953938/215336525-58a833d9-fc06-462b-afb3-6b6e5c222fb5.png" width=80% height=80%>)
+<img src="https://user-images.githubusercontent.com/118953938/215336525-58a833d9-fc06-462b-afb3-6b6e5c222fb5.png" width=80% height=80%>
 
-<img src="https://user-images.githubusercontent.com/118953938/215336578-b2a65489-135b-4470-8c37-5cc3b9f060c9.png" width=80% height=80%>)
+<img src="https://user-images.githubusercontent.com/118953938/215336578-b2a65489-135b-4470-8c37-5cc3b9f060c9.png" width=80% height=80%>
 
-<img src="https://user-images.githubusercontent.com/118953938/215337619-d6ea2d1c-1d88-4caa-89ba-2e7de0b4ffef.png" width=80% height=80%>)
+<img src="https://user-images.githubusercontent.com/118953938/215337619-d6ea2d1c-1d88-4caa-89ba-2e7de0b4ffef.png" width=80% height=80%>
 
-<img src="https://user-images.githubusercontent.com/118953938/215337668-74768f93-f7f8-48bd-91a1-2a4bdb3d5a69.png" width=80% height=80%>)
+<img src="https://user-images.githubusercontent.com/118953938/215337668-74768f93-f7f8-48bd-91a1-2a4bdb3d5a69.png" width=80% height=80%>
 
-<img src="https://user-images.githubusercontent.com/118953938/215337702-53458b96-1c1d-43b2-a209-ce4bb415c453.png" width=80% height=80%>)
+<img src="https://user-images.githubusercontent.com/118953938/215337702-53458b96-1c1d-43b2-a209-ce4bb415c453.png" width=80% height=80%>
 
-<img src="https://user-images.githubusercontent.com/118953938/215337738-01c5aee8-58c5-48d5-99e7-8d5f125e097d.png" width=80% height=80%>)
+<img src="https://user-images.githubusercontent.com/118953938/215337738-01c5aee8-58c5-48d5-99e7-8d5f125e097d.png" width=80% height=80%>
 
-<img src="https://user-images.githubusercontent.com/118953938/215337769-60a46605-0d24-48dd-bb00-27e3bee94f5b.png" width=80% height=80%>)
+<img src="https://user-images.githubusercontent.com/118953938/215337769-60a46605-0d24-48dd-bb00-27e3bee94f5b.png" width=80% height=80%>
 
 	
 </p>
@@ -6424,13 +6424,13 @@ Verified that the input and output ports adhere to the rule that states that the
 <details><summary> Reports </summary>
 <p>		
 	
-<img src="https://user-images.githubusercontent.com/118953938/215337914-d9d07fdc-3e79-47b7-b073-3595e2e0b7ae.png" width=80% height=80%>)
+<img src="https://user-images.githubusercontent.com/118953938/215337914-d9d07fdc-3e79-47b7-b073-3595e2e0b7ae.png" width=80% height=80%>
 
-<img src="https://user-images.githubusercontent.com/118953938/215338050-0f659c39-a23c-4ea0-86ba-3cec826d87e5.png" width=80% height=80%>)
+<img src="https://user-images.githubusercontent.com/118953938/215338050-0f659c39-a23c-4ea0-86ba-3cec826d87e5.png" width=80% height=80%>
 
-<img src="https://user-images.githubusercontent.com/118953938/215338081-cc86f595-faec-46d6-b0fb-4d8256430c22.png" width=80% height=80%>)
+<img src="https://user-images.githubusercontent.com/118953938/215338081-cc86f595-faec-46d6-b0fb-4d8256430c22.png" width=80% height=80%>
 
-<img src="https://user-images.githubusercontent.com/118953938/215338127-768e552f-8d17-41f3-afc4-378f4f37c03f.png" width=80% height=80%>)
+<img src="https://user-images.githubusercontent.com/118953938/215338127-768e552f-8d17-41f3-afc4-378f4f37c03f.png" width=80% height=80%>
 	
 	
 </p>
@@ -6441,12 +6441,115 @@ Verified that the input and output ports adhere to the rule that states that the
 <details><summary> Reports </summary>
 <p>	
 	
+<img src="https://user-images.githubusercontent.com/118953938/215418998-aec6c442-70f3-4e17-bd3d-484ea494fe27.png" width=80% height=80%>
+
+<img src="https://user-images.githubusercontent.com/118953938/215417870-a30cd07d-00a9-44aa-a282-9d96ffefb0a5.png" width=80% height=80%>
+
+<img src="https://user-images.githubusercontent.com/118953938/215418225-9e0e552f-0692-4c92-baaf-b265da5c88c3.png" width=80% height=80%>
+
+<img src="https://user-images.githubusercontent.com/118953938/215420300-0b216f5c-e0f1-44aa-8bf6-a77f0a09c679.png" width=80% height=80%>
+
+**Improving the delay**
 	
+		in openlane	
+		set ::env(SYNTH_MAX_FANOUT) 4	
+		run_synthesis	
+	
+		replace_cell _38618_ sky130_fd_sc_hd__dfxtp_4 #increase drive strength
+		report_checks -fields {net cap dlew input pins} -digits 4
+		report_tns
+		report_wns
+	
+<img src="https://user-images.githubusercontent.com/118953938/215421356-11bd26c0-a343-4f57-bd36-ea056f6fc2ed.png" width=80% height=80%>
+
 	
 </p>
 </details>	
 	
+#### :test_tube: Lab 3 - Lab steps to do basic timing ECO	
+
+<details><summary> Reports </summary>
+<p>	
 	
+**Command**	
+	
+		report_checks -from _41952_ -through _41879_
+	
+By upsizing the cell, the delay will be reduced.	
+</p>
+</details>	
+	
+### :microscope: Clock tree synthesis TritonCTS and signal integrity
+	
+#### :test_tube: Lab 1 - Lab steps to run CTS using TritonCTS
+
+<details><summary> Reports </summary>
+<p>
+	
+**Commands**
+	
+		write_verilog ~/Desktop/work/tools/openlane_working_dir/openlane/designs/picorv32a/runs/13-01_14-09/results/synthesis/picorv32a.synthesis.v
+		cd ~/Desktop/work/tools/openlane_working_dir/openlane/designs/picorv32a/runs/13-01_14-09/results/synthesis
+		ls -lrt picorv32a.synthesis.v
+	
+		In openlane
+		run_floorplan
+		run_placement
+		run_cts
+	
+		Back to terminal
+		cd ~/Desktop/work/tools/openlane_working_dir/openlane/configuration
+		vim README.md
+	
+**Outputs**
+	
+<img src="https://user-images.githubusercontent.com/118953938/215426720-ec13f7d6-c29a-4927-a2cc-449bb0f1ed15.png" width=80% height=80%>
+
+	
+</p>
+</details>	
+
+#### :test_tube: Lab 2 -  Lab steps to verify CTS runs
+
+<details><summary> Reports </summary>
+<p>
+	
+**Commands**	
+	
+		cd ~/Desktop/work/tools/openlane_working_dir/openlane/scripts/tcl_commands
+		vim cts.tcl	
+		cd ~/Desktop/work/tools/openlane_working_dir/openlane/scripts/openroad
+		vim or_cts.tcl
+		
+		in openlane
+		echo $::env(LIB_TYPICAL)
+		echo $::env(CURRENT_DEF)
+		echo $::env(CTS_MAX_CAP)
+		echo $::env(CTS_CLK_BUFFER_LIST)
+		echo $::env(CTS_ROOT_BUFFER)
+	
+**Outputs**	
+	
+<img src="https://user-images.githubusercontent.com/118953938/215430505-1e8619ea-510b-4927-bfdc-415a240ecc2b.png" width=80% height=80%>
+	
+<img src="https://user-images.githubusercontent.com/118953938/215430731-84fe6b87-6a2c-4d7f-a67a-72f14149d0b3.png" width=80% height=80%>
+
+<img src="https://user-images.githubusercontent.com/118953938/215431244-dc72764d-7ff3-4f0a-ad14-a1e6ed013b61.png" width=80% height=80%>
+
+</p>
+</details>	
+
+### :microscope: Clock tree synthesis TritonCTS and signal integrity
+	
+#### :test_tube: Lab 1 - Lab steps to run CTS using TritonCTS
+	
+<details><summary> Reports </summary>
+<p>	
+	
+	
+	
+</p>
+</details>	
 </p>
 </details>		
 	
