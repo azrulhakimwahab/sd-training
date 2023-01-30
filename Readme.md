@@ -6677,6 +6677,74 @@ By upsizing the cell, the delay will be reduced.
 <details><summary> :mag_right: Theories </summary>
 <p>	
 	
+### :mag_right:  Final steps for RTL2GDS using tritonRoute and openSTA
+	
+:black_nib: **Introduction to Maze Routing using Lee's algorithm**
+	
+<details><summary> Explainations </summary>
+<p>	
+	
+**What is maze routing algorithm?**
+	
+The Maze Routing algorithm is an algorithm to find connections between the terminals and the Lee algorithm is one possible solution for Maze routing problems. Lee algorithm searches for the shortest path between two terminals and guarantees to find a route between two points if the connection exists.	
+
+**What is Lee algorithm used for?**
+	
+The Lee algorithm is one possible solution for maze routing problems. It always gives an optimal solution, if one exists, but is slow and requires large memory for dense layout.
+
+<img src="https://user-images.githubusercontent.com/118953938/215517694-dfa5f387-7d40-4890-992c-5bbfe66252a8.png" width=70% height=70%>
+
+<img src="https://user-images.githubusercontent.com/118953938/215520017-b3229269-1560-45e7-8a17-f666aea0409d.png" width=70% height=70%>
+
+<img src="https://user-images.githubusercontent.com/118953938/215521235-30f33a2a-0dbb-43a4-8755-a3fd9eac40be.png" width=70% height=70%>
+
+* There will be some standard dimentions to the grid.
+* A routing grid is superimposed on routing region. Routing takes place along the grid lines. 
+* The space between adjacent grid lines is called wire pitch and is equal to sum of minimum width of wires and spacing of wires.
+
+It usually uses the following steps:
+	
+* A routing grid should be created behind the layout.
+* Track down the two points. The source and target were established as the two points.
+* The routing grid will be used by the algorithm to find the optimum path between the two spots.
+* The tool will mark the grid ground where a horizontal and vertical grid will be close.
+	
+<img src="https://user-images.githubusercontent.com/118953938/215523626-c0ea4b51-3c2b-4b00-a0c2-1016bb36f3f0.png" width=70% height=70%>
+	
+	
+</p>
+</details>	
+
+:black_nib: **Introduction to Maze Routing using Lee's algorithm**
+	
+<details><summary> Explainations </summary>
+<p>	
+	
+* Continually add the numbers	
+	
+	
+	
+	
+	
+	
+</p>
+</details>		
+
+:black_nib: **Design Rule Check**
+	
+<details><summary> Explainations </summary>
+<p>	
+	
+	
+	
+	
+	
+	
+	
+	
+</p>
+</details>
+	
 	
 </p>
 </details>	
