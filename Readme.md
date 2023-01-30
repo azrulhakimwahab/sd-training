@@ -6095,12 +6095,96 @@ What are types of clock gating?<br>
 </p>
 </details>	
 
+### :mag_right: Timing analysis with ideal clocks using openSTA
 	
+:black_nib: **Setup timing analysis and introduction to flip-flop setup time**
 	
+<details><summary> Explainations </summary>
+<p>		
+	
+**Setup Timing Analysis**
+
+* Static timing analysis (STA) is a method of validating the timing performance of a design by checking all possible paths for timing violations.
+* Setup time is the minimum amount of time the data signal should be held steady before the clock event so that the data are reliably sampled by the clock. 
+* Hold time is the minimum amount of time the data signal should be held steady after the clock event so that the data are reliably sampled.
+
+**How it works?**
+
+<img src="https://user-images.githubusercontent.com/118953938/215364823-acebfc01-e334-4ce1-9fc7-83ab013bc416.png" width=80% height=80%>
+	
+* One clock edge hits the launch flop at the zero time stamp.
+* The second rising edge reaches the capture flop at time stamp T. Between 0 and T, any necessary analysis must be performed. 
+* The combinational delay must be shorter than the period, T, for the combinational circuit to function.
+
+In more real-world situations, the internal flop circuitry will experience a delay between mux 1 and mux 2, according on how the flop operates.
+	
+<img src="https://user-images.githubusercontent.com/118953938/215365403-830a8e60-23f9-4b94-9fd9-a123dd8d9343.png" width=80% height=80%>
+	
+* The combinational delay needs will be constrained by these internal delays.
+* The setup time is the name for this internal delay, and it must be deducted from the whole clock period T.
+* In order to ensure that the data is prepared at Q by the time the second rise edge of the clock reaches, the capture flop now has enough time to calculate the data within the flop.	
+	
+<img src="https://user-images.githubusercontent.com/118953938/215365640-b507f12f-a7aa-4a68-8bb6-0d7ac996b639.png" width=80% height=80%>
+	
+In order to guarantee that the data system operates within the allotted time, the capture flop now has adequate time to bring the data to the flop.	
+	
+</p>
+</details>	
+
+:black_nib: **Introduction to clock jitter and uncertainty**
+	
+<details><summary> Explainations </summary>
+<p>	
+
+**JITTER**
+
+Clock jitter is typically caused by clock generator circuitry, noise, power supply variations, interference from nearby circuitry etc. <br>
+Jitter is a contributing factor to the design margin specified for timing closure.
+	
+* Period jitter
+	* Period jitter is the deviation in cycle time of a clock signal with respect to the ideal period over a number of randomly selected cycles(say 10K cycles). 
+	* It can be specified an average value of of clock period deviation over the selected cycles(RMS value) or can be the difference between maximum deviation & minimum deviation within the selected group(peak-to-peak period jitter).
+
+* Cycle to cycle jitter
+	* C2C is the deviation in cycle of of two adjacent clock cycles over a random number of clock cycles. (say 10K). 
+	* This is typically reported as a peak value within the random group.This is used to determine the high frequency jitter.
+
+* Phase jitter
+	* In frequency domain, the effect being measured is phase noise. 
+	* It is the frequency domain representation of rapid, short-term, random fluctuations in the phase of a waveform. 
+	* This can be translated to jitter values for use in digital design.
+	
+To put it a simple word:
+	
+Clock jitter = On the same Flip-Flop, the position of the clock edge moves from edge to edge due to the oscillator noise/stability. Clock uncertainty = I'm not sure. The fact that an edge is neve perfect and that you can't say precisely when it was taken into account by the Flip-Flop?
+	
+<img src="https://user-images.githubusercontent.com/118953938/215366450-822d67b8-28d1-4954-9151-7ef92faf1cad.png" width=80% height=80%>
+
+* In ideal circumstances, the clock signal should be able to reach the clock pin at exactly 0 or Ts, but in practise, this may not be possible because each clock source generation may have its own inherent fluctuation.
+* This is referred to as jitter, which is a brief change in the clock's period.
+* As a consequence, the combinational delay will be tightened up. As a result, we modify our combinational delay to account for the jitter's uncertainty component.
+	
+<img src="https://user-images.githubusercontent.com/118953938/215366576-a2766aa2-55f2-4f24-94a0-d409348b3be1.png" width=80% height=80%>
+	
+**Setup Uncertainty**	
+
+_Uncertainty: It specifies a window within which a clock edge can occur._ 
+* Clock uncertainty is the deviation of the actual arrival time of the clock edge with respect to the ideal arrival time. 
+* In ideal mode the clock signal can arrive at all clock pins simultaneously.	
+* In physical design uncertainty will be used to model several factors like jitter (the deviation of clock edge from its ideal position), additional margins and skew (at pre-cts) There will be different uncertainty values specified for setup and hold.
+
+<img src="https://user-images.githubusercontent.com/118953938/215367146-336744da-3f48-4561-892b-ed44616508d1.png" width=80% height=80%>
+
+<img src="https://user-images.githubusercontent.com/118953938/215367295-e1cb162f-5052-4c93-9ba6-465082411a13.png" width=80% height=80%>
+
+</p>
+</details>	
+
 	
 	
 </p>
 </details>	
+	
 	
 	
 <details><summary> :test_tube: Labs </summary>
@@ -6235,6 +6319,28 @@ Verified that the input and output ports adhere to the rule that states that the
 	
 </p>
 </details>		
+	
+	
+## :book: Day 19 - Final steps for RTL2GDS
+
+<details><summary> :mag_right: Theories </summary>
+<p>	
+	
+	
+</p>
+</details>	
+	
+<details><summary> :test_tube: Labs </summary>
+<p>
+
+### :microscope: Timing modelling using delay tables
+	
+#### :test_tube: Lab 1 - Lab steps to convert grid info to track info	
+	
+	
+</p>
+</details>	
+	
 	
 	
 	
