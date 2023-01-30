@@ -6539,17 +6539,135 @@ By upsizing the cell, the delay will be reduced.
 </p>
 </details>	
 
-### :microscope: Clock tree synthesis TritonCTS and signal integrity
+### :microscope: Timing analysis with real clocks using openSTA
 	
-#### :test_tube: Lab 1 - Lab steps to run CTS using TritonCTS
+#### :test_tube: Lab 1 - Lab steps to analyze timing with real clocks using OpenSTA
 	
 <details><summary> Reports </summary>
 <p>	
 	
+**Commands**	
+		
+		invoking openroad
+		-openroad     
 	
+		read lef and def file
+		-read_lef /openLANE_flow/designs/picorv32a/runs/13-01_14-09/tmp/merged.lef
+		-read_def /openLANE_flow/designs/picorv32a/runs/13-01_14-09/results/cts/picorv32a.cts.def
+		
+		writing db file
+		-write_db pico_cts.db
+	
+		read .db
+		-read_db pico_cts.db
+		-read_verilog /openLANE_flow/designs/picorv32a/runs/13-01_14-09/results/synthesis/picorv32a.synthesis_cts.v
+		-read_liberty -max $::env(OPENLANE_ROOT)/designs/picorv32a/src/sky130_fd_sc_hd__slow.lib
+		-read_liberty -min $::env(OPENLANE_ROOT)/designs/picorv32a/src/sky130_fd_sc_hd__fast.lib
+	
+		-set_propagated_clock [all_clocks]
+		-read_sdc designs/picorv32a/src/my_base.sdc
+	
+		Report
+		-report_checks -path_delay min_max -format full_clock_expanded -digits 4	
+	
+**Outputs**	
+	
+<img src="https://user-images.githubusercontent.com/118953938/215476290-36efe8df-dc84-408e-894a-2c7dc5472c5b.png" width=50% height=50%>
+
+<img src="https://user-images.githubusercontent.com/118953938/215476470-0a7315a5-c86d-48c3-a4a0-22f7af18607c.png" width=50% height=50%>	
+	
+</p>
+</details>
+	
+#### :test_tube: Lab 2 - Lab steps to execute OpenSTA with right timing libraries and CTS assignment
+	
+<details><summary> Reports </summary>
+<p>	
+	
+**Commands**
+		
+		-exit
+	
+		invoke openroad
+		-openroad
+		-read_db pico_cts.db
+		-read_verilog /openLANE_flow/designs/picorv32a/runs/13-01_14-09/results/synthesis/picorv32a.synthesis_cts.v
+		-read_liberty $::env(LIB_SYNTH_COMPLETE)
+	
+		Linking the design with database
+		-link_design picorv32a
+	
+		read_sdc designs/picorv32a/src/my_base.sdc
+		-set_propagated_clock [all_clocks]
+		-report_checks -path_delay min_max -fields {slew trans net cap input pin} -format full_clock_expanded
+		-echo $::env(CTS_CLK_BUFFER_LIST)     
+	
+**Outputs**
+	
+<img src="https://user-images.githubusercontent.com/118953938/215477949-ce568247-5ad2-4d8e-a265-42a689724687.png" width=50% height=50%>
+	
+<img src="https://user-images.githubusercontent.com/118953938/215478281-89e5e721-78c4-4a0e-be4b-269caf9188d6.png" width=50% height=50%>
 	
 </p>
 </details>	
+	
+#### :test_tube: Lab 3 - Lab steps to observe impact of bigger CTS buffers on setup and hold timing
+	
+<details><summary> Reports </summary>
+<p>	
+	
+**Commands**	
+	
+		In openlane, run these command
+		-exit 
+		-echo $::env(CTS_CLK_BUFFER_LIST)
+		-set ::env(CTS_CLK_BUFFER_LIST) [lreplace $::env(CTS_CLK_BUFFER_LIST) 0 0]
+		-echo $::env(CURRENT_DEF)
+		-set ::env(CURRENT_DEF) /openLANE_flow/designs/picorv32a/runs/13-01_14-09/results/placement/picorv32a.placement.def
+		-run_cts	
+	
+		Back to openroad
+		Invoke
+		-openroad
+	
+		read lef and def file
+		-read_lef /openLANE_flow/designs/picorv32a/runs/13-01_14-09/tmp/merged.lef
+		-read_def /openLANE_flow/designs/picorv32a/runs/13-01_14-09/results/cts/picorv32a.cts.def
+	
+		write and read db file
+		-write_db pico_cts1.db
+		-read_db pico_cts1.db
+		-read_verilog /openLANE_flow/designs/picorv32a/runs/13-01_14-09/results/synthesis/picorv32a.synthesis_cts.v
+		-read_liberty $::env(LIB_SYNTH_COMPLETE)
+	
+		linking file
+		-link_design picorv32a
+		-read_sdc designs/picorv32a/src/my_base.sdc
+		-set_propagated_clock [all_clocks]
+	
+		report
+		-report_checks -path_delay min_max -fields {slew trans net cap input pin} -format full_clock_expanded
+	
+		setup and hold time report
+		-report_clock_skew -hold
+		-report_clock_skew -setup
+		-set ::env(CTS_CLK_BUFFER_LIST) [linsert $::env(CTS_CLK_BUFFER_LIST) 0 sky130_fd_sc_hd__clkbuf_1]     
+	
+**Outputs**	
+	
+<img src="https://user-images.githubusercontent.com/118953938/215482336-17fd4862-eb29-4b9a-9886-785e7bff414e.png" width=50% height=50%>
+	
+<img src="https://user-images.githubusercontent.com/118953938/215483930-6d6f0831-71cb-4629-aadd-d3504409cf64.png" width=50% height=50%>
+	
+<img src="https://user-images.githubusercontent.com/118953938/215484464-c18e451c-497f-4f7d-9c5b-3ef724d6895f.png" width=50% height=50%>
+
+<img src="https://user-images.githubusercontent.com/118953938/215485597-05997654-2589-4d14-9ff5-d0e9ea6624ba.png" width=50% height=50%>
+
+	
+</p>
+</details>	
+	
+	
 </p>
 </details>		
 	
