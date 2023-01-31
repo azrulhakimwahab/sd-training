@@ -6895,6 +6895,25 @@ For more information can visit this link : https://slideplayer.com/slide/1603047
 <details><summary> Reports </summary>
 <p>
 	
+**Commands**
+	
+		invoking back the openlane
+		-cd work/tools/openlane_working_dir/openlane
+		-make mount
+		-pwd
+		-ls -ltr
+		-./flow.tcl -interactive
+		-package require openlane 0.9
+		-prep -design picorv32a -tag 13-01_14-09
+
+		To ensure current_def is on the CTS stage
+		-echo $::env(CURRENT_DEF)  
+	
+		To generate power distribution network
+		-gen_pdn                     
+	
+* If we want to retain the configurations from the last openlane job, we need to use **_prep -design -tag_**. 
+* If we want to create a fresh run with new configurations but without changing the tag name, we need to use **_prep -design -tag -overwrite_**.
 	
 	
 </p>
