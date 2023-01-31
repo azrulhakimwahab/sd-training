@@ -6722,11 +6722,22 @@ It usually uses the following steps:
 	
 * Continually add the numbers	
 	
+<img src="https://user-images.githubusercontent.com/118953938/215625976-58562084-ef81-49c2-8605-aaf1cce36293.png" width=70% height=70%>
+
+* As seen in the image above, selecting the LHS is superior to selecting the RHS.
+* The optimal path, which has less bending (L-shaped), was picked in the LHS figure rather than the RHS figure as below.
 	
+<img src="https://user-images.githubusercontent.com/118953938/215626436-6471acbe-9973-4fc1-95a0-5bdbf5515710.png" width=70% height=70%>
 	
+* LHS figure will therefore start the global routing. Routing for a single route will be quite straightforward, but if we need to route between millions of start and endpoints, this technique will take a lot of time and memory.	
+* Large designs need more time and memory spent on maze routing.
+* Some methods, such the line-search algorithm and stanner-tree algorithm, can help to decrease the amount of time and memory used.
 	
+<img src="https://user-images.githubusercontent.com/118953938/215626907-5529ce67-50ad-44de-aa12-4425e94c889c.png" width=70% height=70%>
 	
+<img src="https://user-images.githubusercontent.com/118953938/215627250-15f9fef3-bcf3-4bd0-94eb-41e5e9598358.png" width=70% height=70%>
 	
+
 </p>
 </details>		
 
