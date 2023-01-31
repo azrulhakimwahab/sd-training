@@ -6746,13 +6746,46 @@ It usually uses the following steps:
 <details><summary> Explainations </summary>
 <p>	
 	
+**Design Rule Checking (DRC)**
+* verifies as to whether a specific design meets the constraints imposed by the process technology to be used for its manufacturing. 
+* DRC checking is an essential part of the physical design flow and ensures the design meets manufacturing requirements and will not result in a chip failure.	
+* The minimum wire width rule, which states that the wire's width must not be smaller than a certain number depending on the constraints of the manufacturing process, may be one of the rules.
+* The wire pitch rule, which states that the center-to-centre spacing between 2 wires should not be less than a specific distance, is another regulation based on the lithography fabrication method.	
 	
+<img src="https://user-images.githubusercontent.com/118953938/215628726-ce013dea-9f38-4a2e-af1a-d7cc708a56f4.png" width=70% height=70%>
 	
+* Wire spacing is another regulation, which states that there shall be a minimum space between any two wires.
+* When completing the design's routing, the tool must take into consideration a number of rules.	
 	
+<img src="https://user-images.githubusercontent.com/118953938/215629342-56853fda-bdc8-45fa-bf97-a8b94d07002f.png" width=70% height=70%>
+
+<img src="https://user-images.githubusercontent.com/118953938/215629375-ae80fd9b-8155-4194-89fd-6b4cd946bd8f.png" width=70% height=70%>
+
+<img src="https://user-images.githubusercontent.com/118953938/215629659-2acb7c66-7b74-48f9-abf0-3a2ee9e69968.png" width=70% height=70%>
+
+* A signal short, which occurs when two wires that are not supposed to be linked come into touch on the same layer, is one kind of DRC violation.
+* It is necessary to address this as it might result in functional failure.
+* Simply relocating one of the wires to a different metal layer will solve this problem.
+* Please be aware that there are new DRC regulations that must be taken into consideration.	
 	
+<img src="https://user-images.githubusercontent.com/118953938/215630115-5a10a1fe-6f3f-481a-a5e4-3c1e9a6301d5.png" width=70% height=70%>
+
+DRC rules to be followed when performing the routing of design<br>
+1) wire width 
+	* must not be less than yet not more than a certain quantity
+2) wire pitch 
+	* the two wires' centres should be separated by at least the specified amount of space.
+3) wire spacing 
+	* Minimum spacing should be used, which implies it can't be any smaller or larger.
 	
+<img src="https://user-images.githubusercontent.com/118953938/215630345-b73572e8-49e9-4458-aa38-77ffa686fee3.png" width=70% height=70%>
+
+<img src="https://user-images.githubusercontent.com/118953938/215631030-f27b8fca-e668-4b0e-a42b-336c460ee473.png" width=70% height=70%>
+
+Executing parasitic extraction, where the wires' capacitances and resistances are removed and utilised in subsequent procedures.
 	
-	
+<img src="https://user-images.githubusercontent.com/118953938/215631679-8bab978c-ca50-4d6b-83a1-453473776bfb.png" width=70% height=70%>
+
 </p>
 </details>
 	
