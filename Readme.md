@@ -6788,6 +6788,21 @@ Executing parasitic extraction, where the wires' capacitances and resistances ar
 
 </p>
 </details>
+
+### :mag_right:  TritonRoute Features
+	
+:black_nib: **TritonRoute feature 1 - Honors pre-processed route guides**
+	
+<details><summary> Explainations </summary>
+<p>	
+	
+	
+	
+	
+	
+	
+</p>
+</details>	
 	
 	
 </p>
