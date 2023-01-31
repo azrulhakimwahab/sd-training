@@ -6944,9 +6944,24 @@ There are several VLSI techniques to reduce leakage power, input rise time, sour
 	
 <details><summary> Reports </summary>
 <p>
+
+**Commands**
 	
+		to see change from CTS 1 to floorplan/pdn.def
+		-echo $::env(CURRENT_DEF) 
+		-echo $::env(ROUTING_STRATEGY) 
+		-run_routing
 	
+		read README.md
+		-cd ~/Desktop/work/tools/openlane_working_dir/openlane/configuration
+		-vim README.md
 	
+**Outputs**
+	
+<img src="https://user-images.githubusercontent.com/118953938/215666151-f0423387-da44-4f7d-b1c8-b2a11e4f1075.png" width=60% height=60%>
+	
+<img src="https://user-images.githubusercontent.com/118953938/215666412-22563704-ab9a-4d54-98db-1263ccfadca2.png" width=70% height=70%>
+
 </p>
 </details>
 	
