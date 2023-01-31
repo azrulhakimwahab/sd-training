@@ -6915,7 +6915,10 @@ For more information can visit this link : https://slideplayer.com/slide/1603047
 * If we want to retain the configurations from the last openlane job, we need to use **_prep -design -tag_**. 
 * If we want to create a fresh run with new configurations but without changing the tag name, we need to use **_prep -design -tag -overwrite_**.
 	
+**Outputs**
 	
+<img src="https://user-images.githubusercontent.com/118953938/215661677-7861a577-3ba5-4beb-a270-1d8d1ffacefe.png" width=70% height=70%>
+
 </p>
 </details>	
 	
