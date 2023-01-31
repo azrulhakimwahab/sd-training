@@ -6888,9 +6888,9 @@ For more information can visit this link : https://slideplayer.com/slide/1603047
 <details><summary> :test_tube: Labs </summary>
 <p>
 
-### :microscope: Timing modelling using delay tables
+### :microscope:  Power Distribution Network and routing
 	
-#### :test_tube: Lab 1 - Lab steps to convert grid info to track info	
+#### :test_tube: Lab 1 - Lab steps to build power distribution network	
 	
 	
 </p>
