@@ -7000,15 +7000,66 @@ Creating a new spef file that requires merged.lef and picorv32a.def
 	
 <img src="https://user-images.githubusercontent.com/118953938/215672591-64f53b81-dfea-4088-b95e-ca879b56bbaf.png" width=70% height=70%>
 	
+</p>
+</details>	
+</p>
+</details>	
+
+## :book: Day 20 -  Floorplanning and power planning labs
+
+<details><summary> :mag_right: Theories </summary>
+<p>
 	
+### :mag_right: Floorplanning theory and recap	
+
+**Divisions**
+	
+Typically, the IC physical design is categorized into full custom and semi-custom design.
+
+* Full-Custom: Designer has full flexibility on the layout design, no predefined cells are used.
+* Semi-Custom: Pre-designed library cells (preferably tested with DFM) are used, designer has flexibility in placement of the cells and routing.
+	
+One can use ASIC for Full Custom design and FPGA for Semi-Custom design flows. The reason being that one has the flexibility to design/modify design blocks from vendor provided libraries in ASIC.[5] This flexibility is missing for Semi-Custom flows using FPGAs (e.g. Altera).
+		
+<img src="https://user-images.githubusercontent.com/118953938/215805411-db49b39e-23b0-413a-8de8-f8268447fbe1.png" width=70% height=70%>
+
+The **physical design flow** uses the technology libraries that are provided by the fabrication houses. These technology files provide information regarding the type of silicon wafer used, the standard-cells used, the layout rules (like DRC in VLSI), etc.
+
+**Floorplanning** _is the process of identifying structures that should be placed close together, and allocating space for them in such a manner as to meet the sometimes conflicting goals of available space (cost of the chip), required performance, and the desire to have everything close to everything else._
+
+* Floorplanning takes into account the macros used in the design, memory, other IP cores and their placement needs, the routing possibilities, and also the area of the entire design. 
+* Floorplanning also determines the IO structure and aspect ratio of the design. A bad floorplan will lead to wastage of die area and routing congestion.
+		
 </p>
 </details>	
 	
+<details><summary> :test_tube: Labs </summary>
+<p>	
+	
+#### :test_tube: Task 1
+	
+<details><summary> Reports </summary>
+<p>	
+	
+	
+	
 	
 </p>
-</details>	
+</details>		
+	
+#### :test_tube: Task 2
+	
+<details><summary> Reports </summary>
+<p>	
 	
 	
+	
+	
+</p>
+</details>
+	
+</p>
+</details>		
 	
 	
 	
