@@ -6973,6 +6973,32 @@ There are several VLSI techniques to reduce leakage power, input rise time, sour
 <details><summary> Reports </summary>
 <p>
 	
+**Triton Route**	
+* Inputs
+	* LEF, DEF, Preprocessed route guides
+* Output
+	* Detailed routing solution with optimized wire-length and via count
+* Constraints
+	* Route guide honoring, connectivity constraints and design rules
+	
+<img src="https://user-images.githubusercontent.com/118953938/215670096-71e92922-f64f-4a5a-84f6-6a5ea0087d0c.png" width=70% height=70%>
+
+<img src="https://user-images.githubusercontent.com/118953938/215670666-7b8e4dcf-68b9-40a0-a831-2f717a3ea426.png" width=40% height=40%>
+
+* Currently, TritonRoute strategy = 0 has been selected.
+* The violations may be 0 but the execution may take some time if TritonRoute strategy = 14 is selected.
+* As a result, we must manually correct the violations.
+	
+<img src="https://user-images.githubusercontent.com/118953938/215671346-c46c91c5-208c-4e66-942f-7097e1dc0790.png" width=60% height=60%>
+	
+<img src="https://user-images.githubusercontent.com/118953938/215672020-9fb78994-34ea-415a-8b6b-32484d7f7fc2.png" width=70% height=70%>
+	
+Creating a new spef file that requires merged.lef and picorv32a.def	
+* Routing guides 
+* Extract parasitics where we need to declare the LEF and the DEF first
+* Netlist modified due to the antenna diodes insertions happens	
+	
+<img src="https://user-images.githubusercontent.com/118953938/215672591-64f53b81-dfea-4088-b95e-ca879b56bbaf.png" width=70% height=70%>
 	
 	
 </p>
