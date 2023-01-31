@@ -6821,6 +6821,65 @@ Steps
 	
 </p>
 </details>	
+
+:black_nib: **TritonRoute Feature2 & 3 - Inter-guide connectivity and intra- & inter-layer routing**
+	
+<details><summary> Explainations </summary>
+<p>	
+
+There will be a preferred routing direction assigned to each layer or panel, in which the routes should be built.
+
+Only once routing in the lower levels has been finished will routing in the higher layers start.
+	
+<img src="https://user-images.githubusercontent.com/118953938/215635346-02014dac-ff3d-42af-b8d0-cdfd1b90d4d6.png" width=70% height=70%>	
+	
+The two guides are connected if:	
+* They are on the same metal layer with touching edges, or
+* they are on the neighbouring metal layers with a non zero vertically overlapped area
+	
+Each connected terminal example a pin of a standard cell instance should have its pin shape overlapped by a route guide
+	
+<img src="https://user-images.githubusercontent.com/118953938/215648758-3a156459-be21-43ea-9134-debdd209309e.png" width=70% height=70%>
+	
+For more information can visit this link : https://slideplayer.com/slide/16030472/	
+	
+</p>
+</details>	
+	
+:black_nib: **TritonRoute method to handle connectivity**
+	
+<details><summary> Explainations </summary>
+<p>	
+
+**TritonRoute method to handle connectivity**	
+	
+* Detailed routing is a dead-or-alive critical element in design automation tooling for advanced node enablement.	
+* The LEF file, DEF file, and the Preprocessed route guidelines are the input files required by TritonRoute.
+* A full routing solution with optimal wire-length and through count would be the TritonRoute's output.
+* The route guide must be respected, as well as any connection restrictions and design guidelines, in TritonRoute.	
+	
+**TritonRoute method**
+
+* 2 ways of handling the conectivity
+	* Access Point (AP)
+		* Access point: on-grid point on the metal layer of the route guide, and is used to connect to lower-layer segments, upper-layer segments, pins or IO ports.
+	
+	* Access Point Cluster (APC)	
+		* Access Point Cluster: a union of all Access Points derived from the same lower-layer segment, upper-layer guide, a pin or an IO port.
+
+<img src="https://user-images.githubusercontent.com/118953938/215649916-4c2ad4ec-7be0-4b8f-b336-f058d6cd94df.png" width=50% height=50%>
+
+<img src="https://user-images.githubusercontent.com/118953938/215650437-5c1a0baa-671a-4315-9008-cb61b62bb443.png" width=70% height=70%>
+
+* Creating the best possible connection between two access points is the goal of Mixed Integer Linear Programming (MILP).
+	* Pick which access point the via should be dropped at.
+	* Deciding on the connection method between the first access point and the following access point.
+	
+<img src="https://user-images.githubusercontent.com/118953938/215651006-2b78975a-4dfe-463b-83d9-cb05059e236c.png" width=70% height=70%>
+	
+	
+</p>
+</details>	
 	
 	
 </p>
