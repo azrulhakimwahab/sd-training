@@ -6796,10 +6796,28 @@ Executing parasitic extraction, where the wires' capacitances and resistances ar
 <details><summary> Explainations </summary>
 <p>	
 	
+**TritonRoute** 
+* is an open source detailed router for modern industrial designs. The router consists of several main building blocks, including pin access analysis, track assignment, initial detailed routing, search and repair, and a DRC engine.	
 	
+* Performs the initial detail route
 	
+<img src="https://user-images.githubusercontent.com/118953938/215635124-a126bd27-6815-4d66-bd34-42815b1b4e33.png" width=70% height=70%>
 	
+* Honours the preprocessed route guides (obtained after fast routes), wherein the tool attempts as much as possible to route within route guides.
+* Assumes route guides for each net satisfy inter-guide conectivity
+* Works on proposed MILP-based panel routing scheme with intra-layer paralled and inter-layer sequential routing framework
+
+<img src="https://user-images.githubusercontent.com/118953938/215635346-02014dac-ff3d-42af-b8d0-cdfd1b90d4d6.png" width=70% height=70%>
 	
+Requirements of preprocessed route guides:<br>
+1) Should have unit width
+2) Should be in preffered direction
+
+Steps
+* After FastRoute completed the global route. Initial routing guidance is the FastRoute's output. 
+* It will split improperly when it should have encountered a horizontal axis instead of a vertical one, a process known as spilitting. 
+* The process of merging the edges follows. net, which crosses a further top layer. 
+* Preprocessed guidelines as M1 = vertical, M2 = horizontal are the last step.
 	
 </p>
 </details>	
