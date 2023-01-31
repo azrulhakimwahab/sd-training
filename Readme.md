@@ -6892,12 +6892,51 @@ For more information can visit this link : https://slideplayer.com/slide/1603047
 	
 #### :test_tube: Lab 1 - Lab steps to build power distribution network	
 	
+<details><summary> Reports </summary>
+<p>
+	
+	
+	
+</p>
+</details>	
+	
+#### :test_tube: Lab 2 - Lab steps from power straps to std cell power	
+	
+<details><summary> Reports </summary>
+<p>
+	
+	
+	
+</p>
+</details>
+	
+	
+#### :test_tube: Lab 3 - Basics of global and detail routing and configure TritonRoute	
+	
+<details><summary> Reports </summary>
+<p>
+	
+	
+	
+</p>
+</details>
+	
+	
+### :microscope:  TritonRoute Features
+	
+#### :test_tube: Lab 1 - Routing topology algorithm and final files list post-route	
+	
+<details><summary> Reports </summary>
+<p>
+	
+	
 	
 </p>
 </details>	
 	
 	
-	
+</p>
+</details>	
 	
 	
 	
