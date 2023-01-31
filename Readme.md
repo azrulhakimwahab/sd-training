@@ -6926,7 +6926,14 @@ For more information can visit this link : https://slideplayer.com/slide/1603047
 	
 <details><summary> Reports </summary>
 <p>
+
+**What are the power distribution techniques in VLSI?**
+There are several VLSI techniques to reduce leakage power, input rise time, source leakage current, gate current. Switching power,short circuit power, power in capacitance, and also dissipation in output loading effect the power consumption of device
 	
+* The power and ground rails has a pitch of 2.72um thus the reason why the customized inverter cell has a height of 2.72 or else the power and ground rails will not be able to power up the cell. 
+* Looking at the LEF file runs/[date]/tmp/merged.nom.lef, you will notice that all cells are of height 2.72um and only width differs.
+	
+<img src="https://user-images.githubusercontent.com/118953938/215664521-0efa3f68-ac9e-43f0-bf1a-b1c686ccef72.png" width=70% height=70%>
 	
 	
 </p>
