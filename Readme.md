@@ -7040,9 +7040,25 @@ The **physical design flow** uses the technology libraries that are provided by 
 	
 <details><summary> Reports </summary>
 <p>	
+
+**Commands**
+	
+		In dc_shell
+		 set target_library [list /nfs/png/home/wahabm/sky130RTLDesignAndSynthesisWorkshop/DC_WORKSHOP/lib/avsddac.db /nfs/png/home/wahabm/sky130RTLDesignAndSynthesisWorkshop/DC_WORKSHOP/lib/avsdpll.db /nfs/png/home/wahabm/sky130RTLDesignAndSynthesisWorkshop/DC_WORKSHOP/lib/sky130_fd_sc_hd__tt_025C_1v80.db]
+		set link_library  [list /nfs/png/home/wahabm/sky130RTLDesignAndSynthesisWorkshop/DC_WORKSHOP/lib/avsddac.db /nfs/png/home/wahabm/sky130RTLDesignAndSynthesisWorkshop/DC_WORKSHOP/lib/avsdpll.db /nfs/png/home/wahabm/sky130RTLDesignAndSynthesisWorkshop/DC_WORKSHOP/lib/sky130_fd_sc_hd__tt_025C_1v80.db]
+		set symbol_library ""
+		read_file -format verilog {/nfs/png/disks/png_mip_gen6p9ddr_0032/wahabm/sky130RTLDesignAndSynthesisWorkshop/day20/VSDBabySoC_ICC2/vsdbabysoc.v}
+
 	
 	
 	
+**Outputs**	
+	
+<img src="https://user-images.githubusercontent.com/118953938/216206000-21f5ee3c-7bca-4a2c-9ab9-2df2daa80d94.png" width=70% height=70%>
+	
+<img src="https://user-images.githubusercontent.com/118953938/216227263-92e9eeb1-b971-432a-bab6-1a3e3d2a12f8.png" width=80% height=80%>
+	
+<img src="https://user-images.githubusercontent.com/118953938/216229943-3ffcc3ef-1a29-4543-a34b-a648c0267b22.png" width=80% height=80%>
 	
 </p>
 </details>		
