@@ -7036,7 +7036,7 @@ The **physical design flow** uses the technology libraries that are provided by 
 <details><summary> :test_tube: Labs </summary>
 <p>	
 	
-#### :test_tube: Task 1
+#### :test_tube: Task 1 : Physical Design Flow
 	
 <details><summary> Reports </summary>
 <p>	
@@ -7059,14 +7059,57 @@ The **physical design flow** uses the technology libraries that are provided by 
 <img src="https://user-images.githubusercontent.com/118953938/216227263-92e9eeb1-b971-432a-bab6-1a3e3d2a12f8.png" width=80% height=80%>
 	
 <img src="https://user-images.githubusercontent.com/118953938/216229943-3ffcc3ef-1a29-4543-a34b-a648c0267b22.png" width=80% height=80%>
+
+<img src="https://user-images.githubusercontent.com/118953938/217576627-a429c360-a433-4960-a579-d38818d8e84c.png" width=80% height=80%>
 	
+<img src="https://user-images.githubusercontent.com/118953938/217576767-216f23c7-32ec-4628-ab35-722f51bd2f18.png" width=80% height=80%>
+
+<img src="https://user-images.githubusercontent.com/118953938/217576836-a89fccd8-b97e-47c8-9f6e-3a0de475893e.png" width=80% height=80%>
+
+<img src="https://user-images.githubusercontent.com/118953938/217576908-0e9aceaf-94c5-4ff1-9f72-6ffc7ea8302e.png" width=80% height=80%>
+	
+<img src="https://user-images.githubusercontent.com/118953938/217574959-edf652ac-dd57-4be5-abad-95d37b9869dd.png" width=80% height=80%>
+
+<img src="https://user-images.githubusercontent.com/118953938/217575570-a1685f27-a4f4-44a0-b56e-51c850d4381a.png" width=80% height=80%>
+
+<img src="https://user-images.githubusercontent.com/118953938/217575951-7577dbe6-0891-4346-bc81-0a4a861c8f04.png" width=80% height=80%>
+
+<img src="https://user-images.githubusercontent.com/118953938/217577348-01c7cb0b-b1ad-4d3c-813e-927c8b036d88.png" width=80% height=80%>
+
+<img src="https://user-images.githubusercontent.com/118953938/217577623-9a72ad35-4817-4267-86f3-4d5775911d9f.png" width=80% height=80%>
+
+<img src="https://user-images.githubusercontent.com/118953938/217578053-e8ae82bc-4838-4df4-ae44-4904418d2615.png" width=80% height=80%>
+
 </p>
 </details>		
 	
-#### :test_tube: Task 2
+#### :test_tube: Task 2 : Physical design
 	
 <details><summary> Reports </summary>
 <p>	
+	
+**Files were modified accordingly**
+	
+<img src="https://user-images.githubusercontent.com/118953938/217581531-845264a1-25b8-4120-bbf8-b0a79d6c45fa.png" width=80% height=80%>
+<img src="https://user-images.githubusercontent.com/118953938/217581758-2ca6a642-460e-4aab-a0c1-7e9ec3dc83bc.png" width=80% height=80%>
+
+<img src="https://user-images.githubusercontent.com/118953938/217582386-a7aa3a2c-b8a3-45de-9a34-16dfaa3f8780.png" width=80% height=80%>
+<img src="https://user-images.githubusercontent.com/118953938/217582727-652978e7-988c-4636-b03b-d77150ab1692.png" width=80% height=80%>
+<img src="https://user-images.githubusercontent.com/118953938/217582973-531dd2e7-8ddf-4b30-a110-31c9b308def6.png" width=80% height=80%>
+
+<img src="https://user-images.githubusercontent.com/118953938/217583543-693fdeb6-6d85-4bcd-b5b7-8154c912e330.png" width=80% height=80%>
+
+<img src="https://user-images.githubusercontent.com/118953938/217583899-7bae85d1-e109-45a0-a46b-dce15deb21b4.png" width=80% height=80%>
+
+<img src="https://user-images.githubusercontent.com/118953938/217584262-457e2d9d-ad57-48c7-b330-47ca4a38a750.png" width=80% height=80%>
+
+<img src="https://user-images.githubusercontent.com/118953938/217584573-1846f90c-2fe5-4547-86b5-7a0740db4012.png" width=80% height=80%>
+
+**Opening the layout**
+
+Encountered this problem: 
+	
+<img src="https://user-images.githubusercontent.com/118953938/217585119-2b50966c-d1cc-406d-962b-82268cf5f6b4.png" width=80% height=80%>
 	
 	
 	
