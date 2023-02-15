@@ -7110,13 +7110,56 @@ The **physical design flow** uses the technology libraries that are provided by 
 <img src="https://user-images.githubusercontent.com/118953938/218898209-71a1e104-51fe-44a2-bc27-1ed0844490fc.png" width=80% height=80%>
 	
 	
-	
-	
 </p>
 </details>
 	
 </p>
 </details>		
+	
+	
+## :book: Day 21 - Placement and CTS labs
+
+<details><summary> :mag_right: Theories </summary>
+<p>
+	
+### :mag_right: Placement	
+	
+	
+	
+	
+	
+</p>
+</details>	
+	
+	
+<details><summary> :test_tube: Labs </summary>
+<p>	
+	
+#### :test_tube: Task 1 : 
+	
+<details><summary> Reports </summary>
+<p>	
+
+**Commands**	
+	
+	
+	
+	
+	
+	
+</p>
+</details>	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 	
 	
 	
