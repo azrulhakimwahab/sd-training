@@ -7107,9 +7107,7 @@ The **physical design flow** uses the technology libraries that are provided by 
 
 **Opening the layout**
 
-Encountered this problem: 
-	
-<img src="https://user-images.githubusercontent.com/118953938/217585119-2b50966c-d1cc-406d-962b-82268cf5f6b4.png" width=80% height=80%>
+<img src="https://user-images.githubusercontent.com/118953938/218898209-71a1e104-51fe-44a2-bc27-1ed0844490fc.png" width=80% height=80%>
 	
 	
 	
