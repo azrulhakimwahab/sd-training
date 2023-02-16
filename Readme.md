@@ -7512,6 +7512,45 @@ Path
 	
 #### :test_tube: Task : Report Timing Reveiw
 	
+![image](https://user-images.githubusercontent.com/118953938/219445653-4ed3428a-9be4-431d-a60b-370026ea88d5.png)
+
+**Command**
+	
+		report_timing -from core/CPU_is_add_a3_reg -to core/CPU_Xreg_value_a4_reg[24][31] -path_type full_clock_expanded -capacitance -nets -physical
+
+**Output**
+	
+![image](https://user-images.githubusercontent.com/118953938/219445904-476646c9-1612-436b-a1a9-519284d845a5.png)
+
+<img src="https://user-images.githubusercontent.com/118953938/219446207-e371c81f-efa8-4401-a485-f9fbefc28f61.png" width=50% height=50%>
+
+**Performing ECO**
+* Since the slack was violated, ECO need to be performed to lower the slack
+* One of the method is by increasing the cell size
+	
+**Command**
+	
+![image](https://user-images.githubusercontent.com/118953938/219446580-1c6129b1-1aa2-485c-a71a-07a2c6ac9d39.png)
+	
+**Output**	
+	
+![image](https://user-images.githubusercontent.com/118953938/219446856-c0101c33-15a5-43ab-89d3-d047d58a7484.png)
+
+<img src="https://user-images.githubusercontent.com/118953938/219447567-2ca68cf7-2494-4d59-abf7-4ead97a624af.png" width=70% height=70%>
+
+<img src="https://user-images.githubusercontent.com/118953938/219448794-e17ad871-d29e-468c-8145-a118285e8654.png" width=80% height=80%>
+
+<img src="https://user-images.githubusercontent.com/118953938/219450000-ab430b85-28cf-4792-8d05-d55c6eaad975.png" width=80% height=80%>
+
+**Addition of Decap**
+	
+<img src="https://user-images.githubusercontent.com/118953938/219452308-4329847e-7ea2-41c4-9c4f-5e0355ab74a1.png" width=60% height=60%>
+
+	report_power
+	
+<img src="https://user-images.githubusercontent.com/118953938/219452436-6c952c35-d144-4617-aaa7-8adafad0a182.png" width=80% height=80%>
+
+	
 	
 	
 </p>
