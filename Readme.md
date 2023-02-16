@@ -7109,7 +7109,14 @@ The **physical design flow** uses the technology libraries that are provided by 
 
 <img src="https://user-images.githubusercontent.com/118953938/218898209-71a1e104-51fe-44a2-bc27-1ed0844490fc.png" width=80% height=80%>
 	
-	
+<img src="https://user-images.githubusercontent.com/118953938/219287077-1ea4ace2-9332-4b27-80d6-2233f83b6f2d.png" width=80% height=80%>
+
+<img src="https://user-images.githubusercontent.com/118953938/219287284-3a254ca3-5416-4e6f-82f5-d2e751b17b5c.png" width=80% height=80%>
+
+<img src="https://user-images.githubusercontent.com/118953938/219287511-132e5509-680a-471f-9b01-b362957fd07f.png" width=50% height=50%>
+
+<img src="https://user-images.githubusercontent.com/118953938/219288170-52c84b03-e6f6-4811-a64d-bc3aaba2d8a0.png" width=50% height=50%>
+
 </p>
 </details>
 	
@@ -7121,10 +7128,58 @@ The **physical design flow** uses the technology libraries that are provided by 
 
 <details><summary> :mag_right: Theories </summary>
 <p>
+
+Pre-Placement Sanity Checks (need to check the preplacement timing once before going for placement of standard cells)
+	* Floating Pins in Netlist
+	* Unconstrained Pins
+	* Timing
+	* Pin direction mismatch, etc.
 	
 ### :mag_right: Placement	
 	
+1) Standard Cell
 	
+2) Placement Stages
+	* Global Placement-Global placement is very first stage of the placement where _**cells are placed inside the core area for the first time looking at the timing and congestion**_. 
+	* Legalization-legalization is an essential step where the overlaps between gates/macros must be removed.
+	* Detailed Placement-Refines object locations to legal cell sites and enforces nonoverlapping constraints. The detailed locations enable more accurate estimates of circuit delay for the purpose of timing optimization.
+
+3) Objectives/Quality Checks
+	* Congestion
+		* How to analyze congestion in VLSI? Congestion Fixes
+			* Add placement blockages in channels and around macro corners.
+			* Review the macro placement.
+			* Reduce local cell density using density screens.
+			* Reordering scan chain to reduce congestion.
+			* Congestion driven placement with high effort.
+			* Continue the iterations until good congestion results.
+	* Performance
+	* Timing
+		* Static timing analysis (STA) is a way of evaluating a design's timing performance by testing for timing violations along all conceivable paths. 
+		* Dynamic simulation, which determines the whole behaviour of the circuit for a given set of input stimulus vectors, is another technique to do timing analysis
+	* Routability
+	* Runtime
+
+4) Clock Tree Synthesis (CTS)
+	* Inputs of CTS
+		* Placement DB
+		* CTS Spec File
+	* CTS Steps
+		* Clustering
+		* DRV Fixing
+		* Insertion Delay Reduction
+		* Power Reduction
+		* Balancing
+		* Post-Conditioning
+
+	* CTS Quality Checks
+		* Skew
+		* Pulse width
+		* Duty cycle
+		* Latency
+		* Clock tree power
+		* Signal Integrity and Crosstalk
+	* Timing Analysis and Fixing	
 	
 	
 	
@@ -7135,29 +7190,47 @@ The **physical design flow** uses the technology libraries that are provided by 
 <details><summary> :test_tube: Labs </summary>
 <p>	
 	
-#### :test_tube: Task 1 : 
+#### :test_tube: Task 1 : Change core utilization from 7% to 40%
 	
 <details><summary> Reports </summary>
 <p>	
 
-**Commands**	
+**1) 40%**
 	
+<img src="https://user-images.githubusercontent.com/118953938/219292733-5e07cdbf-75f4-4d24-ab7e-3eacc8a778f7.png" width=60% height=60%>
 	
+<img src="https://user-images.githubusercontent.com/118953938/219293101-236ba485-03a8-45c5-bc95-8b929703a637.png" width=80% height=80%>
+
+<img src="https://user-images.githubusercontent.com/118953938/219294064-e01b267c-464f-4ac2-93aa-a6a99bfc9063.png" width=80% height=80%>
+
+**2) 20% (tryouts)**	
 	
-	
+<img src="https://user-images.githubusercontent.com/118953938/219294703-fc6c878a-a906-4592-8e01-968938aad9c7.png" width=60% height=60%>
+
+<img src="https://user-images.githubusercontent.com/118953938/219295184-d2ffff4a-ab09-4cc1-b8d8-8ee8e5280025.png" width=80% height=80%>
+
+<img src="https://user-images.githubusercontent.com/118953938/219295387-658fc692-9a0c-4b75-8daf-10eacbfec5d7.png" width=80% height=80%>
+
 	
 	
 </p>
 </details>	
 	
+#### :test_tube: Task 2 : All Reports 
+	
+<details><summary> Reports </summary>
+<p>		
+	
+Path
+	
+		
+	
+</p>
+</details>	
 	
 	
-	
-	
-	
-	
-	
-	
+</p>
+</details>	
 	
 	
 	
