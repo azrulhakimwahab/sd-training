@@ -7380,8 +7380,51 @@ Path
 
 <details><summary> :mag_right: Theories </summary>
 <p>
-	
 
+### :mag_right: Clock gating
+ 
+:black_nib: **Advanced H-Tree for million flop clock end-points randomly placed**
+
+1) When CTS is performed, power consumption also needs to be taken care of, especially when designing a large number of clocks where the design might induce a larger power, as well as a larger power usage
+
+2) A digital circuit with a lot of clocks would be so huge with many buffers etc when designing its clock tree
+
+3) In order to fix that, the whole chip is sectioned into smaller versions where each section will have its own clock tree, and managed to get a complete routed tree
+	
+<img src="https://user-images.githubusercontent.com/118953938/219424239-0ab9264b-db4a-47b5-a662-bf972003bc20.png" width=80% height=80%>
+
+:black_nib: **CLock Gating Principle**
+	
+1) The function of clock gating is to reduce the clock power consumption by cutting off the idle clock cycles	
+
+2) it is inserted synthesis stage and optimized in the implementation stage (Physical Design stage)
+
+3) Three types of Clock Gate(CG):
+
+	CG -> AND gate<br>
+	CG -> OR gate<br>
+	CG -> universal NAND gate<br>
+	
+<img src="https://user-images.githubusercontent.com/118953938/219427591-b6d62cd8-27e1-4be6-9323-2f7fb4e59c78.png" width=50% height=50%>
+
+4) Clock gating saves power by pruning the clock tree, at the cost of adding more logic to a circuit. 
+	
+5) Pruning the clock disables portions of the circuitry so that the flip-flops in them do not have to switch states. Switching states consumes power.	
+
+:black_nib: **Routing**
+	
+1) Routing is the process of making physical connections between signal pins using metal layers	
+
+2) Following Clock Tree Synthesis (CTS) and optimization, the routing step determines the exact pathways for interconnecting standard cells, macros, and I/O pins.
+	
+3) There are 3 types of routing
+	1) P/G routing
+	2) Clock routing
+	3) Signal routing: Global routing and Detailed routing	
+	
+<img src="https://user-images.githubusercontent.com/118953938/219429072-7a4e03f1-269c-49be-bea2-10759912b112.png" width=50% height=50%>
+	
+	
 	
 </p>
 </details>
@@ -7389,18 +7432,120 @@ Path
 <details><summary> :test_tube: Labs </summary>
 <p>	
 	
-#### :test_tube: Task 1 : 
+#### :test_tube: Task : Scripts in routing stage
 	
-<details><summary> Reports </summary>
-<p>		
+**Commands**
+
+	Place and optimize the current design
+	-place_opt  
+
+	Synthesize and route the clocks, and then further optimize the design based on the propagated clock latencies
+	-clock_opt 
+
+	Run global routing, trace assignment, and detailed routing at once/automatically
+	-route_auto 
+
+**Scripts**
 	
+![image](https://user-images.githubusercontent.com/118953938/219430439-5527e105-dda2-442e-ad82-222f2ff14e35.png)
+
+<img src="https://user-images.githubusercontent.com/118953938/219431713-8b045554-e8bd-4b32-9690-8a2a48b1ff5d.png" width=80% height=80%>
+	
+</p>
+</details>		
+	
+## :book: Day 24 - Timing violations and ECO
+
+<details><summary> :mag_right: Theories </summary>
+<p>
+
+### :mag_right: Introduction to Engineering Change Order (ECO)	
+	
+1) ECO is how you incorporate last minute changes in your design	
+
+2) ECO will be done on the gate level netlist, but designer needs to edit the gate-level netlist and perform the same changes in RTL
+	
+3) Ensure that the ECO passes a formal and functional verification before we begin changing the layout. All verifications must be successful before it is moved onto the layout.
+	
+4) All violations are fixed, and all sign-off checks that were skipped during the PD flow are sealed.	
+	
+:black_nib: **Steps Performing ECO**
+
+	1) Investigate the problem using the recent database
+	2) ECO generation to address the problem
+	3) ECO implementation with the recent database
+	4) After implementing and fixing the problem, save it in the database for future
+
+:black_nib: **ECO strategies**
+	
+1) Margin based fixing 
+	* Design rule violations(DRV) - max_cap and max_tran 
+	* Setup and hold violations
+	
+2) Selective endpoint biased fixing 
+	* With and without margin 
+	* With and without slack range
+3) Slack based fixing 
+	* Setup and hold target slack 
+	* Max slack
+4) Fix n number paths 
+	* Number of paths per group (max_paths) 
+	* Number of paths per endpoint (nworst)
+5) GBA(group based) and PBA(path-based)fixing
+6) Full chip vs reg2reg fixing
+7) Leakage fixing using HVT
+8) Hierarchical ECO 
+	* Top level only 
+	* Individual 
+	* Replicated hierarchies only 
+	* All of the above
+9) Physical aware ECO 
+	* Routing congestion aware 
+	* Cell legalization aware 
+	* Buffer on route
+	
+</p>
+</details>
+
+<details><summary> :test_tube: Labs </summary>
+<p>	
+	
+#### :test_tube: Task : Report Timing Reveiw
 	
 	
 	
 </p>
 </details>	
+	
+## :book: Day 25 - RISC-v core RTL2GDS flow
+
+<details><summary> :mag_right: Theories </summary>
+<p>
+
+### :mag_right: 	
+	
+	
+	
+</p>
+</details>
+
+<details><summary> :test_tube: Labs </summary>
+<p>	
+	
+#### :test_tube: Task : 
+	
+	
+	
 </p>
 </details>		
+	
+	
+	
+	
+	
+	
+	
+	
 	
 	
 	
