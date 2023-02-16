@@ -7275,6 +7275,112 @@ Path
 <details><summary> :mag_right: Theories </summary>
 <p>
 	
+### :mag_right: Clock Tree Synthesis
+
+* The concept of Clock Tree Synthesis (CTS ) is the automatic insertion of buffers/inverters along the clock paths of the ASIC design in order to balance the clock delay to all clock inputs.
+* In order to balance clock skew and minimize insertion delay, CTS is performed. 
+* Naturally, before CTS, all clock pins are driven by a single clock source and considered as an ideal net.	
+	
+:black_nib: **Some prerequisites for CTS are:**
+
+	Creating non-default rules (e.g., setting large metal width and spacing for clock routing)
+	Setting clock’s max transition, max capacitance, and max fanout
+	Selecting which cells (clock buffer, clock inverter) to use during CTS (although clock buffers have equal rise and fall time, to avoid pulse width violations, it is recommended to use clock inverters that balance both rise and fall time simultaneously)
+	Setting CTS exceptions	
+
+:black_nib: **Various algo’s used for CTS**
+	
+<img src="https://user-images.githubusercontent.com/118953938/219407346-c389aa3e-a867-4033-b5c2-6cfe16f25a87.png" width=80% height=80%>
+
+:black_nib: **H-tree algorithm**
+
+	1) Find out all the flops present
+	2) Find out the center of all the flops
+	3) Trace clock port ot the center point
+	4) Now divide the core into two parts, trace both the parts and reach to each center
+	5) Then form this center again divide the area into two and again trace till center at both the end
+	6) Repeat this algo till the time we reach the flop clock pin.	
+	
+<img src="https://user-images.githubusercontent.com/118953938/219408919-0cc5e0b4-27ff-4c92-93fd-2fbbcf6da94d.png" width=40% height=40%>
+	
+:black_nib: **Various CTS checks**
+
+	1) Skew check
+	2) Pulse width check
+	3) Duty cycle check
+	4) Latency check
+	5) Power check
+	6) Crosstalk Quality check
+	7) Delta Delay Quality check 8. Glitch Quality check	
+	
+:black_nib: **Command used**
+	
+1) Check if the placement done input is perfect
+	* check_legality 
+
+2) Edit those default constraints
+	* set_clock_tree_options
+	
+3) Debug mode	
+	* set cts_use_debug_mode true 
+	
+4) Compiling all the constraints	
+	* compile_clock_tree
+
+5) Reporting an actual, relevant skew, latency, interclock latency etc. for paths that are related	
+	* report_clock_timing -type -summary/-skew 
+	
+6) Clock_opt = which performs clock tree synthesis and incremental physical optimization. 
+	1. Performs clock tree power optimization 
+	2. Synthesizes(Re-Synthesizes) the clock trees
+	3. Optimizes the clock trees
+	4. Adjusts the I/O timing
+	5. Performs RC extraction of the clock nets and computes accurate clock arrival times
+	6. Performs placement and timing optimization	
+</p>
+</details>
+
+<details><summary> :test_tube: Labs </summary>
+<p>	
+	
+#### :test_tube: Task 1 : Check CTS Status
+	
+		
+
+**Commands**
+	
+		check_clock_tree
+		check_legality
+		report_clock_timing -type summary
+		report_clock_timing -type skew
+		report_clock_timing -type latency
+		report_clock_timing -type transition
+	
+**Outputs**
+	
+	
+<img src="https://user-images.githubusercontent.com/118953938/219413791-24bb017e-c118-493d-bb2b-d91da03d78dd.png" width=80% height=80%>
+	
+<img src="https://user-images.githubusercontent.com/118953938/219414717-1b87db61-9400-482d-a992-7b2e3798bd9d.png" width=50% height=50%>
+
+<img src="https://user-images.githubusercontent.com/118953938/219415294-08992bf6-4632-4d59-a4dc-6059f3e93332.png" width=80% height=80%>
+
+<img src="https://user-images.githubusercontent.com/118953938/219416389-ba0ab842-b484-46b3-b22f-9cc2eec3aeb4.png" width=50% height=50%>
+	
+<img src="https://user-images.githubusercontent.com/118953938/219416965-b73693fa-5e12-4ce0-81fb-f4bf3fdeab3a.png" width=50% height=50%>
+
+<img src="https://user-images.githubusercontent.com/118953938/219417274-777a5102-242c-436e-aab9-aa9966c7fc6d.png" width=50% height=50%>
+
+<img src="https://user-images.githubusercontent.com/118953938/219417554-294950dc-6e1b-403e-b0ca-d8dcacee482e.png" width=50% height=50%>
+
+</p>
+</details>	
+	
+## :book: Day 23 - Clock gating technique
+
+<details><summary> :mag_right: Theories </summary>
+<p>
+	
 
 	
 </p>
@@ -7294,9 +7400,7 @@ Path
 </p>
 </details>	
 </p>
-</details>	
-	
-	
+</details>		
 	
 	
 	
