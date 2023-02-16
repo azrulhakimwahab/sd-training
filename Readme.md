@@ -7270,6 +7270,36 @@ Path
 </details>	
 	
 	
+## :book: Day 22 - CTS Lab analysis
+
+<details><summary> :mag_right: Theories </summary>
+<p>
+	
+
+	
+</p>
+</details>
+
+<details><summary> :test_tube: Labs </summary>
+<p>	
+	
+#### :test_tube: Task 1 : 
+	
+<details><summary> Reports </summary>
+<p>		
+	
+	
+	
+	
+</p>
+</details>	
+</p>
+</details>	
+	
+	
+	
+	
+	
 	
 	
 	
