@@ -7222,13 +7222,50 @@ Pre-Placement Sanity Checks (need to check the preplacement timing once before g
 <p>		
 	
 Path
-	
-		
+
+<img src="https://user-images.githubusercontent.com/118953938/219325540-a8d9cafe-8f18-4893-8fa0-7280052ceef1.png" width=60% height=60%>
+
+<img src="https://user-images.githubusercontent.com/118953938/219323217-5acacabb-4cbc-4578-91a9-b7e41035f6dd.png" width=60% height=60%>
+
+<img src="https://user-images.githubusercontent.com/118953938/219323544-7f534576-2ba1-424d-837d-c92d61f9bc5b.png" width=60% height=60%>
+
+<img src="https://user-images.githubusercontent.com/118953938/219323789-468ec65e-c8b3-4a1a-8e3a-74cf9b5a7fc8.png" width=80% height=80%>
+
+<img src="https://user-images.githubusercontent.com/118953938/219324068-1b91a28e-5e71-470f-b5ec-e04d5e8cc633.png" width=80% height=80%>
+
+<img src="https://user-images.githubusercontent.com/118953938/219324309-bc0d31bd-e972-4e48-86f8-b2a5453011fd.png" width=60% height=60%>
+
 	
 </p>
 </details>	
+
+#### :test_tube: Task 3 : Schematic diagram of the clock connection 
 	
+<details><summary> Reports </summary>
+<p>
+
+<img src="https://user-images.githubusercontent.com/118953938/219325415-3d871848-bc1b-4f47-890b-de7ebab76856.png" width=80% height=80%>
+
+**Steps**
 	
+<img src="https://user-images.githubusercontent.com/118953938/219326349-3db70cfa-31cc-45e6-a17c-be185fa10018.png" width=80% height=80%>
+
+<img src="https://user-images.githubusercontent.com/118953938/219326763-d0067694-c388-4c30-b8ac-811455e35e31.png" width=80% height=80%>
+
+**Output**
+	
+<img src="https://user-images.githubusercontent.com/118953938/219327080-0440e48a-b369-4125-92af-89ea74ccfbc0.png" width=80% height=80%>
+
+**Steps**
+	
+<img src="https://user-images.githubusercontent.com/118953938/219327575-ce3ea351-efbd-40e6-b6e4-287970d5fbaa.png" width=80% height=80%>
+
+**Output**
+	
+<img src="https://user-images.githubusercontent.com/118953938/219327701-1e850fb4-ecf6-4099-8477-9bd54e990739.png" width=80% height=80%>
+
+</p>
+</details>	
 </p>
 </details>	
 	
