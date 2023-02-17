@@ -7561,13 +7561,39 @@ Path
 <details><summary> :mag_right: Theories </summary>
 <p>
 
-### :mag_right: 	
+### :mag_right: Review RTL -> GDS
+
+**From Repo DAY 15** : https://github.com/azrulhakimwahab/sd-training/edit/main/Readme.md#mag_right-sky130_d1_sk2---soc-design-and-openlane
+
+:black_nib: **RTL to GDS flow**
 	
+* This flow starts with RTL coding and ends with GDS (Graphic Data Stream) file which is the final output of back end design, so this complete flow is also known as RTL to GDS (RTL2GDS) flow.
+
+* GDS ( Graphical Design System or Graphical Data System) is a binary file used in VLSI Design to represent the IC layout.
+
+<img src="https://user-images.githubusercontent.com/118953938/219562708-610a7ec9-777c-4e09-97eb-05d3f8e3b7f4.png" width=60% height=60%>
+
+<img src="https://user-images.githubusercontent.com/118953938/219561041-01cdc1a9-244d-4cf9-8fb3-d5a846b52510.png" width=80% height=80%>
 	
 	
 </p>
 </details>
 
+## :book: Day 26 - Introduction to mixed-signal flow
+
+<details><summary> :mag_right: Theories </summary>
+<p>
+
+### :mag_right: 	
+	
+:black_nib: 	
+	
+	
+	
+</p>
+</details>	
+	
+	
 <details><summary> :test_tube: Labs </summary>
 <p>	
 	
@@ -7577,17 +7603,4 @@ Path
 	
 </p>
 </details>		
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
 	
