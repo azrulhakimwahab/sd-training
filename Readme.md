@@ -7584,23 +7584,180 @@ Path
 <details><summary> :mag_right: Theories </summary>
 <p>
 
-### :mag_right: 	
+### :mag_right: Understanding mixed signal design	
+
+:black_nib: **What is mixed signal design?**
 	
-:black_nib: 	
+<details><summary> Explainations </summary>
+<p>	
 	
+Mixed signal designs ***combine both analog and digital signals*** within a single design or integrated circuit providing the most powerful features of both analog and digital circuitry in a single chip solution.	
+	
+Benefits of mixed signal circuit design:
+	
+	* Reduction in PCB interconnect which results in better power consumption
+	* Smaller form factor
+	* Reduction in system noise because a mixed signal design leads to a highly simplified overall design with functionality and component integration that reduces the number of high current switching output drivers
+
+**What is signal in electronics?**<br>
+A signal is an electromagnetic or electrical current that carries data from one system or network to another. In electronics, a signal is often a time-varying voltage that is also an electromagnetic wave carrying information, though it can take on other forms, such as current.
+	
+**There are two main types of signals used in electronics**: <br>
+analog signals and digital signals	
+	
+<img src="https://user-images.githubusercontent.com/118953938/219690310-9b9b1b57-a456-4fed-9ed6-86ecbaaf3764.png" width=60% height=60%>
+	
+<img src="https://user-images.githubusercontent.com/118953938/219691443-1ff98688-ad5d-4410-a008-dca4b01e392c.png" width=60% height=60%>
+	
+**Mixed-signal chips** <br>
+_are those that at least partially deal with input signals whose precise values matter_
+
+	1) This broad class includes RF, Analog, Analog-to-Digital and Digital-to-Analog conversion
+	2) More recently, a large number of Mixed-Signal chips where at least part of the chip design needs to measure signals with high precision
+	3) These chips have very different Design and Process Technology demands than normal Digital circuits	
+	
+</p>
+</details>	
+	
+:black_nib: **AMS: Analog and Mixed Signal (digital and analog)**
+	
+<details><summary> Explainations </summary>
+<p>	
+
+**What is Analog and Mixed Signal?**
+	
+* Analog electronics are devices with a continuous variable signal, while digital electronics provide discrete signals and differentiate only two levels (such as “on” and “off”). 
+* As the name implies, mixed-signal devices contain both analog and digital circuits. 
+* Mixed-signal designs are cost-effective solutions commonly used to build consumer electronics applications, and this group of specialty devices has seen dramatic growth with the increased use of smartphones and other portable technologies. 
+* Processing equipment that provides high reliability and productivity cost-effectively is needed for the economical manufacture of analog and mixed-signal devices.
+	
+**Challenges in AMS Design and Modeling** [reference](https://www.design-reuse.com/articles/22773/analog-mixed-signal-modeling.html) <
+	
+	- Design stability in AMS systems is achieved after the design is simulated across all the corners and at all Process, Voltage and Temperature (PVT) conditions. 
+	
+	- Simulators which support AMS simulation are expensive and slow. In addition, co-simulation setup is a time consuming process. 
+	
+	- Modeling AMS system involves tradeoff between simulation time and accuracy. 
+	
+	- Simulink and Ptolemy can capture continuous time behavior, but do not target the design of AMS systems at an architecture level. 
+	
+	- HDL’s like VHDL-AMS and Verilog-AMS target the design of mixed signal subsystems close to implementation level, but these languages have limited capabilities to provide efficient HW/SW co-design at high level of abstraction. 
+	
+	- There is a lack in offering seamless design refinement flow for mixed-signal discrete event/continuous time systems and HW/SW systems at architecture level.	
+	
+	
+**AMS: Analog and Mixed Signal Flow**	
+	
+<img src="https://user-images.githubusercontent.com/118953938/219694920-0d60a9dd-6284-4fbb-a80e-726caf1233bc.png" width=50% height=50%>
+
+**Block diagram representation for mixed signal design**
+	
+<img src="https://user-images.githubusercontent.com/118953938/219695460-3e98b2fc-5e07-44ba-8c16-81ef2f47a166.png" width=80% height=80%>
 	
 	
 </p>
 </details>	
 	
 	
-<details><summary> :test_tube: Labs </summary>
-<p>	
+:black_nib: **Exploring the example of VSDBabySoC**
 	
-#### :test_tube: Task : 
+<details><summary> Explainations </summary>
+<p>		
 	
+RVMYTH processor -> digital block<br>
+PLL -> analog block<br>
+DAC -> analog block (for digital to analog conversion)<br>	
 	
+For more information, visit here : https://github.com/azrulhakimwahab/sd-training/edit/main/Readme.md#mag_right-ip-cores
 	
 </p>
-</details>		
+</details>	
+		
+:black_nib: **Introduction to various files**
+	
+<details><summary> Explainations </summary>
+<p>		
+	
+* **LEF file**- Library Exchange Format file : Physical properties such as width, height etc regarding the standard cells 
+	
+	a. Tf (technology file) or Tlef (technology lef) -both containing the same information <br>
+	b. Cell tf<br>
+* **LIBerty file** - contains the timing information of the cells
+* **gdsII and OASIS file** - GDSII is a file format similar to JPEG, DOCX, XLSX etc to enable a layout design to be transferred from one place to another(IP owner handoff to PD team, PD team to foundry for fabrication), to be viewed/used for verifications like Physical verification checks by EDA tools	
+	
+<img src="https://user-images.githubusercontent.com/118953938/219697762-7cde429d-74c3-44ad-b6b5-36c122136ce1.png" width=70% height=70%>
+
+* **Place and Route (PnR) tools**
+	* The tool aims to position the standard cell in a manner that will result in the least amount of congestion and the best timing. 
+	* Every PnR tool offers a variety of instructions and switches so that users can better optimise the design in terms of timing, congestion, space, and power in accordance with their needs.
+
+This is why we need the following files:
+
+	* LEF file
+	* LIB file
+	* Tf files (tlu+ file)	
+	
+<img src="https://user-images.githubusercontent.com/118953938/219698552-39f2e01d-ce87-401d-9601-7ac180022874.png" width=70% height=70%>
+
+_**Sources of various files**_
+	
+<img src="https://user-images.githubusercontent.com/118953938/219699059-29973ab3-bb85-44b1-8477-d86b1ed0f45e.png" width=70% height=70%>
+	
+Sources were taken from https://teamvlsi.com/2020/08/inputs-for-physical-design-physical-design-input-files.html
+	
+</p>
+</details>
+
+:black_nib: **IP cores**
+	
+<details><summary> Explainations </summary>
+<p>		
+	
+**IP cores**
+_It consists of a block of logic or data that is used in a semiconductor chip_
+	
+* The IP cores are usually the intellectual property of a particular person or company
+* Also used when making a fieldprogrammable gate array (FPGA) or application-specific integrated circuit (ASIC)
+* It created throughout the design process and can be turned into components for reuse
+* There are different categories for IP cores including hard IP cores and soft IP cores
+	* soft IP core -> can be customized during the physical design phase and mapped to any process technology
+	* hard IP core -> has the logic implementation and the physical implementation
+* In other words, the physical layout of a hard macro-IP is finished and fixed in a particular process technology.	
+	
+<img src="https://user-images.githubusercontent.com/118953938/219700729-6233b60d-47c1-4955-84eb-4930651b0fd9.png" width=70% height=70%>
+
+Taken from https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.intel.sg%2Fcontent%2Fwww%2Fxa%2Fen%2Fproducts%2Fdetails%2Ffpga%2Fintellectual-property.html&psig=AOvVaw2USV-2fIVWMyeDtXHDOX81&ust=1676735207691000&source=images&cd=vfe&ved=0CA4QjhxqFwoTCIjV_eHznP0CFQAAAAAdAAAAABAD
+
+**This is how it works in semiconductor industry**
+	
+<img src="https://user-images.githubusercontent.com/118953938/219701000-8cc492f6-2bff-4101-ab96-a3cdc8631d41.png" width=70% height=70%>
+	
+</p>
+</details>	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 	
