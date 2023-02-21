@@ -7734,17 +7734,43 @@ Taken from https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.intel.sg%2Fcont
 	
 </p>
 </details>	
+		
+## :book: Day 27 - Crosstalk
+
+<details><summary> :mag_right: Theories </summary>
+<p>
+
+### :mag_right: 	
+
+:black_nib: **test**
+	
+<details><summary> Explainations </summary>
+<p>	
+	
+</p>
+</details>	
+	
+</p>
+</details>	
 	
 	
+## :book: Day 28 -  Introduction to SkyWater SKY130
+
+<details><summary> :mag_right: Theories </summary>
+<p>
+
+### :mag_right: Introduction to SkyWater PDKs and opensource EDA tools	
+
+:black_nib: ** Introduction to Skywater PDK**
 	
+<details><summary> Explainations </summary>
+<p>	
 	
+</p>
+</details>	
 	
-	
-	
-	
-	
-	
-	
+</p>
+</details>		
 	
 	
 	
