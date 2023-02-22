@@ -1,5 +1,38 @@
 # :book: My Respository
 
+# Contents
+
+[Day 0 System/Tool Setup Check. GitHub ID creation](https://github.com/azrulhakimwahab/sd-training/edit/main/Readme.md#book-day-0-systemtool-setup-check-github-id-creation)<br>
+[Day 1 Introduction to Verilog RTL design and Synthesis](https://github.com/azrulhakimwahab/sd-training/edit/main/Readme.md#book-day-1-introduction-to-verilog-rtl-design-and-synthesis)<br>
+[Day 2 Timing libs(QTMs/ETMs), hierarchical vs flat synthesis and efficient flop coding styles
+](https://github.com/azrulhakimwahab/sd-training/edit/main/Readme.md#book-day-2--timing-libsqtmsetms-hierarchical-vs-flat-synthesis-and-efficient-flop-coding-styles)<br>
+[Day 3 Combinational and sequential optimizations](https://github.com/azrulhakimwahab/sd-training/edit/main/Readme.md#book-day-3---combinational-and-sequential-optimizations)<br>
+[Day 4 GLS, Synthesis-Simulation mismatch and Blocking/Non-blocking statements](https://github.com/azrulhakimwahab/sd-training/edit/main/Readme.md#book-day-4---gls-synthesis-simulation-mismatch-and-blockingnon-blocking-statements)<br>
+[Day 5 Design For Testability](https://github.com/azrulhakimwahab/sd-training/edit/main/Readme.md#book-day-5---design-for-testability)<br>
+[Day 6 Introduction to Logic Synthesis](https://github.com/azrulhakimwahab/sd-training/edit/main/Readme.md#book-day-6---introduction-to-logic-synthesis)<br>
+[Day 7 Basic SDC constraints](https://github.com/azrulhakimwahab/sd-training/edit/main/Readme.md#book-day-7-basic-sdc-constraints)<br>
+[Day 8 Advanced SDC Constraints](https://github.com/azrulhakimwahab/sd-training/edit/main/Readme.md#book-day-8---advanced-sdc-constraints)<br>
+[Day 9 Optimization in synthesis](https://github.com/azrulhakimwahab/sd-training/edit/main/Readme.md#book-day-9--optimization-in-synthesi)<br>
+[Day 10 Quality Checks - Quality of Results (QOR)](https://github.com/azrulhakimwahab/sd-training/edit/main/Readme.md#book-day-10--quality-checks---quality-of-results-qor)<br>
+[Day 11 Introduction to the VSDBabySoC](https://github.com/azrulhakimwahab/sd-training/edit/main/Readme.md#book-day-11--introduction-to-the-vsdbabysoc)<br>
+[Day 12 BabySoC Modelling](https://github.com/azrulhakimwahab/sd-training/edit/main/Readme.md#book-day-12---babysoc-modelling)<br>
+[Day 13 Post-synthesis simulation](https://github.com/azrulhakimwahab/sd-training/edit/main/Readme.md#book-day-13---post-synthesis-simulation)<br>
+[Day 14 Synopsys DC and timing analysis](https://github.com/azrulhakimwahab/sd-training/edit/main/Readme.md#book-day-14---synopsys-dc-and-timing-analysis)<br>
+[Day 15 Inception of open-source EDA, OpenLANE and Sky130 PDK](https://github.com/azrulhakimwahab/sd-training/edit/main/Readme.md#book-day-15---inception-of-open-source-eda-openlane-and-sky130-pdk)<br>
+[Day 16 Good floorplan vs bad floorplan and introduction to library cells](https://github.com/azrulhakimwahab/sd-training/edit/main/Readme.md#book-day-16---good-floorplan-vs-bad-floorplan-and-introduction-to-library-cells)<br>
+[Day 17 Design library cell using Magic Layout and ngspice characterization](https://github.com/azrulhakimwahab/sd-training/edit/main/Readme.md#book-day-17---design-library-cell-using-magic-layout-and-ngspice-characterization)<br>
+[Day 18 Pre-layout timing analysis and importance of good clock tree](https://github.com/azrulhakimwahab/sd-training/edit/main/Readme.md#book-day-18---pre-layout-timing-analysis-and-importance-of-good-clock-tree)<br>
+[Day 19 Final steps for RTL2GDS](https://github.com/azrulhakimwahab/sd-training/edit/main/Readme.md#book-day-19---final-steps-for-rtl2gds)<br>
+[Day 20 Floorplanning and power planning labs](https://github.com/azrulhakimwahab/sd-training/edit/main/Readme.md#book-day-20----floorplanning-and-power-planning-labs)<br>
+[Day 21 Placement and CTS labs](https://github.com/azrulhakimwahab/sd-training/edit/main/Readme.md#book-day-21---placement-and-cts-labs)<br>
+[Day 22 CTS Lab analysis](https://github.com/azrulhakimwahab/sd-training/edit/main/Readme.md#book-day-22---cts-lab-analysis)<br>
+[Day 23 Clock gating technique](https://github.com/azrulhakimwahab/sd-training/edit/main/Readme.md#book-day-23---clock-gating-technique)<br>
+[Day 24 Timing violations and ECO](https://github.com/azrulhakimwahab/sd-training/edit/main/Readme.md#book-day-24---timing-violations-and-eco)<br>
+[Day 25 RISC-v core RTL2GDS flow](https://github.com/azrulhakimwahab/sd-training/edit/main/Readme.md#book-day-25---risc-v-core-rtl2gds-flow)<br>
+[Day 26 Introduction to mixed-signal flow](https://github.com/azrulhakimwahab/sd-training/edit/main/Readme.md#book-day-26---introduction-to-mixed-signal-flow)<br>
+[Day 27 Crosstalk](https://github.com/azrulhakimwahab/sd-training/edit/main/Readme.md#book-day-27---crosstalk)<br>
+[Day 28 Introduction to SkyWater SKY130](https://github.com/azrulhakimwahab/sd-training/edit/main/Readme.md#book-day-28----introduction-to-skywater-sky130)<br>
+
 ## :book: Day 0-System/Tool Setup Check. GitHub ID creation
 
 <details><summary> :mag_right: Theories </summary>
@@ -7805,25 +7838,90 @@ Taken from https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.intel.sg%2Fcont
 	
 </p>
 </details>	
-		
+	
+</p>
+</details>
+	
 ## :book: Day 27 - Crosstalk
 
 <details><summary> :mag_right: Theories </summary>
 <p>
 
-### :mag_right: 	
+### :mag_right: Introduction to Crosstalk	
 
-:black_nib: **test**
+* Crosstalk in VLSI is any phenomenon in electronics that occurs when ***a signal carried on one circuit or channel of a transmission system causes an undesirable effect in another circuit or channel***. 
+* Crosstalk is typically generated by unwanted capacitive, inductive, or conductive coupling between circuits or channels.
+	
+**Chip design cycle**
+
+What we want to achieve?
+* Power: Focus on the lowest power consumption.
+* Performance: Focus on the performance, process and speed of the device.
+* Area: Smaller area
+	
+	
+**What were covered? Introduction to:**
+	
+	Reasons for crosstalk
+	Introduction to noise margin
+	Crosstalk glitch example
+	Factors affecting glitch height
+	AC noise margin
+	Timing window concepts
+	Impact of crosstalk on setup and hold timing
+	Techniques to reduce crosstalk
+	Power supply noise
+	
+### :mag_right: Why and How crosstalk occurs in a chip
+	
+:black_nib: **High Routing Density**
+	
+<details><summary> Explainations </summary>
+<p>	
+
+**Crosstalk Noise Reasons and Definition**
+	
+<img src="https://user-images.githubusercontent.com/118953938/220662205-e25eaed9-f414-4b8e-a7af-4a6261f0d2f9.png" width=70% height=70%>
+	
+* Shortening the channel length is an easy method to reduce MOSFET size. 
+* The cell inside shrinks as well when the channel length is decreased because doing so causes the MOSFET and combinational logic to have smaller total dimensions. 
+* We were able to reduce the MOSFET's size in this manner.	
+* The same region of the chip was only being used by one or two applications prior to the MOSFET size reduction; however, nine applications are now active there.
+* When we decrease the size, there is a problem with interference, though. 
+* In essence, when we reduce the size—referring to the 0.1 um, some interference in their working between the two nets/wires that are being put very close to one another.
+* There are 20 standard compartments at the onset. Due to the size reduction, there are now nine times as many standard cells that must be connected to one another. As a result, there are now more routes and they are now located very near to one another.
+* Consequently, we will start to notice some design flaws where some feature failures are occurring that we can refer to as crosstalk.	
+	
+	
+</p>
+</details>
+
+:black_nib: **Dominant Lateral Capacitance**
 	
 <details><summary> Explainations </summary>
 <p>	
 	
-</p>
-</details>	
+**Crosstalk Noise Reasons and Definition**
+	
+* Increase in number of metal layers resulting in increase in _**lateral capacitance**_	
+	
+<img src="https://user-images.githubusercontent.com/118953938/220667963-93903ad2-d5bf-43b1-b167-2b5b41bd2392.png" width=70% height=70%>
+	
+There are 2 kinds of capacitance.
+* Interlayer capacitance: capacitors that is placed between 2 consecutive different layers.
+* Lateral capacitance: capacitors that is placed between 2 wires at the same level and metal layer.	
+	
+* The lateral capacitance between nets/wires on silicon, becomes much more dominant than the inter layer capacitance. 
+* Hence, there is a capacitive coupling between the nets, that can lead to logic failures and degradation of timing in VLSI circuits. 
+* Crosstalk is a phenomenon, by which a logic transmitted in vlsi circuit or a net/wire creates undesired effect on the neighboring circuit or nets/wires, due to capacitive coupling.	
+	
 	
 </p>
 </details>	
 	
+	
+</p>
+</details>
 	
 ## :book: Day 28 -  Introduction to SkyWater SKY130
 
@@ -7832,7 +7930,7 @@ Taken from https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.intel.sg%2Fcont
 
 ### :mag_right: Introduction to SkyWater PDKs and opensource EDA tools	
 
-:black_nib: ** Introduction to Skywater PDK**
+:black_nib: **Introduction to Skywater PDK**
 	
 <details><summary> Explainations </summary>
 <p>	
@@ -7841,7 +7939,7 @@ Taken from https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.intel.sg%2Fcont
 </details>	
 	
 </p>
-</details>	
+</details>
 	
 	
 	
