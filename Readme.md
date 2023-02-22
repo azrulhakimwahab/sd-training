@@ -7915,6 +7915,29 @@ There are 2 kinds of capacitance.
 * Hence, there is a capacitive coupling between the nets, that can lead to logic failures and degradation of timing in VLSI circuits. 
 * Crosstalk is a phenomenon, by which a logic transmitted in vlsi circuit or a net/wire creates undesired effect on the neighboring circuit or nets/wires, due to capacitive coupling.	
 	
+<img src="https://user-images.githubusercontent.com/118953938/220682863-60c0fc1d-894d-43bd-b613-a6f85ba68b8d.png" width=70% height=70%>
+
+* The resistance can be decreased by separating metal layers into smaller pieces; the greater the area, the lower the resistance. We have a broader metal layer as a result.
+* As can be seen in the figure above, there is a sizable overlap region between metals 1 and 2, which increases the lower capacitance. Because of this, we say that the interlayer capacitance was prevalent in processes 0.25 um and above.
+
+
+
+
+</p>
+</details>	
+
+:black_nib: **Introduction to noise margin**
+	
+<details><summary> Explainations </summary>
+<p>	
+	
+	
+	
+	
+	
+	
+	
+	
 	
 </p>
 </details>	
@@ -7923,7 +7946,7 @@ There are 2 kinds of capacitance.
 </p>
 </details>
 	
-## :book: Day 28 -  Introduction to SkyWater SKY130
+## :book: Day 28 - Introduction to SkyWater SKY130
 
 <details><summary> :mag_right: Theories </summary>
 <p>
@@ -7934,10 +7957,40 @@ There are 2 kinds of capacitance.
 	
 <details><summary> Explainations </summary>
 <p>	
-	
+
+The **SkyWater Open Source PDK** is a collaboration between Google and SkyWater Technology Foundry to provide a fully open source Process Design Kit and related resources, which can be used to create manufacturable designs at SkyWater's facility.
+
+<img src="https://user-images.githubusercontent.com/118953938/220686942-5bdd5aef-1f05-408f-89b5-ae4001e95cef.png" width=70% height=70%>
+
+The SKY130 is a mature 180nm-130nm hybrid technology originally developed internally by Cypress Semiconductor before being spun out into SkyWater Technology and made accessible to general industry. SkyWater and Google’s collaboration is now making this technology accessible to everyone!
+
+The SKY130 Process node technology stack consists of;
+
+	Support for internal 1.8V with 5.0V I/Os (operable at 2.5V)
+	1 level of local interconnect
+	5 levels of metal
+	Is inductor-capable
+	Has high sheet rho poly resistor
+	Optional MiM capacitors
+	Includes SONOS shrunken cell
+	Supports 10V regulated supply
+	HV extended-drain NMOS and PMOS
+
+
 </p>
 </details>	
+
+:black_nib: **Opensource EDA Tools**
 	
+<details><summary> Explainations </summary>
+<p>	
+
+
+
+
+
+
+
 </p>
 </details>
 	
@@ -7946,6 +7999,8 @@ There are 2 kinds of capacitance.
 	
 	
 	
+</p>
+</details>
 	
 	
 	
