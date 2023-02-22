@@ -7841,7 +7841,7 @@ Taken from https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.intel.sg%2Fcont
 </details>	
 	
 </p>
-</details>		
+</details>	
 	
 	
 	
