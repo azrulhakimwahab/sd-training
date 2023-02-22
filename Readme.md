@@ -4289,8 +4289,79 @@ How is PVT data measured?<br>
 <details><summary> :test_tube:	Labs </summary>
 <p>
 
-	
+### :test_tube:	Task 1 - Converting .lib to .db	
 
+<details><summary> Reports </summary>
+<p>	
+
+<img src="https://user-images.githubusercontent.com/118953938/220514256-f2333db0-ac2c-4bdc-ac2a-7e7a1f084c17.png" width=70% height=70%>
+
+<img src="https://user-images.githubusercontent.com/118953938/220513032-55b4fda7-9c82-4ece-af26-1fea96ab023d.png" width=70% height=70%>
+
+<img src="https://user-images.githubusercontent.com/118953938/220513547-b518146d-a182-43c4-9bd0-165c1fa3faab.png" width=70% height=70%>
+
+**'.db' files were created**
+
+<img src="https://user-images.githubusercontent.com/118953938/220515060-4cc4787f-1527-4877-afd8-f7705a53d7f2.png" width=70% height=70%>
+
+</p>
+</details>
+
+### :test_tube:	Task 2 - Timing libs for different PVT corners	
+
+<details><summary> Reports </summary>
+<p>
+
+**Commands**
+
+		In dc_shell
+		-read_file {mythcore_test.v avsd_pll_1v8.v avsddac.v clk_gate.v vsdbabysoc.v} -autoread -format verilog -top vsdbabysoc
+		-set target_library {/nfs/png/disks/png_mip_gen6p9ddr_0032/wahabm/VLSI/sky130RTLDesignAndSynthesisWorkshop/DC_WORKSHOP/verilog_files/rvmyth/timing_libs/sky130_fd_sc_hd__ff_100C_1v65.db /nfs/png/disks/png_mip_gen6p9ddr_0032/wahabm/VLSI/sky130RTLDesignAndSynthesisWorkshop/DC_WORKSHOP/verilog_files/rvmyth/avsddac.db /nfs/png/disks/png_mip_gen6p9ddr_0032/wahabm/VLSI/sky130RTLDesignAndSynthesisWorkshop/DC_WORKSHOP/verilog_files/rvmyth/avsdpll.db}
+	
+		Changing target and link library
+		-set link_library {* /nfs/png/disks/png_mip_gen6p9ddr_0032/wahabm/VLSI/sky130RTLDesignAndSynthesisWorkshop/DC_WORKSHOP/verilog_files/rvmyth/timing_libs/sky130_fd_sc_hd__ff_100C_1v65.db /nfs/png/disks/png_mip_gen6p9ddr_0032/wahabm/VLSI/sky130RTLDesignAndSynthesisWorkshop/DC_WORKSHOP/verilog_files/rvmyth/avsddac.db /nfs/png/disks/png_mip_gen6p9ddr_0032/wahabm/VLSI/sky130RTLDesignAndSynthesisWorkshop/DC_WORKSHOP/verilog_files/rvmyth/avsdpll.db}
+
+		To check if clock exist
+		-get_clocks 
+		
+		Constraints
+		-source cons.tcl 
+
+		Checking clock reports
+		-report_clocks 
+
+		-link
+
+		-compile
+
+		Slack report
+		-report_timing 
+
+		To retrieve the WNS WHS THS
+		-report_qor 
+
+**Outputs**
+
+<img src="https://user-images.githubusercontent.com/118953938/220521705-9d7a66ec-edbb-4aab-83df-454a8cd9fcc7.png" width=70% height=70%>
+
+<img src="https://user-images.githubusercontent.com/118953938/220522211-1f182cac-9102-4467-93d8-dd0ee1d6dc51.png" width=70% height=70%>
+
+<img src="https://user-images.githubusercontent.com/118953938/220522399-0c7cab74-85f3-4fdc-ac01-d5f6a23cb3d8.png" width=70% height=70%>
+
+<img src="https://user-images.githubusercontent.com/118953938/220522619-245ff7d6-79a1-4929-9399-47ed947b09b8.png" width=50% height=50%>
+
+<img src="https://user-images.githubusercontent.com/118953938/220523141-01d7d7a9-04c3-4b22-a4be-ef6b8467dc1e.png" width=70% height=70%>
+
+**Generated Table**
+
+<img src="https://user-images.githubusercontent.com/118953938/220524313-04c246d7-13d8-455c-8d2a-e7f928455340.png" width=50% height=50%>
+
+
+
+
+
+</p>
+</details>
 </p>
 </details>
 
