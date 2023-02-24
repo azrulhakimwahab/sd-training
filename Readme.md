@@ -7985,24 +7985,159 @@ The SKY130 Process node technology stack consists of;
 <details><summary> Explainations </summary>
 <p>	
 
+**Open-PDKs (open_pdks)**
+	
+* Automatic generation of PDKs from foundry sources for open-source tools.
 
+* Constructs and populates a fresh set of directories and subdirectories in the efabless format, starting with the efabless name for the PDK, then the categories "libs.ref" (IP), "libs.tech," and "libs.tech" (EDA tool setup), each with subcategories corresponding to layout, abstract views, netlists, etc. for the IP, and magic, netgen, qflow, etc. for the EDA tool setup.
 
+* The populated PDK directories may have connections to other PDKs, links back to the foundry sources, or copies of files from the foundry sources.
 
+* All vendor IP for which a GDS view or an LEF view exists is generated into magic layout views. Uses annotations to manage ports, bounding boxes, etc. on the views as necessary.
 
+<img src="https://user-images.githubusercontent.com/118953938/221115684-c695980b-0881-4fd4-8f32-e2a9e6af2bbd.png" width=70% height=70%>
 
+Tools that is supported by open_pdks:-
+
+	Magic
+	Klayout
+	Openlane
+	Xschem
+	Netgen
+	Ngspice
+	IVerilog
+	qflow
+	IRSIM
+	xcircuit
+
+<img src="https://user-images.githubusercontent.com/118953938/221116174-bfb3d0d3-9450-49ba-9c42-31054cd4e1f5.png" width=70% height=70%>
+
+The libraries supported by open_pdks are:-
+
+	Digital standard cells i.e. sky130_fd_sc_hd
+	Primitive devices/analog i.e. sky130_fd_pr
+	I/O cells i.e. sky130_fd_io
+	3rd party libraries i.e. sky130_ml_xx_hd
 
 </p>
 </details>
 	
 	
 	
+:black_nib: **Understanding Skywater PDK - Layers**
 	
+<details><summary> Explainations </summary>
+<p>		
 	
+
+**Layers**	
 	
+<img src="https://user-images.githubusercontent.com/118953938/221116584-5724afe7-f211-4ece-a436-bbad7359503f.png" width=50% height=50%>
+	
+<img src="https://user-images.githubusercontent.com/118953938/221116619-ca1c61fb-cafd-436e-9f12-9313731d5129.png" width=50% height=50%>
+	
+**Power and ground rail**	
+	
+<img src="https://user-images.githubusercontent.com/118953938/221116733-d8b51293-be34-49ab-98cd-de01717aaedd.png" width=40% height=40%>
+
+<img src="https://user-images.githubusercontent.com/118953938/221116772-27687934-8e73-47a7-88c8-50e9aea91b63.png" width=40% height=40%>
+
+**Metal Routing**
+
+Routing in VLSI is making physical connections between signal pins using metal layers.
+	
+<img src="https://user-images.githubusercontent.com/118953938/221117018-f33bc100-6a7d-4a25-b54c-06be23697ab0.png" width=40% height=40%>
+
+n-well is used to isolate the NMos from the substrate of other NMos
+	
+<img src="https://user-images.githubusercontent.com/118953938/221117218-34c63e41-e631-4a15-8e46-36b80c7e24c0.png" width=40% height=40%>
+
+**GPIO pads**
+	
+What are GPIO pads?
+* A general-purpose input/output (GPIO) is an uncommitted digital signal pin on an integrated circuit or electronic circuit (e.g. MCUs/MPUs ) board which may be used as an input or output, or both, and is controllable by software. GPIOs have no predefined purpose and are unused by default.	
+	
+<img src="https://user-images.githubusercontent.com/118953938/221118157-d45deea4-222f-4af8-b24f-d5cb54a8c908.png" width=40% height=40%>
+
+What is GPIO used for?
+* GPIO stands for General Purpose Input/Output. It's a standard interface used to connect microcontrollers to other electronic devices. For example, it can be used with sensors, diodes, displays, and System-on-Chip modules.
+	
+**Metal-Insulator-Metal**	
+	
+Metal-insulator-metal (MIM) capacitors, are ***a basic building block of electronic systems*** and allow for high capacitance with little real estate. Capacitors are important for energy storage, signal filtering, and high-frequency tuning applications.	
+	
+<img src="https://user-images.githubusercontent.com/118953938/221118783-3b30952e-a2f0-4a17-a5f1-b88f5552b643.png" width=40% height=40%>
+
+**Bump formation under 3rd party manufacture**	
+	
+<img src="https://user-images.githubusercontent.com/118953938/221119501-e7b01572-3920-4f9b-8b12-0bb4bfc1c4ef.png" width=40% height=40%>
+
+What is UBM? 
+* Under bump metallization – or UBM – is an advanced packaging process that involves creating a thin film metal layer stack between the integrated circuit (IC) or copper pillars and solder bumps in a flip chip package.
+
+<img src="https://user-images.githubusercontent.com/118953938/221119720-fa3334a1-d823-4744-90b1-e08b6d76f37e.png" width=70% height=70%>
+
 </p>
 </details>
 	
 	
+:black_nib: **Understanding Skywater PDK - Devices**
+	
+<details><summary> Explainations </summary>
+<p>	
+	
+What is a bipolar NPN transistor?
+* Bipolar transistors are a type of transistor composed of pn junctions, which are also called bipolar junction transistors (BJTs). Whereas a field-effect transistor is a unipolar device, a bipolar transistor is so named because its operation involves two kinds of charge carriers, holes and electrons.	
+	
+What is a bipolar PNP  transistor?
+* A PNP Bipolar Junction Transistor has an N-doped semiconductor base in between a P-doped emitter and P-doped collector region. The PNP Transistor has very similar characteristics to the NPN Transistor, with the difference being the biasing of the current and voltage directions are reversed.	
+	
+<img src="https://user-images.githubusercontent.com/118953938/221120655-909de046-def0-4771-93da-511ea30a4928.png" width=70% height=70%>
+	
+Polysilicon resistor
+* Resistors of polycrystalline silicon, also called polysilicon, have been used in the electronic circuit field for about thirty years. Methods of manufacturing polycrystalline silicon are well-known, as are methods of manufacturing resistors from polycrystalline silicon.
+	
+What is P well?
+* In an n-type doped semiconductor substrate, a p-well is a localized section of substrate that has been doped with p-type atoms or molecules, making that portion of the semiconductor p-type.	
+	
+What is a diffusion resistor?
+* Diffused resistors are resistors that are fabricated through p-type diffusion into an n-type background, which is usually accomplished simultaneously with base diffusion. The sheet resistance of a base diffusion is usually 100-200 ohms per square.	
+	
+<img src="https://user-images.githubusercontent.com/118953938/221129490-324f195d-db6f-4be3-b4cd-b84c832bc5bb.png" width=70% height=70%>
+	
+<img src="https://user-images.githubusercontent.com/118953938/221130086-efd46b7c-adb0-4b7e-b6d3-479fe1df5638.png" width=70% height=70%>
+	
+</p>
+</details>	
+	
+:black_nib: **Understanding Skywater PDK Libraries**
+	
+<details><summary> Explainations </summary>
+<p>	
+
+What is a standard cell library?
+* A standard-cell library is a collection of low-level electronic logic functions such as AND, OR, INVERT, flip-flops, latches, and buffers. These cells are realized as fixed-height, variable-width full-custom cells.	
+	
+What cells are in a standard cell library?
+
+In general, a standard cell library contains the following types of cell:
+
+	All basic and universal gates (like AND, OR, NOT, NAND, NOR, XOR etc)
+	Complex gates (like MUX, HA, FA, Comparators, AOI, OAI etc)
+	Clock tree cells (like Clock buffers, clock inverters, ICG cells etc)
+	Flip flops and latches.
+	Delay cells.	
+	
+![image](https://user-images.githubusercontent.com/118953938/221132959-558e1a32-f335-4047-bb7b-0d6b2695f056.png)
+
+![image](https://user-images.githubusercontent.com/118953938/221133245-60686d5c-3c57-469c-a138-fbed57e58ad4.png)
+
+![image](https://user-images.githubusercontent.com/118953938/221133712-ae465fac-24ee-4ea7-bdae-e4ec56ee5958.png)
+
+**Primitive devices and models**	
+	
+Primitive device library
+* 
 	
 	
 	
@@ -8011,3 +8146,13 @@ The SKY130 Process node technology stack consists of;
 	
 	
 	
+	
+	
+	
+	
+</p>
+</details>	
+		
+	
+</p>
+</details>	
