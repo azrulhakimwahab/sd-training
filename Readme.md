@@ -8110,7 +8110,7 @@ What is a diffusion resistor?
 </p>
 </details>	
 	
-:black_nib: **Understanding Skywater PDK Libraries**
+:black_nib: **Understanding Skywater PDK - Libraries**
 	
 <details><summary> Explainations </summary>
 <p>	
@@ -8128,31 +8128,55 @@ In general, a standard cell library contains the following types of cell:
 	Flip flops and latches.
 	Delay cells.	
 	
-![image](https://user-images.githubusercontent.com/118953938/221132959-558e1a32-f335-4047-bb7b-0d6b2695f056.png)
+<img src="https://user-images.githubusercontent.com/118953938/221132959-558e1a32-f335-4047-bb7b-0d6b2695f056.png" width=60% height=60%>
 
-![image](https://user-images.githubusercontent.com/118953938/221133245-60686d5c-3c57-469c-a138-fbed57e58ad4.png)
+<img src="https://user-images.githubusercontent.com/118953938/221133245-60686d5c-3c57-469c-a138-fbed57e58ad4.png" width=60% height=60%>
 
-![image](https://user-images.githubusercontent.com/118953938/221133712-ae465fac-24ee-4ea7-bdae-e4ec56ee5958.png)
+<img src="https://user-images.githubusercontent.com/118953938/221133712-ae465fac-24ee-4ea7-bdae-e4ec56ee5958.png" width=60% height=60%>
 
 **Primitive devices and models**	
 	
 Primitive device library
-* 
+* A specific primitive can be found according to the device family and functional category.
 	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
+<img src="https://user-images.githubusercontent.com/118953938/221347504-c1e307a3-78cd-4e34-ab60-84ef424b8d1e.png" width=60% height=60%>
+
+<img src="https://user-images.githubusercontent.com/118953938/221347527-26304184-c058-4125-a7b0-b17c8cc4ef56.png" width=60% height=60%>
+
+<img src="https://user-images.githubusercontent.com/118953938/221347626-e26d09a3-2a12-40b2-8a4e-f45f2019bfa5.png" width=60% height=60%>
 	
 </p>
 </details>	
 		
+:black_nib: **Opensource Tools And Flows**
+	
+<details><summary> Explainations </summary>
+<p>	
+
+What is flow in VLSI?
+* VLSI Physical Design Flow is a cardinal process of converting synthesized netlist, design curtailment and standard library to a layout as per the design rules provided by the foundry. This layout is further sent to the foundry for the creation of the chip.
+	
+<img src="https://user-images.githubusercontent.com/118953938/221348152-cb022557-e7cf-4f34-a970-ed7eaa337f6c.png" width=60% height=60%>
+
+**Generation of schematic**
+	
+<img src="https://user-images.githubusercontent.com/118953938/221348363-b7600287-594c-4d07-8fb3-e83bb8057685.png" width=60% height=60%>
+	
+**DRC check**	
+	
+<img src="https://user-images.githubusercontent.com/118953938/221350025-ec04ade3-80f8-4c32-a84a-5324b6fd3e36.png" width=60% height=60%>
+
+<img src="https://user-images.githubusercontent.com/118953938/221350035-9bc090da-2ef9-4191-852c-6da45d690e6d.png" width=60% height=60%>
+
+<img src="https://user-images.githubusercontent.com/118953938/221350056-1503a690-0c98-4f6a-aed4-f55e51ddea18.png" width=60% height=60%>
+
+<img src="https://user-images.githubusercontent.com/118953938/221350164-c3bf8fc6-faff-45af-95da-3985228a7a15.png" width=60% height=60%>
+	
+</p>
+</details>	
+	
+	
+	
 	
 </p>
 </details>	
